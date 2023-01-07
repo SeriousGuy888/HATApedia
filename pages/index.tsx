@@ -1,32 +1,37 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../src/Link';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
+import Container from "@mui/material/Container"
+import Typography from "@mui/material/Typography"
+import { AppBar, Toolbar, useTheme } from "@mui/material"
 
 export default function Home() {
+  const theme = useTheme()
+
   return (
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
-  );
+    <>
+      <AppBar position="sticky">
+        <Toolbar>
+          <Typography variant="h4">HATApedia</Typography>
+        </Toolbar>
+      </AppBar>
+      <main>
+        <div>
+          <Container>
+            <Typography
+              variant="h2"
+              color={theme.palette.text.primary}
+              marginTop={theme.spacing(4)}
+            >
+              States
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              color={theme.palette.text.secondary}
+              gutterBottom
+            >
+              Empires on the server
+            </Typography>
+          </Container>
+        </div>
+      </main>
+    </>
+  )
 }
