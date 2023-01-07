@@ -2,60 +2,27 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import {
   AppBar,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
   Grid,
   Toolbar,
   useTheme,
 } from "@mui/material"
+import NationCard from "../modules/NationCard/NationCard"
 
 const data = [
   {
-    name: "Billzoplace",
-    type: "City State",
+    name: "Billzoplace City State",
+    government: "Unitary One-Party Republic",
     id: "billzoplace",
   },
   {
     name: "Remy Republic",
-    type: "Federal Republic",
+    government: "Federal Parliamentary Republic",
     id: "remy_republic",
   },
   {
-    name: "Remy Republic",
-    type: "Federal Republic",
+    name: "Tobytopia",
+    government: "Unitary Absolute Monarchy",
     id: "tobytopia",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "aaa",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "bbb",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "ccc",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "ddd",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "eee",
-  },
-  {
-    name: "Remy Republic",
-    type: "Federal Republic",
-    id: "fff",
   },
 ]
 
@@ -88,34 +55,7 @@ export default function Home() {
 
           <Grid marginY={4} container spacing={2}>
             {data.map((nation) => (
-              <Grid item key={nation.id} xs={12} sm={6}>
-                <Card variant="outlined">
-                  <CardActionArea
-                    sx={{ display: "flex", justifyContent: "space-between" }}
-                    href={`./${nation.id}`}
-                  >
-                    <CardContent sx={{ flex: "4" }}>
-                      <Typography variant="h5">{nation.name}</Typography>
-                      <Typography
-                        variant="caption"
-                        color={theme.palette.text.secondary}
-                      >
-                        {nation.type}
-                      </Typography>
-                    </CardContent>
-                    <CardMedia
-                      component="img"
-                      sx={{
-                        flex: "1",
-                        borderRadius: 1,
-                        imageRendering: "pixelated",
-                      }}
-                      image="/images/banners/billzoplace.png"
-                      alt="Banner"
-                    />
-                  </CardActionArea>
-                </Card>
-              </Grid>
+              <NationCard key={nation.id} nation={nation} />
             ))}
           </Grid>
         </Container>

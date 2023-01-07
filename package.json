@@ -19,7 +19,8 @@
     "@next/font": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sass": "^1.57.1"
   },
   "devDependencies": {
     "@types/node": "latest",
