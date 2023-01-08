@@ -17,6 +17,8 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "latest",
+    "gray-matter": "^4.0.3",
+    "mui-markdown": "^0.5.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
