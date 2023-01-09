@@ -2,26 +2,14 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import { Grid, useTheme } from "@mui/material"
 import NationCard from "../modules/NationCard/NationCard"
+import { GetStaticPropsResult, NextPage } from "next"
+import { ArticlePreview, getAllArticles } from "../lib/articlesApi"
 
-const data = [
-  {
-    name: "Billzoplace City State",
-    government: "Unitary One-Party Republic",
-    id: "billzoplace",
-  },
-  {
-    name: "Remy Republic",
-    government: "Federal Parliamentary Republic",
-    id: "remy_republic",
-  },
-  {
-    name: "Tobytopia",
-    government: "Unitary Absolute Monarchy",
-    id: "tobytopia",
-  },
-]
+interface Props {
+  nations: ArticlePreview[]
+}
 
-export default function Home() {
+const Home: NextPage<Props> = ({ nations }) => {
   const theme = useTheme()
 
   return (
@@ -41,13 +29,23 @@ export default function Home() {
         >
           States and empires on the server
         </Typography>
-
         <Grid marginY={4} container spacing={2}>
-          {data.map((nation) => (
-            <NationCard key={nation.id} nation={nation} />
+          {nations.map((nation) => (
+            <NationCard key={nation.slug} nation={nation} />
           ))}
         </Grid>
       </Container>
     </main>
   )
 }
+
+export function getStaticProps(): GetStaticPropsResult<Props> {
+  return {
+    props: {
+      nations: getAllArticles("nation"),
+    },
+    revalidate: 600,
+  }
+}
+
+export default Home

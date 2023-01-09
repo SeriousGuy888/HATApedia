@@ -12,7 +12,9 @@ export interface Article {
 export interface ArticlePreview {
   slug: string
   title: string
-  excerpt: string
+  subtitle?: string
+  image?: string
+  tags: string[]
 }
 
 const articlesDir = join(process.cwd(), "/content/articles")
@@ -31,13 +33,19 @@ export const getArticle = <B extends boolean>(
   const fileContents = fs.readFileSync(filePath, "utf8")
   const { data, content } = matter(fileContents)
 
-  const frontMatter = data
+  let frontMatter = data
+  if (!(frontMatter.tags instanceof Array)) {
+    frontMatter.tags = []
+  }
+  frontMatter.tags = frontMatter.tags.map((tag: string) => tag.toLowerCase())
 
   if (previewDataOnly) {
     const previewData: ArticlePreview = {
       slug,
       title: frontMatter.title || "Untitled",
-      excerpt: "Excerpt",
+      subtitle: frontMatter.subtitle,
+      image: frontMatter.image,
+      tags: frontMatter.tags,
     }
     return previewData as any
   } else {
@@ -51,10 +59,13 @@ export const getArticle = <B extends boolean>(
   }
 }
 
-export const getAllArticles = () => {
+export const getAllArticles = (tagFilter?: string) => {
   const slugs = getArticleFileNames()
   const articles = slugs
     .map((slug) => getArticle(slug, true))
-    .sort((post1, post2) => (post1.title > post2.title ? -1 : 1))
+    .filter((article) =>
+      tagFilter ? article.tags.includes(tagFilter.toLowerCase()) : true,
+    )
+    .sort((a, b) => (a.title < b.title ? -1 : 1))
   return articles
 }
