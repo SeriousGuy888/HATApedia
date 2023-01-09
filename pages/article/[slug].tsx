@@ -6,6 +6,7 @@ import NationBanner from "../../modules/NationCard/NationBanner"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import remarkGfm from "remark-gfm"
+import NationInfoBox from "../../modules/Articles/NationInfoBox"
 
 interface Props {
   article: Article
@@ -27,7 +28,10 @@ const ArticlePage: NextPage<Props> = ({ article, source }) => {
         </Typography>
         <Grid marginY={4} container spacing={4}>
           <Grid item xs={12} md={9}>
-            <MDXRemote {...source} />
+            <MDXRemote
+              {...source}
+              components={{ NationInfoBox }}
+            />
           </Grid>
           <Grid item xs={12} md={3}>
             <NationBanner src={article.image ?? ""} />
