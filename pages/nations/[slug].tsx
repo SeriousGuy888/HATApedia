@@ -48,31 +48,42 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
                 marginBottom: theme.spacing(4),
               }}
             >
-              <Grid container spacing={2}>
-                <Grid item sm={2}>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "stretch",
+                  gap: theme.spacing(2),
+                }}
+              >
+                <Box style={{ flex: "1" }}>
                   <NationBanner src={article.nation.banner ?? ""} />
-                </Grid>
-                <Grid item sm={10} container spacing={2}>
+                </Box>
+                <Box
+                  style={{
+                    flex: "4",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    alignItems: "baseline",
+                    alignContent: "flex-start",
+                    gap: theme.spacing(2),
+                  }}
+                >
                   {article.nation.info &&
                     Object.keys(article.nation.info).map((key) => (
-                      <Grid item sm={6} key={key}>
-                        <Card>
-                          <CardContent style={{ textAlign: "center" }}>
-                            <Typography
-                              color="textSecondary"
-                              variant="overline"
-                            >
-                              {key}
-                            </Typography>
-                            <Typography>
-                              {article.nation?.info[key] ?? "Unknown"}
-                            </Typography>
-                          </CardContent>
-                        </Card>
-                      </Grid>
+                      <Card style={{ flex: "1", minWidth: "35vmin" }} key={key}>
+                        <CardContent style={{ textAlign: "center" }}>
+                          <Typography color="textSecondary" variant="overline">
+                            {key}
+                          </Typography>
+                          <Typography>
+                            {article.nation?.info[key] ?? "Unknown"}
+                          </Typography>
+                        </CardContent>
+                      </Card>
                     ))}
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
             </Paper>
           )}
           <MuiMarkdown

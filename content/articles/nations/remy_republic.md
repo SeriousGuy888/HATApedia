@@ -3,6 +3,9 @@ title: Remy Republic
 subtitle: Federal Parliamentary Republic
 nation:
   banner: /images/banners/remy_republic.png
+  info:
+    leader: Remy
+    demonym: Remyan
 ---
 
 The Remy Republic a state located on the southern worldborder of the server map.
