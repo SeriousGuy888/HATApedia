@@ -15,16 +15,23 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
       </Head>
-      <Container>
+      <Container maxWidth="md">
         <Typography variant="h3" component="h1">
           {article.title}
         </Typography>
         <Typography variant="overline" color="textSecondary">
           {article.subtitle}
         </Typography>
+
         <Grid marginY={4} container spacing={4}>
           <Grid item xs={12} md={9}>
-            <MuiMarkdown>{article.content}</MuiMarkdown>
+            <MuiMarkdown
+              options={{
+                slugify: (str) => str.toLowerCase().replace(/[^a-z]+/g, "-"),
+              }}
+            >
+              {article.content}
+            </MuiMarkdown>
           </Grid>
           <Grid item xs={12} md={3}>
             <NationBanner src={article.image ?? ""} />
