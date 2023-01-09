@@ -1,4 +1,4 @@
-import { Avatar, CardMedia, Container, Grid, Typography } from "@mui/material"
+import { Container, Grid, Typography } from "@mui/material"
 import MuiMarkdown from "mui-markdown"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import Head from "next/head"
@@ -40,7 +40,7 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = getArticle(slug, false)
+  const article = getArticle("nations", slug, false)
 
   return {
     props: {
@@ -50,7 +50,7 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const articles = getAllArticles()
+  const articles = getAllArticles("nations")
 
   return {
     paths: articles.map((article) => ({

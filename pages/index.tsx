@@ -39,7 +39,7 @@ const Home: NextPage<Props> = ({ nations }) => {
 export function getStaticProps(): GetStaticPropsResult<Props> {
   return {
     props: {
-      nations: getAllArticles("nation"),
+      nations: getAllArticles("nations"),
     },
     revalidate: 600,
   }

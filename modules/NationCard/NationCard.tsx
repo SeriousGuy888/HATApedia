@@ -4,8 +4,6 @@ import {
   CardActionArea,
   CardContent,
   Typography,
-  CardMedia,
-  Avatar,
 } from "@mui/material"
 import { NextPage } from "next"
 import { ArticlePreview } from "../../lib/articlesApi"
@@ -13,15 +11,13 @@ import theme from "../../mui/theme"
 import NationBanner from "./NationBanner"
 import styles from "./NationCard.module.scss"
 
-const NationCard: NextPage<{ nation: ArticlePreview }> = ({
-  nation,
-}) => {
+const NationCard: NextPage<{ nation: ArticlePreview }> = ({ nation }) => {
   return (
     <Grid item xs={12} sm={6}>
       <Card variant="outlined">
         <CardActionArea
           sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}
-          href={`./article/${nation.slug}`}
+          href={`./nations/${nation.slug}`}
         >
           <CardContent
             sx={{

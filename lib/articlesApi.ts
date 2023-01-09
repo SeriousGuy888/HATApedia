@@ -17,41 +17,40 @@ export interface ArticlePreview {
   tags: string[]
 }
 
-const articlesDir = join(process.cwd(), "/content/articles")
+export type ArticleSubdir = "nations"
 
-export const getArticleFileNames = () => {
-  return fs.readdirSync(articlesDir)
+const articlesDir = join(process.cwd(), "/content/articles/")
+
+const getArticleFileNames = (subdir: ArticleSubdir) => {
+  return fs.readdirSync(join(articlesDir, subdir))
 }
 
 // returns Article or ArticlePreview based on param
 export const getArticle = <B extends boolean>(
+  subdir: ArticleSubdir,
   slugOrFileName: string,
   previewDataOnly: B,
 ): B extends true ? ArticlePreview : Article => {
   const slug = slugOrFileName.replace(/\.md$/, "")
-  const filePath = join(articlesDir, `${slug}.md`)
+  const filePath = join(articlesDir, subdir, `${slug}.md`)
   const fileContents = fs.readFileSync(filePath, "utf8")
   const { data, content } = matter(fileContents)
 
-  let frontMatter = data
-  if (!(frontMatter.tags instanceof Array)) {
-    frontMatter.tags = []
-  }
-  frontMatter.tags = frontMatter.tags.map((tag: string) => tag.toLowerCase())
-
+  const title = data.title || "Untitled"
+  
   if (previewDataOnly) {
     const previewData: ArticlePreview = {
       slug,
-      title: frontMatter.title || "Untitled",
-      subtitle: frontMatter.subtitle,
-      image: frontMatter.image,
-      tags: frontMatter.tags,
+      title,
+      subtitle: data.subtitle,
+      image: data.image,
+      tags: data.tags,
     }
     return previewData as any
   } else {
     const fullData: Article = {
-      ...frontMatter,
-      title: frontMatter.title ?? "Untitled",
+      ...data,
+      title,
       slug,
       content,
     }
@@ -59,13 +58,10 @@ export const getArticle = <B extends boolean>(
   }
 }
 
-export const getAllArticles = (tagFilter?: string) => {
-  const slugs = getArticleFileNames()
+export const getAllArticles = (subdir: ArticleSubdir) => {
+  const slugs = getArticleFileNames(subdir)
   const articles = slugs
-    .map((slug) => getArticle(slug, true))
-    .filter((article) =>
-      tagFilter ? article.tags.includes(tagFilter.toLowerCase()) : true,
-    )
+    .map((slug) => getArticle(subdir, slug, true))
     .sort((a, b) => (a.title < b.title ? -1 : 1))
   return articles
 }
