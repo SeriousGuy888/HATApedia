@@ -10,6 +10,7 @@ import {
 import { NextPage } from "next"
 import { ArticlePreview } from "../../lib/articlesApi"
 import theme from "../../mui/theme"
+import NationBanner from "./NationBanner"
 import styles from "./NationCard.module.scss"
 
 const NationCard: NextPage<{ nation: ArticlePreview }> = ({
@@ -40,23 +41,7 @@ const NationCard: NextPage<{ nation: ArticlePreview }> = ({
               {nation.subtitle}
             </Typography>
           </CardContent>
-          <CardMedia
-            sx={{
-              flex: "1",
-              borderRadius: 1,
-              imageRendering: "pixelated",
-            }}
-          >
-            <Avatar
-              src={nation.image}
-              sx={{ width: "100%", height: "100%", borderRadius: "inherit" }}
-            >
-              <img
-                src="/images/banners/blank.png"
-                style={{ width: "inherit", height: "inherit" }}
-              />
-            </Avatar>
-          </CardMedia>
+          <NationBanner src={nation.image ?? ""} />
         </CardActionArea>
       </Card>
     </Grid>

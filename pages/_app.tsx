@@ -5,9 +5,10 @@ import CssBaseline from "@mui/material/CssBaseline"
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import theme from "../mui/theme"
 import createEmotionCache from "../mui/createEmotionCache"
-import { AppBar, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Toolbar, Typography } from "@mui/material"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
+import Link from "../common/Link"
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -30,7 +31,9 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <AppBar position="sticky">
           <Toolbar>
-            <Typography variant="h4">HATApedia</Typography>
+            <Link href="/" style={{ textDecoration: "none" }} color="textPrimary">
+              <Typography variant="h4">HATApedia</Typography>
+            </Link>
           </Toolbar>
         </AppBar>
         <motion.main
@@ -39,7 +42,9 @@ export default function MyApp(props: MyAppProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <Component {...pageProps} />
+          <Box marginTop={theme.spacing(4)}>
+            <Component {...pageProps} />
+          </Box>
         </motion.main>
       </ThemeProvider>
     </CacheProvider>

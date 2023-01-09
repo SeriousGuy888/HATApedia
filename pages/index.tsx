@@ -17,7 +17,6 @@ const Home: NextPage<Props> = ({ nations }) => {
       <Typography
         variant="h2"
         color={theme.palette.text.primary}
-        marginTop={theme.spacing(4)}
       >
         Political Entities
       </Typography>
