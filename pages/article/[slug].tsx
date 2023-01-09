@@ -1,15 +1,18 @@
-import { Avatar, CardMedia, Container, Grid, Typography } from "@mui/material"
-import MuiMarkdown from "mui-markdown"
+import { Container, Grid, Typography } from "@mui/material"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import Head from "next/head"
 import { Article, getAllArticles, getArticle } from "../../lib/articlesApi"
 import NationBanner from "../../modules/NationCard/NationBanner"
+import { serialize } from "next-mdx-remote/serialize"
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
+import remarkGfm from "remark-gfm"
 
 interface Props {
   article: Article
+  source: MDXRemoteSerializeResult
 }
 
-const ArticlePage: NextPage<Props> = ({ article }) => {
+const ArticlePage: NextPage<Props> = ({ article, source }) => {
   return (
     <>
       <Head>
@@ -24,7 +27,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
         </Typography>
         <Grid marginY={4} container spacing={4}>
           <Grid item xs={12} md={9}>
-            <MuiMarkdown>{article.content}</MuiMarkdown>
+            <MDXRemote {...source} />
           </Grid>
           <Grid item xs={12} md={3}>
             <NationBanner src={article.image ?? ""} />
@@ -41,10 +44,16 @@ export async function getStaticProps({
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
   const article = getArticle(slug, false)
+  const mdxSource = await serialize(article.content, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+    },
+  })
 
   return {
     props: {
       article,
+      source: mdxSource,
     },
   }
 }

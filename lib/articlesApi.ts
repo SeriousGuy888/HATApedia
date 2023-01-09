@@ -28,8 +28,8 @@ export const getArticle = <B extends boolean>(
   slugOrFileName: string,
   previewDataOnly: B,
 ): B extends true ? ArticlePreview : Article => {
-  const slug = slugOrFileName.replace(/\.md$/, "")
-  const filePath = join(articlesDir, `${slug}.md`)
+  const slug = slugOrFileName.replace(/\.mdx$/, "")
+  const filePath = join(articlesDir, `${slug}.mdx`)
   const fileContents = fs.readFileSync(filePath, "utf8")
   const { data, content } = matter(fileContents)
 
