@@ -28,6 +28,26 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
             <MuiMarkdown
               options={{
                 slugify: (str) => str.toLowerCase().replace(/[^a-z]+/g, "-"),
+                overrides: {
+                  h1: {
+                    component: "h1",
+                  },
+                  h2: {
+                    component: "h2",
+                  },
+                  h3: {
+                    component: "h3",
+                  },
+                  h4: {
+                    component: "h4",
+                  },
+                  h5: {
+                    component: "h5",
+                  },
+                  h6: {
+                    component: "h6",
+                  },
+                },
               }}
             >
               {article.content}
