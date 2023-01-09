@@ -1,12 +1,13 @@
 import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
+import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 
 export interface Article {
   slug: string
   content: string
   title: string
-  nation?: NationData
+  nation?: NationInfoCardData
   [key: string]: any
 }
 
@@ -16,13 +17,6 @@ export interface ArticlePreview {
   subtitle?: string
   image?: string
   [key: string]: any
-}
-
-export interface NationData {
-  banner?: string
-  info: {
-    [key: string]: any
-  }
 }
 
 export type ArticleSubdir = "nations"
@@ -63,11 +57,11 @@ export const getArticle = <B extends boolean>(
     }
   }
 
-  Object.keys(returnData).forEach(key => {
+  Object.keys(returnData).forEach((key) => {
     if (returnData[key] === undefined) {
       delete returnData[key]
     }
-  });
+  })
   return returnData as any
 }
 

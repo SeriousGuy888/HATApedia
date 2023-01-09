@@ -17,6 +17,7 @@ import MuiMarkdown from "mui-markdown"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import Head from "next/head"
 import { Article, getAllArticles, getArticle } from "../../lib/articlesApi"
+import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import NationBanner from "../../modules/NationCard/NationBanner"
 
 interface Props {
@@ -24,7 +25,6 @@ interface Props {
 }
 
 const ArticlePage: NextPage<Props> = ({ article }) => {
-  const theme = useTheme()
 
   return (
     <>
@@ -40,52 +40,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
         </Typography>
 
         <Box my={4}>
-          {article.nation && (
-            <Paper
-              elevation={3}
-              style={{
-                padding: theme.spacing(2),
-                marginBottom: theme.spacing(4),
-              }}
-            >
-              <Box
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "stretch",
-                  gap: theme.spacing(2),
-                }}
-              >
-                <Box style={{ flex: "1" }}>
-                  <NationBanner src={article.nation.banner ?? ""} />
-                </Box>
-                <Box
-                  style={{
-                    flex: "4",
-                    display: "flex",
-                    flexWrap: "wrap",
-                    alignItems: "baseline",
-                    alignContent: "flex-start",
-                    gap: theme.spacing(2),
-                  }}
-                >
-                  {article.nation.info &&
-                    Object.keys(article.nation.info).map((key) => (
-                      <Card style={{ flex: "1", minWidth: "35vmin" }} key={key}>
-                        <CardContent style={{ textAlign: "center" }}>
-                          <Typography color="textSecondary" variant="overline">
-                            {key}
-                          </Typography>
-                          <Typography>
-                            {article.nation?.info[key] ?? "Unknown"}
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                    ))}
-                </Box>
-              </Box>
-            </Paper>
-          )}
+          {article.nation && <NationInfoCard nation={article.nation} />}
           <MuiMarkdown
             options={{
               slugify: (str) => str.toLowerCase().replace(/[^a-z]+/g, "-"),
