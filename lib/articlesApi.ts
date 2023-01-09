@@ -14,7 +14,6 @@ export interface ArticlePreview {
   title: string
   subtitle?: string
   image?: string
-  tags: string[]
 }
 
 export type ArticleSubdir = "nations"
@@ -37,14 +36,13 @@ export const getArticle = <B extends boolean>(
   const { data, content } = matter(fileContents)
 
   const title = data.title || "Untitled"
-  
+
   if (previewDataOnly) {
     const previewData: ArticlePreview = {
       slug,
       title,
       subtitle: data.subtitle,
       image: data.image,
-      tags: data.tags,
     }
     return previewData as any
   } else {
