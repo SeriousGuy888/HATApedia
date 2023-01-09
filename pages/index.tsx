@@ -14,10 +14,7 @@ const Home: NextPage<Props> = ({ nations }) => {
 
   return (
     <Container>
-      <Typography
-        variant="h2"
-        color={theme.palette.text.primary}
-      >
+      <Typography variant="h2" color={theme.palette.text.primary}>
         Political Entities
       </Typography>
       <Typography
@@ -29,7 +26,7 @@ const Home: NextPage<Props> = ({ nations }) => {
       </Typography>
       <Grid marginY={4} container spacing={2}>
         {nations.map((nation) => (
-          <NationCard key={nation.slug} nation={nation} />
+          <NationCard key={nation.slug} article={nation} />
         ))}
       </Grid>
     </Container>

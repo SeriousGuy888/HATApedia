@@ -1,7 +1,8 @@
 ---
 title: Remy Republic
 subtitle: Federal Parliamentary Republic
-image: /images/banners/remy_republic.png
+nation:
+  banner: /images/banners/remy_republic.png
 ---
 
 The Remy Republic a state located on the southern worldborder of the server map.

@@ -11,13 +11,13 @@ import theme from "../../mui/theme"
 import NationBanner from "./NationBanner"
 import styles from "./NationCard.module.scss"
 
-const NationCard: NextPage<{ nation: ArticlePreview }> = ({ nation }) => {
+const NationCard: NextPage<{ article: ArticlePreview }> = ({ article }) => {
   return (
     <Grid item xs={12} sm={6}>
       <Card variant="outlined">
         <CardActionArea
           sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}
-          href={`./nations/${nation.slug}`}
+          href={`./nations/${article.slug}`}
         >
           <CardContent
             sx={{
@@ -27,17 +27,17 @@ const NationCard: NextPage<{ nation: ArticlePreview }> = ({ nation }) => {
             }}
           >
             <Typography variant="h5" className={styles.nowrapText}>
-              {nation.title}
+              {article.title}
             </Typography>
             <Typography
               variant="caption"
               color={theme.palette.text.secondary}
               className={styles.nowrapText}
             >
-              {nation.subtitle}
+              {article.subtitle}
             </Typography>
           </CardContent>
-          <NationBanner src={nation.image ?? ""} />
+          <NationBanner src={article.image ?? ""} />
         </CardActionArea>
       </Card>
     </Grid>

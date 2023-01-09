@@ -6,6 +6,7 @@ export interface Article {
   slug: string
   content: string
   title: string
+  nation?: NationData
   [key: string]: any
 }
 
@@ -14,6 +15,14 @@ export interface ArticlePreview {
   title: string
   subtitle?: string
   image?: string
+  [key: string]: any
+}
+
+export interface NationData {
+  banner?: string
+  info: {
+    [key: string]: any
+  }
 }
 
 export type ArticleSubdir = "nations"
@@ -37,23 +46,29 @@ export const getArticle = <B extends boolean>(
 
   const title = data.title || "Untitled"
 
+  let returnData = {} as ArticlePreview | Article
   if (previewDataOnly) {
-    const previewData: ArticlePreview = {
+    returnData = {
       slug,
       title,
       subtitle: data.subtitle,
-      image: data.image,
+      image: data.image || data.nation?.banner,
     }
-    return previewData as any
   } else {
-    const fullData: Article = {
+    returnData = {
       ...data,
       title,
       slug,
       content,
     }
-    return fullData as any
   }
+
+  Object.keys(returnData).forEach(key => {
+    if (returnData[key] === undefined) {
+      delete returnData[key]
+    }
+  });
+  return returnData as any
 }
 
 export const getAllArticles = (subdir: ArticleSubdir) => {

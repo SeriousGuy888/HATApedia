@@ -1,7 +1,8 @@
 ---
 title: Tobytopia
 subtitle: Unitary Absolute Monarchy
-image:
+nation:
+  banner: 
 ---
 
 # toby
