@@ -13,29 +13,27 @@ const Home: NextPage<Props> = ({ nations }) => {
   const theme = useTheme()
 
   return (
-    <main>
-      <Container>
-        <Typography
-          variant="h2"
-          color={theme.palette.text.primary}
-          marginTop={theme.spacing(4)}
-        >
-          Political Entities
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          color={theme.palette.text.secondary}
-          gutterBottom
-        >
-          States and empires on the server
-        </Typography>
-        <Grid marginY={4} container spacing={2}>
-          {nations.map((nation) => (
-            <NationCard key={nation.slug} nation={nation} />
-          ))}
-        </Grid>
-      </Container>
-    </main>
+    <Container>
+      <Typography
+        variant="h2"
+        color={theme.palette.text.primary}
+        marginTop={theme.spacing(4)}
+      >
+        Political Entities
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        color={theme.palette.text.secondary}
+        gutterBottom
+      >
+        States and empires on the server
+      </Typography>
+      <Grid marginY={4} container spacing={2}>
+        {nations.map((nation) => (
+          <NationCard key={nation.slug} nation={nation} />
+        ))}
+      </Grid>
+    </Container>
   )
 }
 

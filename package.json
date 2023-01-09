@@ -17,6 +17,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "latest",
+    "framer-motion": "^8.2.4",
     "gray-matter": "^4.0.3",
     "mui-markdown": "^0.5.6",
     "next": "latest",
