@@ -5,22 +5,24 @@ import {
   createContext,
   FunctionComponent,
   ReactNode,
+  useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react"
 
 interface IColourModeContext {
-  toggleTheme: () => void
-  theme: PaletteMode
+  colourMode: PaletteMode
+  toggle: () => void
 }
 
 export const ColourModeContext = createContext<IColourModeContext>({
-  toggleTheme: () => {},
-  theme: "dark",
+  colourMode: "dark",
+  toggle: () => {}
 })
 
-
+export const useColourMode = () => useContext(ColourModeContext)
 
 export const font = Montserrat({
   weight: ["300", "400", "500", "700"],
@@ -29,26 +31,28 @@ export const font = Montserrat({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 })
 
-export const ColourModeContextProvider: FunctionComponent<{
+export const ColourModeProvider: FunctionComponent<{
   children: ReactNode
 }> = ({ children }) => {
-  const [mode, setMode] = useState<PaletteMode>("dark")
-  const colourMode = useMemo(
-    () =>
-      ({
-        toggleTheme: () => {
-          setMode((th) => (th === "dark" ? "light" : "dark"))
-        },
-        theme: mode,
-      } as IColourModeContext),
-    [mode],
-  )
+  const [colourMode, setColourMode] = useState<PaletteMode>("dark")
+  const toggle = useCallback(() => {
+    setColourMode((th) => (th === "dark" ? "light" : "dark"))
+  }, [])
+
+  const [contextValue, setContextValue] = useState<IColourModeContext>({
+    colourMode,
+    toggle,
+  })
+
+  useEffect(() => {
+    setContextValue({ colourMode, toggle })
+  }, [colourMode])
 
   const theme = useMemo(
     () =>
       createTheme({
         palette: {
-          mode,
+          mode: colourMode,
           primary: {
             main: "#556cd6",
           },
@@ -63,14 +67,12 @@ export const ColourModeContextProvider: FunctionComponent<{
           fontFamily: font.style.fontFamily,
         },
       }),
-    [mode],
+    [colourMode],
   )
 
   return (
-    <ColourModeContext.Provider value={colourMode}>
+    <ColourModeContext.Provider value={contextValue}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ColourModeContext.Provider>
   )
 }
-
-export const useColourMode = () => useContext(ColourModeContext)
