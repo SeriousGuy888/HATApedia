@@ -45,7 +45,7 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
         >
           {nation.info &&
             Object.keys(nation.info).map((key) => (
-              <Card style={{ flex: "1", minWidth: "35vmin" }} key={key}>
+              <Card style={{ flex: "1", minWidth: "32vmin" }} key={key}>
                 <CardContent style={{ textAlign: "center" }}>
                   <Typography color="textSecondary" variant="overline">
                     {key}
