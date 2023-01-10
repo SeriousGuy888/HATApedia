@@ -1,31 +1,15 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Container,
-  Grid,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Typography,
-  useTheme,
-} from "@mui/material"
+import { Box, Container, Typography } from "@mui/material"
 import MuiMarkdown from "mui-markdown"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import Head from "next/head"
 import { Article, getAllArticles, getArticle } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
-import NationBanner from "../../modules/NationCard/NationBanner"
 
 interface Props {
   article: Article
 }
 
 const ArticlePage: NextPage<Props> = ({ article }) => {
-
   return (
     <>
       <Head>
@@ -79,7 +63,7 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = getArticle("nations", slug, false)
+  const article = getArticle(slug, false)
 
   return {
     props: {
@@ -89,7 +73,7 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const articles = getAllArticles("nations")
+  const articles = getAllArticles()
 
   return {
     paths: articles.map((article) => ({
