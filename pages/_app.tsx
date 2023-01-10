@@ -4,15 +4,12 @@ import { useTheme } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import createEmotionCache from "../mui/createEmotionCache"
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material"
+import { Box } from "@mui/material"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
-import Link from "../common/Link"
 import {
   ColourModeProvider,
-  useColourMode,
 } from "../providers/ColourModeContext"
-import { useCallback } from "react"
 import Topbar from "../modules/Topbar/Topbar"
 
 // Client-side cache, shared for the whole session of the user in the browser.
