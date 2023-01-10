@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material"
-import Link from "next/link"
+import Link from "../../common/Link"
 import { useColourMode } from "../../providers/ColourModeContext"
 
 const Topbar = () => {
