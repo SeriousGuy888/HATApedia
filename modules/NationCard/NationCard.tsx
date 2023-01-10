@@ -17,7 +17,7 @@ const NationCard: NextPage<{ article: ArticlePreview }> = ({ article }) => {
       <Card variant="outlined">
         <CardActionArea
           sx={{ display: "flex", gap: 1, justifyContent: "space-between" }}
-          href={`./nations/${article.slug}`}
+          href={`./article/${article.slug}`}
         >
           <CardContent
             sx={{

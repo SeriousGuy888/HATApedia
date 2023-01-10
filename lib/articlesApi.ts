@@ -19,22 +19,19 @@ export interface ArticlePreview {
   [key: string]: any
 }
 
-export type ArticleSubdir = "nations"
-
 const articlesDir = join(process.cwd(), "/content/articles/")
 
-const getArticleFileNames = (subdir: ArticleSubdir) => {
-  return fs.readdirSync(join(articlesDir, subdir))
+const getArticleFileNames = () => {
+  return fs.readdirSync(articlesDir)
 }
 
 // returns Article or ArticlePreview based on param
 export const getArticle = <B extends boolean>(
-  subdir: ArticleSubdir,
   slugOrFileName: string,
   previewDataOnly: B,
 ): B extends true ? ArticlePreview : Article => {
   const slug = slugOrFileName.replace(/\.md$/, "")
-  const filePath = join(articlesDir, subdir, `${slug}.md`)
+  const filePath = join(articlesDir, `${slug}.md`)
   const fileContents = fs.readFileSync(filePath, "utf8")
   const { data, content } = matter(fileContents)
 
@@ -65,10 +62,10 @@ export const getArticle = <B extends boolean>(
   return returnData as any
 }
 
-export const getAllArticles = (subdir: ArticleSubdir) => {
-  const slugs = getArticleFileNames(subdir)
+export const getAllArticles = () => {
+  const slugs = getArticleFileNames()
   const articles = slugs
-    .map((slug) => getArticle(subdir, slug, true))
+    .map((slug) => getArticle(slug, true))
     .sort((a, b) => (a.title < b.title ? -1 : 1))
   return articles
 }

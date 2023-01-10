@@ -63,7 +63,7 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = getArticle("nations", slug, false)
+  const article = getArticle(slug, false)
 
   return {
     props: {
@@ -73,7 +73,7 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const articles = getAllArticles("nations")
+  const articles = getAllArticles()
 
   return {
     paths: articles.map((article) => ({
