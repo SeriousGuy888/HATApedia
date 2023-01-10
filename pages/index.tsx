@@ -24,6 +24,7 @@ const Home: NextPage<Props> = ({ nations }) => {
       >
         States and empires on the server
       </Typography>
+
       <Grid marginY={4} container spacing={2}>
         {nations.map((nation) => (
           <NationCard key={nation.slug} article={nation} />
@@ -36,7 +37,7 @@ const Home: NextPage<Props> = ({ nations }) => {
 export function getStaticProps(): GetStaticPropsResult<Props> {
   return {
     props: {
-      nations: getAllArticles("nations"),
+      nations: getAllArticles(),
     },
     revalidate: 600,
   }

@@ -4,14 +4,16 @@ import {
   CardActionArea,
   CardContent,
   Typography,
+  useTheme,
 } from "@mui/material"
 import { NextPage } from "next"
 import { ArticlePreview } from "../../lib/articlesApi"
-import theme from "../../mui/theme"
 import NationBanner from "./NationBanner"
 import styles from "./NationCard.module.scss"
 
 const NationCard: NextPage<{ article: ArticlePreview }> = ({ article }) => {
+  const theme = useTheme()
+
   return (
     <Grid item xs={12} sm={6}>
       <Card variant="outlined">
