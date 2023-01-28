@@ -1,25 +1,20 @@
-import { CardMedia, Avatar } from "@mui/material"
 import { NextPage } from "next"
 
 const NationBanner: NextPage<{ src: string }> = ({ src }) => {
   return (
-    <CardMedia
-      sx={{
-        flex: "1",
-        borderRadius: 1,
+    <div
+      className="flex-1 rounded-sm "
+      style={{
         imageRendering: "pixelated",
       }}
     >
-      <Avatar
+      <img
         src={src}
-        sx={{ width: "100%", height: "100%", borderRadius: "inherit" }}
-      >
-        <img
-          src="/images/banners/blank.png"
-          style={{ width: "inherit", height: "inherit" }}
-        />
-      </Avatar>
-    </CardMedia>
+        className="w-full h-full"
+        style={{ borderRadius: "inherit" }}
+        alt="Banner"
+      ></img>
+    </div>
   )
 }
 
