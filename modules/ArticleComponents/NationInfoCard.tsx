@@ -12,39 +12,21 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
   nation,
 }) => {
   return (
-    <div
-      style={{
-        padding: "2rem",
-        marginBottom: "4rem",
-      }}
-    >
-      <section
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "stretch",
-          gap: "2rem",
-        }}
-      >
-        <div style={{ flex: "1" }}>
+    <div className="p-8 mb-16 bg-gray-100 rounded-xl">
+      <section className="flex justify-between items-stretch gap-8">
+        <div className="flex-1">
           <NationBanner src={nation.banner ?? ""} />
         </div>
-        <div
-          style={{
-            flex: "4",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "baseline",
-            alignContent: "flex-start",
-            gap: "2rem",
-          }}
-        >
+        <div className="flex flex-wrap items-baseline content-start flex-[4] gap-8">
           {nation.info &&
             Object.keys(nation.info).map((key) => (
-              <div style={{ flex: "1", minWidth: "32vmin" }} key={key}>
-                <div style={{ textAlign: "center" }}>
-                  <p>{key}</p>
-                  <p>{nation?.info[key] ?? "Unknown"}</p>
+              <div
+                className="flex-1 min-w-min bg-gray-200 rounded-md p-4"
+                key={key}
+              >
+                <div className="text-center">
+                  <p className="uppercase text-gray-600 text-sm">{key}</p>
+                  <p className="text-lg">{nation?.info[key] ?? "Unknown"}</p>
                 </div>
               </div>
             ))}
