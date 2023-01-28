@@ -8,12 +8,17 @@ interface Props {
 
 const Home: NextPage<Props> = ({ nations }) => {
   return (
-    <>
-      <h2>Political Entities</h2>
-      {nations.map((nation) => (
-        <NationCard key={nation.slug} article={nation} />
-      ))}
-    </>
+    <div className="flex flex-col items-center w-full">
+      <article className="max-w-screen-md w-full">
+        <h1 className="text-4xl mb-8">Political Entities</h1>
+
+        <section className="flex flex-row flex-wrap gap-4">
+          {nations.map((nation) => (
+            <NationCard key={nation.slug} article={nation} />
+          ))}
+        </section>
+      </article>
+    </div>
   )
 }
 
