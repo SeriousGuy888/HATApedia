@@ -4,7 +4,7 @@ subtitle: Federal Parliamentary Republic
 nation:
   banner: /images/banners/remy_republic.png
   info:
-    leader: Remy
+    glorious leader: Remy
     demonym: Remyan
 ---
 
