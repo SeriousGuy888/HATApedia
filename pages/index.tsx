@@ -8,12 +8,12 @@ interface Props {
 
 const Home: NextPage<Props> = ({ nations }) => {
   return (
-    <div>
+    <>
       <h2>Political Entities</h2>
       {nations.map((nation) => (
         <NationCard key={nation.slug} article={nation} />
       ))}
-    </div>
+    </>
   )
 }
 

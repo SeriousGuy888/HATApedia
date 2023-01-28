@@ -5,7 +5,7 @@ const Topbar = () => {
   const mode = useColourMode()
 
   return (
-    <nav style={{ display: "flex", justifyContent: "space-between" }}>
+    <nav className="flex justify-between sticky">
       <Link href="/" style={{ textDecoration: "none" }}>
         <h4>HATApedia</h4>
       </Link>
