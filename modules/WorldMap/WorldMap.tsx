@@ -2,6 +2,8 @@ import { Box, Button, Stack } from "@mui/material"
 import React, { useCallback, useState } from "react"
 import styles from "./WorldMap.module.scss"
 
+// https://github.com/alephart/react-image-zoom-pan/blob/master/src/PinchZoomPan.js
+
 interface XY {
   x: number
   y: number
@@ -49,11 +51,11 @@ const WorldMap = () => {
     (e: React.WheelEvent) => {
       const delta = Math.max(Math.min(e.deltaY, 1), -1)
 
-      const mousePos = getEventXY(e)
-      const zoomPoint: XY = {
-        x: (offset.x + mousePos.x) / zoom,
-        y: (offset.y + mousePos.y) / zoom,
-      }
+      // const mousePos = getEventXY(e)
+      // const zoomPoint: XY = {
+      //   x: (offset.x + mousePos.x) / zoom,
+      //   y: (offset.y + mousePos.y) / zoom,
+      // }
 
       changeZoom(-delta * 7)
 
