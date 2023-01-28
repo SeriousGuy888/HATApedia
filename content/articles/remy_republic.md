@@ -8,6 +8,9 @@ nation:
     demonym: Remyan
 ---
 
+## Table of contents
+
+
 The Remy Republic a state located on the southern worldborder of the server map.
 
 # Provinces
@@ -16,7 +19,7 @@ The Remy Republic is made up of several provinces.
 - Scammington
 - Hawainot
 - No
-- Remyan Mangrovia (disputed with [Tobytopia](./tobytopia))
+- New Mangrovia
 
 # Government
 The Remy Republic government is organised as a federal parliamentary republic.
@@ -34,10 +37,10 @@ The following are the candidates who ran in the first Remy Republic alliance.
 | Remyan Mangrovia |     John Nevilory      |         Jose II         |                     |
 
 
-# Relations With [Billzoplace](./billzoplace)
+# Relations With Billzoplace
 
 ## Treaty of No
-The *Treaty of No* is a treaty signed on 2022-12-25 between the RemyRepublic and Billzoplace.
+The *Treaty of No* is a treaty signed on 2022-12-25 between the Remy Republic and [Billzoplace](./billzoplace).
 As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
 
 The treaty stipulates that Billzoplace would be allowed to export wheat from the Remy Republic

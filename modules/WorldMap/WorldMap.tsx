@@ -1,4 +1,3 @@
-import { Box, Button, Stack } from "@mui/material"
 import React, { useCallback, useState } from "react"
 import styles from "./WorldMap.module.scss"
 
@@ -107,7 +106,7 @@ const WorldMap = () => {
         <br />
         drag start: {dragStartPos.x}, {dragStartPos.y}
       </p>
-      <Box mt={2} width="65vmin" height="65vmin">
+      <section style={{ width: "65vmin", height: "65vmin", marginTop: "2rem" }}>
         <div
           draggable
           onDrag={handleDrag}
@@ -139,15 +138,9 @@ const WorldMap = () => {
             }}
           />
         </div>
-      </Box>
-      <Stack direction="row" gap={1} mt={2}>
-        <Button variant="contained" onClick={zoomOut}>
-          meow
-        </Button>
-        <Button variant="contained" onClick={zoomIn}>
-          woof
-        </Button>
-      </Stack>
+      </section>
+      <button onClick={zoomOut}>meow</button>
+      <button onClick={zoomIn}>woof</button>
     </>
   )
 }

@@ -1,59 +1,39 @@
-import { Box, Container, Typography } from "@mui/material"
-import MuiMarkdown from "mui-markdown"
-import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import Head from "next/head"
+import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import { Article, getAllArticles, getArticle } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 
+import { unified } from "unified"
+import remarkGfm from "remark-gfm"
+import remarkToc from "remark-toc"
+import remarkParse from "remark-parse"
+import remarkHtml from "remark-html"
+import remarkRehype from "remark-rehype"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeFormat from "rehype-format"
+import rehypeStringify from "rehype-stringify"
+
 interface Props {
   article: Article
+  html: string
 }
 
-const ArticlePage: NextPage<Props> = ({ article }) => {
+const ArticlePage: NextPage<Props> = ({ article, html }) => {
   return (
     <>
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
       </Head>
-      <Container maxWidth="md">
-        <Typography variant="h3" component="h1">
-          {article.title}
-        </Typography>
-        <Typography variant="overline" color="textSecondary">
-          {article.subtitle}
-        </Typography>
+      <div>
+        <h1>{article.title}</h1>
+        <span>{article.subtitle}</span>
 
-        <Box my={4}>
+        <div>
           {article.nation && <NationInfoCard nation={article.nation} />}
-          <MuiMarkdown
-            options={{
-              slugify: (str) => str.toLowerCase().replace(/[^a-z]+/g, "-"),
-              overrides: {
-                h1: {
-                  component: "h1",
-                },
-                h2: {
-                  component: "h2",
-                },
-                h3: {
-                  component: "h3",
-                },
-                h4: {
-                  component: "h4",
-                },
-                h5: {
-                  component: "h5",
-                },
-                h6: {
-                  component: "h6",
-                },
-              },
-            }}
-          >
-            {article.content}
-          </MuiMarkdown>
-        </Box>
-      </Container>
+          <article dangerouslySetInnerHTML={{ __html: html }} />
+        </div>
+      </div>
     </>
   )
 }
@@ -65,9 +45,22 @@ export async function getStaticProps({
 }): Promise<GetStaticPropsResult<Props>> {
   const article = getArticle(slug, false)
 
+  const file = await unified()
+    .use(remarkGfm)
+    .use(remarkToc)
+    .use(remarkHtml)
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
+    .use(rehypeFormat)
+    .use(rehypeStringify)
+    .process(article.content)
+
   return {
     props: {
       article,
+      html: String(file),
     },
   }
 }

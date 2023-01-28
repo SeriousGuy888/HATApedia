@@ -8,12 +8,10 @@ const WorldMapPage = () => {
       <Head>
         <title>Server Map</title>
       </Head>
-      <Container>
-        <Typography variant="h3" component="h1">
-          Server Map
-        </Typography>
+      <section>
+        <h1>Server Map</h1>
         <WorldMap />
-      </Container>
+      </section>
     </>
   )
 }

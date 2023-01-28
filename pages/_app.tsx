@@ -1,39 +1,24 @@
 import Head from "next/head"
 import { AppProps } from "next/app"
-import { useTheme } from "@mui/material/styles"
-import CssBaseline from "@mui/material/CssBaseline"
-import { CacheProvider, EmotionCache } from "@emotion/react"
-import createEmotionCache from "../mui/createEmotionCache"
-import { Box } from "@mui/material"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
-import {
-  ColourModeProvider,
-} from "../providers/ColourModeContext"
+import { ColourModeProvider } from "../providers/ColourModeContext"
 import Topbar from "../modules/Topbar/Topbar"
 
-// Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache()
+import "../common/globals.scss"
 
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache
-}
-
-export default function MyApp(props: MyAppProps) {
-  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+export default function MyApp(props: AppProps) {
+  const { Component, pageProps } = props
   const router = useRouter()
-  const theme = useTheme()
 
   return (
-    <CacheProvider value={emotionCache}>
+    <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {/* PWA primary color */}
-        <meta name="theme-color" content={theme.palette.primary.main} />
+        <meta name="theme-color" content="#222999" />
       </Head>
       <ColourModeProvider>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
         <Topbar />
         <motion.main
           key={router.route}
@@ -41,11 +26,11 @@ export default function MyApp(props: MyAppProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <Box marginTop={theme.spacing(4)}>
+          <div style={{ marginTop: "32px" }}>
             <Component {...pageProps} />
-          </Box>
+          </div>
         </motion.main>
       </ColourModeProvider>
-    </CacheProvider>
+    </>
   )
 }
