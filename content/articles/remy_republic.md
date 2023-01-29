@@ -82,6 +82,10 @@ Toby never acted on these threats, and New Mangrovia remains a Remyan territory.
 As the Glorious Leader, Remy, spoke these immortal words, the HATA worldborder
 trembled in fear and retreated outwards.
 
+## Western Hawainot Offensive
+
+![Map of the Remyan advance into Western Hawainot](/images/articles/western_hawainot_offensive.png)
+
 The Remy Republic initiated a military operation led by General Fletcher Quadratic
 and swiftly invaded the western islands of the Hawainot Archipelago, collecting
 jungle wood and cocoa beans so that he can finally begin producing his pogstries.
