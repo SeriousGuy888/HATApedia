@@ -27,23 +27,21 @@ const ArticlePage: NextPage<Props> = ({ article, html }) => {
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
       </Head>
-      <section className="flex justify-center mb-16 p-8">
-        <div className="max-w-prose w-full">
-          <div className="flex-1 self-start">
-            <h1 className="text-5xl font-bold mb-2">{article.title}</h1>
-            <p className="text-gray-600 uppercase text-sm">
-              {article.subtitle}
-            </p>
-            <hr className="my-6" />
-          </div>
-
-          {article.nation && <NationInfoCard nation={article.nation} />}
-          <article
-            className={"prose " + styles.prose}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+      <div className="max-w-prose w-full">
+        <div className="flex-1 self-start">
+          <h1 className="text-5xl font-bold mb-2">{article.title}</h1>
+          <p className="text-gray-600 dark:text-gray-400 uppercase text-sm">
+            {article.subtitle}
+          </p>
+          <hr className="my-6 border-t-[1] border-gray-200 dark:border-gray-700" />
         </div>
-      </section>
+
+        {article.nation && <NationInfoCard nation={article.nation} />}
+        <article
+          className={"prose prose-base dark:prose-invert " + styles.prose}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
     </>
   )
 }

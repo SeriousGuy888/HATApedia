@@ -5,13 +5,14 @@ import { useRouter } from "next/router"
 import Topbar from "../modules/Topbar/Topbar"
 
 import "../common/globals.scss"
+import { ThemeProvider } from "next-themes"
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props
   const router = useRouter()
 
   return (
-    <>
+    <ThemeProvider attribute="class">
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {/* PWA primary color */}
@@ -24,10 +25,10 @@ export default function MyApp(props: AppProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div style={{ marginTop: "32px" }}>
+        <main className="flex justify-center mb-16 p-8">
           <Component {...pageProps} />
-        </div>
+        </main>
       </motion.main>
-    </>
+    </ThemeProvider>
   )
 }
