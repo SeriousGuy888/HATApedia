@@ -8,11 +8,11 @@ interface Props {
 
 const Home: NextPage<Props> = ({ nations }) => {
   return (
-    <div className="flex flex-col items-center w-full">
-      <article className="max-w-screen-md w-full">
+    <div className="flex justify-center w-full p-4">
+      <article className="max-w-prose w-full">
         <h1 className="text-4xl mb-8">Political Entities</h1>
 
-        <section className="flex flex-row flex-wrap gap-4">
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {nations.map((nation) => (
             <NationCard key={nation.slug} article={nation} />
           ))}

@@ -25,9 +25,9 @@ const ArticlePage: NextPage<Props> = ({ article, html }) => {
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
       </Head>
-      <div className="flex flex-col items-center mb-16">
-        <div className="max-w-prose">
-          <div className="flex-1 self-start ">
+      <section className="flex justify-center mb-16 p-8">
+        <div className="flex-1 max-w-prose">
+          <div className="flex-1 self-start">
             <h1 className="text-5xl font-bold mb-2">{article.title}</h1>
             <p className="text-gray-600 uppercase text-sm">
               {article.subtitle}
@@ -41,7 +41,7 @@ const ArticlePage: NextPage<Props> = ({ article, html }) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
-      </div>
+      </section>
     </>
   )
 }

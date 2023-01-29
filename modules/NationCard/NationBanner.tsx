@@ -3,7 +3,7 @@ import { NextPage } from "next"
 const NationBanner: NextPage<{ src: string }> = ({ src }) => {
   return (
     <div
-      className="flex-1 overflow-hidden"
+      className="flex-1 min-w-[20%]"
       style={{
         imageRendering: "pixelated",
       }}

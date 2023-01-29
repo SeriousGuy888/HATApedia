@@ -13,17 +13,14 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
 }) => {
   return (
     <div className="p-8 mb-16 bg-gray-100 rounded-xl">
-      <section className="flex justify-between items-stretch gap-8">
+      <section className="flex flex-wrap justify-between items-stretch gap-8">
         <div className="flex-1">
           <NationBanner src={nation.banner ?? ""} />
         </div>
-        <div className="flex flex-wrap items-baseline content-start flex-[4] gap-8">
+        <div className="flex flex-wrap items-baseline content-start flex-[4] gap-4 min-w-[200px]">
           {nation.info &&
             Object.keys(nation.info).map((key) => (
-              <div
-                className="flex-1 min-w-min bg-gray-200 rounded-md p-4"
-                key={key}
-              >
+              <div className="flex-1 bg-gray-200 rounded-md p-4" key={key}>
                 <div className="text-center">
                   <p className="uppercase text-gray-600 text-sm">{key}</p>
                   <p className="text-lg">{nation?.info[key] ?? "Unknown"}</p>
