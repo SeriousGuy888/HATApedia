@@ -1,4 +1,4 @@
-import NationCard from "../modules/NationCard/NationCard"
+import ArticleLink from "../modules/ArticleLink/ArticleLink"
 import { GetStaticPropsResult, NextPage } from "next"
 import { ArticlePreview, getAllArticles } from "../lib/articlesApi"
 
@@ -14,7 +14,7 @@ const Home: NextPage<Props> = ({ nations }) => {
 
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {nations.map((nation) => (
-            <NationCard key={nation.slug} article={nation} />
+            <ArticleLink key={nation.slug} article={nation} />
           ))}
         </section>
       </article>
