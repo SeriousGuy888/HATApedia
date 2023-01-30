@@ -3,17 +3,17 @@ import { GetStaticPropsResult, NextPage } from "next"
 import { ArticlePreview, getAllArticles } from "../lib/articlesApi"
 
 interface Props {
-  nations: ArticlePreview[]
+  articles: ArticlePreview[]
 }
 
-const Home: NextPage<Props> = ({ nations }) => {
+const Home: NextPage<Props> = ({ articles }) => {
   return (
     <article className="max-w-prose w-full">
-      <h1 className="text-4xl mb-8">Political Entities</h1>
+      <h1 className="text-4xl mb-8">Articles</h1>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {nations.map((nation) => (
-          <ArticleLink key={nation.slug} article={nation} />
+        {articles.map((article) => (
+          <ArticleLink key={article.slug} article={article} />
         ))}
       </section>
     </article>
@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({ nations }) => {
 export function getStaticProps(): GetStaticPropsResult<Props> {
   return {
     props: {
-      nations: getAllArticles(),
+      articles: getAllArticles(),
     },
     revalidate: 600,
   }
