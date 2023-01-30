@@ -10,7 +10,7 @@ nation:
 
 The Remy Republic a state that was originally founded on the southern 1000 block worldborder of the server map.
 
-## Table of contents
+## Table of Contents
 
 
 # Provinces
