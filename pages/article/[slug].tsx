@@ -55,8 +55,8 @@ export async function getStaticProps({
 
   const file = await unified()
     .use(remarkGfm)
-    .use(remarkToc)
-    .use(remarkHtml, {})
+    .use(remarkToc, { tight: true, })
+    .use(remarkHtml)
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypeSlug)
