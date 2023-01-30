@@ -18,11 +18,21 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme("colors.gray.700"),
+            a: {
+              color: theme("colors.blue.600"),
+              textDecoration: "none",
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            },
           },
         },
         invert: {
           css: {
             color: theme("colors.gray.300"),
+            a: {
+              color: theme("colors.blue.400"),
+            },
           },
         },
       }),
