@@ -107,6 +107,8 @@ Toby from Tobytopia had threatened to claim Southern No before Remy could during
 days leading up to the Border Disorder, but these threats did not come to fruition.
 
 ## Jungle Island Incident
+![Map of disputed jungle island](/images/articles/jungle_island_incident.png)
+
 Remy had a dispute with Tobytopia over an island of sparse jungle to the west of Hawainot.
 Remy had previously intended to claim this island, but had forgotten to do so in the commotion
 of the Border Disorder. This island had a waterfall, and Remy had intended to turn the
