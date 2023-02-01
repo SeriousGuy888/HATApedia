@@ -6,6 +6,7 @@ nation:
   info:
     Ruler: Billzo
     Demonym: Billzonian
+    Official Languages: Billzonian, English
 ---
 
 # Billzoplace POGPOG & POG
