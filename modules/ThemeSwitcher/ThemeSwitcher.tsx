@@ -16,21 +16,12 @@ const ThemeSwitcher = () => {
 
   return (
     <div className="text-white">
-      {theme === "dark" ? (
-        <button
-          className="hover:text-blue-200"
-          onClick={() => setTheme("light")}
-        >
-          <LightModeRoundedIcon />
-        </button>
-      ) : (
-        <button
-          className="ml-4 hover:text-blue-200"
-          onClick={() => setTheme("dark")}
-        >
-          <DarkModeRoundedIcon />
-        </button>
-      )}
+      <button
+        className="hover:text-blue-200"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        {theme === "dark" ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
+      </button>
     </div>
   )
 }
