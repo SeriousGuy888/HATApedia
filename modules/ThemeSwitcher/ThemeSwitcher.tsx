@@ -18,6 +18,7 @@ const ThemeSwitcher = () => {
     <div className="text-white">
       <button
         className="hover:text-blue-200"
+        aria-label="Toggle colour theme"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
         {theme === "dark" ? <LightModeRoundedIcon /> : <DarkModeRoundedIcon />}
