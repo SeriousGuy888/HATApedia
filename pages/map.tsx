@@ -1,18 +1,28 @@
+import dynamic from "next/dynamic"
 import Head from "next/head"
-import WorldMap from "../modules/WorldMap/WorldMap"
+import { useMemo } from "react"
 
-const WorldMapPage = () => {
+const MapPage = () => {
+  const WorldMap = useMemo(
+    () =>
+      dynamic(() => import("../modules/WorldMap/WorldMap"), {
+        loading: () => <p>Loading...</p>, // nosonar
+        ssr: false,
+      }),
+    [],
+  )
+
   return (
     <>
       <Head>
-        <title>Server Map</title>
+        <title>World Map</title>
       </Head>
       <section>
-        <h1>Server Map</h1>
+        <h1>World Map</h1>
         <WorldMap />
       </section>
     </>
   )
 }
 
-export default WorldMapPage
+export default MapPage
