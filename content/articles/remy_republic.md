@@ -6,6 +6,7 @@ nation:
   info:
     glorious leader: Remy
     demonym: Remyan
+    official languages: English, French, Billzonian
 ---
 
 The Remy Republic a state that was originally founded on the southern 1000 block worldborder of the server map.
