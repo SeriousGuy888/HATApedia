@@ -1,18 +1,23 @@
 import {
+  LayerGroup,
+  LayersControl,
   MapContainer,
   Marker,
   Popup,
   TileLayer,
+  useMap,
   useMapEvents,
 } from "react-leaflet"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { useEffect, useState } from "react"
+import { cityLocations } from "./map_locations"
 
 const MapEvents = () => {
+  const map = useMap()
   useMapEvents({
     click(e) {
-      window.alert(e.latlng)
+      window.alert(map.project(e.latlng, 5).round())
     },
   })
   return <></>
@@ -21,9 +26,10 @@ const MapEvents = () => {
 const WorldMap = () => {
   const [map, setMap] = useState<L.Map | null>(null)
 
-  const mapSW = L.point(0, 8192)
-  const mapNE = L.point(8192, 0)
-  const mapBoundsZoomLvl = 5
+  const fullImgZoom = 5 // Largest zoom level
+  const fullImgDim = [8192, 8192] // Dimensions of image sliced up in the largest zoom level
+  const mapSW = L.point(0, fullImgDim[1])
+  const mapNE = L.point(fullImgDim[0], 0)
 
   useEffect(() => {
     if (!map) {
@@ -31,8 +37,8 @@ const WorldMap = () => {
     }
 
     const bounds = new L.LatLngBounds(
-      map.unproject(mapSW, mapBoundsZoomLvl),
-      map.unproject(mapNE, mapBoundsZoomLvl),
+      map.unproject(mapSW, fullImgZoom),
+      map.unproject(mapNE, fullImgZoom),
     )
     console.log(map.getMaxZoom())
 
@@ -54,14 +60,15 @@ const WorldMap = () => {
       zoomSnap={0.25}
       zoomDelta={0.5}
       scrollWheelZoom={true}
+      crs={L.CRS.Simple}
+      ref={setMap}
       style={{
         height: "100%",
         width: "100%",
         backgroundColor: "black",
         imageRendering: "pixelated",
+        userSelect: "none",
       }}
-      crs={L.CRS.Simple}
-      ref={setMap}
     >
       <MapEvents />
       <TileLayer
@@ -69,11 +76,32 @@ const WorldMap = () => {
         url="/map_tile/{z}/{x}/{y}.png"
         noWrap
         minNativeZoom={1}
-        maxNativeZoom={5}
+        maxNativeZoom={fullImgZoom}
       />
-      <Marker position={[0, 0]} icon={markerIcon} draggable>
-        <Popup>Forgsville</Popup>
-      </Marker>
+      <LayersControl position="topright">
+        <LayersControl.Overlay name="Cities" checked>
+          <LayerGroup>
+            {Object.keys(cityLocations).map((i) => {
+              const loc = cityLocations[i]
+
+              return (
+                <Marker
+                  key={i}
+                  position={
+                    map?.unproject(loc.pixelCoords, fullImgZoom) ?? [0, 0]
+                  }
+                  icon={markerIcon}
+                >
+                  <Popup>
+                    <p className="font-bold">{loc.name}</p>
+                    <p className="font-sm">{loc.description ?? ""}</p>
+                  </Popup>
+                </Marker>
+              )
+            })}
+          </LayerGroup>
+        </LayersControl.Overlay>
+      </LayersControl>
     </MapContainer>
   )
 }
