@@ -15,12 +15,12 @@ import { cityLocations } from "./map_locations"
 import { BannerColour } from "./icons"
 
 const MapEvents = () => {
-  const map = useMap()
-  useMapEvents({
-    click(e) {
-      window.alert(map.project(e.latlng, 5).round())
-    },
-  })
+  // const map = useMap()
+  // useMapEvents({
+  //   click(e) {
+  //     window.alert(map.project(e.latlng, 5).round())
+  //   },
+  // })
   return <></>
 }
 
