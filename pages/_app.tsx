@@ -18,17 +18,18 @@ export default function MyApp(props: AppProps) {
         {/* PWA primary color */}
         <meta name="theme-color" content="#222999" />
       </Head>
-      <Topbar />
-      <motion.main
-        key={router.route}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <main className="flex justify-center mb-16 p-8">
+      <div className="flex flex-col min-h-screen">
+        <Topbar />
+        <motion.main
+          key={router.route}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="flex flex-1 justify-center"
+        >
           <Component {...pageProps} />
-        </main>
-      </motion.main>
+        </motion.main>
+      </div>
     </ThemeProvider>
   )
 }

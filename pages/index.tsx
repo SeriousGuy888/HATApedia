@@ -8,7 +8,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ articles }) => {
   return (
-    <article className="max-w-prose w-full">
+    <article className="max-w-prose w-full p-8">
       <h1 className="text-4xl mb-8">Articles</h1>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
