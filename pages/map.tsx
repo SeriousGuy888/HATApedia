@@ -19,7 +19,9 @@ const MapPage = () => {
       </Head>
       <section>
         <h1>World Map</h1>
-        <WorldMap />
+        <div className="w-[90vw] h-[60vh]">
+          <WorldMap />
+        </div>
       </section>
     </>
   )
