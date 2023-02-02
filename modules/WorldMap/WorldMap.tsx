@@ -12,6 +12,7 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { useEffect, useState } from "react"
 import { cityLocations } from "./map_locations"
+import { BannerColour } from "./icons"
 
 const MapEvents = () => {
   const map = useMap()
@@ -45,11 +46,13 @@ const WorldMap = () => {
     map.setMaxBounds(bounds)
   }, [map])
 
-  const markerIcon = L.icon({
-    iconUrl: "/images/map/markers/banner.png",
-    iconSize: [16, 16],
-    iconAnchor: [8, 16],
-  })
+  const getBannerMarker = (colour: BannerColour) => {
+    return L.icon({
+      iconUrl: `/map/markers/banner_${colour}.png`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 16],
+    })
+  }
 
   return (
     <MapContainer
@@ -90,7 +93,7 @@ const WorldMap = () => {
                   position={
                     map?.unproject(loc.pixelCoords, fullImgZoom) ?? [0, 0]
                   }
-                  icon={markerIcon}
+                  icon={getBannerMarker(loc.banner || "white")}
                 >
                   <Popup>
                     <p className="font-bold">{loc.name}</p>
