@@ -16,6 +16,11 @@ const MapPage = () => {
     <>
       <Head>
         <title>HATA World Map</title>
+        <meta property="og:title" content="HATA SMP World Map" />
+        <meta
+          property="og:description"
+          content="Interactive map with notable places on the server."
+        />
       </Head>
       <section className="w-full max-h-full overflow-hidden">
         <WorldMap />
