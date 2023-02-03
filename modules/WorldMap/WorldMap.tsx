@@ -4,14 +4,13 @@ import {
   MapContainer,
   Marker,
   TileLayer,
-  useMap,
-  useMapEvents,
 } from "react-leaflet"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
 import { useCallback, useEffect, useState } from "react"
 import { locations, MapLocation } from "./map_locations"
 import { BannerColour } from "./icons"
+import Link from "next/link"
 
 const MapEvents = () => {
   // const map = useMap()
@@ -46,6 +45,7 @@ const WorldMap = () => {
     map.on("click", () => {
       setSelectedMarker("")
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map])
 
   const getMarkerInfo = useCallback((): MapLocation => {
@@ -128,6 +128,14 @@ const WorldMap = () => {
       </MapContainer>
       <aside className="flex-1 lg:max-w-[25%] overflow-auto p-6 bg-inherit">
         <h3 className="text-xl font-bold">{getMarkerInfo().name}</h3>
+        {getMarkerInfo().articleSlug && (
+          <Link
+            href={`/article/${getMarkerInfo().articleSlug}`}
+            className="text-sm hover:underline text-blue-600 dark:text-blue-300"
+          >
+            Main Article
+          </Link>
+        )}
         <hr className="my-4 border-gray-300 dark:border-gray-600" />
         <p>{getMarkerInfo().description}</p>
       </aside>
