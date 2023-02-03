@@ -27,7 +27,7 @@ const ArticlePage: NextPage<Props> = ({ article, html }) => {
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
       </Head>
-      <div className="max-w-prose w-full p-8">
+      <div className="max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start">
           <h1 className="text-5xl font-bold mb-2">{article.title}</h1>
           <p className="text-gray-600 dark:text-gray-400 uppercase text-sm">
