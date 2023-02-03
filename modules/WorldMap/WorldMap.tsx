@@ -10,7 +10,7 @@ import "leaflet/dist/leaflet.css"
 import { useCallback, useEffect, useState } from "react"
 import { locations, MapLocation } from "./map_locations"
 import { BannerColour } from "./icons"
-import ArticleLink from "../ArticleLink/ArticleLink"
+import MapInfoDisplay from "./MapInfoDisplay"
 
 const MapEvents = () => {
   // const map = useMap()
@@ -126,21 +126,7 @@ const WorldMap = () => {
           </LayersControl.Overlay>
         </LayersControl>
       </MapContainer>
-      <aside className="flex-1 lg:max-w-[25%] overflow-auto p-6 bg-inherit">
-        <h3 className="text-xl font-bold">{getMarkerInfo().name}</h3>
-        <hr className="my-4 border-gray-300 dark:border-gray-600" />
-        <p>{getMarkerInfo().description}</p>
-        {getMarkerInfo().articles && (
-          <div className="mt-8">
-            <h3 className="text-lg mb-4">See also...</h3>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
-              {getMarkerInfo().articles?.map((slug) => (
-                <ArticleLink key={slug} slug={slug} />
-              ))}
-            </div>
-          </div>
-        )}
-      </aside>
+      <MapInfoDisplay marker={getMarkerInfo()} />
     </section>
   )
 }
