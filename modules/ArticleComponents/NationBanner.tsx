@@ -4,7 +4,7 @@ import Image from "next/image"
 const NationBanner: NextPage<{ src: string }> = ({ src }) => {
   return (
     <div
-      className="flex-1 min-w-[60px] relative aspect-[1/2]"
+      className="flex-1 min-w-[100px] relative aspect-[1/2]"
       style={{
         imageRendering: "pixelated",
       }}
