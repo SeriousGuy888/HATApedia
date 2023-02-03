@@ -72,7 +72,7 @@ const WorldMap = () => {
   return (
     <section className="w-full h-full flex flex-col lg:flex-row overflow-hidden">
       <MapContainer
-        center={[0, 0]}
+        center={fullImgDim.map((e) => e / 2) as [number, number]}
         minZoom={1}
         maxZoom={8}
         zoom={1}
