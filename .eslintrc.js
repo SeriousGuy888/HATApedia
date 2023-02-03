@@ -1,11 +1,11 @@
-export default {
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
   extends: ["eslint:recommended", "next/core-web-vitals"],
-  rules: {
-    "no-restricted-imports": [
-      "error",
-      {
-        patterns: ["@mui/*/*/*"],
-      },
-    ],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
 }
