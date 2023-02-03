@@ -130,10 +130,14 @@ const WorldMap = () => {
         <h3 className="text-xl font-bold">{getMarkerInfo().name}</h3>
         <hr className="my-4 border-gray-300 dark:border-gray-600" />
         <p>{getMarkerInfo().description}</p>
-        {getMarkerInfo().articleSlug && (
+        {getMarkerInfo().articles && (
           <div className="mt-8">
-            <h3 className="text-lg">See also...</h3>
-            <ArticleLink slug={getMarkerInfo().articleSlug} />
+            <h3 className="text-lg mb-4">See also...</h3>
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+              {getMarkerInfo().articles?.map((slug) => (
+                <ArticleLink key={slug} slug={slug} />
+              ))}
+            </div>
           </div>
         )}
       </aside>

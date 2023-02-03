@@ -3,7 +3,7 @@ import { BannerColour } from "./icons"
 export interface MapLocation {
   name: string
   description?: string
-  articleSlug?: string,
+  articles?: string[]
   pixelCoords: [number, number]
   banner?: BannerColour
 }
@@ -15,7 +15,7 @@ export const locations: { [key: string]: MapLocation } = {
   },
   un: {
     name: "United Nations HQ",
-    articleSlug: "united_nations",
+    articles: ["united_nations"],
     pixelCoords: [4554, 4762],
     banner: "cyan",
   },
@@ -36,6 +36,7 @@ export const locations: { [key: string]: MapLocation } = {
   },
   forgsville: {
     name: "Forgsville",
+    articles: ["remy_republic", "remy"],
     pixelCoords: [4355, 5364],
     banner: "purple",
   },
