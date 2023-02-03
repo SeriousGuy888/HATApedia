@@ -14,7 +14,7 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
   const article = data as ArticlePreview
 
   return (
-    <div className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700" title={article.title}>
       <Link
         className="flex gap-4 justify-between px-8 py-4"
         href={`./article/${article.slug}`}
