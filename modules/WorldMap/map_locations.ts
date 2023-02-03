@@ -1,13 +1,13 @@
 import { BannerColour } from "./icons"
 
-interface MapLocation {
+export interface MapLocation {
   name: string
   description?: string
   pixelCoords: [number, number]
   banner?: BannerColour
 }
 
-export const cityLocations: { [key: string]: MapLocation } = {
+export const locations: { [key: string]: MapLocation } = {
   spawn: {
     name: "Spawn",
     pixelCoords: [4442, 4812],

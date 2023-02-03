@@ -15,13 +15,10 @@ const MapPage = () => {
   return (
     <>
       <Head>
-        <title>World Map</title>
+        <title>HATA World Map</title>
       </Head>
-      <section>
-        <h1>World Map</h1>
-        <div className="w-[90vw] h-[60vh]">
-          <WorldMap />
-        </div>
+      <section className="w-full max-h-full overflow-hidden">
+        <WorldMap />
       </section>
     </>
   )
