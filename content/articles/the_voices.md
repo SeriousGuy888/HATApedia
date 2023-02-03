@@ -1,7 +1,6 @@
 ---
 title: The Voices
 subtitle: THEY'RE NOT REAL THEY'RE NOT REAL THEY'RE NOT REAL
-image: /images/blank.png
 ---
 
 The Voices are an unknown entity that manifests as voices in the

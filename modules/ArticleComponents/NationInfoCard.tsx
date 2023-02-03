@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import NationBanner from "../ArticleLink/NationBanner"
+import NationBanner from "./NationBanner"
 
 export interface NationInfoCardData {
   banner?: string

@@ -11,7 +11,7 @@ const Home: NextPage<Props> = ({ slugs }) => {
     <article className="max-w-prose w-full h-fit p-8">
       <h1 className="text-4xl mb-8">Articles</h1>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {slugs.map((slug) => (
           <ArticleLink key={slug} slug={slug} />
         ))}
