@@ -14,7 +14,7 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
   return (
     <div className="p-6 mb-16 bg-gray-100 dark:bg-gray-800 rounded-lg">
       <section className="flex flex-wrap justify-between items-stretch gap-4">
-        <div className="flex-1">
+        <div className="flex-1 min-w-[60px]">
           <NationBanner src={nation.banner ?? ""} />
         </div>
         <div className="flex flex-col items-stretch content-start flex-[4] gap-2 min-w-[150px]">

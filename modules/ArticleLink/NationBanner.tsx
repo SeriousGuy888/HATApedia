@@ -1,19 +1,15 @@
 import { NextPage } from "next"
+import Image from "next/image"
 
 const NationBanner: NextPage<{ src: string }> = ({ src }) => {
   return (
     <div
-      className="flex-1 min-w-[20%]"
+      className="flex-1 relative aspect-[1/2]"
       style={{
         imageRendering: "pixelated",
       }}
     >
-      <img
-        src={src}
-        className="w-full h-full"
-        style={{ borderRadius: "inherit" }}
-        alt="Banner"
-      ></img>
+      <Image src={src} alt="Banner" className="rounded-md" fill unoptimized />
     </div>
   )
 }
