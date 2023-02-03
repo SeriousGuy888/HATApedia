@@ -1,6 +1,10 @@
 import Head from "next/head"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { Article, getAllArticles, getArticle } from "../../lib/articlesApi"
+import {
+  Article,
+  getAllSlugs,
+  getArticle,
+} from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 
@@ -52,10 +56,15 @@ export async function getStaticProps({
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
   const article = getArticle(slug, false)
+  if (!article) {
+    return {
+      notFound: true,
+    }
+  }
 
   const file = await unified()
     .use(remarkGfm)
-    .use(remarkToc, { tight: true, })
+    .use(remarkToc, { tight: true })
     .use(remarkHtml)
     .use(remarkParse)
     .use(remarkRehype)
@@ -78,12 +87,12 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const articles = getAllArticles()
+  const slugs = getAllSlugs()
 
   return {
-    paths: articles.map((article) => ({
+    paths: slugs.map((slug) => ({
       params: {
-        slug: article.slug,
+        slug,
       },
     })),
     fallback: false,

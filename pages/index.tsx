@@ -1,19 +1,19 @@
 import ArticleLink from "../modules/ArticleLink/ArticleLink"
 import { GetStaticPropsResult, NextPage } from "next"
-import { ArticlePreview, getAllArticles } from "../lib/articlesApi"
+import { getAllSlugs } from "../lib/articlesApi"
 
 interface Props {
-  articles: ArticlePreview[]
+  slugs: string[]
 }
 
-const Home: NextPage<Props> = ({ articles }) => {
+const Home: NextPage<Props> = ({ slugs }) => {
   return (
     <article className="max-w-prose w-full h-fit p-8">
       <h1 className="text-4xl mb-8">Articles</h1>
 
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {articles.map((article) => (
-          <ArticleLink key={article.slug} article={article} />
+        {slugs.map((slug) => (
+          <ArticleLink key={slug} slug={slug} />
         ))}
       </section>
     </article>
@@ -23,7 +23,7 @@ const Home: NextPage<Props> = ({ articles }) => {
 export function getStaticProps(): GetStaticPropsResult<Props> {
   return {
     props: {
-      articles: getAllArticles(),
+      slugs: getAllSlugs(),
     },
     revalidate: 600,
   }

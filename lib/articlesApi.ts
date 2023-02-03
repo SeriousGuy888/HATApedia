@@ -21,6 +21,8 @@ export interface ArticlePreview {
 
 const articlesDir = join(process.cwd(), "/content/articles/")
 
+const sluggify = (fileName: string) => fileName.replace(/\.md$/, "")
+
 const getArticleFileNames = () => {
   return fs.readdirSync(articlesDir)
 }
@@ -29,9 +31,13 @@ const getArticleFileNames = () => {
 export const getArticle = <B extends boolean>(
   slugOrFileName: string,
   previewDataOnly: B,
-): B extends true ? ArticlePreview : Article => {
-  const slug = slugOrFileName.replace(/\.md$/, "")
+): (B extends true ? ArticlePreview : Article) | null => {
+  const slug = sluggify(slugOrFileName)
   const filePath = join(articlesDir, `${slug}.md`)
+  if (!fs.existsSync(filePath)) {
+    return null
+  }
+
   const fileContents = fs.readFileSync(filePath, "utf8")
   const { data, content } = matter(fileContents)
 
@@ -62,10 +68,6 @@ export const getArticle = <B extends boolean>(
   return returnData as any
 }
 
-export const getAllArticles = () => {
-  const slugs = getArticleFileNames()
-  const articles = slugs
-    .map((slug) => getArticle(slug, true))
-    .sort((a, b) => (a.title < b.title ? -1 : 1))
-  return articles
+export const getAllSlugs = () => {
+  return getArticleFileNames().map(sluggify)
 }
