@@ -7,7 +7,7 @@ interface Props {
   slugs: string[]
 }
 
-const Home: NextPage<Props> = ({ slugs }) => {
+const ArticlesDirectory: NextPage<Props> = ({ slugs }) => {
   return (
     <>
       <Head>
@@ -35,4 +35,4 @@ export function getStaticProps(): GetStaticPropsResult<Props> {
   }
 }
 
-export default Home
+export default ArticlesDirectory
