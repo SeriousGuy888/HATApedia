@@ -7,7 +7,7 @@ const Topbar = () => {
     <nav className="flex gap-8 items-center sticky bg-blue-900 py-4 px-8">
       <Logo />
       <div className="flex justify-start items-center gap-4 text-gray-200 text-sm">
-        <Link href={"/"}>Articles</Link>
+        <Link href={"/articles"}>Articles</Link>
         <Link href={"/map"}>World Map</Link>
       </div>
       <ThemeSwitcher />
