@@ -14,7 +14,7 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
   return (
     <div className="p-6 mb-16 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-wrap items-start gap-4">
       <NationBanner src={nation.banner ?? ""} />
-      <div className="flex flex-col items-stretch content-start flex-[4] gap-2 min-w-[120px]">
+      <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
         {nation.info &&
           Object.keys(nation.info).map((key) => (
             <div
