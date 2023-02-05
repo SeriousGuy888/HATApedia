@@ -23,51 +23,63 @@ const articlesDir = join(process.cwd(), "/content/articles/")
 
 const sluggify = (fileName: string) => fileName.replace(/\.md$/, "")
 
-const getArticleFileNames = () => {
-  return fs.readdirSync(articlesDir)
+export const getAllSlugs = () => {
+  return fs.readdirSync(articlesDir).map(sluggify)
 }
 
-// returns Article or ArticlePreview based on param
-export const getArticle = <B extends boolean>(
-  slugOrFileName: string,
-  previewDataOnly: B,
-): (B extends true ? ArticlePreview : Article) | null => {
+const getArticleFileContent = (slugOrFileName: string) => {
   const slug = sluggify(slugOrFileName)
   const filePath = join(articlesDir, `${slug}.md`)
   if (!fs.existsSync(filePath)) {
     return null
   }
 
-  const fileContents = fs.readFileSync(filePath, "utf8")
-  const { data, content } = matter(fileContents)
-
-  const title = data.title || "Untitled"
-
-  let returnData = {} as ArticlePreview | Article
-  if (previewDataOnly) {
-    returnData = {
-      slug,
-      title,
-      subtitle: data.subtitle,
-      image: data.image || data.nation?.banner,
-    }
-  } else {
-    returnData = {
-      ...data,
-      title,
-      slug,
-      content,
-    }
-  }
-
-  Object.keys(returnData).forEach((key) => {
-    if (returnData[key] === undefined) {
-      delete returnData[key]
-    }
-  })
-  return returnData as any
+  return fs.readFileSync(filePath, "utf8")
 }
 
-export const getAllSlugs = () => {
-  return getArticleFileNames().map(sluggify)
+const handleUndefinedKeys = (obj: Article | ArticlePreview) => {
+  Object.keys(obj).forEach((key) => {
+    if (obj[key] === undefined) {
+      if (key === "title") {
+        obj[key] = "Untitled"
+      } else {
+        delete obj[key]
+      }
+    }
+  })
+  return obj
+}
+
+export const getArticle = (slug: string) => {
+  const fileContents = getArticleFileContent(slug)
+  if (!fileContents) {
+    return null
+  }
+  const { data, content } = matter(fileContents)
+
+  let returnData: Article = {
+    ...data,
+    title: data.title,
+    slug,
+    content,
+  }
+
+  return handleUndefinedKeys(returnData)
+}
+
+export const getArticlePreview = (slug: string) => {
+  const fileContents = getArticleFileContent(slug)
+  if (!fileContents) {
+    return null
+  }
+  const { data } = matter(fileContents)
+
+  let returnData: ArticlePreview = {
+    slug,
+    title: data.title,
+    subtitle: data.subtitle,
+    image: data.image || data.nation?.banner,
+  }
+
+  return handleUndefinedKeys(returnData)
 }

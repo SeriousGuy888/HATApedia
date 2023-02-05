@@ -51,7 +51,7 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = getArticle(slug, false)
+  const article = getArticle(slug)
   if (!article) {
     return {
       notFound: true,

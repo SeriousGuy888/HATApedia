@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { getArticle } from "../../../lib/articlesApi"
+import { getArticlePreview } from "../../../lib/articlesApi"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const previewData = getArticle(req.query.slug as string, true)
+  const previewData = getArticlePreview(req.query.slug as string)
   if (previewData) {
     res.status(200).json(previewData)
   } else {
