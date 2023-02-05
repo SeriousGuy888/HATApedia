@@ -14,25 +14,30 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
   const article = data as ArticlePreview
 
   return (
-    <div className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700" title={article.title}>
+    <div
+      className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+      title={article.title}
+    >
       <Link
         className="flex gap-4 justify-between px-8 py-4"
         href={`./article/${article.slug}`}
       >
         <div className="flex-[4] overflow-x-hidden py-4 [&>*]:overflow-ellipsis [&>*]:overflow-hidden">
-          <h2 className="text-xl whitespace-nowrap">{article.title}</h2>
+          <h2 className="text-lg whitespace-nowrap">{article.title}</h2>
           <p className="uppercase text-xs text-gray-500 dark:text-gray-400">
             {article.subtitle}
           </p>
         </div>
         {article.image && (
-          <div className="relative flex flex-[2] bg-slate-200 dark:bg-slate-700 rounded-md min-h-[8rem]">
-            <Image
-              src={article.image}
-              alt=""
-              fill
-              className="object-contain"
-            />
+          <div className="flex-[2] bg-slate-200 dark:bg-slate-700 rounded-md min-h-[8rem] p-2">
+            <div className="relative w-full h-full">
+              <Image
+                src={article.image}
+                alt=""
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
         )}
       </Link>
