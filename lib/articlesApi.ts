@@ -37,7 +37,7 @@ const getArticleFileContent = (slugOrFileName: string) => {
   return fs.readFileSync(filePath, "utf8")
 }
 
-const handleUndefinedKeys = (obj: Article | ArticlePreview) => {
+const handleUndefinedKeys = <T extends Article | ArticlePreview>(obj: T) => {
   Object.keys(obj).forEach((key) => {
     if (obj[key] === undefined) {
       if (key === "title") {
