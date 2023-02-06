@@ -1,6 +1,7 @@
 ---
 title: Billzoplace City State
 subtitle: Unitary One-Party Republic
+image: /images/banners/billzoplace.png
 nation:
   banner: /images/banners/billzoplace.png
   info:

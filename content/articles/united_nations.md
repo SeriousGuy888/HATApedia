@@ -1,6 +1,7 @@
 ---
 title: United Nations
 subtitle: Supranational Organisation
+image: /images/banners/united_nations.png
 nation:
   banner: /images/banners/united_nations.png
   info:

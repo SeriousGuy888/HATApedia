@@ -1,6 +1,7 @@
 ---
 title: Tobytopia
 subtitle: Unitary one-party republic under a totalitarian hereditary dictatorship
+image: /images/banners/tobytopia.png
 nation:
   banner: /images/banners/tobytopia.png
   info:
