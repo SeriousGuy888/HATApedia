@@ -28,7 +28,7 @@ const getAllArticles = async () => {
     return {
       content,
       data,
-      slug: fileName.replace(/\.md$/, ""),
+      slug: fileName.replace(/\.md$/g, ""),
     }
   })
 
