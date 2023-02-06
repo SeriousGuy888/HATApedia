@@ -44,7 +44,7 @@ const transformArticlesToSearchObjects = async (articles) => {
         .use(remarkGfm)
         .use(strip)
         .process(article.content.slice(0, 2500))
-    ).value
+    ).value.replace(/\n/g, " ")
 
     return {
       objectID: article.slug,
