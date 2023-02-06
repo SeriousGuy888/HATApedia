@@ -15,7 +15,7 @@ const LinkCard: NextPage<{
       className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
       title={title}
     >
-      <Link className="flex flex-1 gap-4 justify-between px-8 py-4" href={link}>
+      <Link className="flex flex-1 gap-4 justify-between px-8 py-4 h-full" href={link}>
         <div className="flex-[4] overflow-x-hidden py-4 [&>*]:overflow-ellipsis [&>*]:overflow-hidden">
           <h2 className="text-lg whitespace-nowrap">{title}</h2>
           {subtitle && (
