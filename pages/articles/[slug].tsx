@@ -6,6 +6,7 @@ import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 
 import { unified } from "unified"
+import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import remarkToc from "remark-toc"
 import remarkParse from "remark-parse"
@@ -16,17 +17,23 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeFormat from "rehype-format"
 import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
+import strip from "strip-markdown"
 
 interface Props {
   article: Article
   html: string
+  excerpt: string
 }
 
-const ArticlePage: NextPage<Props> = ({ article, html }) => {
+const ArticlePage: NextPage<Props> = ({ article, html, excerpt }) => {
   return (
     <>
       <Head>
         <title>{`${article.title} - HATApedia`}</title>
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:type" content="article" />
+        {article.image && <meta property="og:image" content={article.image} />}
       </Head>
       <div className="max-w-[95vw] md:max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start flex justify-between">
@@ -82,9 +89,20 @@ export async function getStaticProps({
     .use(rehypeStringify)
     .process(article.content)
 
+  const excerpt =
+    (
+      await remark()
+        .use(remarkGfm)
+        .use(strip)
+        .process(article.content.slice(0, 197))
+    ).value
+      .toString()
+      .replace(/\n/g, " ") + "..."
+
   return {
     props: {
       article,
+      excerpt,
       html: String(file),
     },
   }

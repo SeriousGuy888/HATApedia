@@ -20,6 +20,7 @@ const Home = () => {
     <>
       <Head>
         <title>HATApedia</title>
+        <meta property="og:site_name" content="HATApedia" />
       </Head>
       <article className="max-w-prose w-full h-fit p-8">
         <h1 className="text-4xl mb-8">E, shoom! Wog thu tu HATApedia.</h1>
