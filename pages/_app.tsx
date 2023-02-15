@@ -17,6 +17,7 @@ export default function MyApp(props: AppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {/* PWA primary color */}
         <meta name="theme-color" content="#222999" />
+        <meta property="og:site_name" content="HATApedia" />
       </Head>
       <div className="grid grid-rows-[4rem_1fr_1fr] min-h-screen h-screen max-h-screen">
         <Topbar />
