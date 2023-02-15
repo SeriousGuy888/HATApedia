@@ -33,7 +33,7 @@ const ArticlePage: NextPage<Props> = ({ article, html, excerpt }) => {
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
-        {article.image && <meta property="og:image" content={article.image} />}
+        {article.image && <meta property="og:image" content={"https://hatapedia.vercel.app" + article.image} />}
       </Head>
       <div className="max-w-[95vw] md:max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start flex justify-between">
