@@ -5,7 +5,7 @@ image: /images/banners/billzoplace.png
 nation:
   banner: /images/banners/billzoplace.png
   info:
-    Ruler: Billzo le Le Magic Caterpillar
+    Ruler: Billzo le Magic Caterpillar
     Demonym: Billzonian
     Official Languages: Billzonian, English
 ---
