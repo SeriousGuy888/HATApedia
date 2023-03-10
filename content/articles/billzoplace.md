@@ -22,4 +22,4 @@ Billzoplace City (*Billzoplace Urb* in Billzonian) refers to the city built in S
 The architecture style of Billzoplace City is largely based on that of the district of Harka in [CheezSurv6](./oktosurv_theory).
 
 ## Subway Station
-The subway station in Billzoplace City is part of the [Remyan](./remy_republic.md) subway network, connected to Sheapland station. Riders may tap their Hocuspocus Card in order to pay at the turnstiles.
+The subway station in Billzoplace City is part of the [Remyan](./remy_republic) subway network, connected to Sheapland station. Riders may tap their Hocuspocus Card in order to pay at the turnstiles.
