@@ -8,6 +8,9 @@ heads of certain people while they are playing on the HATA server.
 
 ## Table of Contents
 
+# Identity
+[Toby](./toby)
+
 # Interactions with Remy
 [Remy](./remy), the Glorious Leader of the [Remy Republic](./remy_republic),
 has been known to have interactions with these Voices.
