@@ -7,6 +7,7 @@ import styles from "../../modules/ArticleComponents/Article.module.scss"
 
 import { unified } from "unified"
 import { remark } from "remark"
+import remarkWikiLink from "remark-wiki-link"
 import remarkGfm from "remark-gfm"
 import remarkToc from "remark-toc"
 import remarkParse from "remark-parse"
@@ -73,11 +74,18 @@ export async function getStaticProps({
     }
   }
 
+  const allPermalinks = getAllSlugs()
+
   const file = await unified()
+    .use(remarkParse)
+    .use(remarkWikiLink, {
+      permalinks: allPermalinks,
+      hrefTemplate: (permalink: string) => `/articles/${permalink}`,
+      aliasDivider: "|",
+    })
     .use(remarkGfm)
     .use(remarkToc, { tight: true })
     .use(remarkHtml)
-    .use(remarkParse)
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings)
