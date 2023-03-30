@@ -82,6 +82,7 @@ export async function getStaticProps({
       permalinks: allPermalinks,
       hrefTemplate: (permalink: string) => `/articles/${permalink}`,
       aliasDivider: "|",
+      newClassName: "redLink",
     })
     .use(remarkGfm)
     .use(remarkToc, { tight: true })
@@ -93,6 +94,10 @@ export async function getStaticProps({
     .use(rehypeWrap, {
       selector: "table",
       wrapper: `div.${styles.responsiveTable}`,
+    })
+    .use(rehypeWrap, {
+      selector: "a.redLink",
+      wrapper: `span.${styles.redLink}`,
     })
     .use(rehypeStringify)
     .process(article.content)
