@@ -46,6 +46,7 @@ The Parliament of the Remy Republic is a biacameral legislature, with an upper h
 ## Election
 *See also: [[remyan_election_shooting|Hawainot Shooting on Remyan Election Night]]*
 
+![Result of the election: Remy gets another term as Glorious Leader, SBP wins both houses of parliament](/images/articles/First_Parliament_of_the_Remy_Republic.png)
 The election ocurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day.
 
 ### Duck Nest
