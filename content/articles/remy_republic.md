@@ -15,32 +15,65 @@ The Remy Republic a state that was originally founded on the southern 1000 block
 ## Table of Contents
 
 
-# Provinces
-The Remy Republic is made up of several provinces.
+# Provinces and Territories
+
+The Remy Republic is subdivided into provinces and territories.
+
+## Provinces
+Provinces in the Remy Republic are full parts of the country, and they are included and represented in the Duck Nest, the upper house of the Remyan legislature.
+
+The provinces of the Remy Republic are as follows:
 - Forgsville
 - Scammington
 - Hawainot
 - No
-- New Mangrovia
+- New Mangrovia (Formerly "Remyan Mangovia")
+
+## Territories
+Territories are non-core parts of the Remy Republic. They are not colonies, per se, on account of not being called that, but they do not receive representation in the Duck Nest.
+
+The territories of the Remy Republic are as follows:
+- Cocoa Bean Cove
+- Cave Place
+- Floridanot
 
 # Government
 The Remy Republic government is organised as a federal parliamentary republic.
 Each province sends elected representatives to the Remyan parliament.
 
-The Parliament of the Remy Republic is a biacameral legislature.
-The upper house does not yet have a name, and the lower house is called the Villager Council.
+The Parliament of the Remy Republic is a biacameral legislature, with an upper house — the *Duck Nest* — and a lower house — the *Villager Council*.
 
 ## Election
-The following are the candidates who ran in the first Remy Republic election.
+*See also: [[remyan_election_shooting|Hawainot Shooting on Remyan Election Night]]*
 
-|                      |  Slime Ball Party (SBP)  | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
-| -------------------: | :----------------------: | :---------------------: | :-----------------: |
-|       **Forgsville** |         Remyforg         |     Mike MacWebster     |                     |
-|      **Scammington** |      Doug Shimadome      |   William Scamsworth    |                     |
-|               **No** |     Huck Finnisiter      |      Toby Tontory       |   Gerry Flexagon    |
-|         **Hawainot** | Glorious Leader RemyHemy |        Jose III         |                     |
-| **Remyan Mangrovia** |      John Nevilory       |         Jose II         |                     |
+The election ocurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day.
 
+### Duck Nest
+The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
+
+|                      |   Slime Ball Party (SBP)    | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
+| --------------------:|:---------------------------:|:-----------------------:|:-------------------:|
+|       **Forgsville** |         Remyforg 🏆         |     Mike MacWebster     |                     |
+|      **Scammington** |      Doug Shimadome 🏆      |   William Scamsworth    |                     |
+|               **No** |     Huck Finnisiter 🏆      |      Toby Tontory       |   Gerry Flexagon    |
+|         **Hawainot** | Glorious Leader RemyHemy 🏆 |        Jose III         |                     |
+| **Remyan Mangrovia** |      John Nevilory 🏆       |         Jose II         |                     |
+
+It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[Toby]] and [[Arvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
+
+### Villager Council
+The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
+
+| Province/Territory    | SBP    | MCP   | BNQ   | IND   |
+|:--------------------- |:------ |:----- |:----- |:----- |
+| Hawainot              | 95 🏆  | 5     |       |       |
+| Forgsville            | 75 🏆  | 25    |       |       |
+| No                    | 25     | 24    | 51 🏆 |       |
+| Scammington           | 21     | 79 🏆 |       |       |
+| New Mangrovia         | 30     | 60 🏆 |       | 10    |
+| Cocoa Bean Cove Terr. | 100 🏆 |       |       |       |
+| Unnamed Cave Terr.    | 39     | 20    |       | 41 🏆 |
+| Floridanot Terr.      | 70 🏆  | 30    |       |       |
 
 # Diplomacy
 
@@ -53,7 +86,7 @@ in exchange for Billzoplace funding the expansion of the Remy Republic's wheat f
 
 ## Treaty of No (2023)
 
-The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic free access to Billzoshoom's slime farm beneath the newly constructed oil rig.
+The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic free access to Billzoshoom's slime farm beneath the newly constructed Limedye Oil Rig.
 
 The access was free because the previous Treaty of No already authorised Billzoplace free access to the Remyan wheat from the wheat fields in No. This treaty effectively added to the previous agreement, making it a wheat-for-slime trade agreement between the Remy Republic and the Billzoplace City State.
 
@@ -89,7 +122,7 @@ trembled in fear and retreated outwards.
 ## Western Hawainot Offensive
 ![Map of the Remyan advance into Western Hawainot](/images/articles/western_hawainot_offensive.png)
 
-The Remy Republic initiated a military operation led by General Fletcher Quadratic
+The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]]
 and swiftly invaded the western islands of the Hawainot Archipelago, collecting
 jungle wood and cocoa beans so that he can finally begin producing his pogstries.
 
@@ -130,3 +163,6 @@ a glorious retreat back to Hawainot after his glorious defeat on the jungle isla
 After the glorious defeat on the jungle island, and on the suggestion of Toby, Remy rowed
 his boat westward again, and claimed the coastline of the large landmass further to the west
 of the jungle island. This landmass also had a large area of sparse jungle on it.
+
+# Mangrovepox Outbreak in No
+to be written…

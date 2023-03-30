@@ -21,7 +21,8 @@ export interface ArticlePreview {
 
 const articlesDir = join(process.cwd(), "/content/articles/")
 
-const sluggify = (fileName: string) => fileName.replace(/\.md$/, "")
+const sluggify = (fileName: string) =>
+  fileName.toLowerCase().replace(/\.md$/, "")
 
 export const getAllSlugs = () => {
   return fs.readdirSync(articlesDir).map(sluggify)
