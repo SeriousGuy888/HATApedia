@@ -45,23 +45,21 @@ The following are the candidates who ran in the first Remy Republic election.
 # Diplomacy
 
 ## Treaty of No (2022)
-The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [Billzoplace](./billzoplace).
-As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
+
+The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[Billzoplace]]. As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
 
 The treaty stipulates that Billzoplace would be allowed to export wheat from the Remy Republic
 in exchange for Billzoplace funding the expansion of the Remy Republic's wheat fields.
 
 ## Treaty of No (2023)
-The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic
-free access to Billzoshoom's slime farm beneath the newly constructed oil rig.
 
-The access was free because the previous Treaty of No already authorised Billzoplace free access to the Remyan
-wheat from the wheat fields in No. This treaty effectively added to the previous agreement, making it
-a wheat-for-slime trade agreement between the Remy Republic and the Billzoplace City State.
+The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic free access to Billzoshoom's slime farm beneath the newly constructed oil rig.
+
+The access was free because the previous Treaty of No already authorised Billzoplace free access to the Remyan wheat from the wheat fields in No. This treaty effectively added to the previous agreement, making it a wheat-for-slime trade agreement between the Remy Republic and the Billzoplace City State.
 
 # The Great Mangrove War
 
-The Great Mangrove War was a conflict between the Remy Republic and [Tobytopia](./tobytopia).
+The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]].
 The disagreement was over which nation should have sovereignty over New Mangrovia
 (then referred to by Remy as Remyan Mangrovia).
 
