@@ -7,8 +7,8 @@ import styles from "../../modules/ArticleComponents/Article.module.scss"
 
 import { unified } from "unified"
 import { remark } from "remark"
-import remarkWikiLink from "remark-wiki-link"
 import remarkGfm from "remark-gfm"
+import remarkWikilink from "../../plugins/remark-wikilink-syntax"
 import remarkToc from "remark-toc"
 import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
@@ -19,6 +19,7 @@ import rehypeFormat from "rehype-format"
 import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
 import strip from "strip-markdown"
+
 
 interface Props {
   article: Article
@@ -34,7 +35,12 @@ const ArticlePage: NextPage<Props> = ({ article, html, excerpt }) => {
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
-        {article.image && <meta property="og:image" content={"https://hatapedia.vercel.app" + article.image} />}
+        {article.image && (
+          <meta
+            property="og:image"
+            content={"https://hatapedia.vercel.app" + article.image}
+          />
+        )}
       </Head>
       <div className="max-w-[95vw] md:max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start flex justify-between">
@@ -78,13 +84,8 @@ export async function getStaticProps({
 
   const file = await unified()
     .use(remarkParse)
-    .use(remarkWikiLink, {
-      permalinks: allPermalinks,
-      hrefTemplate: (permalink: string) => `/articles/${permalink}`,
-      aliasDivider: "|",
-      newClassName: "redLink",
-    })
     .use(remarkGfm)
+    .use(remarkWikilink, { existingPageNames: allPermalinks })
     .use(remarkToc, { tight: true })
     .use(remarkHtml)
     .use(remarkRehype)

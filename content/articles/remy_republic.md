@@ -52,8 +52,8 @@ The election ocurred on 2023-02-16, although a second vote for the Duck Nest con
 ### Duck Nest
 The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
 
-|                      |   Slime Ball Party (SBP)    | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
-| --------------------:|:---------------------------:|:-----------------------:|:-------------------:|
+|                      |   Slime Ball Party (SBP)   | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
+| -------------------: | :------------------------: | :---------------------: | :-----------------: |
 |       **Forgsville** |         Remyforg 🏆         |     Mike MacWebster     |                     |
 |      **Scammington** |      Doug Shimadome 🏆      |   William Scamsworth    |                     |
 |               **No** |     Huck Finnisiter 🏆      |      Toby Tontory       |   Gerry Flexagon    |
@@ -65,16 +65,16 @@ It is worth noting that the vote was originally undecided, with the vote counts 
 ### Villager Council
 The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
 
-| Province/Territory    | SBP    | MCP   | BNQ   | IND   |
-|:--------------------- |:------ |:----- |:----- |:----- |
-| Hawainot              | 95 🏆  | 5     |       |       |
-| Forgsville            | 75 🏆  | 25    |       |       |
-| No                    | 25     | 24    | 51 🏆 |       |
-| Scammington           | 21     | 79 🏆 |       |       |
-| New Mangrovia         | 30     | 60 🏆 |       | 10    |
-| Cocoa Bean Cove Terr. | 100 🏆 |       |       |       |
-| Unnamed Cave Terr.    | 39     | 20    |       | 41 🏆 |
-| Floridanot Terr.      | 70 🏆  | 30    |       |       |
+| Province/Territory    | SBP   | MCP  | BNQ  | IND  |
+| :-------------------- | :---- | :--- | :--- | :--- |
+| Hawainot              | 95 🏆  | 5    |      |      |
+| Forgsville            | 75 🏆  | 25   |      |      |
+| No                    | 25    | 24   | 51 🏆 |      |
+| Scammington           | 21    | 79 🏆 |      |      |
+| New Mangrovia         | 30    | 60 🏆 |      | 10   |
+| Cocoa Bean Cove Terr. | 100 🏆 |      |      |      |
+| Unnamed Cave Terr.    | 39    | 20   |      | 41 🏆 |
+| Floridanot Terr.      | 70 🏆  | 30   |      |      |
 
 # Diplomacy
 
@@ -121,7 +121,7 @@ As the Glorious Leader, Remy, spoke these immortal words, the HATA worldborder
 trembled in fear and retreated outwards.
 
 ## Western Hawainot Offensive
-![Map of the Remyan advance into Western Hawainot](/images/articles/western_hawainot_offensive.png)
+![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 
 The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]]
 and swiftly invaded the western islands of the Hawainot Archipelago, collecting

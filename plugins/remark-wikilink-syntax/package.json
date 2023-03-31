@@ -1,0 +1,19 @@
+{
+  "name": "remark-wikilink-syntax",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mdast": "^3.0.11",
+    "@types/unist": "^2.0.6",
+    "mdast": "^3.0.0",
+    "mdast-util-find-and-replace": "^2.2.2"
+  }
+}

@@ -37,7 +37,6 @@
     "remark-parse": "^10.0.1",
     "remark-rehype": "^10.1.0",
     "remark-toc": "^8.0.1",
-    "remark-wiki-link": "^1.0.4",
     "sass": "^1.57.1",
     "strip-markdown": "^5.0.0",
     "swr": "^2.0.3",
