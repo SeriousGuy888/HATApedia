@@ -6,6 +6,7 @@ import algoliasearch from "algoliasearch/lite.js"
 import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import strip from "strip-markdown"
+import { sluggify } from "../utils/sluggify.js"
 
 dotenv.config()
 const APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID
@@ -28,7 +29,7 @@ const getAllArticles = async () => {
     return {
       content,
       data,
-      slug: fileName.replace(/\.md$/g, ""),
+      slug: sluggify(fileName),
     }
   })
 

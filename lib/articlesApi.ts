@@ -2,6 +2,7 @@ import fs from "fs"
 import { join } from "path"
 import matter from "gray-matter"
 import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
+import { sluggify } from "../utils/sluggify.js"
 
 export interface Article {
   slug: string
@@ -20,9 +21,6 @@ export interface ArticlePreview {
 }
 
 const articlesDir = join(process.cwd(), "/content/articles/")
-
-const sluggify = (fileName: string) =>
-  fileName.toLowerCase().replace(/ /g, "_").replace(/\.md$/, "")
 
 export const getAllSlugs = () => {
   const slugs = fs.readdirSync(articlesDir).map(sluggify)
