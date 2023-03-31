@@ -3,6 +3,7 @@ import { join } from "path"
 import matter from "gray-matter"
 import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 import { sluggify } from "../utils/sluggify.js"
+import { generateArticleSlugs, slugsFile } from "./generateArticleSlugs"
 
 export interface Article {
   slug: string
@@ -22,6 +23,21 @@ export interface ArticlePreview {
 
 const articlesDir = join(process.cwd(), "/content/articles/")
 
+let slugMap: null | { [slug: string]: string } = null
+const getSlugMap = async () => {
+  if (!slugMap) {
+    if (!fs.existsSync(slugsFile)) {
+      slugMap = await generateArticleSlugs()
+    }
+    const fileContent = fs.readFileSync(slugsFile, "utf8")
+    slugMap = JSON.parse(fileContent)
+  }
+  if (slugMap === null) {
+    throw new Error("Slug map is null")
+  }
+  return slugMap
+}
+
 export const getAllSlugs = () => {
   const slugs = fs.readdirSync(articlesDir).map(sluggify)
 
@@ -30,12 +46,15 @@ export const getAllSlugs = () => {
     console.warn("Duplicate article slugs found!")
   }
 
-  return slugs
+  return getSlugMap().then((slugs) => {
+    const keys = Object.keys(slugs)
+    return keys
+  })
 }
 
-const getArticleFileContent = (slugOrFileName: string) => {
-  const slug = sluggify(slugOrFileName)
-  const filePath = join(articlesDir, `${slug}.md`)
+const getArticleFileContent = async (slug: string) => {
+  const fileName = (await getSlugMap())[slug]
+  const filePath = join(articlesDir, fileName)
   if (!fs.existsSync(filePath)) {
     return null
   }
@@ -56,8 +75,8 @@ const handleUndefinedKeys = <T extends Article | ArticlePreview>(obj: T) => {
   return obj
 }
 
-export const getArticle = (slug: string) => {
-  const fileContents = getArticleFileContent(slug)
+export const getArticle = async (slug: string) => {
+  const fileContents = await getArticleFileContent(slug)
   if (!fileContents) {
     return null
   }
@@ -73,8 +92,8 @@ export const getArticle = (slug: string) => {
   return handleUndefinedKeys(returnData)
 }
 
-export const getArticlePreview = (slug: string) => {
-  const fileContents = getArticleFileContent(slug)
+export const getArticlePreview = async (slug: string) => {
+  const fileContents = await getArticleFileContent(slug)
   if (!fileContents) {
     return null
   }

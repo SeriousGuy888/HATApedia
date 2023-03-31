@@ -72,14 +72,14 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = getArticle(slug)
+  const article = await getArticle(slug)
   if (!article) {
     return {
       notFound: true,
     }
   }
 
-  const allPermalinks = getAllSlugs()
+  const allPermalinks = await getAllSlugs()
 
   const file = await unified()
     .use(remarkParse)
@@ -122,7 +122,7 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths(): Promise<GetStaticPathsResult> {
-  const slugs = getAllSlugs()
+  const slugs = await getAllSlugs()
 
   return {
     paths: slugs.map((slug) => ({
