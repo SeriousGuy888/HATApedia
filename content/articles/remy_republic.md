@@ -23,19 +23,19 @@ The Remy Republic is subdivided into provinces and territories.
 Provinces in the Remy Republic are full parts of the country, and they are included and represented in the Duck Nest, the upper house of the Remyan legislature.
 
 The provinces of the Remy Republic are as follows:
-- Forgsville
-- Scammington
-- Hawainot
-- No
-- New Mangrovia (Formerly "Remyan Mangovia")
+- [[Forgsville]]
+- [[Scammington]]
+- [[Hawainot]]
+- [[No]]
+- [[New Mangrovia]] (Formerly "Remyan Mangovia")
 
 ## Territories
 Territories are non-core parts of the Remy Republic. They are not colonies, per se, on account of not being called that, but they do not receive representation in the Duck Nest.
 
 The territories of the Remy Republic are as follows:
-- Cocoa Bean Cove
+- [[Cocoa Bean Cove]]
 - Cave Place
-- Floridanot
+- [[Floridanot]]
 
 # Government
 The Remy Republic government is organised as a federal parliamentary republic.
