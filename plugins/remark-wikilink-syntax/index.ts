@@ -35,7 +35,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
       }
 
       if (isImage) {
-        const src = `/images/articles/${linkAddress}`
+        const src = `/api/images/${linkAddress}`
 
         const imgNode: Image = {
           type: "image",
