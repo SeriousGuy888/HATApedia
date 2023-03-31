@@ -1,5 +1,5 @@
-import fs from "fs"
-import { join } from "path"
+import fs from "fs/promises"
+import path from "path"
 import matter from "gray-matter"
 import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 import { sluggify } from "../utils/sluggify.js"
@@ -21,15 +21,17 @@ export interface ArticlePreview {
   [key: string]: any
 }
 
-const articlesDir = join(process.cwd(), "/content/articles/")
+const articlesDir = path.join(process.cwd(), "/content/articles/")
 
 let slugMap: null | { [slug: string]: string } = null
 const getSlugMap = async () => {
   if (!slugMap) {
-    if (!fs.existsSync(slugsFile)) {
+    try {
+      await fs.stat(slugsFile)
+    } catch (e) {
       slugMap = await generateArticleSlugs()
     }
-    const fileContent = fs.readFileSync(slugsFile, "utf8")
+    const fileContent = await fs.readFile(slugsFile, "utf8")
     slugMap = JSON.parse(fileContent)
   }
   if (slugMap === null) {
@@ -39,7 +41,7 @@ const getSlugMap = async () => {
 }
 
 export const getAllSlugs = async () => {
-  const slugs = fs.readdirSync(articlesDir).map(sluggify)
+  const slugs = (await fs.readdir(articlesDir)).map(sluggify)
 
   const uniqueSlugs = new Set(slugs)
   if (slugs.length !== uniqueSlugs.size) {
@@ -50,25 +52,27 @@ export const getAllSlugs = async () => {
 }
 
 const getArticleFileContent = async (slug: string) => {
-  const fileName = (await getSlugMap())[slug]
-  const filePath = join(articlesDir, fileName)
-  if (!fs.existsSync(filePath)) {
+  const slugMap = await getSlugMap()
+  const fileName = slugMap?.[slug]
+  const filePath = path.join(articlesDir, fileName)
+  if (!(await fs.stat(filePath)).isFile()) {
     return null
   }
-
-  return fs.readFileSync(filePath, "utf8")
+  return fs.readFile(filePath, "utf8")
 }
 
 const handleUndefinedKeys = <T extends Article | ArticlePreview>(obj: T) => {
-  Object.keys(obj).forEach((key) => {
-    if (obj[key] === undefined) {
-      if (key === "title") {
-        obj[key] = "Untitled"
-      } else {
-        delete obj[key]
-      }
-    }
-  })
+  const { title, subtitle, image, nation } = obj
+  if (!title) {
+    obj.title = "Untitled"
+  }
+  if (!subtitle) {
+    delete obj.subtitle
+  }
+  if (!image) {
+    obj.image = nation?.banner ?? null
+  }
+  
   return obj
 }
 
@@ -78,15 +82,14 @@ export const getArticle = async (slug: string) => {
     return null
   }
   const { data, content } = matter(fileContents)
+  const { title = "Untitled" } = data
 
-  let returnData: Article = {
+  return handleUndefinedKeys({
     ...data,
-    title: data.title,
+    title,
     slug,
     content,
-  }
-
-  return handleUndefinedKeys(returnData)
+  })
 }
 
 export const getArticlePreview = async (slug: string) => {
@@ -95,13 +98,12 @@ export const getArticlePreview = async (slug: string) => {
     return null
   }
   const { data } = matter(fileContents)
+  const { title = "Untitled", subtitle, nation } = data
 
-  let returnData: ArticlePreview = {
+  return handleUndefinedKeys({
     slug,
-    title: data.title,
-    subtitle: data.subtitle,
-    image: data.image || data.nation?.banner,
-  }
-
-  return handleUndefinedKeys(returnData)
+    title,
+    subtitle,
+    image: data?.image ?? nation?.banner ?? null,
+  })
 }
