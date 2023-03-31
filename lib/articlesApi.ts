@@ -22,13 +22,13 @@ export interface ArticlePreview {
 const articlesDir = join(process.cwd(), "/content/articles/")
 
 const sluggify = (fileName: string) =>
-  fileName.toLowerCase().replace(/\.md$/, "")
+  fileName.toLowerCase().replace(/ /g, "_").replace(/\.md$/, "")
 
 export const getAllSlugs = () => {
   const slugs = fs.readdirSync(articlesDir).map(sluggify)
-  
+
   const uniqueSlugs = new Set(slugs)
-  if(slugs.length !== uniqueSlugs.size) {
+  if (slugs.length !== uniqueSlugs.size) {
     console.warn("Duplicate article slugs found!")
   }
 
