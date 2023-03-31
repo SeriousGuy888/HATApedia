@@ -12,7 +12,7 @@ heads of certain people while they are playing on the HATA server.
 [[Toby]] (allegedly)
 
 # Interactions with Remy
-[[Remy]], the Glorious Leader of the [[remy_republic|Remy Republic]], has been known to have interactions with these Voices.
+[[Remy]], the Glorious Leader of the [[Remy Republic|Remy Republic]], has been known to have interactions with these Voices.
 
 ## Netherrack Incident
 There was an incident where, one day, Remy started noticing that netherrack keeps appearing behind him whenever he opens chests, crafting tables, or furnaces.
