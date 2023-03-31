@@ -17,7 +17,7 @@ Billzoplace, also informally known as Billzonia, is the a city state based aroun
 # The City
 Billzoplace City (*Billzoplace Urb* in Billzonian) refers to the city built in Sheapland. Its construction began in late February of 2023.
 
-![Billzoplace, 2023-03-02](/images/articles/billzoplace_2023-03-02.jpg)
+![[billzoplace_2023-03-02.jpg|Billzoplace, 2023-03-02]]
 
 The architecture style of Billzoplace City is largely based on that of the district of Harka in [[oktosurv_theory|CheezSurv6]].
 

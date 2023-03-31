@@ -46,7 +46,7 @@ The Parliament of the Remy Republic is a biacameral legislature, with an upper h
 ## Election
 *See also: [[remyan_election_shooting|Hawainot Shooting on Remyan Election Night]]*
 
-![[First_Parliament_of_the_Remy_Republic.png]]
+![[First_Parliament_of_the_Remy_Republic.png|Result of the election: Remy gets another term as Glorious Leader, SBP wins both houses of parliament]]
 The election ocurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day.
 
 ### Duck Nest
@@ -141,7 +141,8 @@ Toby from Tobytopia had threatened to claim Southern No before Remy could during
 days leading up to the Border Disorder, but these threats did not come to fruition.
 
 ## Jungle Island Incident
-![[jungle_island_incident.png]]
+
+![[jungle_island_incident.png|Map of disputed jungle island]]
 
 Remy had a dispute with Tobytopia over an island of sparse jungle to the west of Hawainot.
 Remy had previously intended to claim this island, but had forgotten to do so in the commotion

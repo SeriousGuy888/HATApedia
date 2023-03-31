@@ -26,7 +26,7 @@ Arvi had built near spawn.
 
 # Headquarters
 
-![The exterior of the UN HQ](/images/articles/unhq_exterior.png)
+![[unhq_exterior.png|The exterior of the UN HQ]]
 
 The United Nations is headquartered to the northeast of Spawn, in the oak and
 cobblestone building built by architect Arvi.
@@ -36,5 +36,7 @@ bar in Scammington, Remy renovated the interior of the building to be fit to
 host the United Nations.
 
 Remy added chairs and a table, as well as ladders to get up and down.
-![The exterior of the UN HQ](/images/articles/unhq_interior.png)
-![Portrait of the first UN meeting](/images/articles/unhq_portrait.png)
+
+![[unhq_interior.png|Interior of the UN HQ building]]
+
+![[unhq_portrait.png|Portrait of the first UN meeting]]
