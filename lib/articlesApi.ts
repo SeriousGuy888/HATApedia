@@ -25,7 +25,14 @@ const sluggify = (fileName: string) =>
   fileName.toLowerCase().replace(/\.md$/, "")
 
 export const getAllSlugs = () => {
-  return fs.readdirSync(articlesDir).map(sluggify)
+  const slugs = fs.readdirSync(articlesDir).map(sluggify)
+  
+  const uniqueSlugs = new Set(slugs)
+  if(slugs.length !== uniqueSlugs.size) {
+    console.warn("Duplicate article slugs found!")
+  }
+
+  return slugs
 }
 
 const getArticleFileContent = (slugOrFileName: string) => {
