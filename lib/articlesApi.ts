@@ -38,7 +38,7 @@ const getSlugMap = async () => {
   return slugMap
 }
 
-export const getAllSlugs = () => {
+export const getAllSlugs = async () => {
   const slugs = fs.readdirSync(articlesDir).map(sluggify)
 
   const uniqueSlugs = new Set(slugs)
@@ -46,10 +46,7 @@ export const getAllSlugs = () => {
     console.warn("Duplicate article slugs found!")
   }
 
-  return getSlugMap().then((slugs) => {
-    const keys = Object.keys(slugs)
-    return keys
-  })
+  return Object.keys(await getSlugMap())
 }
 
 const getArticleFileContent = async (slug: string) => {
