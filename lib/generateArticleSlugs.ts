@@ -16,6 +16,13 @@ export async function generateArticleSlugs() {
   }
 
   warnIfDuplicateSlugs(Object.keys(slugs))
+
+  try {
+    fs.mkdir(path.dirname(slugsFile), { recursive: true })
+  } catch (e) {
+    // ignore error if directory already exists
+  }
+
   await fs.writeFile(slugsFile, JSON.stringify(slugs))
 
   return slugs
