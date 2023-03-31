@@ -20,7 +20,6 @@ import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
 import strip from "strip-markdown"
 
-
 interface Props {
   article: Article
   html: string
@@ -90,7 +89,7 @@ export async function getStaticProps({
     .use(remarkHtml)
     .use(remarkRehype)
     .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings)
+    .use(rehypeAutolinkHeadings, { behavior: "append" })
     .use(rehypeFormat)
     .use(rehypeWrap, {
       selector: "table",
