@@ -12,7 +12,7 @@ nation:
 
 Billzoplace, also informally known as Billzonia, is the a city state based around the three-way intersection of the Remy Sea, the Sheapland River, and the Spawn River.
 
-It was constructed by and is home to [[billzoshoom|Billzo]].
+It was constructed by and is home to [[wBillzoshoom|Billzo]].
 
 ## Table of Contents
 

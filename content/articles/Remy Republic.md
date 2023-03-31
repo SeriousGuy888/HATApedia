@@ -60,7 +60,7 @@ The following are the candidates who ran in the first Remy Republic election for
 |         **Hawainot** | Glorious Leader RemyHemy 🏆 |        Jose III         |                     |
 | **Remyan Mangrovia** |      John Nevilory 🏆       |         Jose II         |                     |
 
-It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[Toby]] and [[Arvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
+It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[wToby]] and [[wArvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
 
 ### Villager Council
 The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
@@ -80,7 +80,7 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 
 ## Treaty of No (2022)
 
-The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[Billzoplace]]. As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
+The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[wBillzoplace]]. As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
 
 The treaty stipulates that Billzoplace would be allowed to export wheat from the Remy Republic
 in exchange for Billzoplace funding the expansion of the Remy Republic's wheat fields.
@@ -93,7 +93,7 @@ The access was free because the previous Treaty of No already authorised Billzop
 
 # The Great Mangrove War
 
-The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]].
+The Great Mangrove War was a conflict between the Remy Republic and [[wTobytopia]].
 The disagreement was over which nation should have sovereignty over New Mangrovia
 (then referred to by Remy as Remyan Mangrovia).
 

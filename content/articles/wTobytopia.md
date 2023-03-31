@@ -22,7 +22,7 @@ to the northwest of Spawn.
 # Territorial Disputes
 
 ## New Mangrovia
-An area of mangrove trees planted by [[Holden]] in what used to be the savanna.
+An area of mangrove trees planted by [[wHolden]] in what used to be the savanna.
 This area was at some point claimed by Remy, but this claim was disputed by Toby and
 Holden since Holden, a Tobytopian, planted the trees.
 
