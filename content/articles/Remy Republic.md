@@ -52,13 +52,13 @@ The election ocurred on 2023-02-16, although a second vote for the Duck Nest con
 ### Duck Nest
 The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
 
-|                      |   Slime Ball Party (SBP)   | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
-| -------------------: | :------------------------: | :---------------------: | :-----------------: |
-|       **Forgsville** |         Remyforg 🏆         |     Mike MacWebster     |                     |
-|      **Scammington** |      Doug Shimadome 🏆      |   William Scamsworth    |                     |
-|               **No** |     Huck Finnisiter 🏆      |      Toby Tontory       |   Gerry Flexagon    |
-|         **Hawainot** | Glorious Leader RemyHemy 🏆 |        Jose III         |                     |
-| **Remyan Mangrovia** |      John Nevilory 🏆       |         Jose II         |                     |
+|                   |   Slime Ball Party (SBP)    | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
+| -----------------:|:---------------------------:|:-----------------------:|:-------------------:|
+|    **Forgsville** |         Remyforg 🏆         |     Mike MacWebster     |                     |
+|   **Scammington** |      Doug Shimadome 🏆      |   William Scamsworth    |                     |
+|            **No** |     Huck Finnisiter 🏆      |      Toby Tontory       |   Gerry Flexagon    |
+|      **Hawainot** | Glorious Leader RemyHemy 🏆 |        Jose III         |                     |
+| **New Mangrovia** |      John Nevilory 🏆       |         Jose II         |                     |
 
 It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[Toby]] and [[Arvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
 
@@ -167,4 +167,4 @@ his boat westward again, and claimed the coastline of the large landmass further
 of the jungle island. This landmass also had a large area of sparse jungle on it.
 
 # Mangrovepox Outbreak in No
-to be written…
+Please see: [[Mangrovepox]]
