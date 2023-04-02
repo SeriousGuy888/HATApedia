@@ -46,6 +46,8 @@ decided to claim it first.
 
 ![[Toby's Base 2023-03-31 From Above.png]]
 
+![[Pasted image 20230402161202.png]]
+
 ## Toby's Cave
 Toby's cave is located directly below the base above it.
 
