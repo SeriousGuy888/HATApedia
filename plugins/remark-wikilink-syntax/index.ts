@@ -1,6 +1,7 @@
 import { findAndReplace } from "mdast-util-find-and-replace"
 import { Image, Link } from "mdast"
 import type { Plugin, Transformer } from "unified"
+import { sluggify } from "../../utils/sluggify"
 
 interface Options {
   existingPageNames: string[]
@@ -46,7 +47,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
 
         return imgNode
       } else {
-        const href = linkAddress.toLowerCase()
+        const href = sluggify(linkAddress)
 
         const linkNode: Link = {
           type: "link",
