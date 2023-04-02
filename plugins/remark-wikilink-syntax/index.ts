@@ -23,8 +23,11 @@ const extractLinkElements = (wikilink: string) => {
 
   const isImage = !!match[1]
   const pageName = match[2]
-  const headingAnchor = githubAnchorSlug(match[3] || "")
-  const altText = match[4] || pageName // if no alt text (link text), use page name
+  
+  const headingText = match[3]
+  const headingAnchor = githubAnchorSlug(headingText || "")
+  const altText = // if no alt text (link text), use page name
+    match[4] || headingAnchor ? `${pageName}#${headingText}` : pageName
 
   return { isImage, pageName, altText, headingAnchor }
 }
