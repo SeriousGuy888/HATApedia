@@ -37,3 +37,27 @@ dispute with Remy. Remy had intended to claim this island, but forgotten, and To
 decided to claim it first.
 
 [[Remy Republic|More info in the Remy Republic article]]
+
+# Structures
+
+## Toby's Base
+
+![[Toby's Base 2023-03-31 From Tree Level.png|Toby's base under construction]]
+
+![[Toby's Base 2023-03-31 From Above.png]]
+
+## Toby's Cave
+Toby's cave is located directly below the base above it.
+
+![[Toby's Cave 2023-03-31.png|The main chamber of the cave]]
+
+![[Toby's semiautomatic crop farms.png|Toby's auto wheat and carrot farm]]
+
+# Fortuguese Rebellion
+
+![[Authentic Fortuguese Army.png]]
+[News report on the start of the rebellion.](https://www.youtube.com/watch?v=m9Mk31BjK-Q)
+
+Led by [[Che Forguera]], the Fortuguese rebellion is a rebellion of frogs in Tobytopia.
+
+The rebellion has not been acknowledged by [[Toby]] at all, as he has been too busy building a large DVD player.

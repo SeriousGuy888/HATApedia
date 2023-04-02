@@ -6,4 +6,5 @@ image: /images/portraits/toby.png
 
 ## Table of Contents
 
-# TOBuy
+# Toby's Base
+Toby lives in [[Tobytopia]].
