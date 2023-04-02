@@ -29,14 +29,14 @@ Holden since Holden, a Tobytopian, planted the trees.
 When the conflict was resolved, it was agreed that the Remy Republic would own the area,
 but Holden would be awarded with the title of Founder of New Mangrovia.
 
-[[Remy Republic|More info in the Remy Republic article]]
+[[Remy Republic#The Great Mangrove War|More info in the Remy Republic article]]
 
 ## Unnamed Jungle Island
 This island, which is currently under Tobytopian sovereignty, was once part of a
 dispute with Remy. Remy had intended to claim this island, but forgotten, and Toby
 decided to claim it first.
 
-[[Remy Republic|More info in the Remy Republic article]]
+[[Remy Republic#Jungle Island Incident|More info in the Remy Republic article]]
 
 # Structures
 
