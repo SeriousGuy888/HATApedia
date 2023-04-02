@@ -7,18 +7,13 @@ import { generateArticleSlugs, slugsFile } from "./generateArticleSlugs"
 
 export interface Article {
   slug: string
-  content: string
-  title: string
-  nation?: NationInfoCardData
-  [key: string]: any
-}
-
-export interface ArticlePreview {
-  slug: string
   title: string
   subtitle?: string
   image?: string
-  [key: string]: any
+}
+export interface ArticleFull extends Article {
+  content: string
+  nation?: NationInfoCardData
 }
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
@@ -64,16 +59,14 @@ const getArticleFileContent = async (slug: string) => {
   return fs.readFile(filePath, "utf8")
 }
 
-const handleUndefinedKeys = <T extends Article | ArticlePreview>(obj: T) => {
-  const { title, subtitle, image, nation } = obj
+const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
+  const { title, subtitle } = obj
   if (!title) {
-    obj.title = "Untitled"
+    // If no title specified, use the filename without the extension as title
+    obj.title = (await getSlugMap())[obj.slug].replace(/\.md$/, "")
   }
   if (!subtitle) {
     delete obj.subtitle
-  }
-  if (!image) {
-    obj.image = nation?.banner ?? null
   }
 
   return obj
@@ -85,9 +78,9 @@ export const getArticle = async (slug: string) => {
     return null
   }
   const { data, content } = matter(fileContents)
-  const { title = "Untitled" } = data
+  const { title } = data
 
-  return handleUndefinedKeys({
+  return await handleUndefinedKeys({
     ...data,
     title,
     slug,
@@ -101,9 +94,9 @@ export const getArticlePreview = async (slug: string) => {
     return null
   }
   const { data } = matter(fileContents)
-  const { title = "Untitled", subtitle, nation } = data
+  const { title, subtitle, nation } = data
 
-  return handleUndefinedKeys({
+  return await handleUndefinedKeys({
     slug,
     title,
     subtitle,

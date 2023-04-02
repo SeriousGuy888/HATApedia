@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import useSWR from "swr"
-import { ArticlePreview } from "../../lib/articlesApi"
+import { Article } from "../../lib/articlesApi"
 import LinkCard from "../Search/LinkCard"
 
 const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
@@ -11,7 +11,7 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
     return <p>Failed to get article {slug}.</p>
   }
 
-  const article = data as ArticlePreview
+  const article = data as Article
 
   return (
     <LinkCard

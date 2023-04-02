@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { Article, getAllSlugs, getArticle } from "../../lib/articlesApi"
+import { ArticleFull, getAllSlugs, getArticle } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 
@@ -21,7 +21,7 @@ import rehypeWrap from "rehype-wrap-all"
 import strip from "strip-markdown"
 
 interface Props {
-  article: Article
+  article: ArticleFull
   html: string
   excerpt: string
 }
