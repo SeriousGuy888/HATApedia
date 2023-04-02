@@ -27,7 +27,10 @@ let slugMap: null | { [slug: string]: string } = null
 const getSlugMap = async () => {
   if (!slugMap) {
     try {
-      await fs.stat(slugsFile)
+      const fileStats = await fs.stat(slugsFile)
+      if (Date.now() - fileStats.mtime.valueOf() > 1000 * 60 * 60 * 24) {
+        slugMap = await generateArticleSlugs()
+      }
     } catch (e) {
       slugMap = await generateArticleSlugs()
     }
@@ -72,7 +75,7 @@ const handleUndefinedKeys = <T extends Article | ArticlePreview>(obj: T) => {
   if (!image) {
     obj.image = nation?.banner ?? null
   }
-  
+
   return obj
 }
 
