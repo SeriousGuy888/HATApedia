@@ -2,9 +2,31 @@ import { findAndReplace } from "mdast-util-find-and-replace"
 import { Image, Link } from "mdast"
 import type { Plugin, Transformer } from "unified"
 import { sluggify } from "../../utils/sluggify"
+import { slug as githubAnchorSlug } from "github-slugger"
 
 interface Options {
   existingPageNames: string[]
+}
+
+const extractLinkElements = (wikilink: string) => {
+  // Capture groups:
+  //   1. ! at start of link, indicating an image (optional)
+  //   2. page name/image name
+  //   3. anchor (optional)
+  //   4. link text/alt text (optional)
+  const captureGroups = /(!)?\[\[([\w\s]+)(?:#([\w\s]+))?(?:\|([\w\s]+))?\]\]/
+
+  const match = wikilink.match(captureGroups)
+  if (!match) {
+    return null
+  }
+
+  const isImage = !!match[1]
+  const pageName = match[2]
+  const headingAnchor = githubAnchorSlug(match[3] || "")
+  const altText = match[4] || pageName // if no alt text (link text), use page name
+
+  return { isImage, pageName, altText, headingAnchor }
 }
 
 const wikilinkSyntax: Plugin<[Options?]> = (
@@ -14,29 +36,23 @@ const wikilinkSyntax: Plugin<[Options?]> = (
 ): Transformer => {
   return async (tree: any) => {
     // regex to find wikilinks
-    // [[page name|link text]] or ![[image name|alt text]]
+    // Optional exclamation at start + [[something between brackets]]
     const linkRegex = /!?\[\[.*?\]\]/g
 
-    findAndReplace(tree, linkRegex, (match: string) => {
-      let isImage = false
-
-      // if starts with !, it's an image. remove the !
-      if (match.startsWith("!")) {
-        isImage = true
-        match = match.substring(1)
+    findAndReplace(tree, linkRegex, (wikilink: string) => {
+      const linkElems = extractLinkElements(wikilink)
+      if (!linkElems) {
+        return null
       }
-
-      // remove the [[ and ]] from the match
-      const bracketContent = match.substring(2, match.length - 2)
-
-      // get the [page name/image name] and [link text/alt text]
-      let [linkAddress, altText] = bracketContent.split("|")
-      if (!altText) {
-        altText = linkAddress
-      }
+      const { isImage, pageName, altText, headingAnchor } = linkElems
 
       if (isImage) {
-        const src = `/api/images/${linkAddress}`
+        const src = `/api/images/${pageName}`
+        if (headingAnchor) {
+          console.warn(
+            `Heading anchors are not supported for images: ${wikilink}. Ignoring anchor.`,
+          )
+        }
 
         const imgNode: Image = {
           type: "image",
@@ -47,7 +63,8 @@ const wikilinkSyntax: Plugin<[Options?]> = (
 
         return imgNode
       } else {
-        const href = sluggify(linkAddress)
+        const pageSlug = sluggify(pageName)
+        const href = `${pageSlug}${headingAnchor ? "#" + headingAnchor : ""}`
 
         const linkNode: Link = {
           type: "link",
@@ -61,7 +78,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
           data: {
             hProperties: {
               // make link red if page doesn't exist
-              className: options.existingPageNames.includes(href)
+              className: options.existingPageNames.includes(pageSlug)
                 ? ""
                 : "redLink",
             },
