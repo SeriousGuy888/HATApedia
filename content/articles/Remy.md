@@ -15,7 +15,7 @@ He is most well known for being the Glorious Leader of the [Remy Republic](Remy%
 ## (2022-12 to present): Glorious Leader of the Remy Republic
 woggi
 
-## (2023-01-22 to 2023-01-22): Leader of Tobytopia
+## (2023-01-22 to 2023-01-22): Interim Dictator of Tobytopia
 
 ### Catalyst
 The reason that Toby was perceived as missing was that Toby had slipped away and abandoned Remy during their date in Billzoplace. Remy was reportedly planning to kidnap Toby after their date was finished, but was unsuccessful as Toby noticed the red flags and escaped before this could happen.
