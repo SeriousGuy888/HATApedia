@@ -80,7 +80,7 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 
 ## Treaty of No (2022)
 
-The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[Billzoplace]]. As this was during Remy's absence, it was Remyforg who represented the Remy Republic.
+The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[Billzoplace]]. As this was during Remy's absence, it was [[Remyforg]] who represented the Remy Republic.
 
 The treaty stipulates that Billzoplace would be allowed to export wheat from the Remy Republic
 in exchange for Billzoplace funding the expansion of the Remy Republic's wheat fields.
@@ -123,48 +123,29 @@ trembled in fear and retreated outwards.
 ## Western Hawainot Offensive
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 
-The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]]
-and swiftly invaded the western islands of the Hawainot Archipelago, collecting
-jungle wood and cocoa beans so that he can finally begin producing his pogstries.
+The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
 
-The military operation unfortunately was in fact very rushed in its planning and
-the logistics were not well prepared for. The food shipments did not arrive and
-Remy was forced to live off the land for the duration of the operation.
+The military operation unfortunately was in fact very rushed in its planning and the logistics were not well prepared for. The food shipments did not arrive and Remy was forced to live off the land for the duration of the operation.
 
 ## Acquisition of Southern No
-After planting his flag in Western Hawainot and acquiring his so coveted cocoa beans,
-Remy also claimed Southern No. This is an area of land that was originally labelled as
-being part of No on the first worldmap released, but tragically, in reality, lay outside
-the confines of the 1000 block worldborder.
+After planting his flag in Western Hawainot and acquiring his so coveted cocoa beans, Remy also claimed Southern No. This is an area of land that was originally labelled as being part of No on the first worldmap released, but tragically, in reality, lay outside the confines of the 1000 block worldborder.
 
-Toby from Tobytopia had threatened to claim Southern No before Remy could during the
-days leading up to the Border Disorder, but these threats did not come to fruition.
+[[Toby|Toby from Tobytopia]] had threatened to claim Southern No before Remy could during the days leading up to the Border Disorder, but these threats did not come to fruition.
 
 ## Jungle Island Incident
 
 ![[jungle_island_incident.png|Map of disputed jungle island]]
 
-Remy had a dispute with Tobytopia over an island of sparse jungle to the west of Hawainot.
-Remy had previously intended to claim this island, but had forgotten to do so in the commotion
-of the Border Disorder. This island had a waterfall, and Remy had intended to turn the
-island into a top tier resort due to its very unique and beautiful terrain.
+Remy had a dispute with Tobytopia over an island of sparse jungle to the west of Hawainot. Remy had previously intended to claim this island, but had forgotten to do so in the commotion of the Border Disorder. This island had a waterfall, and Remy had intended to turn the island into a top tier resort due to its very unique and beautiful terrain.
 
-Unfortunately for the Glorious Leader, Toby from Tobytopia found the island and claimed it
-before Remy could do so. Toby planted the Tobytopian banner upon the northern side of the
-island, cementing his claim before Remy could get there with his own banners.
+Unfortunately for the Glorious Leader, Toby from Tobytopia found the island and claimed it before Remy could do so. Toby planted the Tobytopian banner upon the northern side of the island, cementing his claim before Remy could get there with his own banners.
 
-Remy attempted an amphibious assault on the island, arriving in his oak boat. Unfortunately,
-the Remyan military forces under General Fletcher Quadratic were tied down doing paperwork
-after the Western Hawainot offensive. This meant that the Remyan invasion force was extremely
-understaffed, with only the Glorious Leader himself participating in the invasion.
+Remy attempted an amphibious assault on the island, arriving in his oak boat. Unfortunately, the Remyan military forces under General [[Fletcher Quadratic]] were tied down doing paperwork after the Western Hawainot offensive. This meant that the Remyan invasion force was extremely understaffed, with only the Glorious Leader himself participating in the invasion.
 
-The invasion was repulsed by the defending Tobytopian forces. The Glorious Leader then made
-a glorious retreat back to Hawainot after his glorious defeat on the jungle island.
+The invasion was repulsed by the defending Tobytopian forces. The Glorious Leader then made a glorious retreat back to Hawainot after his glorious defeat on the glorious jungle island.
 
 ## Claiming of the Jungle Mainland
-After the glorious defeat on the jungle island, and on the suggestion of Toby, Remy rowed
-his boat westward again, and claimed the coastline of the large landmass further to the west
-of the jungle island. This landmass also had a large area of sparse jungle on it.
+After the glorious defeat on the jungle island, and on the suggestion of Toby, Remy rowed his boat westward again, and claimed the coastline of the large landmass further to the west of the jungle island. This landmass also had a large area of sparse jungle on it.
 
 # Mangrovepox Outbreak in No
-Please see: [[Mangrovepox]]
+*Please see: [[Mangrovepox]]*
