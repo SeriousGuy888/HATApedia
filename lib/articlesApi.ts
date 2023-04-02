@@ -80,12 +80,12 @@ export const getArticle = async (slug: string) => {
   const { data, content } = matter(fileContents)
   const { title } = data
 
-  return await handleUndefinedKeys({
+  return (await handleUndefinedKeys({
     ...data,
     title,
     slug,
     content,
-  })
+  })) as ArticleFull
 }
 
 export const getArticlePreview = async (slug: string) => {
@@ -96,10 +96,10 @@ export const getArticlePreview = async (slug: string) => {
   const { data } = matter(fileContents)
   const { title, subtitle, nation } = data
 
-  return await handleUndefinedKeys({
+  return (await handleUndefinedKeys({
     slug,
     title,
     subtitle,
     image: data?.image ?? nation?.banner ?? null,
-  })
+  })) as Article
 }
