@@ -17,12 +17,9 @@ and issues in a peaceful manner on the server.
 
 # Inception
 
-The United Nations was an idea conceived by [[Remy]], the Glorious Leader of the
-[[Remy Republic|Remy Republic]], apparently based on something similar from a so-called "dream
-world" called """""""CheezSurvNations""""""".
+The United Nations was an idea conceived by [[Remy]], the Glorious Leader of the [[Remy Republic|Remy Republic]], apparently based on something similar from a so-called "dream world" called """""""CheezSurvNations""""""".
 
-Remy came up with this idea after Arvi tried to sell him some real estate that
-[[Arvi]] had built near spawn.
+Remy came up with this idea after Arvi tried to sell him some real estate that [[Arvi]] had built near spawn.
 
 # Headquarters
 
