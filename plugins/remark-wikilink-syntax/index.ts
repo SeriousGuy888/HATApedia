@@ -14,7 +14,7 @@ const extractLinkElements = (wikilink: string) => {
   //   2. page name/image name
   //   3. anchor (optional)
   //   4. link text/alt text (optional)
-  const captureGroups = /(!)?\[\[([\w\s]+)(?:#([\w\s]+))?(?:\|([\w\s]+))?\]\]/
+  const captureGroups = /(!)?\[\[([^|#]+)(?:#([^|#]+))?(?:\|([^|#]+))?\]\]/
 
   const match = wikilink.match(captureGroups)
   if (!match) {
