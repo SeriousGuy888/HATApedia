@@ -2,8 +2,9 @@
 subtitle: Bilateral Trade Deal
 ---
 
-Date of signing: 2023-04-02
-Signatories: [[Billzoplace]], [[Remy Republic]]
+| Signing Date | Signatories                        |
+| ------------ | ---------------------------------- |
+| 2023-04-02   | [[Billzoplace]], [[Remy Republic]] | 
 
 # Original Text
 
