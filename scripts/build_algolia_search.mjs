@@ -26,9 +26,12 @@ const getAllArticles = async () => {
   const articles = contentFilePaths.map((fileName) => {
     const source = fs.readFileSync(path.join(CONTENT_PATH, fileName))
     const { content, data } = matter(source)
+
+    const title = data.title || fileName.replace(/.md$/, "")
     return {
       content,
       data,
+      title,
       slug: sluggify(fileName),
     }
   })
