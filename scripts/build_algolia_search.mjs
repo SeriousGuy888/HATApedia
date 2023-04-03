@@ -30,8 +30,7 @@ const getAllArticles = async () => {
     const title = data.title || fileName.replace(/.md$/, "")
     return {
       content,
-      data,
-      title,
+      data: { ...data, title },
       slug: sluggify(fileName),
     }
   })
