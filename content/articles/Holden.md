@@ -1,6 +1,6 @@
 ---
 title: Holden
-subtitle: Statue
+subtitle: Self-Proclaimed Ecoterrorist
 image: /images/portraits/holden.png
 ---
 
