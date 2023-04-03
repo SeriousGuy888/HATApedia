@@ -122,6 +122,7 @@ trembled in fear and retreated outwards.
 
 ## Western Hawainot Offensive
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
+[Animated map of the invasion](https://www.youtube.com/watch?v=0rIYGpypZ0k)
 
 The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
 
