@@ -4,7 +4,7 @@
     overflow-x: auto;
   }
 
-  .redLink > a {
+  :global(a.redLink) {
     color: #ef5353;
   }
 

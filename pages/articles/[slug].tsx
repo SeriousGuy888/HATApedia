@@ -90,15 +90,11 @@ export async function getStaticProps({
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: "append" })
-    .use(rehypeFormat)
     .use(rehypeWrap, {
       selector: "table",
       wrapper: `div.${styles.responsiveTable}`,
     })
-    .use(rehypeWrap, {
-      selector: "a.redLink",
-      wrapper: `span.${styles.redLink}`,
-    })
+    .use(rehypeFormat)
     .use(rehypeStringify)
     .process(article.content)
 
