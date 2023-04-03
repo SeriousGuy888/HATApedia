@@ -1,3 +1,7 @@
+---
+title: UN Meeting 2023-04-02
+subtitle: Meeting Minutes
+---
 
 ![[Pasted image 20230402192537.png]]
 
