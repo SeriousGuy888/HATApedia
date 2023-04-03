@@ -10,7 +10,7 @@ nation:
     official languages: English, French, Billzonian
 ---
 
-The Remy Republic a state that was originally founded on the southern 1000 block worldborder of the server map.
+The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
 
 ## Table of Contents
 
@@ -41,7 +41,7 @@ The territories of the Remy Republic are as follows:
 The Remy Republic government is organised as a federal parliamentary republic.
 Each province sends elected representatives to the Remyan parliament.
 
-The Parliament of the Remy Republic is a biacameral legislature, with an upper house — the *Duck Nest* — and a lower house — the *Villager Council*.
+The Parliament of the Remy Republic is a bicameral legislature, with an upper house — the *Duck Nest* — and a lower house — the *Villager Council*.
 
 ## Election
 *See also: [[remyan_election_shooting|Hawainot Shooting on Remyan Election Night]]*
@@ -52,13 +52,13 @@ The election ocurred on 2023-02-16, although a second vote for the Duck Nest con
 ### Duck Nest
 The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
 
-|                   |   Slime Ball Party (SBP)    | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
-| -----------------:|:---------------------------:|:-----------------------:|:-------------------:|
-|    **Forgsville** |         Remyforg 🏆         |     Mike MacWebster     |                     |
-|   **Scammington** |      Doug Shimadome 🏆      |   William Scamsworth    |                     |
-|            **No** |     Huck Finnisiter 🏆      |      Toby Tontory       |   Gerry Flexagon    |
-|      **Hawainot** | Glorious Leader RemyHemy 🏆 |        Jose III         |                     |
-| **New Mangrovia** |      John Nevilory 🏆       |         Jose II         |                     |
+|                   |        Slime Ball Party (SBP)         | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
+| -----------------:|:-------------------------------------:|:-----------------------:|:-------------------:|
+|    **Forgsville** |            [[Remyforg]] 🏆            |     Mike MacWebster     |                     |
+|   **Scammington** |           Doug Shimadome 🏆           |   William Scamsworth    |                     |
+|            **No** |          Huck Finnisiter 🏆           |      Toby Tontory       |   Gerry Flexagon    |
+|      **Hawainot** | Glorious Leader [[Remy\|RemyHemy]] 🏆 |        Jose III         |                     |
+| **New Mangrovia** |           John Nevilory 🏆            |         Jose II         |                     |
 
 It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[Toby]] and [[Arvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
 
