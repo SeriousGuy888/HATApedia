@@ -40,8 +40,8 @@ const SearchBar = () => {
           classNames={{
             root: "mt-8 select-none flex justify-center",
             list: "flex gap-1",
-            item: "rounded-2xl w-8 h-8 text-center text-white flex items-center [&>*]:flex-1",
-            selectedItem: "bg-blue-500",
+            item: "rounded-2xl w-8 h-8 text-center text-gray-600 dark:text-white flex items-center [&>*]:flex-1",
+            selectedItem: "bg-blue-500 text-white",
             disabledItem: "opacity-50",
             previousPageItem: "mr-4",
             nextPageItem: "ml-4",
