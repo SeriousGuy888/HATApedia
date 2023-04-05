@@ -4,15 +4,14 @@ import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
 import { ArticleFull, getAllSlugs, getArticle } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
+import ReactMarkdown from "react-markdown"
 
-import { unified } from "unified"
 import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import remarkWikilink from "../../plugins/remark-wikilink-syntax"
 import remarkToc from "remark-toc"
 import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
-import remarkRehype from "remark-rehype"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeFormat from "rehype-format"
@@ -22,11 +21,17 @@ import strip from "strip-markdown"
 
 interface Props {
   article: ArticleFull
-  html: string
+  content: string
   excerpt: string
+  allSlugs: string[]
 }
 
-const ArticlePage: NextPage<Props> = ({ article, html, excerpt }) => {
+const ArticlePage: NextPage<Props> = ({
+  article,
+  content,
+  excerpt,
+  allSlugs,
+}) => {
   return (
     <>
       <Head>
@@ -60,10 +65,58 @@ const ArticlePage: NextPage<Props> = ({ article, html, excerpt }) => {
         {article.nation && <NationInfoCard nation={article.nation} />}
         <article
           className={"prose prose-base dark:prose-invert " + styles.prose}
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        >
+          <MarkdownRenderer content={content} allSlugs={allSlugs} />
+        </article>
       </div>
     </>
+  )
+}
+
+const markdownComponents = {
+  img: (image: any) => (
+    <Image
+      src={image.src ?? ""}
+      alt={image.alt ?? ""}
+      width={700}
+      height={350}
+    />
+  ),
+}
+
+const MarkdownRenderer = ({
+  content,
+  allSlugs,
+}: {
+  content: string
+  allSlugs: string[]
+}) => {
+  return (
+    <ReactMarkdown
+      components={markdownComponents}
+      remarkPlugins={[
+        remarkParse,
+        remarkGfm,
+        [remarkWikilink, { existingPageNames: allSlugs }],
+        [remarkToc, { tight: true }],
+        remarkHtml,
+      ]}
+      rehypePlugins={[
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeWrap,
+          {
+            selector: "table",
+            wrapper: `div.${styles.responsiveTable}`,
+          },
+        ],
+        rehypeFormat,
+        rehypeStringify,
+      ]}
+    >
+      {content}
+    </ReactMarkdown>
   )
 }
 
@@ -79,24 +132,7 @@ export async function getStaticProps({
     }
   }
 
-  const allPermalinks = await getAllSlugs()
-
-  const file = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkWikilink, { existingPageNames: allPermalinks })
-    .use(remarkToc, { tight: true })
-    .use(remarkHtml)
-    .use(remarkRehype)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, { behavior: "append" })
-    .use(rehypeWrap, {
-      selector: "table",
-      wrapper: `div.${styles.responsiveTable}`,
-    })
-    .use(rehypeFormat)
-    .use(rehypeStringify)
-    .process(article.content)
+  const allSlugs = await getAllSlugs()
 
   const excerpt =
     (
@@ -112,7 +148,8 @@ export async function getStaticProps({
     props: {
       article,
       excerpt,
-      html: String(file),
+      content: article.content,
+      allSlugs,
     },
   }
 }

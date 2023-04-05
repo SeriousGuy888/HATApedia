@@ -28,6 +28,7 @@
     "react-dom": "18.2.0",
     "react-instantsearch-hooks-web": "^6.39.2",
     "react-leaflet": "^4.2.0",
+    "react-markdown": "^8.0.6",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-format": "^4.0.1",
     "rehype-slug": "^5.1.0",
