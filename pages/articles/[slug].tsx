@@ -18,6 +18,7 @@ import rehypeFormat from "rehype-format"
 import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
 import strip from "strip-markdown"
+import Link from "next/link"
 
 interface Props {
   article: ArticleFull
@@ -75,12 +76,14 @@ const ArticlePage: NextPage<Props> = ({
 
 const markdownComponents = {
   img: (image: { src?: string; alt?: string }) => (
-    <Image
-      src={image.src ?? ""}
-      alt={image.alt ?? ""}
-      width={700}
-      height={350}
-    />
+    <Link href={image.src ?? ""} target="_blank">
+      <Image
+        src={image.src ?? ""}
+        alt={image.alt ?? ""}
+        width={700}
+        height={350}
+      />
+    </Link>
   ),
 }
 
