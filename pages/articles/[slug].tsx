@@ -74,7 +74,7 @@ const ArticlePage: NextPage<Props> = ({
 }
 
 const markdownComponents = {
-  img: (image: any) => (
+  img: (image: { src?: string; alt?: string }) => (
     <Image
       src={image.src ?? ""}
       alt={image.alt ?? ""}
