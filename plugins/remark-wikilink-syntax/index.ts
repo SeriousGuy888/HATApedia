@@ -40,7 +40,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
     existingPageNames: [],
   },
 ): Transformer => {
-  return async (tree: any) => {
+  return (tree: any) => {
     // regex to find wikilinks
     // Optional exclamation at start + [[something between brackets]]
     const linkRegex = /!?\[\[.*?\]\]/g
