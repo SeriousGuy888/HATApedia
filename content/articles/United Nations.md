@@ -34,3 +34,6 @@ Remy added chairs and a table, as well as ladders to get up and down.
 ![[unhq_interior.png|Interior of the UN HQ building]]
 
 ![[unhq_portrait.png|Portrait of the first UN meeting]]
+
+# Impact
+The first ever meeting with all four nations present occurred on [[UN Meeting 2023-04-02|2023-04-02]].
