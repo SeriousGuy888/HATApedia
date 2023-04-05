@@ -75,11 +75,12 @@ const ArticlePage: NextPage<Props> = ({
 }
 
 const markdownComponents = {
-  img: (image: { src?: string; alt?: string }) => (
+  img: (image: { src?: string; alt?: string, title?: string }) => (
     <Link href={image.src ?? ""} target="_blank">
       <Image
         src={image.src ?? ""}
         alt={image.alt ?? ""}
+        title={image.title ?? ""}
         width={700}
         height={350}
       />
