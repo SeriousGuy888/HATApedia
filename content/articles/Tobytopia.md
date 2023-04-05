@@ -15,9 +15,9 @@ to the northwest of Spawn.
 
 
 # Territories
-- Swamp of Secrets (AKA Tobytopian Mangrovia)
+- [[Swamp of Secrets]] (AKA Tobytopian Mangrovia)
 - Unnamed Jungle Island
-- Tobytopian Southern Territories
+- [[Tobytopian Southern Territories]]
 
 # Territorial Disputes
 
