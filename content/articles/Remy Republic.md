@@ -47,7 +47,9 @@ The Parliament of the Remy Republic is a bicameral legislature, with an upper ho
 *See also: [[remyan_election_shooting|Hawainot Shooting on Remyan Election Night]]*
 
 ![[First_Parliament_of_the_Remy_Republic.png|Result of the election: Remy gets another term as Glorious Leader, SBP wins both houses of parliament]]
-The election ocurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day.
+The election for the Villager Council occurred and concluded on 2023-02-16.
+
+The election for the Duck Nest occurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day, 2023-02-17.
 
 ### Duck Nest
 The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
@@ -62,9 +64,10 @@ The following are the candidates who ran in the first Remy Republic election for
 
 It is worth noting that the vote was originally undecided, with the vote counts of Forgsville, New Mangrovia, and Hawainot all being tied at exactly 8 votes for the SBP and MCP each. As a result, a second vote was called a day later, and as [[Toby]] and [[Arvi]] were not able to participate in this vote<sup>[verification needed]</sup>, the SBP was able to take the victory.
 
+![[Remy Republic Duck Nest Election Result Map.png]]
+
 ### Villager Council
 The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
-
 | Province/Territory    | SBP   | MCP  | BNQ  | IND  |
 | :-------------------- | :---- | :--- | :--- | :--- |
 | Hawainot              | 95 🏆  | 5    |      |      |
@@ -75,6 +78,8 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 | Cocoa Bean Cove Terr. | 100 🏆 |      |      |      |
 | Unnamed Cave Terr.    | 39    | 20   |      | 41 🏆 |
 | Floridanot Terr.      | 70 🏆  | 30   |      |      |
+
+![[Remy Republic Villager Council Election Result Map.png]]
 
 # Diplomacy
 
