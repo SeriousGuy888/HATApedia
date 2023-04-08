@@ -19,6 +19,8 @@ The Remy Republic a state that was originally founded by [[Remy]] on the souther
 
 The Remy Republic is subdivided into provinces and territories.
 
+![[Provinces and Territories of the Remy Republic 2023-02-15.png]]
+
 ## Provinces
 Provinces in the Remy Republic are full parts of the country, and they are included and represented in the Duck Nest, the upper house of the Remyan legislature.
 
@@ -136,7 +138,7 @@ trembled in fear and retreated outwards.
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 [Animated map of the invasion](https://www.youtube.com/watch?v=0rIYGpypZ0k)
 
-The Remy Republic initiated a military operation led by General [[fletcher_quadratic|Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
+The Remy Republic initiated a military operation led by General [[Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
 
 The military operation unfortunately was in fact very rushed in its planning and the logistics were not well prepared for. The food shipments did not arrive and Remy was forced to live off the land for the duration of the operation.
 
