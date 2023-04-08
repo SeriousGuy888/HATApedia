@@ -84,13 +84,12 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 # Diplomacy
 
 ## Treaty of No (2022)
+*Main Article: [[Treaty of No (2022)]]*
 
-The *Treaty of No (2022)* is a treaty signed on 2022-12-25 between the Remy Republic and [[Billzoplace]]. As this was during Remy's absence, it was [[Remyforg]] who represented the Remy Republic.
-
-The treaty stipulates that Billzoplace would be allowed to export wheat from the Remy Republic
-in exchange for Billzoplace funding the expansion of the Remy Republic's wheat fields.
+The *Treaty of No (2022)* is a trade deal signed with [[Billzoplace]].
 
 ## Treaty of No (2023)
+*Main Article: [[Treaty of No (2023)]]*
 
 The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic free access to Billzoshoom's slime farm beneath the newly constructed Limedye Oil Rig.
 
