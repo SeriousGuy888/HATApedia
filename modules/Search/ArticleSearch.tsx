@@ -9,7 +9,6 @@ import {
   SearchBox,
   Snippet,
 } from "react-instantsearch-hooks-web"
-import ArticleLink from "../ArticleLink/ArticleLink"
 import LinkCard from "./LinkCard"
 
 const SearchBar = () => {
