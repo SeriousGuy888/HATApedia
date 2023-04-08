@@ -25,3 +25,11 @@ The architecture style of Billzoplace City is largely based on that of the distr
 
 ## Subway Station
 The subway station in Billzoplace City is part of the [[Hata Railways]], connected to Sheapland station. Riders may tap their Hocuspocus Card in order to pay at the turnstiles.
+
+# Diplomacy
+
+## Remy Republic
+Billzoplace has signed the following treaties/agreements with the [[Remy Republic]].
+- [[Treaty of No (2022)]]
+- [[Treaty of No (2023)]]
+- [[Remy Sea Trade Bloc Agreement]]
