@@ -75,17 +75,35 @@ const ArticlePage: NextPage<Props> = ({
 }
 
 const markdownComponents = {
-  img: (image: { src?: string; alt?: string, title?: string }) => (
-    <Link href={image.src ?? ""} target="_blank">
-      <Image
+  img: (image: {
+    src?: string
+    alt?: string
+    title?: string
+    className?: string
+  }) => {
+    if (image.className?.split(" ").includes("wikilink-image")) {
+      return (
+        <Link href={image.src ?? ""} target="_blank">
+          <Image
+            src={image.src ?? ""}
+            alt={image.alt ?? ""}
+            title={image.title ?? ""}
+            width={700}
+            height={350}
+          />
+        </Link>
+      )
+    }
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
         src={image.src ?? ""}
         alt={image.alt ?? ""}
         title={image.title ?? ""}
-        width={700}
-        height={350}
-      />
-    </Link>
-  ),
+        className={image.className ?? ""}
+      ></img>
+    )
+  },
 }
 
 const MarkdownRenderer = ({
@@ -98,6 +116,7 @@ const MarkdownRenderer = ({
   return (
     <ReactMarkdown
       components={markdownComponents}
+      skipHtml={false}
       remarkPlugins={[
         remarkParse,
         remarkGfm,

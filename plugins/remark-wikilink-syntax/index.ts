@@ -65,6 +65,11 @@ const wikilinkSyntax: Plugin<[Options?]> = (
           url: src,
           alt: altText,
           title: altText,
+          data: {
+            hProperties: {
+              className: "wikilink-image",
+            },
+          },
         }
 
         return imgNode
