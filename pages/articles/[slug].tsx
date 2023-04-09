@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { Article, getAllSlugs } from "../../lib/articlesApi"
+import { Article, getAllSlugs, getArticle } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 
@@ -11,7 +11,6 @@ import { MDXRemote } from "next-mdx-remote"
 import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import strip from "strip-markdown"
-import { getFileBySlug } from "../../lib/mdx"
 import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 
 interface Props {
@@ -73,7 +72,7 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = await getFileBySlug(slug)
+  const article = await getArticle(slug)
   if (!article) {
     return {
       notFound: true,
@@ -85,7 +84,7 @@ export async function getStaticProps({
       await remark()
         .use(remarkGfm)
         .use(strip)
-        .process(article.mdxSource.compiledSource.slice(0, 197))
+        .process(article.compiledSource.slice(0, 197))
     ).value
       .toString()
       .replace(/\n/g, " ") + "..."
@@ -93,7 +92,7 @@ export async function getStaticProps({
   return {
     props: {
       excerpt,
-      mdxSource: article.mdxSource,
+      mdxSource: article,
     },
   }
 }

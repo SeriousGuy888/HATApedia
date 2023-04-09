@@ -5,6 +5,19 @@ import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 import { sluggify } from "../utils/sluggify.js"
 import { generateArticleSlugs, slugsFile } from "./generateArticleSlugs"
 
+import { serialize } from "next-mdx-remote/serialize"
+
+import remarkGfm from "remark-gfm"
+import remarkWikilink from "../plugins/remark-wikilink-syntax"
+import remarkToc from "remark-toc"
+import remarkParse from "remark-parse"
+import remarkHtml from "remark-html"
+import rehypeSlug from "rehype-slug"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeFormat from "rehype-format"
+import rehypeStringify from "rehype-stringify"
+import rehypeWrap from "rehype-wrap-all"
+
 export interface Article {
   slug: string
   title: string
@@ -49,7 +62,7 @@ export const getAllSlugs = async () => {
   return Object.keys(await getSlugMap())
 }
 
-export const getArticleFileContent = async (slug: string) => {
+const getArticleFileContent = async (slug: string) => {
   const slugMap = await getSlugMap()
   const fileName = slugMap?.[slug]
   const filePath = path.join(articlesDir, fileName)
@@ -63,7 +76,7 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   const { title, subtitle } = obj
   if (!title) {
     // If no title specified, use the filename without the extension as title
-    obj.title = (await getSlugMap())[obj.slug].replace(/\.md$/, "")
+    obj.title = (await getSlugMap())[obj.slug].replace(/\.mdx?$/, "")
   }
   if (!subtitle) {
     delete obj.subtitle
@@ -72,20 +85,47 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   return obj
 }
 
-export const getArticle = async (slug: string) => {
-  const fileContents = await getArticleFileContent(slug)
-  if (!fileContents) {
+export async function getArticle(slug: string) {
+  const source = await getArticleFileContent(slug)
+  if (!source) {
     return null
   }
-  const { data, content } = matter(fileContents)
-  const { title } = data
 
-  return (await handleUndefinedKeys({
+  const allSlugs = await getAllSlugs()
+
+  const { content, data } = matter(source)
+  const frontMatter = (await handleUndefinedKeys({
     ...data,
-    title,
     slug,
-    content,
-  })) as ArticleFull
+  } as any)) as any
+
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkParse,
+        remarkGfm,
+        [remarkWikilink, { existingPageNames: allSlugs }],
+        [remarkToc, { tight: true }],
+        remarkHtml,
+      ],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeWrap,
+          {
+            selector: "table",
+            wrapper: `div.responsive-table`,
+          },
+        ],
+        rehypeFormat,
+        rehypeStringify,
+      ],
+    },
+    scope: frontMatter,
+  })
+
+  return mdxSource
 }
 
 export const getArticlePreview = async (slug: string) => {
