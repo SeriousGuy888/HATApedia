@@ -10,10 +10,10 @@ export interface Article {
   title: string
   subtitle?: string
   image?: string
+  nation?: NationInfoCardData
 }
 export interface ArticleFull extends Article {
   content: string
-  nation?: NationInfoCardData
 }
 
 export const articlesDir = path.join(process.cwd(), "/content/articles/")

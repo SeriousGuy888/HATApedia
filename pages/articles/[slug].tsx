@@ -1,10 +1,9 @@
 import Head from "next/head"
 import Image from "next/image"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { getAllSlugs } from "../../lib/articlesApi"
+import { Article, getAllSlugs } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
-import ReactMarkdown from "react-markdown"
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
@@ -21,33 +20,34 @@ interface Props {
 }
 
 const ArticlePage: NextPage<Props> = ({ mdxSource, excerpt }) => {
-  const data = mdxSource.scope
+  const data = mdxSource.scope as unknown as Article
+
   return (
     <>
       <Head>
         <title>{`${data.title} - HATApedia`}</title>
-        <meta property="og:title" content={data.title as string} />
+        <meta property="og:title" content={data.title} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
-        {(data.image as string) && (
+        {(data.image) && (
           <meta
             property="og:image"
-            content={`https://hatapedia.vercel.app${data.image as string}`}
+            content={`https://hatapedia.vercel.app${data.image}`}
           />
         )}
       </Head>
       <div className="max-w-[95vw] md:max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start flex justify-between">
           <div className="">
-            <h1 className="text-5xl font-bold mb-2">{data.title as string}</h1>
+            <h1 className="text-5xl font-bold mb-2">{data.title}</h1>
             <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
-              {data.subtitle as string}
+              {data.subtitle}
             </h2>
           </div>
-          {(data.image as any) && !data.nation && (
+          {data.image && !data.nation && (
             <div className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
               <Image
-                src={data.image as string}
+                src={data.image}
                 alt=""
                 width={100}
                 height={100}
