@@ -6,6 +6,10 @@ import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 import ReactMarkdown from "react-markdown"
 
+import type { MDXRemoteSerializeResult } from "next-mdx-remote"
+import { MDXRemote } from "next-mdx-remote"
+import { serialize } from "next-mdx-remote/serialize"
+
 import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import remarkWikilink from "../../plugins/remark-wikilink-syntax"
@@ -22,17 +26,11 @@ import Link from "next/link"
 
 interface Props {
   article: ArticleFull
-  content: string
+  source: MDXRemoteSerializeResult
   excerpt: string
-  allSlugs: string[]
 }
 
-const ArticlePage: NextPage<Props> = ({
-  article,
-  content,
-  excerpt,
-  allSlugs,
-}) => {
+const ArticlePage: NextPage<Props> = ({ article, source, excerpt }) => {
   return (
     <>
       <Head>
@@ -67,81 +65,44 @@ const ArticlePage: NextPage<Props> = ({
         <article
           className={"prose prose-base dark:prose-invert " + styles.prose}
         >
-          <MarkdownRenderer content={content} allSlugs={allSlugs} />
+          <MDXRemote {...source} />
         </article>
       </div>
     </>
   )
 }
 
-const markdownComponents = {
-  img: (image: {
-    src?: string
-    alt?: string
-    title?: string
-    className?: string
-  }) => {
-    if (image.className?.split(" ").includes("wikilink-image")) {
-      return (
-        <Link href={image.src ?? ""} target="_blank">
-          <Image
-            src={image.src ?? ""}
-            alt={image.alt ?? ""}
-            title={image.title ?? ""}
-            width={700}
-            height={350}
-          />
-        </Link>
-      )
-    }
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={image.src ?? ""}
-        alt={image.alt ?? ""}
-        title={image.title ?? ""}
-        className={image.className ?? ""}
-      ></img>
-    )
-  },
-}
-
-const MarkdownRenderer = ({
-  content,
-  allSlugs,
-}: {
-  content: string
-  allSlugs: string[]
-}) => {
-  return (
-    <ReactMarkdown
-      components={markdownComponents}
-      skipHtml={false}
-      remarkPlugins={[
-        remarkParse,
-        remarkGfm,
-        [remarkWikilink, { existingPageNames: allSlugs }],
-        [remarkToc, { tight: true }],
-        remarkHtml,
-      ]}
-      rehypePlugins={[
-        rehypeSlug,
-        rehypeAutolinkHeadings,
-        [
-          rehypeWrap,
-          {
-            selector: "table",
-            wrapper: `div.${styles.responsiveTable}`,
-          },
-        ],
-        rehypeFormat,
-        rehypeStringify,
-      ]}
-    >
-      {content}
-    </ReactMarkdown>
-  )
-}
+// const markdownComponents = {
+//   img: (image: {
+//     src?: string
+//     alt?: string
+//     title?: string
+//     className?: string
+//   }) => {
+//     if (image.className?.split(" ").includes("wikilink-image")) {
+//       return (
+//         <Link href={image.src ?? ""} target="_blank">
+//           <Image
+//             src={image.src ?? ""}
+//             alt={image.alt ?? ""}
+//             title={image.title ?? ""}
+//             width={700}
+//             height={350}
+//           />
+//         </Link>
+//       )
+//     }
+//     return (
+//       // eslint-disable-next-line @next/next/no-img-element
+//       <img
+//         src={image.src ?? ""}
+//         alt={image.alt ?? ""}
+//         title={image.title ?? ""}
+//         className={image.className ?? ""}
+//       ></img>
+//     )
+//   },
+// }
 
 export async function getStaticProps({
   params: { slug },
@@ -155,8 +116,6 @@ export async function getStaticProps({
     }
   }
 
-  const allSlugs = await getAllSlugs()
-
   const excerpt =
     (
       await remark()
@@ -167,12 +126,37 @@ export async function getStaticProps({
       .toString()
       .replace(/\n/g, " ") + "..."
 
+  const allSlugs = await getAllSlugs()
+  const mdxSource = await serialize(article.content, {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkParse,
+        remarkGfm,
+        [remarkWikilink, { existingPageNames: allSlugs }],
+        [remarkToc, { tight: true }],
+        remarkHtml,
+      ],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeWrap,
+          {
+            selector: "table",
+            wrapper: `div.${styles.responsiveTable}`,
+          },
+        ],
+        rehypeFormat,
+        rehypeStringify,
+      ],
+    },
+  })
+
   return {
     props: {
       article,
       excerpt,
-      content: article.content,
-      allSlugs,
+      source: mdxSource,
     },
   }
 }
