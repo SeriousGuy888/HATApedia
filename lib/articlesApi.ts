@@ -16,7 +16,7 @@ export interface ArticleFull extends Article {
   nation?: NationInfoCardData
 }
 
-const articlesDir = path.join(process.cwd(), "/content/articles/")
+export const articlesDir = path.join(process.cwd(), "/content/articles/")
 
 let slugMap: null | { [slug: string]: string } = null
 const getSlugMap = async () => {
@@ -49,7 +49,7 @@ export const getAllSlugs = async () => {
   return Object.keys(await getSlugMap())
 }
 
-const getArticleFileContent = async (slug: string) => {
+export const getArticleFileContent = async (slug: string) => {
   const slugMap = await getSlugMap()
   const fileName = slugMap?.[slug]
   const filePath = path.join(articlesDir, fileName)

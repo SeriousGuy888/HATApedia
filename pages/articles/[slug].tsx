@@ -1,115 +1,79 @@
 import Head from "next/head"
 import Image from "next/image"
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { ArticleFull, getAllSlugs, getArticle } from "../../lib/articlesApi"
+import { getAllSlugs } from "../../lib/articlesApi"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 import ReactMarkdown from "react-markdown"
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
-import { serialize } from "next-mdx-remote/serialize"
 
 import { remark } from "remark"
 import remarkGfm from "remark-gfm"
-import remarkWikilink from "../../plugins/remark-wikilink-syntax"
-import remarkToc from "remark-toc"
-import remarkParse from "remark-parse"
-import remarkHtml from "remark-html"
-import rehypeSlug from "rehype-slug"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
-import rehypeFormat from "rehype-format"
-import rehypeStringify from "rehype-stringify"
-import rehypeWrap from "rehype-wrap-all"
 import strip from "strip-markdown"
-import Link from "next/link"
+import { getFileBySlug } from "../../lib/mdx"
+import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 
 interface Props {
-  article: ArticleFull
-  source: MDXRemoteSerializeResult
+  mdxSource: MDXRemoteSerializeResult
   excerpt: string
 }
 
-const ArticlePage: NextPage<Props> = ({ article, source, excerpt }) => {
+const ArticlePage: NextPage<Props> = ({ mdxSource, excerpt }) => {
+  const data = mdxSource.scope
   return (
     <>
       <Head>
-        <title>{`${article.title} - HATApedia`}</title>
-        <meta property="og:title" content={article.title} />
+        <title>{`${data.title} - HATApedia`}</title>
+        <meta property="og:title" content={data.title as string} />
         <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
-        {article.image && (
+        {(data.image as string) && (
           <meta
             property="og:image"
-            content={"https://hatapedia.vercel.app" + article.image}
+            content={`https://hatapedia.vercel.app${data.image as string}`}
           />
         )}
       </Head>
       <div className="max-w-[95vw] md:max-w-prose w-full h-fit p-8">
         <div className="flex-1 self-start flex justify-between">
           <div className="">
-            <h1 className="text-5xl font-bold mb-2">{article.title}</h1>
+            <h1 className="text-5xl font-bold mb-2">{data.title as string}</h1>
             <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
-              {article.subtitle}
+              {data.subtitle as string}
             </h2>
           </div>
-          {article.image && !article.nation && (
+          {(data.image as any) && !data.nation && (
             <div className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
-              <Image src={article.image} alt="" width={100} height={100} />
+              <Image
+                src={data.image as string}
+                alt=""
+                width={100}
+                height={100}
+              />
             </div>
           )}
         </div>
         <hr className="my-6 border-t-[1] border-gray-200 dark:border-gray-700" />
 
-        {article.nation && <NationInfoCard nation={article.nation} />}
+        {data.nation as any && <NationInfoCard nation={data.nation as any} />}
         <article
           className={"prose prose-base dark:prose-invert " + styles.prose}
         >
-          <MDXRemote {...source} />
+          <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>
       </div>
     </>
   )
 }
 
-// const markdownComponents = {
-//   img: (image: {
-//     src?: string
-//     alt?: string
-//     title?: string
-//     className?: string
-//   }) => {
-//     if (image.className?.split(" ").includes("wikilink-image")) {
-//       return (
-//         <Link href={image.src ?? ""} target="_blank">
-//           <Image
-//             src={image.src ?? ""}
-//             alt={image.alt ?? ""}
-//             title={image.title ?? ""}
-//             width={700}
-//             height={350}
-//           />
-//         </Link>
-//       )
-//     }
-//     return (
-//       // eslint-disable-next-line @next/next/no-img-element
-//       <img
-//         src={image.src ?? ""}
-//         alt={image.alt ?? ""}
-//         title={image.title ?? ""}
-//         className={image.className ?? ""}
-//       ></img>
-//     )
-//   },
-// }
-
 export async function getStaticProps({
   params: { slug },
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
-  const article = await getArticle(slug)
+  const article = await getFileBySlug(slug)
   if (!article) {
     return {
       notFound: true,
@@ -121,42 +85,15 @@ export async function getStaticProps({
       await remark()
         .use(remarkGfm)
         .use(strip)
-        .process(article.content.slice(0, 197))
+        .process(article.mdxSource.compiledSource.slice(0, 197))
     ).value
       .toString()
       .replace(/\n/g, " ") + "..."
 
-  const allSlugs = await getAllSlugs()
-  const mdxSource = await serialize(article.content, {
-    mdxOptions: {
-      remarkPlugins: [
-        remarkParse,
-        remarkGfm,
-        [remarkWikilink, { existingPageNames: allSlugs }],
-        [remarkToc, { tight: true }],
-        remarkHtml,
-      ],
-      rehypePlugins: [
-        rehypeSlug,
-        rehypeAutolinkHeadings,
-        [
-          rehypeWrap,
-          {
-            selector: "table",
-            wrapper: `div.${styles.responsiveTable}`,
-          },
-        ],
-        rehypeFormat,
-        rehypeStringify,
-      ],
-    },
-  })
-
   return {
     props: {
-      article,
       excerpt,
-      source: mdxSource,
+      mdxSource: article.mdxSource,
     },
   }
 }

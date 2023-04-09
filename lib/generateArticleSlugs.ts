@@ -1,12 +1,11 @@
 import fs from "fs/promises"
 import path from "path"
 import { sluggify } from "../utils/sluggify"
+import { articlesDir } from "./articlesApi"
 
 export const slugsFile = path.join(process.cwd(), "cache", "articleSlugs.json")
 
 export async function generateArticleSlugs() {
-  const articlesDir = path.join(process.cwd(), "/content/articles/")
-
   const filenames = await fs.readdir(articlesDir)
 
   let slugs: { [slug: string]: string } = {}
