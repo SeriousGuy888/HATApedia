@@ -25,9 +25,3 @@ Billzoplace shall fund the expansion of the wheat field in No.
 
 ### Article II
 The Remy Republic shall export wheat to Billzoplace for [[Billzoshoom|Billzo]]'s sneaky and sinister purposes.
-
-## Scans
-![[Treaty of No (2022) pg1.png]]
-![[Treaty of No (2022) pg2.png]]
-![[Treaty of No (2022) pg3.png]]
-![[Treaty of No (2022) pg4.png]]
