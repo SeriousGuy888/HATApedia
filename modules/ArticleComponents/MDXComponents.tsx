@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import NationInfoCard from "./NationInfoCard"
+import BookAndQuill from "./BookAndQuill"
 
 const MDXComponents = {
   img: (image: {
@@ -33,6 +34,7 @@ const MDXComponents = {
     )
   },
   NationInfoCard,
+  BookAndQuill,
 }
 
 export default MDXComponents
