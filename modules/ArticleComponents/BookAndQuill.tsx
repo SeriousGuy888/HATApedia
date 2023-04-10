@@ -49,10 +49,12 @@ const BookAndQuill: NextPage<{ bookData: WrittenBookData }> = ({
         fontFamily: minecraftFont.style.fontFamily,
         fontSize: `${fontSize}px`,
       }}
-      onResizeCapture={() => {
-        console.log("resize")
-      }}
       ref={bookContainer}
+      onClick={(e) => {
+        if (e.shiftKey) {
+          alert(`/give @s written_book{pages:[${pagesData}]}`)
+        }
+      }}
     >
       <BackgroundAndControls
         prevPageFn={gotoPrevPage}
