@@ -53,6 +53,8 @@ const BookAndQuill: NextPage<{ pagesData: string[] }> = ({ pagesData }) => {
       <BackgroundAndControls
         prevPageFn={gotoPrevPage}
         nextPageFn={gotoNextPage}
+        currPage={page}
+        maxPage={maxPage}
       />
       <div className="absolute right-[13.7%] top-[8.3%] z-30 text-right">
         <p className="m-0">
@@ -123,7 +125,9 @@ const MinecraftTextRenderer: NextPage<{
 const BackgroundAndControls: NextPage<{
   prevPageFn: Function
   nextPageFn: Function
-}> = ({ prevPageFn: prevPage, nextPageFn: nextPage }) => {
+  currPage: number
+  maxPage: number
+}> = ({ prevPageFn: prevPage, nextPageFn: nextPage, currPage, maxPage }) => {
   const imageUrls = {
     page: "/images/book_and_quill/page.png",
     prev: "/images/book_and_quill/prev.png",
@@ -150,6 +154,9 @@ const BackgroundAndControls: NextPage<{
         width={18}
         height={10}
         className="z-30 left-[17.8%] top-[87.8%] w-[10%]"
+        style={{
+          display: currPage === 1 ? "none" : "block",
+        }}
         onMouseEnter={() => {
           setPrevBtnSrc(imageUrls.prevHover)
         }}
@@ -166,6 +173,9 @@ const BackgroundAndControls: NextPage<{
         width={18}
         height={10}
         className="z-30 left-[67.9%] top-[87.8%] w-[10%]"
+        style={{
+          display: currPage === maxPage ? "none" : "block",
+        }}
         onMouseEnter={() => {
           setNextBtnSrc(imageUrls.nextHover)
         }}
