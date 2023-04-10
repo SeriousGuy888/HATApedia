@@ -60,7 +60,7 @@ const BookAndQuill: NextPage<{ bookData: WrittenBookData }> = ({
       ref={bookContainer}
       onClick={(e) => {
         if (e.shiftKey) {
-          alert(`/give @s written_book{pages:[${pagesData}]}`)
+          alert(`/give @p written_book${JSON.stringify(bookData)}`)
         }
       }}
     >
