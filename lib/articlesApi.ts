@@ -76,7 +76,7 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   const { title, subtitle } = obj
   if (!title) {
     // If no title specified, use the filename without the extension as title
-    obj.title = (await getSlugMap())[obj.slug].replace(/\.mdx?$/, "")
+    obj.title = (await getSlugMap())?.[obj.slug].replace(/\.mdx?$/, "")
   }
   if (!subtitle) {
     delete obj.subtitle
@@ -85,7 +85,7 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   return obj
 }
 
-export async function getArticle(slug: string) {
+export const getArticle = async (slug: string) => {
   const source = await getArticleFileContent(slug)
   if (!source) {
     return null
@@ -93,13 +93,7 @@ export async function getArticle(slug: string) {
 
   const allSlugs = await getAllSlugs()
 
-  const { content, data } = matter(source)
-  const frontMatter = (await handleUndefinedKeys({
-    ...data,
-    slug,
-  } as any)) as any
-
-  const mdxSource = await serialize(content, {
+  const mdxSource = await serialize(source, {
     mdxOptions: {
       remarkPlugins: [
         remarkParse,
@@ -122,10 +116,13 @@ export async function getArticle(slug: string) {
         rehypeStringify,
       ],
     },
-    scope: frontMatter,
+    parseFrontmatter: true,
   })
 
-  return mdxSource
+  return {
+    mdxSource,
+    fileName: (await getSlugMap())?.[slug],
+  }
 }
 
 export const getArticlePreview = async (slug: string) => {
