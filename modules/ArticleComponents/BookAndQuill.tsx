@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react"
 const minecraftFont = localFont({
   src: "../../public/fonts/minecraftia-webfont.woff",
 })
-const BookAndQuill: NextPage = () => {
+const BookAndQuill: NextPage<{ pagesData: string[] }> = ({ pagesData }) => {
   const [page, setPage] = useState(1)
+  const maxPage = pagesData.length
+
   const gotoPrevPage = () => {
     if (page === 1) {
       return
@@ -15,8 +17,13 @@ const BookAndQuill: NextPage = () => {
     setPage((p) => p - 1)
   }
   const gotoNextPage = () => {
+    if (page === maxPage) {
+      return
+    }
     setPage((p) => p + 1)
   }
+
+  const getCurrPageData = () => JSON.parse(pagesData[page - 1])
 
   const bookContainer = useRef<HTMLDivElement>(null)
   const [fontSize, setFontSize] = useState(18)
@@ -25,7 +32,7 @@ const BookAndQuill: NextPage = () => {
     if (bookContainer.current) {
       new ResizeObserver(() => {
         const containerHeight = bookContainer.current!.clientHeight
-        setFontSize((6.5 / 180) * containerHeight)
+        setFontSize((6.25 / 180) * containerHeight)
       }).observe(bookContainer.current)
     }
   }, [])
@@ -48,21 +55,68 @@ const BookAndQuill: NextPage = () => {
         nextPageFn={gotoNextPage}
       />
       <div className="absolute right-[13.7%] top-[8.3%] z-30 text-right">
-        <p className="m-0">Page {page} of 8</p>
-      </div>
-      <div className="absolute left-[11%] top-[16.1%] z-20 w-[78.1%] [&>*]:m-0 leading-tight">
-        <p>
-          Cillum eiusmod incididunt pariatur eu sint reprehenderit. Ipsum est
-          ipsum non magna magna ad in. Deserunt fugiat ad do exercitation non
-          cupidatat aute sint. Elit incididunt anim culpa deserunt veniam
-          proident amet irure proident voluptate velit aliquip officia ea. Ad
-          pariatur minim in duis aliqua occaecat id id. Officia dolore veniam
-          velit magna. Proident et officia exercitation labore laborum culpa
-          exercitation. Pariatur cillum quis fugiat ut do. Labore fugiat ipsum
-          consectetur laborum.
+        <p className="m-0">
+          Page {page} of {maxPage}
         </p>
       </div>
+      <div className="absolute left-[11%] top-[16.1%] z-20 w-[78.1%] [&>*]:m-0 leading-tight break-words">
+        <MinecraftTextRenderer textData={getCurrPageData()} />
+      </div>
     </div>
+  )
+}
+
+interface MinecraftTextComponent {
+  text?: string
+  color?: string
+  bold?: boolean
+  italic?: boolean
+  underlined?: boolean
+  strikethrough?: boolean
+  obfuscated?: boolean
+}
+
+const MinecraftTextRenderer: NextPage<{
+  textData: MinecraftTextComponent | MinecraftTextComponent[]
+}> = ({ textData }) => {
+  // https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition
+
+  if (!Array.isArray(textData)) {
+    textData = [textData]
+  }
+
+  return (
+    <>
+      {textData.map((textComponent, i) => {
+        const lines = textComponent.text?.split("\n")
+        if (!lines) {
+          return <p key={i}></p> // NOSONAR
+        }
+
+        return (
+          <span
+            key={i} // NOSONAR
+            style={{
+              color: textComponent.color ?? "black",
+              fontWeight: textComponent.bold ? "bold" : "normal",
+              fontStyle: textComponent.italic ? "italic" : "normal",
+              textDecoration: textComponent.underlined ? "underline" : "none",
+              textDecorationLine: textComponent.strikethrough
+                ? "line-through"
+                : "none",
+              textShadow: textComponent.obfuscated ? "0 0 5px black" : "none",
+            }}
+          >
+            {lines.map((value, i) => (
+              <>
+                {value}
+                {i !== lines.length - 1 && <br />}
+              </>
+            ))}
+          </span>
+        )
+      })}
+    </>
   )
 }
 
