@@ -6,7 +6,11 @@ import { useEffect, useRef, useState } from "react"
 const minecraftFont = localFont({
   src: "../../public/fonts/minecraftia-webfont.woff",
 })
-const BookAndQuill: NextPage<{ pagesData: string[] }> = ({ pagesData }) => {
+const BookAndQuill: NextPage<{ bookData: WrittenBookData }> = ({
+  bookData,
+}) => {
+  const pagesData = bookData.pages
+
   const [page, setPage] = useState(1)
   const maxPage = pagesData.length
 
@@ -68,6 +72,13 @@ const BookAndQuill: NextPage<{ pagesData: string[] }> = ({ pagesData }) => {
   )
 }
 
+interface WrittenBookData {
+  pages: string[]
+  title?: string
+  author?: string
+  generation?: number
+}
+
 interface MinecraftTextComponent {
   text?: string
   color?: string
@@ -76,20 +87,35 @@ interface MinecraftTextComponent {
   underlined?: boolean
   strikethrough?: boolean
   obfuscated?: boolean
+  extra?: MinecraftTextComponent[]
 }
 
 const MinecraftTextRenderer: NextPage<{
   textData: MinecraftTextComponent | MinecraftTextComponent[]
 }> = ({ textData }) => {
   // https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition
+  // https://minecraft.fandom.com/wiki/Written_Book#Data_values
 
   if (!Array.isArray(textData)) {
     textData = [textData]
   }
 
+  const flattenedExtras = []
+  for (const textComponent of textData) {
+    const clone = { ...textComponent }
+    delete clone.extra
+    flattenedExtras.push(clone)
+
+    if (textComponent.extra) {
+      textComponent.extra.forEach((extra) => {
+        flattenedExtras.push({ ...textComponent, ...extra })
+      })
+    }
+  }
+
   return (
     <>
-      {textData.map((textComponent, i) => {
+      {flattenedExtras.map((textComponent, i) => {
         const lines = textComponent.text?.split("\n")
         if (!lines) {
           return <p key={i}></p> // NOSONAR
@@ -99,7 +125,7 @@ const MinecraftTextRenderer: NextPage<{
           <span
             key={i} // NOSONAR
             style={{
-              color: textComponent.color ?? "black",
+              color: textComponent.color?.replace(/_/g, "") ?? "black",
               fontWeight: textComponent.bold ? "bold" : "normal",
               fontStyle: textComponent.italic ? "italic" : "normal",
               textDecoration: textComponent.underlined ? "underline" : "none",
@@ -110,10 +136,10 @@ const MinecraftTextRenderer: NextPage<{
             }}
           >
             {lines.map((value, i) => (
-              <>
+              <span key={i}>
                 {value}
                 {i !== lines.length - 1 && <br />}
-              </>
+              </span>
             ))}
           </span>
         )
