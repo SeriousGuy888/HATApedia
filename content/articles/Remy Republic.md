@@ -101,8 +101,6 @@ A followup to the first [[Treaty of No (2022)]].
 ## Treaty of Neville
 *Main article: [[Treaty of Neville]]*
 
-This was an investment and trade agreement signed between the [[Remy Republic]] and [[Neville]].
-
 # The Great Mangrove War
 
 The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]].
