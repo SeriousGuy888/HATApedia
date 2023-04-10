@@ -4,7 +4,15 @@ import localFont from "@next/font/local"
 import { useEffect, useRef, useState } from "react"
 
 const minecraftFont = localFont({
-  src: "../../public/fonts/minecraftia-webfont.woff",
+  src: [
+    {
+      path: "../../public/fonts/minecraftia-webfont.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
+  preload: true,
 })
 const BookAndQuill: NextPage<{ bookData: WrittenBookData }> = ({
   bookData,
