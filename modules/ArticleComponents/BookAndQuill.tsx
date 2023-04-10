@@ -183,6 +183,7 @@ const BackgroundAndControls: NextPage<{
         width={146}
         height={180}
         className="w-full top-0 left-0 z-10"
+        draggable={false}
       />
       <Image
         src={prevBtnSrc}
@@ -190,6 +191,7 @@ const BackgroundAndControls: NextPage<{
         width={18}
         height={10}
         className="z-30 left-[17.8%] top-[87.8%] w-[10%]"
+        draggable={false}
         style={{
           display: currPage === 1 ? "none" : "block",
         }}
@@ -209,6 +211,7 @@ const BackgroundAndControls: NextPage<{
         width={18}
         height={10}
         className="z-30 left-[67.9%] top-[87.8%] w-[10%]"
+        draggable={false}
         style={{
           display: currPage === maxPage ? "none" : "block",
         }}
