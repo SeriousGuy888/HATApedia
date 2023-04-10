@@ -168,7 +168,7 @@ const BackgroundAndControls: NextPage<{
   const [nextBtnSrc, setNextBtnSrc] = useState(imageUrls.next)
 
   return (
-    <div className="aspect-[146/180] w-full relative [&>img]:absolute [&>img]:m-0">
+    <div className="aspect-[146/180] w-full relative select-none [&>img]:absolute [&>img]:m-0">
       <Image
         src={imageUrls.page}
         alt=""
