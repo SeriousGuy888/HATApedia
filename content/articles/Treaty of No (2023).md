@@ -2,9 +2,9 @@
 subtitle: Trade Agreement
 ---
 
-The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the Remy Republic free access to Billzoshoom's slime farm beneath the newly constructed Limedye Oil Rig.
+The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the [[Remy Republic]] free access to [[Billzoshoom]]'s slime farm beneath the newly constructed [[Limedye Oil Rig]].
 
-The access was free because the previous Treaty of No already authorised Billzoplace free access to the Remyan wheat from the wheat fields in No. This treaty effectively added to the previous agreement, making it a wheat-for-slime trade agreement between the Remy Republic and the Billzoplace City State.
+The access was free because the previous [[Treaty of No (2022)]] already authorised [[Billzoplace]] free access to the Remyan wheat from the wheat fields in [[No]]. This treaty effectively added to the previous agreement, making it a wheat-for-slime trade agreement between the Remy Republic and the Billzoplace City State.
 
 ## Table of Contents
 
