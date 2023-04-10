@@ -84,22 +84,13 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 ![[Remy Republic Villager Council Election Result Map.png]]
 
 # Diplomacy
+The Remy Republic maintains diplomatic relations with a number of other nations.
 
-## Treaty of No (2022)
-*Main article: [[Treaty of No (2022)]]*
-
-The *Treaty of No (2022)* is a trade deal signed with [[Billzoplace]].
-
-## Treaty of No (2023)
-*Main article: [[Treaty of No (2023)]]*
-
-A followup to the first [[Treaty of No (2022)]].
-
-## Remy Sea Trade Bloc Agreement
-*Main article: [[Remy Sea Trade Bloc Agreement]]*
-
-## Treaty of Neville
-*Main article: [[Treaty of Neville]]*
+## Treaties
+- [[Treaty of No (2022)]]
+- [[Treaty of No (2023)]]
+- [[Remy Sea Trade Bloc Agreement]]
+- [[Treaty of Neville]]
 
 # The Great Mangrove War
 
