@@ -17,6 +17,8 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeFormat from "rehype-format"
 import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
+import { remark } from "remark"
+import strip from "strip-markdown"
 
 export interface Article {
   slug: string
@@ -119,8 +121,17 @@ export const getArticle = async (slug: string) => {
     parseFrontmatter: true,
   })
 
+  const { content } = matter(source)
+  const excerpt =
+    (
+      await remark().use(remarkGfm).use(strip).process(content.slice(0, 197))
+    ).value
+      .toString()
+      .replace(/\n/g, " ") + "..."
+
   return {
     mdxSource,
+    excerpt,
     fileName: (await getSlugMap())?.[slug],
   }
 }

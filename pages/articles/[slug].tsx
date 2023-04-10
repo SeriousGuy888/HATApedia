@@ -7,10 +7,6 @@ import styles from "../../modules/ArticleComponents/Article.module.scss"
 
 import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
-
-import { remark } from "remark"
-import remarkGfm from "remark-gfm"
-import strip from "strip-markdown"
 import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 
 interface Props {
@@ -78,24 +74,9 @@ export async function getStaticProps({
       notFound: true,
     }
   }
-  const { mdxSource, fileName } = article
-
-  const excerpt =
-    (
-      await remark()
-        .use(remarkGfm)
-        .use(strip)
-        .process(mdxSource.compiledSource.slice(0, 197))
-    ).value
-      .toString()
-      .replace(/\n/g, " ") + "..."
 
   return {
-    props: {
-      excerpt,
-      mdxSource,
-      fileName,
-    },
+    props: article,
   }
 }
 
