@@ -147,7 +147,7 @@ const MinecraftTextRenderer: NextPage<{
             }}
           >
             {lines.map((value, i) => (
-              <span key={i}>
+              <span key={i /* NOSONAR */}>
                 {value}
                 {i !== lines.length - 1 && <br />}
               </span>
