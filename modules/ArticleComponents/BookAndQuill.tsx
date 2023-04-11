@@ -41,12 +41,13 @@ const BookAndQuill: NextPage<{ bookData: WrittenBookData }> = ({
   const [fontSize, setFontSize] = useState(18)
 
   useEffect(() => {
-    if (bookContainer.current) {
-      new ResizeObserver(() => {
-        const containerHeight = bookContainer.current!.clientHeight
-        setFontSize((6.25 / 180) * containerHeight)
-      }).observe(bookContainer.current)
-    }
+    if (!bookContainer.current) return
+    new ResizeObserver(() => {
+      if (!bookContainer.current) return
+
+      const containerHeight = bookContainer.current.clientHeight
+      setFontSize((6.25 / 180) * containerHeight)
+    }).observe(bookContainer.current)
   }, [])
 
   return (
