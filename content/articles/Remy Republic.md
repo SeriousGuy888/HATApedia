@@ -59,7 +59,7 @@ The following are the candidates who ran in the first Remy Republic election for
 |                   |        Slime Ball Party (SBP)         | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
 | -----------------:|:-------------------------------------:|:-----------------------:|:-------------------:|
 |    **Forgsville** |            [[Remyforg]] 🏆            |     Mike MacWebster     |                     |
-|   **Scammington** |           Doug Shimadome 🏆           |   William Scamsworth    |                     |
+|   **Scammington** |           Doug Shimadome 🏆           | [[William Scamsworth]]  |                     |
 |            **No** |          Huck Finnisiter 🏆           |      Toby Tontory       |   Gerry Flexagon    |
 |      **Hawainot** | Glorious Leader [[Remy\|RemyHemy]] 🏆 |        Jose III         |                     |
 | **New Mangrovia** |           John Nevilory 🏆            |         Jose II         |                     |
@@ -151,3 +151,21 @@ After the glorious defeat on the jungle island, and on the suggestion of Toby, R
 
 # Mangrovepox Outbreak in No
 *Please see: [[Mangrovepox]]*
+
+# Night of Mischief
+On 2023-04-09, [[Holden]] attempted to kidnap a group of [[Scammington|Scammingtonian]] ducks, including [[William Scamsworth]]. The [[Remy|Glorious Leader]], after learning of this, intervened and apprehended Holden demanding that he complete his parole, which was to remove the mangrove trees from No, as per the terms set at the end of the [[Remy Republic#The Great Mangrove War|Great Mangrove War]]. When confronting Holden, the Glorious Leader was seen assaulting Holden, the perpetrator of the ducksnatching case, when he thought nobody was watching. Holden repeatedly stated that he was not resisting, but the Glorious Leader continued to punch him, later killing him as well.
+
+> [[Holden]]:
+> I'm not resisting! I'm not resisting!
+
+> [[Remy]]:
+> You don't need to file a _lawsuit_.
+> You already owe me a date.
+
+Holden, at some point, managed to evade capture by Remyan authorities and twice escaped on escape vehicles driven by [[Arvi]] and [[Toby]], who were later caught stealing more ducks from the animal pens in [[No]].
+
+The Remyan government claimed that the Night of Mischief, as it was later dubbed, caused "significant damage to public property" and "disrupted the peace of the community". The government subsequently declared a state of emergency, closing several areas for repairs and announcing plans to punish Arvi and Toby for their involvement in the night.
+
+During an emergency meeting of the Duck Nest, the Villager Council, and Remyan military officials, the need for enhanced security measures was discussed. Top scientist of the Remy Republic, [[Leonard Pentagon]], proposed funding research into strength syrup for clones and building a new laboratory in a new piece of territory to be known as [[Blocksburg]], but MCP members disagreed on how to allocate funding.
+
+The alliance between Toby's [[Tobytopia]], [[Holden's Regime]], and Arvi's [[Neville]] was given the name "the Allies of [Tromos](https://en.wiktionary.org/wiki/%CF%84%CF%81%CF%8C%CE%BC%CE%BF%CF%82)" by the Remyan government. The Glorious Leader then declaring the creation of the Allies of [Asphaleia](https://en.wiktionary.org/wiki/%CE%B1%CF%83%CF%86%CE%AC%CE%BB%CE%B5%CE%B9%CE%B1), which was touted as a counter to the Allies of Tromos. This growing polarisation between factions in the region raised concerns about future conflicts and their potential impact on the stability of the area.
