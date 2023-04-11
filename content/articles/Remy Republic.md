@@ -172,3 +172,16 @@ The Remyan government claimed that the Night of Mischief, as it was later dubbed
 During an emergency meeting of the Duck Nest, the Villager Council, and Remyan military officials, the need for enhanced security measures was discussed. Top scientist of the Remy Republic, [[Leonard Pentagon]], proposed funding research into strength syrup for clones and building a new laboratory in a new piece of territory to be known as [[Blocksburg]], but MCP members disagreed on how to allocate funding.
 
 The alliance between Toby's [[Tobytopia]], [[Holden's Regime]], and Arvi's [[Neville]] was given the name "the Allies of [Tromos](https://en.wiktionary.org/wiki/%CF%84%CF%81%CF%8C%CE%BC%CE%BF%CF%82)" by the Remyan government. The Glorious Leader then declaring the creation of the Allies of [Asphaleia](https://en.wiktionary.org/wiki/%CE%B1%CF%83%CF%86%CE%AC%CE%BB%CE%B5%CE%B9%CE%B1), which was touted as a counter to the Allies of Tromos. This growing polarisation between factions in the region raised concerns about future conflicts and their potential impact on the stability of the area.
+
+## Speech Following the Night of Mischief
+The Glorious Leader made the following speech on 2023-04-10 regarding the events of the previous night.
+
+> Citizens of the Remy Republic,
+> 
+> An iron curtain has fallen upon us all. We have been misled by those we were led to trust. We have been beaten and bruised by those we thought were close to our hearts. We have been insulted by those who focus on harassing others rather than improving themselves. In short, we have been blindsided and betrayed.
+> 
+> As the leader of the Remy Republic, I shall not let these recent attacks go unnoticed. The Night of Mischief was the unfortunate warning the Remy Republic needed to wake up and better prepare ourselves. I promise you that we will build back better and stronger, and we will vanquish those who try to go against us.
+> 
+> This new gang of scallywags, the Allies of Tromos, will fall and get what they have been waiting for. Over the next few days, our government will band together and initiate a battle plan to combat the Tromos, and for the protection of the Remy Republic, the government will declare a state of emergency.
+> 
+> The Remyan military will be commanded to patrol and keep the Remy Republic safe. As a final warning, those who betray the family that is the Remy Republic during the state of emergency shall be punished in Remyan court. That is all I have to say. Thank you, and goodnight.
