@@ -36,6 +36,7 @@ const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
       className={`${
         node.depth === 1 ? "text-sm" : "text-xs"
       } hover:text-blue-500`}
+      scroll={false}
     >
       {node.value}
     </Link>
