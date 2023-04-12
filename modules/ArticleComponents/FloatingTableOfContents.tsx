@@ -56,7 +56,7 @@ function renderNodes(nodes: TocNode[]): ReactNode {
   return (
     <ul>
       {nodes.map((node) => (
-        <li key={node.id} className={`${node.depth > 1 ? "" : ""}`}>
+        <li key={node.id}>
           <TocLink node={node} />
           {node.children?.length > 0 && renderNodes(node.children)}
         </li>
