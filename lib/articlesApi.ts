@@ -20,6 +20,8 @@ import rehypeWrap from "rehype-wrap-all"
 import { remark } from "remark"
 import strip from "strip-markdown"
 
+import remarkHeadingTree from "../plugins/remark-heading-tree"
+
 export interface Article {
   slug: string
   title: string
@@ -128,6 +130,13 @@ export const getArticle = async (slug: string) => {
     ).value
       .toString()
       .replace(/\n/g, " ") + "..."
+
+  const headingsData = await remark()
+    .use(remarkParse)
+    .use(remarkHeadingTree)
+    .process(content)
+
+  console.log(JSON.stringify(headingsData.data.headings, null, 2))
 
   return {
     mdxSource,
