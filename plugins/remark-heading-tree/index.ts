@@ -13,26 +13,22 @@ interface HeadingData extends Data {
   }
 }
 
-interface HeadingsData {
-  headings: TransformedNode[]
-}
-
-interface TransformedNode {
+export interface TocNode {
   value: string
   depth: number
-  data?: HeadingData
-  children: TransformedNode[]
+  children: TocNode[]
+  id: string
 }
 
 const headingTree: Plugin = (): any => {
-  return (node: Root, file: VFileWithOutput<HeadingsData>) => {
+  return (node: Root, file: VFileWithOutput<string>) => {
     file.data = { headings: getHeadings(node) }
   }
 }
 
-function getHeadings(node: Root): TransformedNode[] {
-  const output: TransformedNode[] = []
-  const indexMap: { [key: number]: TransformedNode } = {}
+function getHeadings(node: Root): TocNode[] {
+  const output: TocNode[] = []
+  const indexMap: { [key: number]: TocNode } = {}
 
   const slugger = new GithubSlugger()
 
@@ -53,13 +49,13 @@ function addID(node: Heading, slugger: GithubSlugger): void {
 
 function transformNode(
   node: Heading,
-  output: TransformedNode[],
-  indexMap: { [key: number]: TransformedNode },
-): void {
-  const transformedNode: TransformedNode = {
+  output: TocNode[],
+  indexMap: { [key: number]: TocNode },
+) {
+  const transformedNode: TocNode = {
     value: toString(node),
     depth: node.depth,
-    data: node.data as HeadingData,
+    id: (node.data as HeadingData).hProperties.id,
     children: [],
   }
 
