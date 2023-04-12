@@ -42,7 +42,10 @@ const ArticlePage: NextPage<Props> = ({
           />
         )}
       </Head>
-      <section className="max-w-[95vw] md:grid grid-cols-[3fr_1fr] gap-8 py-8 h-fit">
+      <section
+        className="max-w-[95vw] md:grid grid-cols-[3fr_1fr] gap-8 py-8 h-fit"
+        id="_top"
+      >
         <div className="w-full h-fit md:max-w-prose">
           <div className="flex-1 self-start flex justify-between">
             <div className="">

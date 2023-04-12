@@ -10,7 +10,14 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
 
   return (
     <div className="sticky top-4 h-fit w-full left-0 hidden md:block">
-      <h2 className="text-lg text-gray-500 mb-4">Table of Contents</h2>
+      <div className="flex justify-between align-bottom">
+        <h2 className="text-lg text-gray-500 dark:text-gray-400 mb-4">
+          Table of Contents
+        </h2>
+        <Link href="#_top" scroll={false} className="text-xl">
+          🔼
+        </Link>
+      </div>
       {renderNodes(nodes)}
     </div>
   )
@@ -35,7 +42,7 @@ const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
       href={`#${node.id}`}
       className={`${
         node.depth === 1 ? "text-sm" : "text-xs"
-      } hover:text-blue-500`}
+      } hover:text-blue-600 dark:hover:text-blue-300`}
       scroll={false}
     >
       {node.value}
