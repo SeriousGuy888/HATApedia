@@ -43,10 +43,10 @@ const ArticlePage: NextPage<Props> = ({
         )}
       </Head>
       <section
-        className="max-w-[95vw] md:grid grid-cols-[3fr_1fr] gap-8 py-8 h-fit"
+        className={`max-w-[90vw] md:max-w-[75vw] xl:max-w-screen-lg w-full md:grid grid-cols-[3fr_1fr] gap-12 py-8 h-fit`}
         id="_top"
       >
-        <div className="w-full h-fit md:max-w-prose">
+        <div className="w-full md:max-w-prose h-fit">
           <div className="flex-1 self-start flex justify-between">
             <div className="">
               <h1 className="text-5xl font-bold mb-2">{title}</h1>
