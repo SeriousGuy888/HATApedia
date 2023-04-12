@@ -42,9 +42,9 @@ const ArticlePage: NextPage<Props> = ({
           />
         )}
       </Head>
-      <section className="max-w-[95vw] grid grid-cols-[3fr_1fr] relative my-8 h-fit">
-        <div className="w-full h-fit pr-8">
-          <div className="md:max-w-prose flex-1 self-start flex justify-between">
+      <section className="max-w-[95vw] md:grid grid-cols-[3fr_1fr] gap-8 my-8 h-fit">
+        <div className="w-full h-fit md:max-w-prose">
+          <div className="flex-1 self-start flex justify-between">
             <div className="">
               <h1 className="text-5xl font-bold mb-2">{title}</h1>
               <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
@@ -62,7 +62,7 @@ const ArticlePage: NextPage<Props> = ({
               </div>
             )}
           </div>
-          <hr className="my-6 border-t-[1] border-gray-200 dark:border-gray-700" />
+          <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
 
           {(frontmatter.nation as any) && (
             <NationInfoCard nation={frontmatter.nation as any} />
