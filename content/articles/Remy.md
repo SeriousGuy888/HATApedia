@@ -8,8 +8,6 @@ image: /images/portraits/remy.png
 Remy, whose full name is RemyHemy, is one of the members of the HATA server.
 He is most well known for being the Glorious Leader of the [[Remy Republic]].
 
-## Table of Contents
-
 # Career
 
 ## (2022-12 to present): Glorious Leader of the Remy Republic

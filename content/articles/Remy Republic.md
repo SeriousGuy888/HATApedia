@@ -12,9 +12,6 @@ nation:
 
 The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
 
-## Table of Contents
-
-
 # Provinces and Territories
 
 The Remy Republic is subdivided into provinces and territories.

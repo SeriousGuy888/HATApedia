@@ -11,9 +11,6 @@ nation:
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
 to the northwest of Spawn.
 
-## Table of Contents
-
-
 # Territories
 - [[Swamp of Secrets]] (AKA Tobytopian Mangrovia)
 - Unnamed Jungle Island

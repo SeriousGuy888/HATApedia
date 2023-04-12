@@ -3,8 +3,6 @@ title: Mangrovepox
 subtitle: Infectious botanical disease
 ---
 
-## Table of Contents
-
 # About Mangrovepox
 Mangrovepox is an infectious disease, known to mainly infect [[Remy Republic|Remyan provinces]].
 

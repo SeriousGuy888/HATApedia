@@ -14,8 +14,6 @@ Billzoplace, also informally known as Billzonia, is the a city state based aroun
 
 It was constructed by and is home to [[Billzoshoom|Billzo]].
 
-## Table of Contents
-
 # The City
 Billzoplace City (*Billzoplace Urb* in Billzonian) refers to the city built in [[Sheapland]]. Its construction began in late February of 2023.
 

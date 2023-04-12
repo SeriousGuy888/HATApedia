@@ -9,8 +9,6 @@ nation:
 
 Neville is a city state to the northeast of spawn. It was founded by [[Arvi]].
 
-## Table of Contents
-
 # Economy
 The main industry of Neville is agriculture. Neville is best known for its large wheat field.
 

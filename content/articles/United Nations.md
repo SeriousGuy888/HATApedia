@@ -12,9 +12,6 @@ nation:
 The United Nations is an organisation intended to solve international disputes
 and issues in a peaceful manner on the server.
 
-## Table of Contents
-
-
 # Inception
 
 The United Nations was an idea conceived by [[Remy]], the Glorious Leader of the [[Remy Republic|Remy Republic]], apparently based on something similar from a so-called "dream world" called """""""CheezSurvNations""""""".
