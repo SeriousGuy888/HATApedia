@@ -77,7 +77,7 @@ const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
     >
       <Link
         href={`#${node.id}`}
-        className={`hover:text-blue-600 dark:hover:text-blue-300`}
+        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-300"
         scroll={false}
         onClick={() => setHighlighted(node.id)}
       >
