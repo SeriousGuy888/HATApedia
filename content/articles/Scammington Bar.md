@@ -23,5 +23,24 @@ However, Arvi also later asserted that he burned the bar simply because he "dint
 
 The legality of Arvi's actions have been the subject of scrutinty.
 
+### Remy's Speech on the Bar's Destruction
+The Glorious Leader delivered a speech at the site of the former bar after assessing the damages.
+
+> As you are aware, the Scammington bar has been burnt down by its owner, Arvi. A lot of you are questioning the legality of this arson, and a lot of you are questioning the safety of two Remy Republicans. I will answer those questions now.
+> 
+> First, is what Arvi did legal? This is a tricky question to answer. Arvi is the owner of this bar and property, and it is legal for him to adjust the property as he pleases. However, the way he conducted his adjustments to his property was not.
+> 
+> First and foremost, he did not give the Remy Republic a proper time and date as to when he was going to burn down the bar. This meant any attempts to warn the public or evacuate anyone near were compromised. Second, and most concerning, he did not remove both William Scamsworth and Birch Nuke from the property. Fortunately, they didn't die; however, if they did, he would be charged with 3rd-degree murder. He still endangered the lives of citizens.
+> 
+> Also, I will make this clear: even though he owns the bar, it does not make it private property. It is a public establishment; therefore, he cannot fault those who hang around within it.
+> 
+> The second thing that is the issue with the bar burning is the ruin that remained after. Arvi did not attempt to clean it up, leading to multiple safety hazards. We at the Remyan government have come to a decision revolving the solution to this. We deem the bar and the area surrounding the bar unsafe for the public; therefore, we are closing it down to public access. We will also repossess the rights to the property as Arvi has been deemed unfit to maintain his land.
+> 
+> We plan to reconstruct a new, better bar and, with the assistance of Birch Nuke, turn this area into a casino. As you already know, Toby of Tobytopia and I plan on constructing the court of HATA very soon. Arvi will be trialed then for any crimes he committed during this incident.
+> 
+> I would like to make one final thing clear: I want to tell the public what Remyan citizenship is. Lack of Remyan citizenship does not restrict you from being in the Remy Republic. Lack of Remyan citizenship also does not restrict you from owning a property. Remyan citizenship is more like a benefits package to living in the Remy Republic. Remyan citizenship allows you to vote, make your voice heard, get a complementary fast pass for your Hocus Pocus card.
+> 
+> That is all I wanted to make clear. Any questions?
+
 # Arvi's Bunker
 The Scammington Bar has a nuclear fallout bunker located deep below it built by Arvi. There was a somewhat sneaky mechanism to enter the bunker before the Bar was burned down.
