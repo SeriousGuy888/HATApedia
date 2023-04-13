@@ -19,12 +19,13 @@ However, Arvi also later asserted that he burned the bar simply because he "dint
 
 > I want to make an announcement about the bar. I didn't want it to be there anymore, so I burnt it. I'm sorry that I almost killed the citizens. I was just trying to destroy my build. I am deeply sorry. Thank you. And about the lava, I put it so I can burn the place, not to kill anyone, Remy. That's all. You can have my land as I am no longer a citizen. You can do whatever you want with it. Thank you.
 
-![[Scammington Bar 2023-04-13.png]]
 
 The legality of Arvi's actions have been the subject of scrutinty.
 
 ### Remy's Speech on the Bar's Destruction
 The Glorious Leader delivered a speech at the site of the former bar after assessing the damages.
+
+![[Scammington Bar 2023-04-13.png]]
 
 > As you are aware, the Scammington bar has been burnt down by its owner, Arvi. A lot of you are questioning the legality of this arson, and a lot of you are questioning the safety of two Remy Republicans. I will answer those questions now.
 > 
