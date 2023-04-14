@@ -61,7 +61,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
         }
 
         const imageSize = sizeOf(`./content/images/${pageName}`)
-        console.log(imageSize)
+        
         const imgNode: Image = {
           type: "image",
           url: pageName,
