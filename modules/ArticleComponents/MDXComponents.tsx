@@ -23,10 +23,10 @@ const MDXComponents = {
             alt={alt ?? ""}
             width={width}
             height={height}
-            className={className ?? ""}
             sizes="(min-width: 1280px) 1024px,
-              (min-width: 768px) 75vw,
-              90vw"
+            (min-width: 768px) 75vw,
+            90vw"
+            className={(className ?? "") + " rounded-lg"}
           />
         </Link>
       )
