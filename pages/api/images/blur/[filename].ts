@@ -11,6 +11,7 @@ export default async function handler(
   const filePath = "/" + path.join(fileName)
   const { base64 } = await getPlaiceholder(filePath, {
     dir: "./content/images",
+    size: 8,
   })
 
   const decoded = base64.replace("data:image/png;base64,", "")
