@@ -18,11 +18,15 @@ const MDXComponents = {
             src={"/api/images/" + src}
             blurDataURL="/images/loading.png"
             placeholder="blur"
+            quality={30}
             title={title}
             alt={alt ?? ""}
             width={width}
             height={height}
             className={className ?? ""}
+            sizes="(min-width: 1280px) 1024px,
+              (min-width: 768px) 75vw,
+              90vw"
           />
         </Link>
       )
