@@ -1,8 +1,7 @@
 import Link from "next/link"
-import Image, { ImageProps } from "next/image"
+import Image from "next/image"
 import NationInfoCard from "./NationInfoCard"
 import BookAndQuill from "./BookAndQuill"
-import { useEffect, useRef, useState } from "react"
 
 const MDXComponents = {
   img: (image: {
@@ -16,10 +15,15 @@ const MDXComponents = {
     if (className?.split(" ").includes("wikilink-image")) {
       return (
         <Link href={src ? "/api/images/" + src : ""} target="_blank">
-          <BlurredImage
-            src={image.src ?? ""}
-            alt={image.alt ?? ""}
-            title={title ?? ""}
+          <Image
+            src={"/api/images/" + src}
+            blurDataURL={"/api/images/blur/" + src}
+            placeholder="blur"
+            title={title}
+            alt={alt ?? ""}
+            width={700}
+            height={350}
+            className={className ?? ""}
           />
         </Link>
       )
@@ -36,25 +40,6 @@ const MDXComponents = {
   },
   NationInfoCard,
   BookAndQuill,
-}
-
-const BlurredImage = (imgProps: ImageProps) => {
-  const [loaded, setLoaded] = useState(false)
-
-  return (
-    <Image
-      src={"/api/images/" + imgProps.src}
-      blurDataURL={"/api/images/blur/" + imgProps.src}
-      placeholder="blur"
-      title={imgProps.title}
-      alt={imgProps.alt}
-      width={700}
-      height={350}
-      className={imgProps.className ?? ""}
-      onLoadingComplete={() => setLoaded(true)}
-      style={{ filter: loaded ? "" : "blur(10px)" }}
-    />
-  )
 }
 
 export default MDXComponents
