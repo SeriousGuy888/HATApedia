@@ -13,5 +13,9 @@ export default async function handler(
     dir: "./content/images",
   })
 
-  res.status(200).send(base64)
+  const decoded = base64.replace("data:image/png;base64,", "")
+  const imageResp = Buffer.from(decoded, "base64")
+
+  res.status(200)
+  res.end(imageResp)
 }

@@ -17,7 +17,7 @@ const MDXComponents = {
         <Link href={image.src ?? ""} target="_blank">
           <Image
             src={src ? "/api/images/" + src : ""}
-            blurDataURL={src ? "/api/images/blur/" + src : ""}
+            blurDataURL={`/api/images/blur/${src}`}
             placeholder="blur"
             alt={alt ?? ""}
             title={title ?? ""}
