@@ -3,6 +3,7 @@ import { Image, Link } from "mdast"
 import type { Plugin, Transformer } from "unified"
 import { sluggify } from "../../utils/sluggify"
 import { slug as githubAnchorSlug } from "github-slugger"
+import sizeOf from "image-size"
 
 interface Options {
   existingPageNames: string[]
@@ -53,13 +54,14 @@ const wikilinkSyntax: Plugin<[Options?]> = (
       const { isImage, pageName, altText, headingAnchor } = linkElems
 
       if (isImage) {
-        // const src = `/api/images/${pageName}`
         if (headingAnchor) {
           console.warn(
             `Heading anchors are not supported for images: ${wikilink}. Ignoring anchor.`,
           )
         }
 
+        const imageSize = sizeOf(`./content/images/${pageName}`)
+        console.log(imageSize)
         const imgNode: Image = {
           type: "image",
           url: pageName,
@@ -68,6 +70,8 @@ const wikilinkSyntax: Plugin<[Options?]> = (
           data: {
             hProperties: {
               className: "wikilink-image",
+              width: imageSize.width,
+              height: imageSize.height,
             },
           },
         }

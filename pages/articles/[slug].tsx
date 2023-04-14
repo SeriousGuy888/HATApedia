@@ -73,7 +73,7 @@ const ArticlePage: NextPage<Props> = ({
           <article
             className={"prose prose-base dark:prose-invert " + styles.prose}
           >
-            <MDXRemote {...mdxSource} components={MDXComponents} />
+            <MDXRemote {...mdxSource} components={MDXComponents as any} />
           </article>
         </div>
         <FloatingTableOfContents nodes={tocHeadings} />

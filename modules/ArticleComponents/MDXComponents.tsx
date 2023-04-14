@@ -4,25 +4,24 @@ import NationInfoCard from "./NationInfoCard"
 import BookAndQuill from "./BookAndQuill"
 
 const MDXComponents = {
-  img: (image: {
-    src?: string
-    alt?: string
-    title?: string
-    className?: string
-  }) => {
-    const { src, alt, title, className } = image
+  img: (image: HTMLImageElement) => {
+    const { src, alt, title, className, width, height } = image
 
     if (className?.split(" ").includes("wikilink-image")) {
       return (
-        <Link href={src ? "/api/images/" + src : ""} target="_blank">
+        <Link
+          href={src ? "/api/images/" + src : ""}
+          target="_blank"
+          className="w-full max-w-full flex justify-center"
+        >
           <Image
             src={"/api/images/" + src}
-            blurDataURL={"/api/images/blur/" + src}
-            placeholder="blur"
+            // blurDataURL={"/api/images/blur/" + src}
+            placeholder="empty"
             title={title}
             alt={alt ?? ""}
-            width={700}
-            height={350}
+            width={width}
+            height={height}
             className={className ?? ""}
           />
         </Link>
@@ -31,7 +30,7 @@ const MDXComponents = {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={src ?? ""}
+        src={src}
         alt={alt ?? ""}
         title={title ?? ""}
         className={className ?? ""}
