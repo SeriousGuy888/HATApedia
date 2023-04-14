@@ -53,7 +53,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
       const { isImage, pageName, altText, headingAnchor } = linkElems
 
       if (isImage) {
-        const src = `/api/images/${pageName}`
+        // const src = `/api/images/${pageName}`
         if (headingAnchor) {
           console.warn(
             `Heading anchors are not supported for images: ${wikilink}. Ignoring anchor.`,
@@ -62,7 +62,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
 
         const imgNode: Image = {
           type: "image",
-          url: src,
+          url: pageName,
           alt: altText,
           title: altText,
           data: {

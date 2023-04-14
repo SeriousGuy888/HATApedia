@@ -10,13 +10,17 @@ const MDXComponents = {
     title?: string
     className?: string
   }) => {
-    if (image.className?.split(" ").includes("wikilink-image")) {
+    const { src, alt, title, className } = image
+
+    if (className?.split(" ").includes("wikilink-image")) {
       return (
         <Link href={image.src ?? ""} target="_blank">
           <Image
-            src={image.src ?? ""}
-            alt={image.alt ?? ""}
-            title={image.title ?? ""}
+            src={src ? "/api/images/" + src : ""}
+            blurDataURL={src ? "/api/images/blur/" + src : ""}
+            placeholder="blur"
+            alt={alt ?? ""}
+            title={title ?? ""}
             width={700}
             height={350}
           />
@@ -26,10 +30,10 @@ const MDXComponents = {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={image.src ?? ""}
-        alt={image.alt ?? ""}
-        title={image.title ?? ""}
-        className={image.className ?? ""}
+        src={src ?? ""}
+        alt={alt ?? ""}
+        title={title ?? ""}
+        className={className ?? ""}
       ></img>
     )
   },

@@ -1,5 +1,7 @@
+const { withPlaiceholder } = require("@plaiceholder/next");
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
@@ -11,3 +13,5 @@ module.exports = {
     ]
   },
 }
+
+module.exports = withPlaiceholder(nextConfig)
