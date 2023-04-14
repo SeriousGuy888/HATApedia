@@ -15,7 +15,7 @@ const MDXComponents = {
           className="w-full max-w-full flex justify-center"
         >
           <Image
-            src={"/api/imageas/" + src}
+            src={"/api/images/" + src}
             blurDataURL="/images/loading.png"
             placeholder="blur"
             title={title}
