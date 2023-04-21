@@ -1,14 +1,15 @@
 import Head from "next/head"
 import Image from "next/image"
-import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { Article, getAllSlugs, getArticle } from "../../lib/articlesApi"
-import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 
+import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
+import { Article, getAllSlugs, getArticle } from "../../lib/articlesApi"
 import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
+
 import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
-import { TocNode } from "../../plugins/remark-heading-tree"
+import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
+import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
 
 interface Props {

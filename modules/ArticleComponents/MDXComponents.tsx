@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import NationInfoCard from "./NationInfoCard"
 import BookAndQuill from "./BookAndQuill"
+import Youtube from "./Youtube"
 
 const MDXComponents = {
   img: (image: HTMLImageElement) => {
@@ -43,6 +44,7 @@ const MDXComponents = {
   },
   NationInfoCard,
   BookAndQuill,
+  Youtube,
 }
 
 export default MDXComponents
