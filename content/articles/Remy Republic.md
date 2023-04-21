@@ -93,14 +93,9 @@ The Remy Republic maintains diplomatic relations with a number of other nations.
 
 ## The Great Mangrove War
 
-The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]].
-The disagreement was over which nation should have sovereignty over New Mangrovia
-(then referred to by Remy as Remyan Mangrovia).
+The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]]. The disagreement was over which nation should have sovereignty over New Mangrovia (then referred to by Remy as Remyan Mangrovia).
 
-After Holden and Toby came to Forgsville and tried to burn down Remy's house,
-Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia.
-This crisis boiled over into an epique duel between Remy and Holden, which Remy would
-win 2 to 1.
+After Holden and Toby came to Forgsville and tried to burn down Remy's house, Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia. This crisis boiled over into an epique duel between Remy and Holden, which Remy would win 2 to 1.
 
 *The recording of the crisis and the duel is available [here](https://youtu.be/pXPVKZaFRZI).*
 
@@ -122,7 +117,7 @@ trembled in fear and retreated outwards.
 
 ## Western Hawainot Offensive
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
-[Animated map of the invasion](https://www.youtube.com/watch?v=0rIYGpypZ0k)
+<Youtube videoId="0rIYGpypZ0k" />
 
 The Remy Republic initiated a military operation led by General [[Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
 
