@@ -9,7 +9,6 @@ import { serialize } from "next-mdx-remote/serialize"
 
 import remarkGfm from "remark-gfm"
 import remarkWikilink from "../plugins/remark-wikilink-syntax"
-import remarkToc from "remark-toc"
 import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
 import rehypeSlug from "rehype-slug"
