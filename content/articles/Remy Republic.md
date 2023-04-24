@@ -97,7 +97,7 @@ The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]
 
 After Holden and Toby came to Forgsville and tried to burn down Remy's house, Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia. This crisis boiled over into an epique duel between Remy and Holden, which Remy would win 2 to 1.
 
-*The recording of the crisis and the duel is available [here](https://youtu.be/pXPVKZaFRZI).*
+<Youtube videoId="pXPVKZaFRZI" />
 
 As a result of the Remyan victory, Remy and Holden came to the following agreement.
 - Remy gets to own Remyan Mangrovia
@@ -116,7 +116,6 @@ As the Glorious Leader, Remy, spoke these immortal words, the HATA worldborder
 trembled in fear and retreated outwards.
 
 ## Western Hawainot Offensive
-![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 <Youtube videoId="0rIYGpypZ0k" />
 
 The Remy Republic initiated a military operation led by General [[Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
@@ -127,6 +126,8 @@ The military operation unfortunately was in fact very rushed in its planning and
 After planting his flag in Western Hawainot and acquiring his so coveted cocoa beans, Remy also claimed Southern No. This is an area of land that was originally labelled as being part of No on the first worldmap released, but tragically, in reality, lay outside the confines of the 1000 block worldborder.
 
 [[Toby|Toby from Tobytopia]] had threatened to claim Southern No before Remy could during the days leading up to the Border Disorder, but these threats did not come to fruition.
+
+![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 
 ### Jungle Island Incident
 
