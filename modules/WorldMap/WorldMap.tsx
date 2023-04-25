@@ -12,16 +12,6 @@ import { locations, MapLocation } from "./map_locations"
 import { BannerColour } from "./icons"
 import MapInfoDisplay from "./MapInfoDisplay"
 
-const MapEvents = () => {
-  // const map = useMap()
-  // useMapEvents({
-  //   click(e) {
-  //     window.alert(map.project(e.latlng, 5).round())
-  //   },
-  // })
-  return <></>
-}
-
 const WorldMap = () => {
   const [map, setMap] = useState<L.Map | null>(null)
   const [selectedMarker, setSelectedMarker] = useState<string>("")
@@ -87,7 +77,6 @@ const WorldMap = () => {
           imageRendering: "pixelated",
         }}
       >
-        <MapEvents />
         <TileLayer
           attribution="HATA SMP World Map"
           url="/map_tile/{z}/{x}/{y}.png"
