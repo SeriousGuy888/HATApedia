@@ -2,7 +2,6 @@ import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
 import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
-import { sluggify } from "../utils/sluggify.js"
 
 import { serialize } from "next-mdx-remote/serialize"
 
