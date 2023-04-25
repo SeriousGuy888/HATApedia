@@ -111,7 +111,7 @@ export const locations: { [key: string]: MapLocation } = {
     description:
       "AKA the Swamp of Secrets. Home of many hidden bases and literally nothing on the surface.",
     articles: ["tobytopia"],
-    pixelCoords: [4102, 4679],
+    pixelCoords: [4212, 4569],
     banner: "orange",
   },
   tobytopia_south_place: {
@@ -156,5 +156,13 @@ export const locations: { [key: string]: MapLocation } = {
     articles: ["holden"],
     pixelCoords: [5339, 7197],
     banner: "lime",
+  },
+  neville: {
+    name: "City of Neville",
+    description:
+      "Arvi lives here. He founded it after abandoning Korolarachi entirely and moving to so random remote place.",
+    articles: ["neville", "arvi"],
+    pixelCoords: [5225, 4480],
+    banner: "pink",
   },
 }
