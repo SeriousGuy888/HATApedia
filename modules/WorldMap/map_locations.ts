@@ -19,7 +19,7 @@ export const locations: { [key: string]: MapLocation } = {
     name: "United Nations HQ",
     description:
       "Originally just some house that Arvi built and intended to sell, this building has since been converted by Remy into the headquarters of the United Nations.",
-    articles: ["united_nations"],
+    articles: ["united_nations", "arvi"],
     pixelCoords: [4554, 4762],
     banner: "cyan",
   },
@@ -56,7 +56,7 @@ export const locations: { [key: string]: MapLocation } = {
     name: "No",
     description:
       "A huge wheat plantation started by Remy and massively expanded by Billzoshoom with some help from Arvi while Remy was on vacation. No is the heart of the Remyan agricultural industry.",
-    articles: ["remy_republic"],
+    articles: ["remy_republic", "mangrovepox"],
     pixelCoords: [4416, 5363],
     banner: "purple",
   },
@@ -64,7 +64,7 @@ export const locations: { [key: string]: MapLocation } = {
     name: "Scammington",
     description:
       "A beach where Remy plans to turn into a luxury resort or something like that in order to siphon as much money out of its visitors as possible. Still waiting on that Shimadome...",
-    articles: ["remy_republic"],
+    articles: ["remy_republic", "scammington"],
     pixelCoords: [4312, 5264],
     banner: "purple",
   },
