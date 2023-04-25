@@ -1,7 +1,7 @@
 ---
 title: Holden
 subtitle: Self-Proclaimed Ecoterrorist
-image: /images/portraits/holden.png
+image: "[[Holden Portrait.png]]"
 ---
 
 # GLORIOUS LEADER

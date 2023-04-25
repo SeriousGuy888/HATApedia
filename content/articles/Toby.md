@@ -1,7 +1,7 @@
 ---
 title: Toby
 subtitle: Sniki Ekto
-image: /images/portraits/toby.png
+image: "[[Toby Portrait.png]]"
 ---
 
 # Toby's Base

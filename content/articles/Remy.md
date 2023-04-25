@@ -1,7 +1,7 @@
 ---
 title: Remy
 subtitle: Glorious Leader
-image: /images/portraits/remy.png
+image: "[[Remy Portrait.png]]"
 ---
 
 ![](https://s.namemc.com/2d/skin/face.png?id=535ea16de06fd2d0&scale=10)

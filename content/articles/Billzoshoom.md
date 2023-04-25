@@ -1,7 +1,7 @@
 ---
 title: Billzoshoom
 subtitle: Wearer of duck onesies
-image: /images/portraits/billzoshoom.png
+image: "[[Billzo Portrait.png]]"
 ---
 
 # woggi

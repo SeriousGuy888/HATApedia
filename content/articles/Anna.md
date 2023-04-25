@@ -1,7 +1,7 @@
 ---
 title: Anna
 subtitle: Axolotl Fiend
-image: /images/portraits/anna.png
+image: "[[Anna Portrait.png]]"
 ---
 
 # GLORIOUS LEADER

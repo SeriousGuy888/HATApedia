@@ -1,7 +1,7 @@
 ---
 title: Arvi
 subtitle: Serial Killer
-image: /images/portraits/arvi.png
+image: "[[Arvi Portrait.png]]"
 ---
 
 # Career
