@@ -44,6 +44,11 @@ export const getAllSlugs = async () => {
 const getArticleFileContent = async (slug: string) => {
   const slugMap = await getSlugMap()
   const fileName = (slugMap as any)?.[slug]
+
+  if (!fileName) {
+    return null
+  }
+
   const filePath = path.join(articlesDir, fileName)
   if (!(await fs.stat(filePath)).isFile()) {
     return null
