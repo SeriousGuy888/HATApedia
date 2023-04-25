@@ -10,6 +10,12 @@ const nextConfig = {
       },
     ]
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      import("./scripts/build_algolia_search.mjs")
+    }
+    return config
+  },
 }
 
 module.exports = nextConfig
