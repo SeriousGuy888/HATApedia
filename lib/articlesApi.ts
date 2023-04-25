@@ -3,7 +3,6 @@ import path from "path"
 import matter from "gray-matter"
 import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 import { sluggify } from "../utils/sluggify.js"
-import { generateArticleSlugs, slugsFile } from "./generateArticleSlugs"
 
 import { serialize } from "next-mdx-remote/serialize"
 
@@ -32,27 +31,10 @@ export interface ArticleFull extends Article {
   content: string
 }
 
-export const articlesDir = path.join(process.cwd(), "/content/articles/")
+const articlesDir = path.join(process.cwd(), "/content/articles/")
+// const slugMapFile = path.join(process.cwd(), "cache", "articleSlugs.json")
 
-let slugMap: null | { [slug: string]: string } = null
-const getSlugMap = async () => {
-  if (!slugMap) {
-    try {
-      const fileStats = await fs.stat(slugsFile)
-      if (Date.now() - fileStats.mtime.valueOf() > 1000 * 60 * 60 * 24) {
-        slugMap = await generateArticleSlugs()
-      }
-    } catch (e) {
-      slugMap = await generateArticleSlugs()
-    }
-    const fileContent = await fs.readFile(slugsFile, "utf8")
-    slugMap = JSON.parse(fileContent)
-  }
-  if (slugMap === null) {
-    throw new Error("Slug map is null")
-  }
-  return slugMap
-}
+const getSlugMap = async () => await import("../cache/articleSlugs.json")
 
 export const getAllSlugs = async () => {
   const slugs = (await fs.readdir(articlesDir)).map(sluggify)
@@ -67,7 +49,7 @@ export const getAllSlugs = async () => {
 
 const getArticleFileContent = async (slug: string) => {
   const slugMap = await getSlugMap()
-  const fileName = slugMap?.[slug]
+  const fileName = (slugMap as any)?.[slug]
   const filePath = path.join(articlesDir, fileName)
   if (!(await fs.stat(filePath)).isFile()) {
     return null
@@ -79,7 +61,7 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   const { title, subtitle } = obj
   if (!title) {
     // If no title specified, use the filename without the extension as title
-    obj.title = (await getSlugMap())?.[obj.slug].replace(/\.mdx?$/, "")
+    obj.title = ((await getSlugMap()) as any)?.[obj.slug].replace(/\.mdx?$/, "")
   }
   if (!subtitle) {
     delete obj.subtitle
@@ -137,7 +119,7 @@ export const getArticle = async (slug: string) => {
     mdxSource,
     excerpt,
     tocHeadings,
-    fileName: (await getSlugMap())?.[slug],
+    fileName: (await getSlugMap() as any)?.[slug],
   }
 }
 

@@ -1,11 +1,11 @@
 import fs from "fs/promises"
 import path from "path"
 import { sluggify } from "../utils/sluggify"
-import { articlesDir } from "./articlesApi"
 
-export const slugsFile = path.join(process.cwd(), "cache", "articleSlugs.json")
+const slugsFile = path.join(process.cwd(), "cache", "articleSlugs.json")
+const articlesDir = path.join(process.cwd(), "/content/articles/")
 
-export async function generateArticleSlugs() {
+async function generateArticleSlugs() {
   const filenames = await fs.readdir(articlesDir)
 
   let slugs: { [slug: string]: string } = {}
@@ -23,6 +23,12 @@ export async function generateArticleSlugs() {
   }
 
   await fs.writeFile(slugsFile, JSON.stringify(slugs))
+  
+  console.log(
+    `Successfully wrote ${
+      Object.keys(slugs).length
+    } article slugs to ${slugsFile}.`,
+  )
 
   return slugs
 }
@@ -33,3 +39,5 @@ function warnIfDuplicateSlugs(slugs: string[]) {
     console.warn("Warning: Duplicate article slugs found!")
   }
 }
+
+generateArticleSlugs()
