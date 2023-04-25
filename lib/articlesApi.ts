@@ -32,9 +32,8 @@ export interface ArticleFull extends Article {
 }
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
-// const slugMapFile = path.join(process.cwd(), "cache", "articleSlugs.json")
 
-const getSlugMap = async () => await import("../cache/articleSlugs.json")
+const getSlugMap = async () => await import("../cache/article_slugs.json")
 
 export const getAllSlugs = async () => {
   const slugs = (await fs.readdir(articlesDir)).map(sluggify)
@@ -119,7 +118,7 @@ export const getArticle = async (slug: string) => {
     mdxSource,
     excerpt,
     tocHeadings,
-    fileName: (await getSlugMap() as any)?.[slug],
+    fileName: ((await getSlugMap()) as any)?.[slug],
   }
 }
 

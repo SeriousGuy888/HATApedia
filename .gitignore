@@ -176,6 +176,3 @@ dist
 
 # Obsidian vault config files
 .obsidian
-
-# Cache folder used for things like article slugs
-/cache/
