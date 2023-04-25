@@ -1,9 +1,9 @@
 ---
 title: The Remy Republic
 subtitle: Federal Parliamentary Republic
-image: /images/banners/remy_republic.png
+image: "[[Remy Republic Banner.png]]"
 nation:
-  banner: /images/banners/remy_republic.png
+  banner: "[[Remy Republic Banner.png]]"
   info:
     glorious leader: Remy
     demonym: Remyan

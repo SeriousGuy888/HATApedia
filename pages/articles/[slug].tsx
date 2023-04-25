@@ -11,6 +11,7 @@ import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
 import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
+import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult
@@ -39,7 +40,10 @@ const ArticlePage: NextPage<Props> = ({
         {frontmatter.image && (
           <meta
             property="og:image"
-            content={`https://hatapedia.vercel.app${frontmatter.image}`}
+            content={
+              "https://hatapedia.vercel.app" +
+              getImgWikilinkSrc(frontmatter.image)
+            }
           />
         )}
       </Head>
@@ -62,7 +66,7 @@ const ArticlePage: NextPage<Props> = ({
             {frontmatter.image && !frontmatter.nation && (
               <div className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
                 <Image
-                  src={frontmatter.image}
+                  src={getImgWikilinkSrc(frontmatter.image)}
                   alt=""
                   width={100}
                   height={100}
