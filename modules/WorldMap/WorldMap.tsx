@@ -113,6 +113,20 @@ const WorldMap = () => {
               })}
             </LayerGroup>
           </LayersControl.Overlay>
+          {/* For debugging purposes */}
+          {/* <Marker
+            position={[0, 0]}
+            draggable
+            icon={getBannerMarker("pink", false)}
+            eventHandlers={{
+              dragend: (e) => {
+                const marker = e.target
+                const position = marker.getLatLng()
+                const pixelCoords = map?.project(position, fullImgZoom)
+                alert(pixelCoords)
+              },
+            }}
+          /> */}
         </LayersControl>
       </MapContainer>
       <MapInfoDisplay marker={getMarkerInfo()} />
