@@ -1,4 +1,5 @@
 ---
+image: "[[Che Forguera Portrait.png]]"
 subtitle: Leader of the Fortuguese Insurrection in Tobytopia
 ---
 
