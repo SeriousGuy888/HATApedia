@@ -1,9 +1,9 @@
 ---
 title: Korolarachi
 subtitle: Anarchy
-image: /images/banners/korolarachi.png
+image: "[[Korolarachi Banner.png]]"
 nation:
-  banner: /images/banners/korolarachi.png
+  banner: "[[Korolarachi Banner.png]]"
 ---
 
 # a

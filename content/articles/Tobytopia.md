@@ -1,9 +1,9 @@
 ---
 title: Tobytopia
 subtitle: Unitary one-party republic under a totalitarian hereditary dictatorship
-image: /images/banners/tobytopia.png
+image: "[[Tobytopia Banner.png]]"
 nation:
-  banner: /images/banners/tobytopia.png
+  banner: "[[Tobytopia Banner.png]]"
   info:
     leader: Toby
 ---

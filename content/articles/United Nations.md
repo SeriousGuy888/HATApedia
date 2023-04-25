@@ -1,9 +1,9 @@
 ---
 title: United Nations
 subtitle: Supranational Organisation
-image: /images/banners/united_nations.png
+image: "[[United Nations Banner.png]]"
 nation:
-  banner: /images/banners/united_nations.png
+  banner: "[[United Nations Banner.png]]"
   info:
     founder: Remy
     architect: Arvi

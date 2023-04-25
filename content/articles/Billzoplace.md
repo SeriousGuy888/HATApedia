@@ -1,9 +1,9 @@
 ---
 title: Billzoplace
 subtitle: Unitary One-Party Republic
-image: /images/banners/billzoplace.png
+image: "[[Billzoplace Banner.png]]"
 nation:
-  banner: /images/banners/billzoplace.png
+  banner: "[[Billzoplace Banner.png]]"
   info:
     Ruler: Billzo le Magic Caterpillar
     Demonym: Billzonian
