@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import useSWR from "swr"
 import { Article } from "../../lib/articlesApi"
 import LinkCard from "../Search/LinkCard"
+import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
 
 const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
   const fetcher = (url: string) =>
@@ -12,13 +13,14 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
   }
 
   const article = data as Article
+  const src = getImgWikilinkSrc(article.image ?? "") 
 
   return (
     <LinkCard
       title={article.title}
       subtitle={article.subtitle}
       link={`./article/${article.slug}`}
-      imageSrc={article.image}
+      imageSrc={src}
     />
   )
 }

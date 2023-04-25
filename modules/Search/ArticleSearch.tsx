@@ -10,6 +10,7 @@ import {
   Snippet,
 } from "react-instantsearch-hooks-web"
 import LinkCard from "./LinkCard"
+import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
 
 const SearchBar = () => {
   const searchClient = algoliasearch(
@@ -68,7 +69,7 @@ const Hit: NextPage<{ hit: any }> = ({ hit }) => {
         subtitle={hit.subtitle}
         description={<Snippet hit={hit} attribute="excerpt" />}
         link={`/articles/${hit.slug}`}
-        imageSrc={hit.image}
+        imageSrc={getImgWikilinkSrc(hit.image ?? "")}
       />
     </div>
   )
