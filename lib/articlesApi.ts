@@ -33,16 +33,12 @@ export interface ArticleFull extends Article {
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
 
-const getSlugMap = async () => await import("../cache/article_slugs.json")
-
-export const getAllSlugs = async () => {
-  const slugs = (await fs.readdir(articlesDir)).map(sluggify)
-
-  const uniqueSlugs = new Set(slugs)
-  if (slugs.length !== uniqueSlugs.size) {
-    console.warn("Duplicate article slugs found!")
+const getSlugMap = async () =>
+  (await import("../cache/article_slugs.json")).default as {
+    [slug: string]: string
   }
 
+export const getAllSlugs = async () => {
   return Object.keys(await getSlugMap())
 }
 

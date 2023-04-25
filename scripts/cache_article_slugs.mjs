@@ -1,14 +1,16 @@
-import fs from "fs/promises"
+import fs from "fs"
 import path from "path"
-import { sluggify } from "../utils/sluggify"
+import { sluggify } from "../utils/sluggify.js"
 
-const slugsFile = path.join(process.cwd(), "cache", "articleSlugs.json")
+const slugsFile = path.join(process.cwd(), "cache", "article_slugs.json")
 const articlesDir = path.join(process.cwd(), "/content/articles/")
 
-async function generateArticleSlugs() {
-  const filenames = await fs.readdir(articlesDir)
+generateArticleSlugs()
 
-  let slugs: { [slug: string]: string } = {}
+function generateArticleSlugs() {
+  const filenames = fs.readdirSync(articlesDir)
+
+  let slugs = {}
   for (const filename of filenames) {
     const slug = sluggify(filename)
     slugs[slug] = filename
@@ -17,13 +19,13 @@ async function generateArticleSlugs() {
   warnIfDuplicateSlugs(Object.keys(slugs))
 
   try {
-    fs.mkdir(path.dirname(slugsFile), { recursive: true })
+    fs.mkdirSync(path.dirname(slugsFile), { recursive: true })
   } catch (e) {
     // ignore error if directory already exists
   }
 
-  await fs.writeFile(slugsFile, JSON.stringify(slugs))
-  
+  fs.writeFileSync(slugsFile, JSON.stringify(slugs))
+
   console.log(
     `Successfully wrote ${
       Object.keys(slugs).length
@@ -33,11 +35,9 @@ async function generateArticleSlugs() {
   return slugs
 }
 
-function warnIfDuplicateSlugs(slugs: string[]) {
+function warnIfDuplicateSlugs(slugs) {
   const uniqueSlugs = new Set(slugs)
   if (uniqueSlugs.size !== slugs.length) {
     console.warn("Warning: Duplicate article slugs found!")
   }
 }
-
-generateArticleSlugs()
