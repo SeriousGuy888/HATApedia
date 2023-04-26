@@ -26,14 +26,14 @@ The provinces of the Remy Republic are as follows:
 - [[Scammington]]
 - [[Hawainot]]
 - [[No]]
-- [[New Mangrovia]] (Formerly "Remyan Mangovia")
+- [[New Mangrovia]] (formerly Remyan Mangovia)
 
 ## Territories
 Territories are non-core parts of the Remy Republic. They are not colonies, per se, on account of not being called that, but they do not receive representation in the Duck Nest.
 
 The territories of the Remy Republic are as follows:
 - [[Cocoa Bean Cove]]
-- Cave Place
+- [[Edmonton]] (formerly Cave Place)
 - [[Floridanot]]
 
 # Government
