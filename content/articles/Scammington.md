@@ -19,6 +19,8 @@ According to a census of the population of Scammington on 2023-04-13, the popula
 | ------ | ------- | -------- | ------ |
 | 74     | 47      | 1        | 1      |
 
+# History
+
 ## Order 66 Accident
 The Glorious Leader accidentally called Order 66 in Scammington, which resulted in the death of almost the entirety of the Scammington villager population.<sup>[exact dates needed]</sup>
 
