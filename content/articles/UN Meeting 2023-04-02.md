@@ -22,7 +22,7 @@ Toby rebuts that Remy has not done anything with Cave Place (newly renamed to [[
 [[Arvi]] threatens to declare war on Remy if Remy kills him one more time.
 
 ## Arvi Abdicates
-Arvi declares his abdications of his position as leader of [[Korolarachi]] in favour of [[bill the Allay]].
+Arvi declares his abdication of his position as leader of [[Korolarachi]] in favour of [[bill the Allay]].
 
 ## Bakaville Requests Villager Meat
 This request was ignored.
