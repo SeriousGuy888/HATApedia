@@ -148,7 +148,14 @@ After the glorious defeat on the jungle island, and on the suggestion of Toby, R
 *Please see: [[Mangrovepox]]*
 
 ## Night of Mischief
-On 2023-04-09, [[Holden]] attempted to kidnap a group of [[Scammington|Scammingtonian]] ducks, including [[William Scamsworth]]. The [[Remy|Glorious Leader]], after learning of this, intervened and apprehended Holden demanding that he complete his parole, which was to remove the mangrove trees from No, as per the terms set at the end of the [[Remy Republic#The Great Mangrove War|Great Mangrove War]]. When confronting Holden, the Glorious Leader was seen assaulting Holden, the perpetrator of the ducksnatching case, when he thought nobody was watching. Holden repeatedly stated that he was not resisting, but the Glorious Leader continued to punch him, later killing him as well.
+
+### Duck Heist
+
+On 2023-04-09, [[Holden]] attempted to kidnap a group of [[Scammington|Scammingtonian]] ducks, including [[William Scamsworth]]. The [[Remy|Glorious Leader]], after learning of this, intervened and apprehended Holden demanding that he complete his parole, which was to remove the mangrove trees from No, as per the terms set at the end of the [[Remy Republic#The Great Mangrove War|Great Mangrove War]].
+
+When confronting Holden, the Glorious Leader was seen assaulting Holden, the perpetrator of the ducksnatching case, when he thought nobody was watching. Holden repeatedly stated that he was not resisting, but the Glorious Leader continued to punch him, later killing him as well.
+
+![[Glorious Leader performs police brutality.png]]
 
 > [[Holden]]:
 > 
@@ -161,6 +168,10 @@ On 2023-04-09, [[Holden]] attempted to kidnap a group of [[Scammington|Scammingt
 > You already owe me a date.
 
 Holden, at some point, managed to evade capture by Remyan authorities and twice escaped on escape vehicles driven by [[Arvi]] and [[Toby]], who were later caught stealing more ducks from the animal pens in [[No]].
+
+![[Toby and Arvi stealing Remy's ducks from No.png]]
+
+### Aftermath
 
 The Remyan government claimed that the Night of Mischief, as it was later dubbed, caused "significant damage to public property" and "disrupted the peace of the community". The government subsequently declared a state of emergency, closing several areas for repairs and announcing plans to punish Arvi and Toby for their involvement in the night.
 
