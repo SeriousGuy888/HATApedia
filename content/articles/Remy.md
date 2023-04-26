@@ -1,6 +1,5 @@
 ---
-title: Remy
-subtitle: Glorious Leader
+subtitle: Glorious Leader of the Remy Republic
 image: "[[Remy Portrait.png]]"
 ---
 
