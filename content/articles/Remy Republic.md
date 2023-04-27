@@ -115,7 +115,7 @@ Toby never acted on these threats, and New Mangrovia remains a Remyan territory.
 As the Glorious Leader, Remy, spoke these immortal words, the HATA worldborder
 trembled in fear and retreated outwards.
 
-## Western Hawainot Offensive
+### Western Hawainot Offensive
 <Youtube videoId="0rIYGpypZ0k" />
 
 The Remy Republic initiated a military operation led by General [[Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
@@ -124,12 +124,12 @@ The military operation unfortunately was in fact very rushed in its planning and
 
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 
-### Acquisition of Southern No
+#### Acquisition of Southern No
 After planting his flag in Western Hawainot and acquiring his so coveted cocoa beans, Remy also claimed Southern No. This is an area of land that was originally labelled as being part of No on the first worldmap released, but tragically, in reality, lay outside the confines of the 1000 block worldborder.
 
 [[Toby|Toby from Tobytopia]] had threatened to claim Southern No before Remy could during the days leading up to the Border Disorder, but these threats did not come to fruition.
 
-### Jungle Island Incident
+#### Jungle Island Incident
 
 Remy had a dispute with Tobytopia over an island of sparse jungle to the west of Hawainot. Remy had previously intended to claim this island, but had forgotten to do so in the commotion of the Border Disorder. This island had a waterfall, and Remy had intended to turn the island into a top tier resort due to its very unique and beautiful terrain.
 
@@ -141,7 +141,7 @@ The invasion was repulsed by the defending Tobytopian forces. The Glorious Leade
 
 ![[jungle_island_incident.png|Map of disputed jungle island]]
 
-### Claiming of the Jungle Mainland
+#### Claiming of the Jungle Mainland
 After the glorious defeat on the jungle island, and on the suggestion of Toby, Remy rowed his boat westward again, and claimed the coastline of the large landmass further to the west of the jungle island. This landmass also had a large area of sparse jungle on it.
 
 ## Mangrovepox Outbreak in No
