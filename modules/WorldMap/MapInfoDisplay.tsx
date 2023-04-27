@@ -11,7 +11,7 @@ const MapInfoDisplay: NextPage<{ marker: MapLocation }> = ({ marker }) => {
       {marker.articles && (
         <div className="mt-8">
           <h3 className="text-lg mb-4">See also...</h3>
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+          <div className="flex flex-col gap-4">
             {marker.articles?.map((slug) => (
               <ArticleLink key={slug} slug={slug} />
             ))}
