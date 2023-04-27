@@ -27,7 +27,7 @@ const MDXComponents = {
             sizes="(min-width: 1280px) 1024px,
             (min-width: 768px) 75vw,
             90vw"
-            className={(className ?? "") + " rounded-lg"}
+            className={(className ?? "") + " rounded-lg max-h-[32rem] w-auto"}
           />
         </Link>
       )
