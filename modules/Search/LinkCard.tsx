@@ -12,30 +12,28 @@ const LinkCard: NextPage<{
 }> = ({ title, subtitle, description, imageSrc, link }) => {
   return (
     <div
-      className="max-w-full overflow-hidden rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+      className="max-w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 hover:border-l-[12px] border-blue-500 dark:border-blue-400 transition-[border] cursor-pointer"
       title={title}
     >
-      <Link className="flex flex-1 gap-4 justify-between px-8 py-4 h-full" href={link}>
-        <div className="flex-[4] overflow-x-hidden py-4 [&>*]:overflow-ellipsis [&>*]:overflow-hidden">
+      <Link className="flex flex-1 gap-4 justify-between h-full" href={link}>
+        <div className="p-6 md:p-8 flex-[4] overflow-hidden [&>*]:overflow-ellipsis [&>*]:overflow-hidden">
           <h2 className="text-lg whitespace-nowrap">{title}</h2>
-          {subtitle && (
-            <p className="uppercase tracking-tight text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
-              {subtitle}
-            </p>
-          )}
-          {description && (
-            <>
-              <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-                {description}
-              </p>
-            </>
-          )}
+          <p className="uppercase tracking-tight text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">
+            {subtitle ?? ""}
+          </p>
+          <p className="mt-3 text-xs min-h-[3em] text-gray-500 dark:text-gray-400">
+            {description ?? ""}
+          </p>
         </div>
         {imageSrc && (
-          <div className="flex-[2] bg-slate-200 dark:bg-slate-700 rounded-md min-h-[8rem] p-2">
-            <div className="relative w-full h-full">
-              <Image src={imageSrc} alt="" fill className="object-contain" />
-            </div>
+          <div className="flex-[2] bg-slate-200 dark:bg-slate-700 p-3 flex justify-center h-full aspect-square">
+            <Image
+              src={imageSrc}
+              alt=""
+              width={128}
+              height={128}
+              className="object-contain rounded-md w-full"
+            />
           </div>
         )}
       </Link>
