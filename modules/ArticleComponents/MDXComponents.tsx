@@ -29,7 +29,9 @@ const MDXComponents = {
             sizes="(min-width: 1280px) 1024px,
             (min-width: 768px) 75vw,
             90vw"
-            className={(className ?? "") + " rounded-lg max-h-[32rem] w-auto"}
+            className={
+              (className ?? "") + " rounded-lg max-h-[32rem] w-auto m-0"
+            }
           />
         </Link>
       )
@@ -40,12 +42,21 @@ const MDXComponents = {
           src={src}
           alt={alt ?? ""}
           title={title ?? ""}
-          className={className ?? ""}
+          className={(className ?? "") + " m-0"}
         ></img>
       )
     }
 
-    return imgElem
+    return (
+      <figure>
+        {imgElem}
+        {title && (
+          <figcaption className="text-center text-gray-500 dark:text-gray-400 text-sm m-0">
+            {title}
+          </figcaption>
+        )}
+      </figure>
+    )
   },
   NationInfoCard,
   BookAndQuill,
