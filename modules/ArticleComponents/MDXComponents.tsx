@@ -8,8 +8,10 @@ const MDXComponents = {
   img: (image: HTMLImageElement) => {
     const { src, alt, title, className, width, height } = image
 
+    let imgElem
+
     if (className?.split(" ").includes("wikilink-image")) {
-      return (
+      imgElem = (
         <Link
           href={src ? "/api/images/" + src : ""}
           target="_blank"
@@ -31,16 +33,19 @@ const MDXComponents = {
           />
         </Link>
       )
+    } else {
+      imgElem = (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt ?? ""}
+          title={title ?? ""}
+          className={className ?? ""}
+        ></img>
+      )
     }
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={src}
-        alt={alt ?? ""}
-        title={title ?? ""}
-        className={className ?? ""}
-      ></img>
-    )
+
+    return imgElem
   },
   NationInfoCard,
   BookAndQuill,
