@@ -18,16 +18,16 @@ const wikilinkSyntax: Plugin = (): Transformer => {
           if (child.type === "text") return child.value.trim() !== ""
         })
 
+        // Don't consider the node if there's anything other than images in it.
+        if (filteredChildren.some((child) => child.type !== "image")) {
+          return
+        }
+
         // don't wrap images in a gallery if there's only one image
         if (filteredChildren.length <= 1) {
           // still take the image out of the p tag, since itll be wrapped in a figure tag later
           parent.children.splice(index, 1, ...filteredChildren)
           return SKIP
-        }
-
-        // Don't consider the node if there's anything other than images in it.
-        if (filteredChildren.some((child) => child.type !== "image")) {
-          return
         }
 
         // Replace the node with a new one
