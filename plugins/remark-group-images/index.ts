@@ -18,6 +18,11 @@ const wikilinkSyntax: Plugin = (): Transformer => {
           if (child.type === "text") return child.value.trim() !== ""
         })
 
+        // don't wrap images in a gallery if there's only one image
+        if (filteredChildren.length <= 1) {
+          return
+        }
+
         // Don't consider the node if there's anything other than images in it.
         if (filteredChildren.some((child) => child.type !== "image")) {
           return
@@ -32,8 +37,8 @@ const wikilinkSyntax: Plugin = (): Transformer => {
           data: {
             hProperties: {
               className: "gallery",
-            }
-          }
+            },
+          },
         }
 
         parent.children.splice(index, 1, newNode)
