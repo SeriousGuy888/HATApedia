@@ -15,7 +15,7 @@ const MDXComponents = {
         <Link
           href={src ? "/api/images/" + src : ""}
           target="_blank"
-          className="w-full max-w-full flex justify-center h-fit"
+          className="w-full max-w-full flex justify-center"
         >
           <Image
             src={"/api/images/" + src}
@@ -30,7 +30,7 @@ const MDXComponents = {
             (min-width: 768px) 75vw,
             90vw"
             className={
-              (className ?? "") + " rounded-lg max-h-[32rem] w-auto m-0"
+              (className ?? "") + " rounded-lg w-auto m-0"
             }
           />
         </Link>

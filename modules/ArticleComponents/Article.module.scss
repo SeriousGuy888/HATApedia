@@ -15,12 +15,23 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 1rem;
-
       margin: 2rem 0;
 
       & > * {
-        flex: 1 1 250px;
+        flex: 1 1 200px;
         margin: 0;
+
+        overflow: hidden;
+        border-radius: 0.5rem;
+      }
+
+      img {
+        object-fit: cover;
+        transform: scale(1.05);
+        transition: transform 0.5s;
+        &:hover {
+          transform: scale(1);
+        }
       }
     }
   }
