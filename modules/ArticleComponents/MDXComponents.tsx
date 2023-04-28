@@ -15,7 +15,7 @@ const MDXComponents = {
         <Link
           href={src ? "/api/images/" + src : ""}
           target="_blank"
-          className="w-full max-w-full flex justify-center"
+          className="w-full max-w-full flex justify-center h-fit"
         >
           <Image
             src={"/api/images/" + src}
@@ -48,14 +48,15 @@ const MDXComponents = {
     }
 
     return (
-      <figure>
-        {imgElem}
-        {title && (
-          <figcaption className="text-center text-gray-500 dark:text-gray-400 text-sm m-0">
-            {title}
-          </figcaption>
-        )}
-      </figure>
+      imgElem
+      // <span>
+      //   {imgElem}
+      //   {title && (
+      //     <span className="text-center text-gray-500 dark:text-gray-400 text-xs m-0">
+      //       {title}
+      //     </span>
+      //   )}
+      // </span>
     )
   },
   NationInfoCard,

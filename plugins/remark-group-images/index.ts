@@ -18,26 +18,22 @@ const wikilinkSyntax: Plugin = (): Transformer => {
           if (child.type === "text") return child.value.trim() !== ""
         })
 
-        // Don't consider the node if there's anything other than images in it, or if there are no images.
+        /*
+          Don't consider the node
+          if there's anything other than images in it,
+          or if there are no images,
+          or if there is only one image.
+        */
         if (
-          filteredChildren.length === 0 ||
+          filteredChildren.length <= 1 ||
           filteredChildren.some((child) => child.type !== "image")
         ) {
-          return CONTINUE
-        }
-        
-        // don't wrap images in a gallery if there's only one image
-        if (filteredChildren.length === 1) {
-          // still take the image out of the p tag, since itll be wrapped in a figure tag later
-          parent.children.splice(index, 1, ...filteredChildren)
           return SKIP
         }
 
         // Replace the node with a new one
         const newNode: Content = {
-          type: "tableCell" /*  this is a hack; tablecell becomes a div
-                                im not allowed to use a p tag,
-                                since <figure>s are not allowed inside p tags */,
+          type: "paragraph",
           children: filteredChildren,
           data: {
             hProperties: {

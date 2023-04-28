@@ -10,7 +10,7 @@
       color: #ef5353;
     }
 
-    div.gallery {
+    .gallery {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -18,7 +18,7 @@
 
       margin: 2rem 0;
 
-      & > figure {
+      & > * {
         flex: 1 1 250px;
         margin: 0;
       }
