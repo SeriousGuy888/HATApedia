@@ -42,6 +42,8 @@ decided to claim it first.
 ![[Toby's Base 2023-03-31 From Tree Level.png|Toby's base under construction]]
 ![[Toby's Base 2023-03-31 From Above.png]]
 ![[Pasted image 20230402161202.png|Remy swoops in on espionage mission]]
+![[Remy Infiltrates Toby's Moat 2023-04-26.png]]
+![[Remy sneaks around Toby's Palace 2023-04-26.png]]
 
 ## Toby's Cave
 Toby's cave is located directly below the base above it.
