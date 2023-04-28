@@ -1,11 +1,28 @@
 .prose {
-  :global(.responsive-table) {
-    width: 100%;
-    overflow-x: auto;
-  }
+  // todo: do this better without :global
+  :global {
+    .responsive-table {
+      width: 100%;
+      overflow-x: auto;
+    }
 
-  :global(a.redLink) {
-    color: #ef5353;
+    a.redLink {
+      color: #ef5353;
+    }
+
+    div.gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      margin: 2rem 0;
+
+      & > figure {
+        flex: 1 1 250px;
+        margin: 0;
+      }
+    }
   }
 
   h1:hover,
