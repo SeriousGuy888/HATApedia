@@ -30,7 +30,7 @@ const MDXComponents = {
             (min-width: 768px) 75vw,
             90vw"
             className={
-              (className ?? "") + " rounded-lg w-auto m-0"
+              (className ?? "") + " rounded-lg m-0"
             }
           />
         </Link>
