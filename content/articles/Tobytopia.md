@@ -40,16 +40,13 @@ decided to claim it first.
 ## Toby's Base
 
 ![[Toby's Base 2023-03-31 From Tree Level.png|Toby's base under construction]]
-
 ![[Toby's Base 2023-03-31 From Above.png]]
-
 ![[Pasted image 20230402161202.png|Remy swoops in on espionage mission]]
 
 ## Toby's Cave
 Toby's cave is located directly below the base above it.
 
 ![[Toby's Cave 2023-03-31.png|The main chamber of the cave]]
-
 ![[Toby's semiautomatic crop farms.png|Toby's auto wheat and carrot farm]]
 
 # Fortuguese Rebellion
