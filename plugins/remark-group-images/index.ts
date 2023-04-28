@@ -20,7 +20,9 @@ const wikilinkSyntax: Plugin = (): Transformer => {
 
         // don't wrap images in a gallery if there's only one image
         if (filteredChildren.length <= 1) {
-          return
+          // still take the image out of the p tag, since itll be wrapped in a figure tag later
+          parent.children.splice(index, 1, ...filteredChildren)
+          return SKIP
         }
 
         // Don't consider the node if there's anything other than images in it.
