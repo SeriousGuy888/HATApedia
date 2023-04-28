@@ -1,7 +1,7 @@
 import type { Parent, Paragraph, Content } from "mdast"
 import type { Node } from "unist"
 import type { Plugin, Transformer } from "unified"
-import { visit, SKIP } from "unist-util-visit"
+import { visit, SKIP, CONTINUE } from "unist-util-visit"
 
 const wikilinkSyntax: Plugin = (): Transformer => {
   return (tree: Node) => {
@@ -18,13 +18,16 @@ const wikilinkSyntax: Plugin = (): Transformer => {
           if (child.type === "text") return child.value.trim() !== ""
         })
 
-        // Don't consider the node if there's anything other than images in it.
-        if (filteredChildren.some((child) => child.type !== "image")) {
-          return
+        // Don't consider the node if there's anything other than images in it, or if there are no images.
+        if (
+          filteredChildren.length === 0 ||
+          filteredChildren.some((child) => child.type !== "image")
+        ) {
+          return CONTINUE
         }
-
+        
         // don't wrap images in a gallery if there's only one image
-        if (filteredChildren.length <= 1) {
+        if (filteredChildren.length === 1) {
           // still take the image out of the p tag, since itll be wrapped in a figure tag later
           parent.children.splice(index, 1, ...filteredChildren)
           return SKIP
