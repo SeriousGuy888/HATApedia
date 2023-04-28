@@ -25,6 +25,15 @@ module.exports = {
                 textDecoration: "underline",
               },
             },
+            blockquote: {
+              fontStyle: "normal",
+            },
+            "blockquote p:first-of-type::before": {
+              content: "",
+            },
+            "blockquote p:last-of-type::after": {
+              content: "",
+            },
           },
         },
         invert: {
