@@ -169,7 +169,9 @@ When confronting Holden, the Glorious Leader was seen assaulting Holden, the per
 
 Holden, at some point, managed to evade capture by Remyan authorities and twice escaped on escape vehicles driven by [[Arvi]] and [[Toby]], who were later caught stealing more ducks from the animal pens in [[No]].
 
+![[Pasted image 20230428141826.png]]
 ![[Toby and Arvi stealing Remy's ducks from No.png]]
+![[Pasted image 20230428141852.png]]
 
 ### Aftermath
 
