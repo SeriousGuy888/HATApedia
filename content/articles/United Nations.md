@@ -29,7 +29,6 @@ After buying the building from Arvi for the price of a building permit for a bar
 Remy added chairs and a table, as well as ladders to get up and down.
 
 ![[unhq_interior.png|Interior of the UN HQ building]]
-
 ![[unhq_portrait.png|Portrait of the first UN meeting]]
 
 # Impact
