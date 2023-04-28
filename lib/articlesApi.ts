@@ -7,6 +7,7 @@ import { serialize } from "next-mdx-remote/serialize"
 
 import remarkGfm from "remark-gfm"
 import remarkWikilink from "../plugins/remark-wikilink-syntax"
+import remarkGroupImages from "../plugins/remark-group-images"
 import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
 import rehypeSlug from "rehype-slug"
@@ -83,6 +84,7 @@ export const getArticle = async (slug: string) => {
         remarkParse,
         remarkGfm,
         [remarkWikilink, { existingPageNames: allSlugs }],
+        remarkGroupImages,
         remarkHtml,
       ],
       rehypePlugins: [
