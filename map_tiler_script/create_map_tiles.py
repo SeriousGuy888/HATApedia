@@ -11,53 +11,65 @@ from math import ceil
 from PIL import Image
 from PIL.Image import Resampling
 
+from tqdm import tqdm
+
 
 def main():
   img_path = "map.png"
   output_dir = "../public/map_tile/"
+
+  # the dimensions for each of the individual tiles;
+  # not related to the dimensions of the input image
   tile_size = 256
 
+  # the zoom levels to create tiles for
   min_zoom = 1
   max_zoom = 5
 
-  img = Image.open(img_path)
-  img_w, img_h = img.size
-  max_side = max(img_w, img_h)
+  in_img = Image.open(img_path)
+  in_img_w, in_img_h = in_img.size
+
+  ##############################
+
+  """
+  Create a new image whose dimensions are some multiple of the tile_size
+  and greater than or equal to the input image's dimensions.
+  Then, paste the input image into the center of the new image.
+  This is so that the input image can be sliced up cleanly into tiles.
+  """
+
+  img_w = ceil(in_img_w / tile_size) * tile_size
+  img_h = ceil(in_img_h / tile_size) * tile_size
+  new_img = Image.new("RGB", (img_w, img_h), "black")
+
+  paste_x = (img_w - in_img_w) // 2
+  paste_y = (img_h - in_img_h) // 2
+  new_img.paste(in_img, (paste_x, paste_y))
+
+  ##############################
 
   for zoom_lvl in range(min_zoom, max_zoom + 1):
+    # what directory for this zoom level
     z_output = path.join(output_dir, str(zoom_lvl))
     if not path.isdir(z_output):
       makedirs(z_output)
 
-    tile_size_at_zoom_lvl = tile_size * (2 ** zoom_lvl)
-    scale_ratio = tile_size_at_zoom_lvl / max_side
-    scaled_w = int(img_w * scale_ratio)
-    scaled_h = int(img_h * scale_ratio)
-    scaled_img = img.resize((scaled_w, scaled_h), Resampling.BICUBIC)
-    print(f"zoom={zoom_lvl}, width={scaled_w}, height={scaled_h}")
-
-    # Put the input image on a new image whose dimensions are multiples
-    # of the tile dimensions so it can be sliced up cleanly.
-    new_w = ceil(scaled_w / tile_size) * tile_size
-    new_h = ceil(scaled_h / tile_size) * tile_size
-    new_img = Image.new("RGB", (new_w, new_h), "black")
-
-    paste_x = (new_w - scaled_w) // 2
-    paste_y = (new_h - scaled_h) // 2
-    # print(paste_x, paste_y)
-    new_img.paste(scaled_img, (paste_x, paste_y))
-    # scaled_img.save(path.join(z_output, "scaled.png"))
-    # new_img.save(path.join(z_output, "goodified.png"))
+    dim_divisor = 2 ** (max_zoom - zoom_lvl)
+    scaled_w = img_w // dim_divisor
+    scaled_h = img_h // dim_divisor
+    scaled_img = new_img.resize((scaled_w, scaled_h), Resampling.BICUBIC)
+    print(
+        f"\nSlicing tiles for zoom level {zoom_lvl}, from image with dimensions {scaled_img.size}...")
 
     tile_x, tile_y = 0, 0
-    for y in range(0, new_h, tile_size):
-      for x in range(0, new_w, tile_size):
+    for y in tqdm(range(0, scaled_h, tile_size), desc="Columns", unit="col"):
+      for x in range(0, scaled_w, tile_size):
         x_output = path.join(z_output, str(tile_x))
         if not path.isdir(x_output):
           makedirs(x_output)
 
         box = (x, y, x + tile_size, y + tile_size)
-        tile_img = new_img.crop(box)
+        tile_img = scaled_img.crop(box)
         tile_img.save(path.join(x_output, f"{tile_y}.png"))
 
         tile_x += 1

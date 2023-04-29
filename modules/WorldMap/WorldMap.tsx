@@ -17,7 +17,7 @@ const WorldMap = () => {
   const [selectedMarker, setSelectedMarker] = useState<string>("")
 
   const fullImgZoom = 5 // Largest zoom level
-  const fullImgDim = [8192, 8192] // Dimensions of image sliced up in the largest zoom level
+  const fullImgDim = [10240, 10240] // Dimensions of image sliced up in the largest zoom level
   const mapSW = L.point(0, fullImgDim[1])
   const mapNE = L.point(fullImgDim[0], 0)
 
