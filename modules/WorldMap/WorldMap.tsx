@@ -45,7 +45,8 @@ const WorldMap = () => {
       return {
         coords: [0, 0],
         name: "HATA SMP World Map",
-        description: "Click a map marker to \nsee more information about it.",
+        description:
+          "🎉Update🎉: Quality improved! The map is no longer blurry up close, and you can now see each individual block!",
       }
     }
   }, [selectedMarker])
