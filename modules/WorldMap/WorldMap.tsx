@@ -43,7 +43,7 @@ const WorldMap = () => {
       return locations[selectedMarker]
     } else {
       return {
-        pixelCoords: [0, 0],
+        coords: [0, 0],
         name: "HATA SMP World Map",
         description: "Click a map marker to \nsee more information about it.",
       }
@@ -90,12 +90,18 @@ const WorldMap = () => {
               {Object.keys(locations).map((key) => {
                 const loc = locations[key]
 
+                let coords = loc.coords.map(
+                  (e, i) => e + fullImgDim[i] / 2,
+                ) as [number, number]
+
+                let position =
+                  map?.unproject(coords, fullImgZoom) ?? new L.LatLng(0, 0)
+                console.log(position)
+
                 return (
                   <Marker
                     key={key}
-                    position={
-                      map?.unproject(loc.pixelCoords, fullImgZoom) ?? [0, 0]
-                    }
+                    position={position}
                     icon={getBannerMarker(
                       loc.banner || "white",
                       selectedMarker === key,
@@ -115,7 +121,7 @@ const WorldMap = () => {
           </LayersControl.Overlay>
           {/* For debugging purposes */}
           {/* <Marker
-            position={[0, 0]}
+            position={[-150, 150]}
             draggable
             icon={getBannerMarker("pink", false)}
             eventHandlers={{
@@ -123,7 +129,13 @@ const WorldMap = () => {
                 const marker = e.target
                 const position = marker.getLatLng()
                 const pixelCoords = map?.project(position, fullImgZoom)
-                alert(pixelCoords)
+                alert(
+                  pixelCoords +
+                    "\n" +
+                    [pixelCoords?.x, pixelCoords?.y].map((e) =>
+                      e ? Math.round(e - 5120) : 0,
+                    ),
+                )
               },
             }}
           /> */}
