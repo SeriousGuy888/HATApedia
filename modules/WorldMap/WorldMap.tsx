@@ -1,20 +1,32 @@
 import {
+  FeatureGroup,
   LayerGroup,
   LayersControl,
   MapContainer,
   Marker,
+  Polygon,
   TileLayer,
+  Tooltip,
+  GeoJSON,
 } from "react-leaflet"
+import { EditControl } from "react-leaflet-draw"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { useCallback, useEffect, useState } from "react"
+import "leaflet-draw/dist/leaflet.draw.css"
+
 import { locations, MapLocation } from "./map_locations"
+import { geoJsonData } from "./map_geojson_data"
+
+import { useCallback, useEffect, useRef, useState } from "react"
 import { BannerColour } from "./icons"
 import MapInfoDisplay from "./MapInfoDisplay"
+import { GeoJsonObject } from "geojson"
 
 const WorldMap = () => {
   const [map, setMap] = useState<L.Map | null>(null)
   const [selectedMarker, setSelectedMarker] = useState<string>("")
+
+  const editableFg = useRef<typeof FeatureGroup>(null)
 
   const fullImgZoom = 5 // Largest zoom level
   const fullImgDim = [10240, 10240] // Dimensions of image sliced up in the largest zoom level
@@ -37,6 +49,12 @@ const WorldMap = () => {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map])
+
+  useEffect(() => {
+    new L.GeoJSON(geoJsonData as any).eachLayer((layer) =>
+      editableFg.current?.addLayer(layer),
+    )
+  }, [editableFg])
 
   const getMarkerInfo = useCallback((): MapLocation => {
     if (selectedMarker in locations) {
@@ -76,6 +94,7 @@ const WorldMap = () => {
         style={{
           backgroundColor: "black",
           imageRendering: "pixelated",
+          fontFamily: "inherit",
         }}
       >
         <TileLayer
@@ -97,7 +116,6 @@ const WorldMap = () => {
 
                 let position =
                   map?.unproject(coords, fullImgZoom) ?? new L.LatLng(0, 0)
-                console.log(position)
 
                 return (
                   <Marker
@@ -120,27 +138,64 @@ const WorldMap = () => {
               })}
             </LayerGroup>
           </LayersControl.Overlay>
-          {/* For debugging purposes */}
-          {/* <Marker
-            position={[-150, 150]}
-            draggable
-            icon={getBannerMarker("pink", false)}
-            eventHandlers={{
-              dragend: (e) => {
-                const marker = e.target
-                const position = marker.getLatLng()
-                const pixelCoords = map?.project(position, fullImgZoom)
-                alert(
-                  pixelCoords +
-                    "\n" +
-                    [pixelCoords?.x, pixelCoords?.y].map((e) =>
-                      e ? Math.round(e - 5120) : 0,
-                    ),
-                )
-              },
-            }}
-          /> */}
+          <LayersControl.Overlay name="For Testing Purposes" checked>
+            <LayerGroup>
+              <Polygon
+                positions={[
+                  [0, 0],
+                  [-100, 0],
+                  [-100, 100],
+                  [0, 100],
+                  [0, 0],
+                ]}
+                className="fill-red-500 stroke-red-500"
+              >
+                <Tooltip direction="center" permanent>
+                  This is a square.
+                </Tooltip>
+              </Polygon>
+
+              <GeoJSON data={geoJsonData as GeoJsonObject} />
+
+              <Marker
+                position={[-150, 150]}
+                draggable
+                icon={getBannerMarker("pink", false)}
+                eventHandlers={{
+                  dragend: (e) => {
+                    const marker = e.target
+                    const position = marker.getLatLng()
+                    const pixelCoords = map?.project(position, fullImgZoom)
+                    alert(
+                      pixelCoords +
+                        "\n" +
+                        [pixelCoords?.x, pixelCoords?.y].map((e) =>
+                          e ? Math.round(e - 5120) : 0,
+                        ),
+                    )
+                  },
+                }}
+              />
+            </LayerGroup>
+          </LayersControl.Overlay>
         </LayersControl>
+        <FeatureGroup ref={editableFg as any}>
+          <EditControl
+            position="topleft"
+            onEdited={(e) => {
+              console.log(JSON.stringify(e.layers.toGeoJSON()))
+            }}
+            edit={{ remove: true }}
+            draw={{
+              marker: false,
+              circle: false,
+              rectangle: false,
+              polygon: true,
+              polyline: false,
+              circlemarker: false,
+            }}
+          />
+        </FeatureGroup>
       </MapContainer>
       <MapInfoDisplay marker={getMarkerInfo()} />
     </section>
