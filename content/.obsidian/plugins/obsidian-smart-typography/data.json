@@ -6,7 +6,7 @@
   "comparisons": true,
   "fractions": false,
   "guillemets": false,
-  "skipEnDash": false,
+  "skipEnDash": true,
   "openSingle": "‘",
   "closeSingle": "’",
   "openDouble": "“",
