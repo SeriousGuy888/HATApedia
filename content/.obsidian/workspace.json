@@ -13,26 +13,45 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/No.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7774c5372dffe27f",
+            "id": "c0c413b173e35fb8",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/No 2023-01-15.png"
+              }
+            }
+          },
+          {
+            "id": "954eb974befe7727",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/No 2022-12-04.png"
+              }
+            }
+          },
+          {
+            "id": "dc5d9e11313dde22",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/No.md",
+                "file": "articles/Scammington.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -161,9 +180,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4bf1c943edbb0ac4",
+  "active": "3b8fdf70d530c719",
   "lastOpenFiles": [
+    "images/No 2023-01-15.png",
+    "articles/No.md",
+    "articles/Remy.md",
+    "images/No 2022-12-04.png",
+    "images/Remy getting stalked by the paparazzi.png",
     "articles/Remy Republic.md",
-    "articles/No.md"
+    "articles/Scammington.md"
   ]
 }

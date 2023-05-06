@@ -12,6 +12,8 @@ He is most well known for being the Glorious Leader of the [[Remy Republic]].
 ## (2022-12 to present): Glorious Leader of the Remy Republic
 *Please see: [[Remy Republic]]*
 
+![[Remy getting stalked by the paparazzi.png]]
+
 ## (2023-01-22 to 2023-01-22): Interim Dictator of Tobytopia
 
 ### Catalyst
