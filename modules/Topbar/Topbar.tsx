@@ -1,8 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import ThemeSwitcher from "./ThemeSwitcher"
+import { useEffect, useState } from "react"
 
 const Topbar = () => {
+  const [date, setDate] = useState<Date | null>(null)
+  useEffect(() => {
+    setDate(new Date())
+  }, [])
+
   return (
     <nav className="flex gap-8 items-center sticky top-0 z-40 bg-blue-900 py-4 px-8">
       <Logo />
@@ -12,8 +18,8 @@ const Topbar = () => {
       </div>
       <ThemeSwitcher />
       <div className="hidden print:flex justify-between w-full text-sm">
-        <p>HATApedia: {window.location.pathname}</p>
-        <p className="text-right">{new Date().toISOString()}</p>
+        <p>HATApedia</p>
+        <p className="text-right">{date ? date.toISOString() : ""}</p>
       </div>
     </nav>
   )
