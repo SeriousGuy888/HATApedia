@@ -2,7 +2,7 @@ import type { NextPage } from "next"
 
 const Youtube: NextPage<YoutubeEmbedData> = ({ videoId }) => {
   return (
-    <aside className="w-full flex">
+    <aside className="w-full flex mb-5">
       {/* https://developers.google.com/youtube/player_parameters#Parameters */}
       <iframe
         className="w-full aspect-video print:hidden"
