@@ -21,14 +21,14 @@ export default function MyApp(props: AppProps) {
           <meta name="theme-color" content="#222999" />
           <meta property="og:site_name" content="HATApedia" />
         </Head>
-        <div className="grid grid-rows-[4rem_1fr_1fr] min-h-screen h-screen max-h-screen">
+        <div className="min-h-full max-h-full">
           <Topbar />
           <motion.main
             key={router.route}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex row-span-2 justify-center"
+            className="flex justify-center"
           >
             <Component {...pageProps} />
           </motion.main>

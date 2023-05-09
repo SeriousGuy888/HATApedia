@@ -12,7 +12,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
   }
 
   return (
-    <div className="sticky top-12 h-fit w-full left-0 hidden md:block">
+    <div className="sticky top-24 h-fit w-full left-0 hidden md:block">
       <div className="flex justify-between align-bottom">
         <h2 className="text-lg text-gray-500 dark:text-gray-400 mb-4">
           Contents
