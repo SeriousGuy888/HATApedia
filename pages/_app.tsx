@@ -21,7 +21,7 @@ export default function MyApp(props: AppProps) {
           <meta name="theme-color" content="#222999" />
           <meta property="og:site_name" content="HATApedia" />
         </Head>
-        <div className="grid grid-rows-[4rem_1fr] min-h-fit min-w-full">
+        <div className="grid grid-rows-[4rem_1fr] min-h-screen h-fit min-w-full">
           <Topbar />
           <motion.main
             key={router.route}
