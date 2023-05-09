@@ -77,7 +77,7 @@ After acquiring power, Holden officially renamed the nation to *Holdentopia*, de
 ### Toby's Countercoup
 While Holden left to build his city, Toby had respawned and prepared to retake the throne from Holden. He gathered any gear he had remaining from his ender chest and storage system, including invisiblity potions, a crossbow, and four [[big damage missile|big damage missiles]] so that he could conduct a retalliatory assassination on Holden.
 
-Holden soon tracked down Holden's exact location — the beach village on the northern coast of the nation. Toby rowed his boat to the village and splashed an invisibility potion on himself. He snuck closer to the village house in which Holden was hiding out and waited for Holden to come out of the front door. At approximately 02:30 EDT, as Holden stepped out of the door, Toby fired his big damage missile and instantly killed the usurper.
+Toby soon tracked down Holden's exact location — the beach village on the northern coast of the nation. Toby rowed his boat to the village and splashed an invisibility potion on himself. He snuck closer to the village house in which Holden was hiding out and waited for Holden to come out of the front door. At approximately 02:30 EDT, as Holden stepped out of the door, Toby fired his big damage missile and instantly killed the usurper.
 
 ![[Toby blows up Holden.png]]
 
