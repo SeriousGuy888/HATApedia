@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "0712914dfd80d2c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Remy Republic.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "dc5d9e11313dde22",
             "type": "leaf",
             "state": {
@@ -42,8 +30,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0712914dfd80d2c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Remy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6d455a7d4a253669",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Tobytopia.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "314175badde382e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Toby.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "19917432c9b66f46",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Che Forguera.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -109,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/No.md",
+                "file": "articles/Toby.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/No.md",
+                "file": "articles/Toby.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,16 +186,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/No.md"
+                "file": "articles/Toby.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -172,14 +209,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3b8fdf70d530c719",
+  "active": "314175badde382e0",
   "lastOpenFiles": [
+    "articles/Tobytopia.md",
+    "articles/Holden.md",
+    "images/Holdentopia residents are not allowed here unless to pray.png",
+    "images/Toby places some signs at the jungle palace.png",
+    "images/Pasted image 20230509111235.png",
+    "images/Pasted image 20230509111231.png",
+    "images/Toby arrives at the Jungle Palace.png",
+    "images/Toby blows up Holden.png",
+    "images/Holdentopia Jungle Palace.png",
+    "images/Holden murders Toby.png",
     "articles/Remy.md",
-    "articles/No.md",
     "articles/Remy Republic.md",
+    "articles/Che Forguera.md",
+    "articles/Scammington.md",
+    "articles/No.md",
     "images/No 2023-01-15.png",
-    "images/No 2022-12-04.png",
-    "images/Remy getting stalked by the paparazzi.png",
-    "articles/Scammington.md"
+    "images/No 2022-12-04.png"
   ]
 }

@@ -1,6 +1,6 @@
 ---
 title: Toby
-subtitle: Sniki Ekto
+subtitle: Ultimate Kaiser of Doom Three Thousand of Tobytopia
 image: "[[Toby Portrait.png]]"
 ---
 
