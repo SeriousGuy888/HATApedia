@@ -165,4 +165,11 @@ export const locations: { [key: string]: MapLocation } = {
     coords: [1375, 472],
     banner: "pink",
   },
+  bakaville: {
+    name: "Bakaville",
+    description: "Settlement of dogs. Founded by Billzo & Remy, run by their dogs.",
+    articles: ["remy", "billzoshoom"],
+    coords: [1639, 3310],
+    banner: "red",
+  },
 }
