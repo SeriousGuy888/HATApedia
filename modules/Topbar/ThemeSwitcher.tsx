@@ -15,7 +15,7 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="text-white ml-auto">
+    <div className="text-white ml-auto print:hidden">
       <button
         className="hover:text-blue-200"
         aria-label="Toggle colour theme"

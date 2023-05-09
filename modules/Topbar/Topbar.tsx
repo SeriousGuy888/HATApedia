@@ -4,20 +4,27 @@ import ThemeSwitcher from "./ThemeSwitcher"
 
 const Topbar = () => {
   return (
-    <nav className="flex gap-8 items-center sticky top-0 z-40 bg-blue-900 py-4 px-8 print:hidden">
+    <nav className="flex gap-8 items-center sticky top-0 z-40 bg-blue-900 py-4 px-8">
       <Logo />
-      <div className="flex justify-start items-center gap-4 text-gray-200 text-sm">
+      <div className="flex justify-start items-center gap-4 text-gray-200 text-sm print:hidden">
         <Link href={"/articles"}>Articles</Link>
         <Link href={"/map"}>World Map</Link>
       </div>
       <ThemeSwitcher />
+      <div className="hidden print:flex justify-between w-full text-sm">
+        <p>HATApedia: {window.location.pathname}</p>
+        <p className="text-right">{new Date().toISOString()}</p>
+      </div>
     </nav>
   )
 }
 
 const Logo = () => {
   return (
-    <Link href="/" className="flex gap-2 items-center no-underline">
+    <Link
+      href="/"
+      className="flex gap-2 items-center no-underline print:hidden"
+    >
       <Image
         src="/images/earth_icon.png"
         alt="Logo"
