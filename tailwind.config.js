@@ -44,6 +44,40 @@ module.exports = {
             },
           },
         },
+        print: {
+          css: {
+            // backgroundColor: theme("colors.white"),
+            color: theme("colors.gray.800") + " !important",
+            h1: {
+              color: theme("colors.black"),
+            },
+            h2: {
+              color: theme("colors.black"),
+            },
+            h3: {
+              color: theme("colors.black"),
+            },
+            h4: {
+              color: theme("colors.black"),
+            },
+            h5: {
+              color: theme("colors.black"),
+            },
+            h6: {
+              color: theme("colors.black"),
+            },
+            blockquote: {
+              borderLeftColor: theme("colors.gray.500"),
+              color: theme("colors.gray.800"),
+            },
+            strong: {
+              color: theme("colors.gray.800"),
+            },
+            a: {
+              textDecoration: "underline",
+            }
+          },
+        },
       }),
     },
   },

@@ -58,7 +58,9 @@ const ArticlePage: NextPage<Props> = ({
         <div className="w-full md:max-w-prose h-fit">
           <div className="flex-1 self-start flex justify-between">
             <div className="">
-              <h1 className="text-5xl font-bold mb-2">{title}</h1>
+              <h1 className="text-5xl font-bold mb-2 print:text-black">
+                {title}
+              </h1>
               <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
                 {frontmatter.subtitle}
               </h2>
@@ -80,7 +82,11 @@ const ArticlePage: NextPage<Props> = ({
             <NationInfoCard nation={frontmatter.nation as any} />
           )}
           <article
-            className={"prose prose-base dark:prose-invert " + styles.prose}
+            className={
+              "prose prose-base dark:prose-invert " +
+              "print:prose-print " +
+              styles.prose
+            }
           >
             <MDXRemote {...mdxSource} components={MDXComponents as any} />
           </article>
