@@ -4,7 +4,7 @@ import ThemeSwitcher from "./ThemeSwitcher"
 
 const Topbar = () => {
   return (
-    <nav className="flex gap-8 items-center sticky top-0 z-50 bg-blue-900 py-4 px-8">
+    <nav className="flex gap-8 items-center bg-blue-900 py-4 px-8">
       <Logo />
       <div className="flex justify-start items-center gap-4 text-gray-200 text-sm">
         <Link href={"/articles"}>Articles</Link>
