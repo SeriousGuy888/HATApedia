@@ -25,14 +25,16 @@ const NationInfoCard: NextPage<{ nation: NationInfoCardData }> = ({
         {nation.info &&
           Object.keys(nation.info).map((key) => (
             <div
-              className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-md p-4"
+              className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-md p-4 print:border-b-black print:border-2"
               key={key}
             >
               <div className="px-2 py-1">
-                <p className="uppercase text-gray-600 dark:text-gray-300 text-xs">
+                <p className="uppercase text-gray-600 dark:text-gray-300 print:text-black text-xs">
                   {key}
                 </p>
-                <p className="text-md">{nation?.info[key] ?? "Unknown"}</p>
+                <p className="text-md print:text-black">
+                  {nation?.info[key] ?? "Unknown"}
+                </p>
               </div>
             </div>
           ))}
