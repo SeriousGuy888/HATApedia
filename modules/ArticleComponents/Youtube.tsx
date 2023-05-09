@@ -14,7 +14,8 @@ const Youtube: NextPage<YoutubeEmbedData> = ({ videoId }) => {
       {/* Display a link to the video in print view */}
       <div className="hidden print:block w-full border-solid border-2 border-gray-600 rounded-xl">
         <p className="text-center text-gray-600">
-          <strong>Embedded Video:</strong> youtu.be/{videoId}
+          <strong>Embedded Video:</strong>{" "}
+          <a href={`https://www.youtu.be/${videoId}`}>youtu.be/{videoId}</a>
         </p>
       </div>
     </aside>
