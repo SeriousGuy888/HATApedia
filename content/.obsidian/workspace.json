@@ -51,7 +51,7 @@
               "state": {
                 "file": "articles/Tobytopia.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           },
@@ -211,7 +211,11 @@
   },
   "active": "6d455a7d4a253669",
   "lastOpenFiles": [
+    "articles/No.md",
+    "articles/Remy.md",
     "articles/Toby.md",
+    "articles/Che Forguera.md",
+    "articles/Scammington.md",
     "articles/Tobytopia.md",
     "articles/Holden.md",
     "images/Holdentopia residents are not allowed here unless to pray.png",
@@ -222,11 +226,7 @@
     "images/Toby blows up Holden.png",
     "images/Holdentopia Jungle Palace.png",
     "images/Holden murders Toby.png",
-    "articles/Remy.md",
     "articles/Remy Republic.md",
-    "articles/Che Forguera.md",
-    "articles/Scammington.md",
-    "articles/No.md",
     "images/No 2023-01-15.png",
     "images/No 2022-12-04.png"
   ]

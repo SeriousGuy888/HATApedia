@@ -1,6 +1,6 @@
 ---
 title: Tobytopia
-subtitle: Unitary one-party republic under a totalitarian hereditary dictatorship
+subtitle: Ultimatekaiserofdoomthreethousandreich
 image: "[[Tobytopia Banner.png]]"
 nation:
   banner: "[[Tobytopia Banner.png]]"
