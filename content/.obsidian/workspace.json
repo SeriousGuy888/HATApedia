@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "626356c6551220bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/(meta) Hatapedia Changelog.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "314175badde382e0",
             "type": "leaf",
             "state": {
@@ -92,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -158,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/(meta) Hatapedia Changelog.md",
+                "file": "articles/Tobytopia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/(meta) Hatapedia Changelog.md",
+                "file": "articles/Tobytopia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/(meta) Hatapedia Changelog.md"
+                "file": "articles/Tobytopia.md"
               }
             }
           }
@@ -221,8 +209,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "626356c6551220bd",
+  "active": "6d455a7d4a253669",
   "lastOpenFiles": [
+    "articles/(meta) Hatapedia Changelog.md",
     "articles/Tobytopia.md",
     "articles/No.md",
     "articles/Remy.md",
