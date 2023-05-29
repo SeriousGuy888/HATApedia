@@ -7,7 +7,7 @@ const ArticlesDirectory = () => {
       <Head>
         <title>Articles - HATApedia</title>
       </Head>
-      <article className="max-w-5xl w-full h-fit p-8">
+      <article className="h-fit p-8 max-w-full md:max-w-5xl">
         <h1 className="text-4xl mb-8">Articles</h1>
 
         <ArticleSearch />
