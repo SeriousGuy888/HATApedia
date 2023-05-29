@@ -52,10 +52,10 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
           ${isTocOpen ? "block" : "hidden"}
           md:block
           
-          overflow-y-scroll
-          md:overflow-y-hidden
+          overflow-y-scroll h-full
+          md:overflow-y-hidden md:h-fit
 
-          h-full w-full left-0
+          w-full left-0
           max-h-[65%] z-30
         `}
       >
@@ -67,7 +67,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
             🔼
           </Link>
         </div>
-        <ul>{renderHeadingLinks(nodes)}</ul>
+        {renderHeadingLinks(nodes)}
       </div>
     </>
   )
@@ -101,14 +101,14 @@ function useHighlighted(id: string) {
 
 function renderHeadingLinks(nodes: TocNode[]): ReactNode {
   return (
-    <>
+    <ul>
       {nodes.map((node) => (
         <li key={node.id}>
           <TocLink node={node} />
           {node.children?.length > 0 && renderHeadingLinks(node.children)}
         </li>
       ))}
-    </>
+    </ul>
   )
 }
 
