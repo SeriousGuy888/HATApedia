@@ -2,27 +2,74 @@
 
 import type { NextPage } from "next"
 import type { TocNode } from "../../plugins/remark-heading-tree"
-import type { ReactNode } from "react"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, ReactNode } from "react"
+// import { motion } from "framer-motion"
 import Link from "next/link"
 
+import ListRoundedIcon from "@mui/icons-material/ListRounded"
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded"
+
 const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
+  const [isTocOpen, setTocOpen] = useState<boolean>(false)
+  const toggleToc = () => {
+    setTocOpen((isTocOpen) => !isTocOpen)
+  }
+
   if (!nodes.length) {
     return null
   }
 
   return (
-    <div className="sticky top-24 h-fit w-full left-0 hidden md:block">
-      <div className="flex justify-between align-bottom">
-        <h2 className="text-lg text-gray-500 dark:text-gray-400 mb-4">
-          Contents
-        </h2>
-        <Link href="#_top" scroll={false} className="text-xl">
-          🔼
-        </Link>
+    <>
+      <button
+        className="bg-blue-900 p-3 opacity-100 rounded-full fixed right-4 bottom-4 z-40 md:hidden"
+        onClick={toggleToc}
+        title="Toggle table of contents"
+      >
+        {isTocOpen ? (
+          <CloseRoundedIcon sx={{ color: "white" }} />
+        ) : (
+          <ListRoundedIcon sx={{ color: "white" }} />
+        )}
+      </button>
+      <span
+        className={`fixed left-0 right-0 top-0 bottom-0 bg-black opacity-80 z-20 ${
+          isTocOpen ? "block" : "hidden"
+        }`}
+        onClick={toggleToc}
+      />
+      <div
+        className={`
+          fixed bottom-0 
+          md:sticky md:top-24 md:bottom-auto 
+        
+        bg-gray-200 dark:bg-gray-900 shadow-xl
+          md:bg-transparent md:dark:bg-transparent 
+          
+          px-8 py-4 
+          md:p-0 
+
+          ${isTocOpen ? "block" : "hidden"}
+          md:block
+          
+          overflow-y-scroll
+          md:overflow-y-hidden
+
+          h-full w-full left-0
+          max-h-[65%] z-30
+        `}
+      >
+        <div className="flex justify-between align-bottom">
+          <h2 className="text-lg text-gray-500 dark:text-gray-400 mb-4">
+            Contents
+          </h2>
+          <Link href="#_top" scroll={false} className="text-xl">
+            🔼
+          </Link>
+        </div>
+        <ul>{renderHeadingLinks(nodes)}</ul>
       </div>
-      {renderNodes(nodes)}
-    </div>
+    </>
   )
 }
 
@@ -52,16 +99,16 @@ function useHighlighted(id: string) {
   return [activeId === id, setActiveId] as [boolean, (id: string) => void]
 }
 
-function renderNodes(nodes: TocNode[]): ReactNode {
+function renderHeadingLinks(nodes: TocNode[]): ReactNode {
   return (
-    <ul>
+    <>
       {nodes.map((node) => (
         <li key={node.id}>
           <TocLink node={node} />
-          {node.children?.length > 0 && renderNodes(node.children)}
+          {node.children?.length > 0 && renderHeadingLinks(node.children)}
         </li>
       ))}
-    </ul>
+    </>
   )
 }
 
