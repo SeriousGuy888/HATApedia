@@ -1,3 +1,9 @@
+# 2023-05-29
+
+## Added Button to Toggle Table of Contents on Mobile
+
+There is now a floating button in the bottom right that you can tap while browsing the site on a small-screened device, which allows you to access the table of contents (which was previously hidden on mobile).
+
 # 2023-04-28
 
 ## Improved [World Map Viewer](/map)
