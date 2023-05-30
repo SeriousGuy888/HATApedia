@@ -2,7 +2,6 @@ import algoliasearch from "algoliasearch"
 import { NextPage } from "next"
 import {
   Configure,
-  Highlight,
   Hits,
   InstantSearch,
   Pagination,
