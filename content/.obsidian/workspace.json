@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Election Night Shooting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +187,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Election Night Shooting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Remy Republic.md"
+                "file": "articles/Election Night Shooting.md"
               }
             }
           }
@@ -233,10 +233,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4799e3c93eab98d9",
+  "active": "83781b7b651ac507",
   "lastOpenFiles": [
-    "articles/Election Night Shooting.md",
     "articles/Remy Republic.md",
+    "articles/Election Night Shooting.md",
     "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
