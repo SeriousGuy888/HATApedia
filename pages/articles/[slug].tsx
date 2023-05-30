@@ -48,50 +48,48 @@ const ArticlePage: NextPage<Props> = ({
         )}
       </Head>
       <section
-        className={
-          "max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg " +
-          "md:grid grid-cols-[3fr_1fr] gap-12 " +
-          "w-full py-8 h-fit"
-        }
+        className={`max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg w-full py-8 h-fit md:grid grid-cols-[3fr_1fr] gap-12`}
         id="_top"
       >
-        <div className="w-full md:max-w-prose h-fit">
-          <div className="flex-1 self-start flex justify-between">
-            <div className="">
+        <div>
+          <header>
+            <div className="flex flex-col justify-between">
               <h1 className="text-5xl font-bold mb-2 print:text-black">
                 {title}
               </h1>
               <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
                 {frontmatter.subtitle}
               </h2>
+              {frontmatter.image && !frontmatter.nation && (
+                <figure className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
+                  <Image
+                    src={getImgWikilinkSrc(frontmatter.image)}
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </figure>
+              )}
             </div>
-            {frontmatter.image && !frontmatter.nation && (
-              <div className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
-                <Image
-                  src={getImgWikilinkSrc(frontmatter.image)}
-                  alt=""
-                  width={100}
-                  height={100}
-                />
-              </div>
-            )}
-          </div>
-          <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
+            <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
+          </header>
 
           {(frontmatter.nation as any) && (
             <NationInfoCard nation={frontmatter.nation as any} />
           )}
           <article
             className={
-              "prose prose-base dark:prose-invert " +
-              "print:prose-print " +
+              "prose prose-base dark:prose-invert print:prose-print " +
               styles.prose
             }
           >
             <MDXRemote {...mdxSource} components={MDXComponents as any} />
           </article>
         </div>
-        <FloatingTableOfContents nodes={tocHeadings} />
+
+        <aside>
+          <FloatingTableOfContents nodes={tocHeadings} />
+        </aside>
       </section>
     </>
   )
