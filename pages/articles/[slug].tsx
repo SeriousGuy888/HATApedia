@@ -53,13 +53,15 @@ const ArticlePage: NextPage<Props> = ({
       >
         <div>
           <header>
-            <div className="flex flex-col justify-between">
-              <h1 className="text-5xl font-bold mb-2 print:text-black">
-                {title}
-              </h1>
-              <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
-                {frontmatter.subtitle}
-              </h2>
+            <div className="flex flex-row justify-between gap-4">
+              <section>
+                <h1 className="text-5xl font-bold mb-2 print:text-black">
+                  {title}
+                </h1>
+                <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
+                  {frontmatter.subtitle}
+                </h2>
+              </section>
               {frontmatter.image && !frontmatter.nation && (
                 <figure className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
                   <Image
