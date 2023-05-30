@@ -49,7 +49,7 @@ const ArticlePage: NextPage<Props> = ({
       </Head>
       <section
         className={
-          "max-w-[90vw] md:max-w-[75vw] xl:max-w-screen-lg " +
+          "max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg " +
           "md:grid grid-cols-[3fr_1fr] gap-12 " +
           "w-full py-8 h-fit"
         }
