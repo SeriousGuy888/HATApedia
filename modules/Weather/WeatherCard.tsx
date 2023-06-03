@@ -83,16 +83,6 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
       })
   }
 
-  const getTemp = (tempCelsius: number) => {
-    let temperature = Math.round(tempCelsius)
-    switch (tempUnit) {
-      case "celsius":
-        return temperature
-      case "kelvin":
-        return temperature + 273
-    }
-  }
-
   const getWeatherCondition = (
     code: number,
     defaultConditionText: string,
@@ -110,6 +100,19 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
 
     return descriptionFromCode
   }
+
+  const getTemp = (tempCelsius: number) => {
+    let temperature = Math.round(tempCelsius)
+    switch (tempUnit) {
+      case "celsius":
+        return temperature
+      case "kelvin":
+        return temperature + 273
+    }
+  }
+
+  const actualTemp = getTemp(currWeather?.temp_c ?? 0)
+  const feelsLikeTemp = getTemp(currWeather?.feelslike_c ?? 0)
 
   const cardBg = ({ isDay }: { isDay: boolean }) => cntl`
     bg-gradient-to-br
@@ -147,16 +150,15 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
       <header className="flex justify-between gap-4 flex-col-reverse @md:flex-row">
         <section className="flex flex-col items-center @md:items-start">
           <h1 className="relative">
-            <span className="text-7xl">
-              {currWeather ? getTemp(currWeather.temp_c) : "--"}
-            </span>
+            <span className="text-7xl">{actualTemp}</span>
             <span className="text-xl absolute -right-6 top-2">
               {unitSymbol}
             </span>
           </h1>
           <p className="text-xs">
-            Feels like {currWeather ? getTemp(currWeather.feelslike_c) : "__"}
-            {unitSymbol}
+            {feelsLikeTemp !== actualTemp
+              ? `Feels like ${feelsLikeTemp}${unitSymbol}`
+              : "\u200b"}
           </p>
         </section>
         <section className="flex-shrink text-center @md:text-right">
