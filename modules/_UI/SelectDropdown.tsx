@@ -16,9 +16,7 @@ const SelectDropdown: NextPage<Props> = ({
   setSelectedOption,
 }) => {
   if (!options || !selectedOption || !setSelectedOption) {
-    return (
-      <UIElementError message={"Missing props for SelectDropdown!"} />
-    )
+    return <UIElementError message={"Missing props for SelectDropdown!"} />
   }
 
   return (
@@ -32,6 +30,8 @@ const SelectDropdown: NextPage<Props> = ({
           
           bg-gray-200 dark:bg-gray-700
           border-2 border-gray-300 dark:border-gray-600
+
+          overflow-x-hidden whitespace-nowrap text-ellipsis
         `}
         value={selectedOption}
         onChange={(e) => {
@@ -46,7 +46,7 @@ const SelectDropdown: NextPage<Props> = ({
           )
         })}
       </select>
-      <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+      <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
         <ExpandMoreRoundedIcon fontSize="medium" />
       </span>
     </div>

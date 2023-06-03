@@ -46,7 +46,7 @@ const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
         />
       </Head>
       <section className="my-12 w-full max-w-[90vw] lg:max-w-prose">
-        <aside className="w-full flex gap-2 [&>*]:flex-grow items-stretch mb-8">
+        <aside className="w-full flex gap-2 [&>*]:flex-1 items-stretch mb-8">
           <SelectDropdown
             options={cityIdNameMap}
             selectedOption={city}
