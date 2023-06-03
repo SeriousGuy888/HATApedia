@@ -3,18 +3,25 @@ import useSWR from "swr"
 import Head from "next/head"
 import WeatherCard from "../modules/Weather/WeatherCard"
 import TabbedRadio from "../modules/_UI/TabbedRadio"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   TemperatureUnit,
   WeatherData,
 } from "../modules/Weather/weatherapi_types"
 import SelectDropdown from "../modules/_UI/SelectDropdown"
+import { useRouter } from "next/router"
 
 const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
   const [tempUnit, setTempUnit] = useState<TemperatureUnit>("celsius")
   const handleUpdateTempUnit = (unitId: TemperatureUnit) => {
     setTempUnit(unitId)
   }
+
+  // <city selection>
+  // Used for selecting the city to view.
+  // - Allows user to select a city from a dropdown.
+  // - Also allows user to link to a specific city using a hash fragment.
+  // - Defaults to the first city in the list.
 
   const [city, setCity] = useState<string>(Object.keys(cities)[0] ?? "")
   const handleUpdateCity = (cityId: string) => {
@@ -25,6 +32,18 @@ const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
   Object.values(cities).forEach((city) => {
     cityIdNameMap[city.id] = `${city.name}, ${city.country}`
   })
+
+  const { asPath } = useRouter()
+  useEffect(() => {
+    const cityId = asPath.split("#")[1] // get the city id from hash fragment
+    if (cityId && cityIdNameMap[cityId]) {
+      // if the city id is valid
+      setCity(cityId) // set the city to the one specified in the hash fragment
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // </city selection>
 
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
   const fetcher = (url: string) =>
