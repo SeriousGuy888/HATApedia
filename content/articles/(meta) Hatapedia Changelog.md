@@ -1,3 +1,10 @@
+# 2023-06-03
+
+## Added weather page
+You can now see live weather updates from HATA at [/weather](/weather)! (Currently only displays Forgsville, Remy Republic).
+- Supports switching between viewing temperatures as Celsius & Kelvin
+- Allows user to click the download button & export the weather card as an image
+
 # 2023-05-29
 
 ## Added button to toggle table of contents on mobile
