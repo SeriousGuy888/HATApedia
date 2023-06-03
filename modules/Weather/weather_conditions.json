@@ -1,8 +1,8 @@
 {
+  "_source": "https://www.weatherapi.com/docs/weather_conditions.json",
   "1000": {
     "description": "Sunny",
-    "description_night": "Clear Skies",
-    "aaaaaaaaaaaaaaaa": "https://www.weatherapi.com/docs/weather_conditions.json"
+    "description_night": "Clear Skies"
   },
   "1003": {
     "description": "Partly cloudy"
