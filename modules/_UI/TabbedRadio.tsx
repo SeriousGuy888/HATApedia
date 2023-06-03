@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import UIElementError from "./UIElementError"
 
 interface Props {
   options: {
@@ -13,18 +14,14 @@ const TabbedRadio: NextPage<Props> = ({
   selectedOption,
   setSelectedOption,
 }) => {
-  if (!options) {
-    return (
-      <p className="bg-red-300 rounded-xl p-4 my-4 text-black">
-        No options specified.
-      </p>
-    )
+  if (!options || !selectedOption || !setSelectedOption) {
+    return <UIElementError message={"Missing props for TabbedRadio!"} />
   }
 
   return (
     <ul
       className={`
-        mb-8 flex text-center
+        flex text-center
         rounded-xl
         text-black dark:text-white
         bg-gray-200 dark:bg-gray-700
