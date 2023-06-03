@@ -1,10 +1,10 @@
 import { NextPage } from "next"
-import { TemperatureUnit, WeatherData } from "../../pages/weather"
 import { useRef } from "react"
 import cntl from "cntl"
 import { toPng } from "html-to-image" // https://github.com/tsayen/dom-to-image
 import { saveAs } from "file-saver" // https://github.com/eligrey/FileSaver.js/
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded"
+import { TemperatureUnit, WeatherData } from "./weatherapi_types"
 
 // Import Montserrat manually so that the font renders properly when exported as an image
 import { Montserrat } from "@next/font/google"
