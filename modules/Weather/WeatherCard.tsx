@@ -61,6 +61,16 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
       })
   }
 
+  const getTemp = (tempCelsius: number) => {
+    let temperature = Math.round(tempCelsius)
+    switch (tempUnit) {
+      case "celsius":
+        return temperature
+      case "kelvin":
+        return temperature + 273
+    }
+  }
+
   const cardBg = ({ isDay }: { isDay: boolean }) => cntl`
     bg-gradient-to-br
     ${
@@ -76,14 +86,13 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     }
   `
 
-  const getTemp = (tempCelsius: number) => {
-    let temperature = Math.round(tempCelsius)
-    switch (tempUnit) {
-      case "celsius":
-        return temperature
-      case "kelvin":
-        return temperature + 273
-    }
+  if (weatherData.error) {
+    return (
+      <article className="rounded-xl w-full p-8 bg-red-200 text-black">
+        <h1>Error while getting weather data.</h1>
+        <p>{weatherData.error.message}</p>
+      </article>
+    )
   }
 
   return (
