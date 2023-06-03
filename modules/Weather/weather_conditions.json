@@ -1,7 +1,7 @@
 {
   "1000": {
     "description": "Sunny",
-    "description_night": "Clear",
+    "description_night": "Clear Skies",
     "aaaaaaaaaaaaaaaa": "https://www.weatherapi.com/docs/weather_conditions.json"
   },
   "1003": {
