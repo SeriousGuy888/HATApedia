@@ -14,7 +14,8 @@ const Topbar = () => {
       <Logo />
       <div className="flex justify-start items-center gap-4 text-gray-200 text-sm print:hidden">
         <Link href={"/articles"}>Articles</Link>
-        <Link href={"/map"}>World Map</Link>
+        <Link href={"/map"}>Map</Link>
+        <Link href={"/weather"}>Weather</Link>
       </div>
       <ThemeSwitcher />
       <div className="hidden print:flex justify-between w-full text-sm">
