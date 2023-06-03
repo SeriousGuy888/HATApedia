@@ -1,0 +1,148 @@
+{
+  "1000": {
+    "description": "Sunny",
+    "description_night": "Clear",
+    "aaaaaaaaaaaaaaaa": "https://www.weatherapi.com/docs/weather_conditions.json"
+  },
+  "1003": {
+    "description": "Partly cloudy"
+  },
+  "1006": {
+    "description": "Cloudy"
+  },
+  "1009": {
+    "description": "Overcast"
+  },
+  "1030": {
+    "description": "Mist"
+  },
+  "1063": {
+    "description": "Patchy rain possible"
+  },
+  "1066": {
+    "description": "Patchy snow possible"
+  },
+  "1069": {
+    "description": "Patchy sleet possible"
+  },
+  "1072": {
+    "description": "Patchy freezing drizzle possible"
+  },
+  "1087": {
+    "description": "Thundery outbreaks possible"
+  },
+  "1114": {
+    "description": "Blowing snow"
+  },
+  "1117": {
+    "description": "Blizzard"
+  },
+  "1135": {
+    "description": "Fog"
+  },
+  "1147": {
+    "description": "Freezing fog"
+  },
+  "1150": {
+    "description": "Patchy light drizzle"
+  },
+  "1153": {
+    "description": "Light drizzle"
+  },
+  "1168": {
+    "description": "Freezing drizzle"
+  },
+  "1171": {
+    "description": "Heavy freezing drizzle"
+  },
+  "1180": {
+    "description": "Patchy light rain"
+  },
+  "1183": {
+    "description": "Light rain"
+  },
+  "1186": {
+    "description": "Moderate rain at times"
+  },
+  "1189": {
+    "description": "Moderate rain"
+  },
+  "1192": {
+    "description": "Heavy rain at times"
+  },
+  "1195": {
+    "description": "Heavy rain"
+  },
+  "1198": {
+    "description": "Light freezing rain"
+  },
+  "1201": {
+    "description": "Moderate or heavy freezing rain"
+  },
+  "1204": {
+    "description": "Light sleet"
+  },
+  "1207": {
+    "description": "Moderate or heavy sleet"
+  },
+  "1210": {
+    "description": "Patchy light snow"
+  },
+  "1213": {
+    "description": "Light snow"
+  },
+  "1216": {
+    "description": "Patchy moderate snow"
+  },
+  "1219": {
+    "description": "Moderate snow"
+  },
+  "1222": {
+    "description": "Patchy heavy snow"
+  },
+  "1225": {
+    "description": "Heavy snow"
+  },
+  "1237": {
+    "description": "Ice pellets"
+  },
+  "1240": {
+    "description": "Light rain shower"
+  },
+  "1243": {
+    "description": "Moderate or heavy rain shower"
+  },
+  "1246": {
+    "description": "Torrential rain shower"
+  },
+  "1249": {
+    "description": "Light sleet showers"
+  },
+  "1252": {
+    "description": "Moderate or heavy sleet showers"
+  },
+  "1255": {
+    "description": "Light snow showers"
+  },
+  "1258": {
+    "description": "Moderate or heavy snow showers"
+  },
+  "1261": {
+    "description": "Light showers of ice pellets"
+  },
+  "1264": {
+    "description": "Moderate or heavy showers of ice pellets"
+  },
+  "1273": {
+    "description": "Patchy light rain with thunder"
+  },
+  "1276": {
+    "description": "Moderate or heavy rain with thunder"
+  },
+  "1279": {
+    "description": "Patchy light snow with thunder"
+  },
+  "1282": {
+    "description": "Moderate or heavy snow with thunder"
+  }
+}

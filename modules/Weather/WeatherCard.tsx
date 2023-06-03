@@ -4,7 +4,14 @@ import cntl from "cntl"
 import { toPng } from "html-to-image" // https://github.com/tsayen/dom-to-image
 import { saveAs } from "file-saver" // https://github.com/eligrey/FileSaver.js/
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded"
-import { TemperatureUnit, WeatherData } from "./weatherapi_types"
+import {
+  TemperatureUnit,
+  WeatherCondition,
+  WeatherData,
+} from "./weatherapi_types"
+const weatherConditions: {
+  [code: string]: WeatherCondition
+} = require("./weather_conditions.json")
 
 // Import Montserrat manually so that the font renders properly when exported as an image
 import { Montserrat } from "@next/font/google"
@@ -71,6 +78,24 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     }
   }
 
+  const getWeatherCondition = (
+    code: number,
+    defaultConditionText: string,
+    isDay: boolean,
+  ) => {
+    const conditionObj = weatherConditions[code.toString()]
+    if (!conditionObj) {
+      return defaultConditionText
+    }
+
+    let descriptionFromCode = conditionObj.description
+    if (!isDay && conditionObj.description_night) {
+      descriptionFromCode = conditionObj.description_night
+    }
+
+    return descriptionFromCode
+  }
+
   const cardBg = ({ isDay }: { isDay: boolean }) => cntl`
     bg-gradient-to-br
     ${
@@ -125,7 +150,11 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
 
       <section>
         <p className="text-center uppercase leading-4 text-sm tracking-wider @md:text-base">
-          {currWeather.condition.text}
+          {getWeatherCondition(
+            currWeather.condition.code,
+            currWeather.condition.text,
+            !!currWeather.is_day,
+          )}
         </p>
       </section>
 

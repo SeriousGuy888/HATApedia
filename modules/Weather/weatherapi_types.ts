@@ -46,3 +46,8 @@ export interface WeatherData {
   }
 }
 
+// ./weather_conditions.json
+export interface WeatherCondition {
+  description: string
+  description_night?: string
+}
