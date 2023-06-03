@@ -82,7 +82,8 @@ const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
         </aside>
         <WeatherCard
           cardInfo={{
-            city: cities[city]?.name,
+            cityId: city,
+            cityName: cities[city]?.name,
             country: cities[city]?.country,
           }}
           weatherData={weatherData}

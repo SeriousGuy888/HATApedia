@@ -4,6 +4,7 @@ import cntl from "cntl"
 import { toPng } from "html-to-image" // https://github.com/tsayen/dom-to-image
 import { saveAs } from "file-saver" // https://github.com/eligrey/FileSaver.js/
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded"
+import LinkRoundedIcon from "@mui/icons-material/LinkRounded"
 import {
   TemperatureUnit,
   WeatherCondition,
@@ -24,7 +25,8 @@ const font = Montserrat({
 
 interface Props {
   cardInfo: {
-    city: string
+    cityId: string
+    cityName: string
     country: string
   }
   weatherData: WeatherData | null
@@ -36,7 +38,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
   const unitSymbol = tempUnit === "celsius" ? "°C" : "K"
 
   const cardElem = useRef<HTMLDivElement | null>(null)
-  const exportButton = useRef<HTMLButtonElement | null>(null)
+  const buttonGroupRef = useRef<HTMLDivElement | null>(null)
   const exportToPng = () => {
     const elem = cardElem.current
     if (!elem) {
@@ -48,7 +50,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     const heightIsLarger = elemH > elemW
     const largerDimension = 2048
 
-    exportButton.current!!.style.opacity = "0"
+    buttonGroupRef.current!!.style.opacity = "0"
     toPng(elem, {
       // resize canvas but keep aspect ratio
       canvasWidth: heightIsLarger
@@ -60,11 +62,24 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     })
       .then((png: any) => {
         saveAs(png, "weather.png")
-        exportButton.current!!.style.opacity = ""
+        buttonGroupRef.current!!.style.opacity = ""
       })
       .catch((e) => {
         console.error(e)
         alert("Error while exporting image D:")
+      })
+  }
+
+  const copyCityLink = () => {
+    const url = `${window.location.origin}/weather#${cardInfo.cityId}`
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        alert("Copied to clipboard!")
+      })
+      .catch((e) => {
+        console.error(e)
+        alert("Error while copying to clipboard D:")
       })
   }
 
@@ -146,7 +161,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
         </section>
         <section className="flex-shrink text-center @md:text-right">
           <p className="text-xl @md:text-lg font-bold">
-            {cardInfo.city ?? "Waiting..."}
+            {cardInfo.cityName ?? "Waiting..."}
           </p>
           <p className="text-sm text-blue-100 font-light">
             {cardInfo.country ?? "Please select a city."}
@@ -179,13 +194,20 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
         </ul>
       )}
       <footer className="flex justify-between items-center gap-4">
-        <button
-          className="opacity-50 hover:opacity-100"
-          onClick={exportToPng}
-          ref={exportButton}
-        >
-          <DownloadRoundedIcon fontSize="small" />
-        </button>
+        <div className="flex gap-2" ref={buttonGroupRef}>
+          <button
+            className="opacity-50 hover:opacity-100"
+            onClick={exportToPng}
+          >
+            <DownloadRoundedIcon fontSize="small" />
+          </button>
+          <button
+            className="opacity-50 hover:opacity-100"
+            onClick={copyCityLink}
+          >
+            <LinkRoundedIcon fontSize="small" />
+          </button>
+        </div>
         <p className="flex-grow text-right text-[0.5rem] uppercase opacity-30">
           Data last updated:{" "}
           {currWeather ? currWeather.last_updated : "____-__-__ __:__"}
