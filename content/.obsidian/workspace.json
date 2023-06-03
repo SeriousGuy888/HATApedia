@@ -4,107 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "b181663a89f4f80f",
+        "id": "fd12e993d57b2dd6",
         "type": "tabs",
         "children": [
           {
-            "id": "3b8fdf70d530c719",
+            "id": "9174623cbd402a24",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/No.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dc5d9e11313dde22",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Scammington.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0712914dfd80d2c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Remy.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6d455a7d4a253669",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Tobytopia.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "314175badde382e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Toby.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "19917432c9b66f46",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Che Forguera.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "83781b7b651ac507",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Election Night Shooting.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4799e3c93eab98d9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Remy Republic.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -133,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "equalsosc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Election Night Shooting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Election Night Shooting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -209,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "articles/Election Night Shooting.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -233,19 +140,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "83781b7b651ac507",
+  "active": "9174623cbd402a24",
   "lastOpenFiles": [
+    "articles/Fletcher Quadratic.md",
+    "articles/Che Forguera.md",
+    "articles/Toby.md",
+    "articles/Tobytopia.md",
+    "articles/Remy.md",
+    "articles/Scammington.md",
+    "articles/No.md",
     "articles/Remy Republic.md",
     "articles/Election Night Shooting.md",
     "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
-    "articles/Che Forguera.md",
-    "articles/Toby.md",
-    "articles/Tobytopia.md",
-    "articles/No.md",
-    "articles/Remy.md",
-    "articles/Scammington.md",
     "articles/Holden.md",
     "images/Holdentopia residents are not allowed here unless to pray.png",
     "images/Toby places some signs at the jungle palace.png",
