@@ -60,7 +60,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     })
       .then((png: any) => {
         saveAs(png, "weather.png")
-        exportButton.current!!.style.opacity = "1"
+        exportButton.current!!.style.opacity = ""
       })
       .catch((e) => {
         console.error(e)
@@ -174,7 +174,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
           onClick={exportToPng}
           ref={exportButton}
         >
-          <DownloadRoundedIcon fontSize="small" sx={{ color: "grey" }} />
+          <DownloadRoundedIcon fontSize="small" />
         </button>
         <p className="flex-grow text-right text-[0.5rem] uppercase opacity-30">
           Data last updated: {currWeather.last_updated}
