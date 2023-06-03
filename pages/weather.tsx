@@ -16,6 +16,8 @@ const Weather: NextPage<Props> = ({ weatherData }) => {
     <>
       <Head>
         <title>HATA Weather</title>
+        <meta property="og:title" content={"HATA Weather"} />
+        <meta property="og:description" content={"Live weather updates from HATA!"} />
       </Head>
       <section className="my-12 w-full max-w-[90vw] lg:max-w-prose">
         <TabbedRadio
