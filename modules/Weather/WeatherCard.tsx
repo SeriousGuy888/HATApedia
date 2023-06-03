@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import { WeatherData } from "../../pages/weather"
+import { TemperatureUnit, WeatherData } from "../../pages/weather"
 import cntl from "cntl"
 
 interface Props {
@@ -8,11 +8,12 @@ interface Props {
     country: string
   }
   weatherData: WeatherData
+  tempUnit: TemperatureUnit
 }
 
-const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData }) => {
+const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
   const currWeather = weatherData.current
-  const temperature = Math.round(currWeather.temp_c)
+  const unitSymbol = tempUnit === "celsius" ? "°C" : "K"
 
   const cardBg = ({ isDay }: { isDay: boolean }) => cntl`
     bg-gradient-to-br
@@ -29,6 +30,16 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData }) => {
     }
   `
 
+  const getTemp = (tempCelsius: number) => {
+    let temperature = Math.round(tempCelsius)
+    switch (tempUnit) {
+      case "celsius":
+        return temperature
+      case "kelvin":
+        return temperature + 273
+    }
+  }
+
   return (
     <article
       className={`rounded-xl w-full p-8 text-white flex flex-col gap-8 @container ${cardBg(
@@ -40,10 +51,15 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData }) => {
       <header className="flex justify-between gap-4 flex-col-reverse @md:flex-row">
         <section className="flex flex-col items-center @md:items-start">
           <h1 className="relative">
-            <span className="text-7xl">{temperature}</span>
-            <span className="text-xl absolute -right-6 top-2">&deg;C</span>
+            <span className="text-7xl">{getTemp(currWeather.temp_c)}</span>
+            <span className="text-xl absolute -right-6 top-2">
+              {unitSymbol}
+            </span>
           </h1>
-          <p className="text-xs">Feels like {currWeather.feelslike_c}&deg;C</p>
+          <p className="text-xs">
+            Feels like {getTemp(currWeather.feelslike_c)}
+            {unitSymbol}
+          </p>
         </section>
         <section className="flex-shrink text-center @md:text-right">
           <p className="text-xl @md:text-lg font-bold">{cardInfo.city}</p>

@@ -1,18 +1,35 @@
 import { GetServerSideProps, NextPage } from "next"
 import Head from "next/head"
 import WeatherCard from "../modules/Weather/WeatherCard"
+import TabbedRadio from "../modules/_UI/TabbedRadio"
+import { useState } from "react"
+
+export type TemperatureUnit = "celsius" | "kelvin"
 
 const Weather: NextPage<Props> = ({ weatherData }) => {
+  const [tempUnit, setTempUnit] = useState<TemperatureUnit>("celsius")
+  const handleUpdateTempUnit = (unitId: TemperatureUnit) => {
+    setTempUnit(unitId)
+  }
+
   return (
     <>
       <Head>
         <title>HATA Weather</title>
       </Head>
       <section className="my-12 w-full max-w-[90vw] lg:max-w-prose">
-        
+        <TabbedRadio
+          options={{
+            celsius: "Celsius",
+            kelvin: "Kelvin",
+          }}
+          selectedOption={tempUnit}
+          setSelectedOption={handleUpdateTempUnit}
+        />
         <WeatherCard
           cardInfo={{ city: "Forgsville", country: "Remy Republic" }}
           weatherData={weatherData}
+          tempUnit={tempUnit}
         />
       </section>
     </>
