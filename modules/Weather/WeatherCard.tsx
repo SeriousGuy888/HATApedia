@@ -27,12 +27,12 @@ interface Props {
     city: string
     country: string
   }
-  weatherData: WeatherData
+  weatherData: WeatherData | null
   tempUnit: TemperatureUnit
 }
 
 const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
-  const currWeather = weatherData.current
+  const currWeather = weatherData?.current ?? null
   const unitSymbol = tempUnit === "celsius" ? "°C" : "K"
 
   const cardElem = useRef<HTMLDivElement | null>(null)
@@ -111,7 +111,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     }
   `
 
-  if (weatherData.error) {
+  if (weatherData?.error) {
     return (
       <article className="rounded-xl w-full p-8 bg-red-200 text-black">
         <h1>Error while getting weather data.</h1>
@@ -124,7 +124,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     <article
       className={`rounded-xl w-full p-8 text-white flex flex-col gap-8 @container ${cardBg(
         {
-          isDay: !!currWeather.is_day,
+          isDay: !!currWeather?.is_day ?? true,
         },
       )} ${font.className}`}
       ref={cardElem}
@@ -132,42 +132,52 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
       <header className="flex justify-between gap-4 flex-col-reverse @md:flex-row">
         <section className="flex flex-col items-center @md:items-start">
           <h1 className="relative">
-            <span className="text-7xl">{getTemp(currWeather.temp_c)}</span>
+            <span className="text-7xl">
+              {currWeather ? getTemp(currWeather.temp_c) : "--"}
+            </span>
             <span className="text-xl absolute -right-6 top-2">
               {unitSymbol}
             </span>
           </h1>
           <p className="text-xs">
-            Feels like {getTemp(currWeather.feelslike_c)}
+            Feels like {currWeather ? getTemp(currWeather.feelslike_c) : "__"}
             {unitSymbol}
           </p>
         </section>
         <section className="flex-shrink text-center @md:text-right">
-          <p className="text-xl @md:text-lg font-bold">{cardInfo.city}</p>
-          <p className="text-sm text-blue-100 font-light">{cardInfo.country}</p>
+          <p className="text-xl @md:text-lg font-bold">
+            {cardInfo.city ?? "Waiting..."}
+          </p>
+          <p className="text-sm text-blue-100 font-light">
+            {cardInfo.country ?? "Please select a city."}
+          </p>
         </section>
       </header>
-
       <section>
         <p className="text-center uppercase leading-4 text-sm tracking-wider @md:text-base">
-          {getWeatherCondition(
-            currWeather.condition.code,
-            currWeather.condition.text,
-            !!currWeather.is_day,
-          )}
+          {currWeather
+            ? getWeatherCondition(
+                currWeather.condition.code,
+                currWeather.condition.text,
+                !!currWeather.is_day,
+              )
+            : "Waiting..."}
         </p>
       </section>
-
-      <ul className="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(40%,1fr))]">
-        <InfoBox title={"Humidity"} data={`${currWeather.humidity}%`} />
-        <InfoBox
-          title={"Wind"}
-          data={`${currWeather.wind_kph}km/h, ${currWeather.wind_dir}`}
-        />
-        <InfoBox title={"Cloud Cover"} data={`${currWeather.cloud}%`} />
-        <InfoBox title={"Precipitation"} data={`${currWeather.precip_mm}mm`} />
-      </ul>
-
+      {currWeather && (
+        <ul className="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(40%,1fr))]">
+          <InfoBox title={"Humidity"} data={`${currWeather.humidity}%`} />
+          <InfoBox
+            title={"Wind"}
+            data={`${currWeather.wind_kph}km/h, ${currWeather.wind_dir}`}
+          />
+          <InfoBox title={"Cloud Cover"} data={`${currWeather.cloud}%`} />
+          <InfoBox
+            title={"Precipitation"}
+            data={`${currWeather.precip_mm}mm`}
+          />
+        </ul>
+      )}
       <footer className="flex justify-between items-center gap-4">
         <button
           className="opacity-50 hover:opacity-100"
@@ -177,7 +187,8 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
           <DownloadRoundedIcon fontSize="small" />
         </button>
         <p className="flex-grow text-right text-[0.5rem] uppercase opacity-30">
-          Data last updated: {currWeather.last_updated}
+          Data last updated:{" "}
+          {currWeather ? currWeather.last_updated : "____-__-__ __:__"}
         </p>
       </footer>
     </article>

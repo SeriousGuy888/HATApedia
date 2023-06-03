@@ -1,34 +1,71 @@
 import { GetServerSideProps, NextPage } from "next"
+import useSWR from "swr"
 import Head from "next/head"
 import WeatherCard from "../modules/Weather/WeatherCard"
 import TabbedRadio from "../modules/_UI/TabbedRadio"
 import { useState } from "react"
-import { TemperatureUnit, WeatherData } from "../modules/Weather/weatherapi_types"
+import {
+  TemperatureUnit,
+  WeatherData,
+} from "../modules/Weather/weatherapi_types"
+import SelectDropdown from "../modules/_UI/SelectDropdown"
 
-const Weather: NextPage<Props> = ({ weatherData }) => {
+const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
   const [tempUnit, setTempUnit] = useState<TemperatureUnit>("celsius")
   const handleUpdateTempUnit = (unitId: TemperatureUnit) => {
     setTempUnit(unitId)
   }
+
+  const [city, setCity] = useState<string>(Object.keys(cities)[0] ?? "")
+  const handleUpdateCity = (cityId: string) => {
+    setCity(cityId)
+  }
+
+  let cityIdNameMap: { [id: string]: string } = {}
+  Object.values(cities).forEach((city) => {
+    cityIdNameMap[city.id] = `${city.name}, ${city.country}`
+  })
+
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null)
+  const fetcher = (url: string) =>
+    fetch(url).then(async (res) => await res.json())
+  useSWR(`/api/weather/${city}`, fetcher, {
+    onSuccess: (data) => {
+      setWeatherData(data)
+    },
+  })
 
   return (
     <>
       <Head>
         <title>HATA Weather</title>
         <meta property="og:title" content={"HATA Weather"} />
-        <meta property="og:description" content={"Live weather updates from HATA!"} />
+        <meta
+          property="og:description"
+          content={"Live weather updates from HATA!"}
+        />
       </Head>
       <section className="my-12 w-full max-w-[90vw] lg:max-w-prose">
-        <TabbedRadio
-          options={{
-            celsius: "Celsius",
-            kelvin: "Kelvin",
-          }}
-          selectedOption={tempUnit}
-          setSelectedOption={handleUpdateTempUnit}
-        />
+        <aside className="w-full flex gap-2 [&>*]:flex-grow items-stretch mb-8">
+          <SelectDropdown
+            options={cityIdNameMap}
+            selectedOption={city}
+            setSelectedOption={handleUpdateCity}
+          />
+          <TabbedRadio
+            options={{
+              celsius: "Celsius",
+              kelvin: "Kelvin",
+            }}
+            selectedOption={tempUnit}
+            setSelectedOption={handleUpdateTempUnit}
+          />
+        </aside>
         <WeatherCard
-          cardInfo={{ city: "Forgsville", country: "Remy Republic" }}
+          cardInfo={{
+            city: cities[city]?.name,
+            country: cities[city]?.country,
+          }}
           weatherData={weatherData}
           tempUnit={tempUnit}
         />
@@ -37,41 +74,39 @@ const Weather: NextPage<Props> = ({ weatherData }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ res, req }) => {
-  // don't make multiple requests within 15min
-  res.setHeader(
-    "Cache-Control",
-    `public, s-maxage=${15 * 60}, stale-while-revalidate=${20 * 60}`,
-  )
+export default Weather
 
-  const apiKey = process.env.WEATHER_API_COM_API_KEY
-  const location = "Toronto" // https://www.weatherapi.com/docs/#intro-request -- city name, postal code, or latlng
+export const getServerSideProps: GetServerSideProps = async () => {
+  const cities: {
+    [id: string]: City
+  } = {
+    forgsville: {
+      id: "forgsville",
+      name: "Forgsville",
+      country: "Remy Republic",
+    },
+    hawainot: { id: "hawainot", name: "Hawainot", country: "Remy Republic" },
+    swamp_of_secrets: {
+      id: "swamp_of_secrets",
+      name: "Swamp of Secrets",
+      country: "Tobytopia",
+    },
+    billzoplace: {
+      id: "billzoplace",
+      name: "Billzoplace",
+      country: "Billzoplace City State",
+    },
+  }
 
-  try {
-    const weatherRes = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`,
-    )
-    const weatherData: WeatherData = await weatherRes.json()
-
-    // Pass data to the page via props
-    return { props: { weatherData } }
-  } catch (err) {
-    return {
-      props: {
-        weatherData: {
-          error: {
-            code: -1,
-            message: `Failed to make API request: ${err}`,
-          },
-        } as WeatherData,
-      },
-    }
+  return {
+    props: {
+      cities,
+    },
   }
 }
 
-export default Weather
-
-interface Props {
-  weatherData: WeatherData
+interface City {
+  id: string
+  name: string
+  country: string
 }
-
