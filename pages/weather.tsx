@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from "next"
+import { GetStaticProps, NextPage } from "next"
 import useSWR from "swr"
 import Head from "next/head"
 import WeatherCard from "../modules/Weather/WeatherCard"
@@ -96,7 +96,7 @@ const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
 
 export default Weather
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const cities: {
     [id: string]: City
   } = {
