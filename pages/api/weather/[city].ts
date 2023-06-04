@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { WeatherData } from "../../../modules/Weather/weatherapi_types"
+import { getFakeCityRealCityMap } from "../../../lib/weatherCitiesManager"
 
 const apiKey = process.env.WEATHER_API_COM_API_KEY
 
@@ -8,12 +9,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const city = req.query.city as string
-  const fakeCityToRealCity: { [id: string]: string } = {
-    forgsville: "Toronto",
-    hawainot: "Honolulu",
-    billzoplace: "Ottawa",
-    swamp_of_secrets: "New Orleans",
-  }
+  const fakeCityToRealCity = getFakeCityRealCityMap()
 
   if (!fakeCityToRealCity[city]) {
     res.status(404).json({

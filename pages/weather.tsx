@@ -10,8 +10,11 @@ import {
 } from "../modules/Weather/weatherapi_types"
 import SelectDropdown from "../modules/_UI/SelectDropdown"
 import { useRouter } from "next/router"
+import { CityDisplayData, getClientCityList } from "../lib/weatherCitiesManager"
 
-const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
+const Weather: NextPage<{ cities: { [id: string]: CityDisplayData } }> = ({
+  cities,
+}) => {
   const [tempUnit, setTempUnit] = useState<TemperatureUnit>("celsius")
   const handleUpdateTempUnit = (unitId: TemperatureUnit) => {
     setTempUnit(unitId)
@@ -97,36 +100,11 @@ const Weather: NextPage<{ cities: { [id: string]: City } }> = ({ cities }) => {
 export default Weather
 
 export const getStaticProps: GetStaticProps = async () => {
-  const cities: {
-    [id: string]: City
-  } = {
-    forgsville: {
-      id: "forgsville",
-      name: "Forgsville",
-      country: "Remy Republic",
-    },
-    hawainot: { id: "hawainot", name: "Hawainot", country: "Remy Republic" },
-    swamp_of_secrets: {
-      id: "swamp_of_secrets",
-      name: "Swamp of Secrets",
-      country: "Tobytopia",
-    },
-    billzoplace: {
-      id: "billzoplace",
-      name: "Billzoplace",
-      country: "Billzoplace City State",
-    },
-  }
+  const cities = getClientCityList()
 
   return {
     props: {
       cities,
     },
   }
-}
-
-interface City {
-  id: string
-  name: string
-  country: string
 }
