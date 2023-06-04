@@ -16,6 +16,7 @@ const weatherConditions: {
 
 // Import Montserrat manually so that the font renders properly when exported as an image
 import { Montserrat } from "@next/font/google"
+import moment from "moment-timezone"
 const font = Montserrat({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
@@ -219,8 +220,13 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
           </button>
         </div>
         <p className="flex-grow text-right text-[0.5rem] uppercase opacity-30">
-          Data last updated:{" "}
-          {currWeather ? currWeather.last_updated : "____-__-__ __:__"}
+          Last Updated:{" "}
+          {currWeather
+            ? moment
+                .tz(currWeather.last_updated, weatherData!!.location.tz_id)
+                .utc()
+                .format("YYYY-MM-DD HH:mm (UTC)")
+            : "_________"}
         </p>
       </footer>
     </article>
