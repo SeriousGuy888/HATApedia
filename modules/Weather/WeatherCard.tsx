@@ -62,7 +62,12 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
         : elemH * (largerDimension / elemW),
     })
       .then((png: any) => {
-        saveAs(png, "weather.png")
+        saveAs(
+          png,
+          `${cardInfo.cityName} Weather (${moment
+            .utc()
+            .format("YYYYMMDD-HHmmss z")}).png`,
+        )
         buttonGroupRef.current!!.style.opacity = ""
       })
       .catch((e) => {
