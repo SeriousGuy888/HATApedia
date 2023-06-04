@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import Image from "next/image"
 import { useRef } from "react"
 import cntl from "cntl"
 import { toPng } from "html-to-image" // https://github.com/tsayen/dom-to-image
@@ -16,6 +17,7 @@ const weatherConditions: {
 
 // Import Montserrat manually so that the font renders properly when exported as an image
 import { Montserrat } from "@next/font/google"
+import { css } from "@emotion/react"
 const font = Montserrat({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
@@ -101,6 +103,15 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
     return descriptionFromCode
   }
 
+  const getWeatherImage = (code: number) => {
+    const conditionObj = weatherConditions[code.toString()]
+    if (!conditionObj) {
+      return "clear"
+    }
+
+    return conditionObj.image
+  }
+
   const getTemp = (tempCelsius: number) => {
     let temperature = Math.round(tempCelsius)
     switch (tempUnit) {
@@ -114,21 +125,6 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
   const actualTemp = getTemp(currWeather?.temp_c ?? 0)
   const feelsLikeTemp = getTemp(currWeather?.feelslike_c ?? 0)
 
-  const cardBg = ({ isDay }: { isDay: boolean }) => cntl`
-    bg-gradient-to-br
-    ${
-      isDay
-        ? cntl`
-        from-blue-600
-        to-slate-600
-      `
-        : cntl`
-        from-slate-700
-        to-gray-900
-      `
-    }
-  `
-
   if (weatherData?.error) {
     return (
       <article className="rounded-xl w-full p-8 bg-red-200 text-black">
@@ -140,13 +136,27 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
 
   return (
     <article
-      className={`rounded-xl w-full p-8 text-white flex flex-col gap-8 @container ${cardBg(
-        {
-          isDay: !!currWeather?.is_day ?? true,
-        },
-      )} ${font.className}`}
+      className={`
+        rounded-xl overflow-clip
+        w-full p-8 text-white
+        flex flex-col gap-8
+        @container ${font.className}
+        
+        relative
+      `}
       ref={cardElem}
     >
+      <div className="absolute inset-0 select-none pointer-events-none z-[-10]">
+        <Image
+          src={`/images/weather/${getWeatherImage(
+            currWeather?.condition.code ?? 1000,
+          )}.jpg`}
+          fill
+          alt=""
+          className="absolute inset-0"
+        />
+        <span className="absolute inset-0 bg-blue-900 opacity-60" />
+      </div>
       <header className="flex justify-between gap-4 flex-col-reverse @md:flex-row">
         <section className="flex flex-col items-center @md:items-start">
           <h1 className="relative">
@@ -224,7 +234,15 @@ const InfoBox: NextPage<{ title: string; data: string }> = ({
   data,
 }) => {
   return (
-    <li className="bg-black bg-opacity-10 rounded-md p-4 text-center break-words @container/infobox">
+    <li
+      className={`
+        bg-black bg-opacity-10
+        filter backdrop-blur-xl
+
+        rounded-md p-4 text-center break-words
+        @container/infobox
+      `}
+    >
       <h2 className="uppercase text-xs tracking-tight text-gray-300 mb-2">
         {title}
       </h2>

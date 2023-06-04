@@ -50,4 +50,5 @@ export interface WeatherData {
 export interface WeatherCondition {
   description: string
   description_night?: string
+  image: string
 }

@@ -2,147 +2,195 @@
   "_source": "https://www.weatherapi.com/docs/weather_conditions.json",
   "1000": {
     "description": "Sunny",
-    "description_night": "Clear Skies"
+    "description_night": "Clear Skies",
+    "image": "clear"
   },
   "1003": {
-    "description": "Partly cloudy"
+    "description": "Partly cloudy",
+    "image": "light_cloudy"
   },
   "1006": {
-    "description": "Cloudy"
+    "description": "Cloudy",
+    "image": "dark_cloudy"
   },
   "1009": {
-    "description": "Overcast"
+    "description": "Overcast",
+    "image": "dark_cloudy"
   },
   "1030": {
-    "description": "Mist"
+    "description": "Mist",
+    "image": "dark_cloudy"
   },
   "1063": {
-    "description": "Patchy rain possible"
+    "description": "Patchy rain possible",
+    "image": "some_rain"
   },
   "1066": {
-    "description": "Patchy snow possible"
+    "description": "Patchy snow possible",
+    "image": "some_snow"
   },
   "1069": {
-    "description": "Patchy sleet possible"
+    "description": "Patchy sleet possible",
+    "image": "some_snow"
   },
   "1072": {
-    "description": "Patchy freezing drizzle possible"
+    "description": "Patchy freezing drizzle possible",
+    "image": "some_rain"
   },
   "1087": {
-    "description": "Thundery outbreaks possible"
+    "description": "Thundery outbreaks possible",
+    "image": "thunder_and_lightning"
   },
   "1114": {
-    "description": "Blowing snow"
+    "description": "Blowing snow",
+    "image": "much_snow"
   },
   "1117": {
-    "description": "Blizzard"
+    "description": "Blizzard",
+    "image": "much_snow"
   },
   "1135": {
-    "description": "Fog"
+    "description": "Fog",
+    "image": "dark_cloudy"
   },
   "1147": {
-    "description": "Freezing fog"
+    "description": "Freezing fog",
+    "image": "dark_cloudy"
   },
   "1150": {
-    "description": "Patchy light drizzle"
+    "description": "Patchy light drizzle",
+    "image": "some_rain"
   },
   "1153": {
-    "description": "Light drizzle"
+    "description": "Light drizzle",
+    "image": "some_rain"
   },
   "1168": {
-    "description": "Freezing drizzle"
+    "description": "Freezing drizzle",
+    "image": "some_rain"
   },
   "1171": {
-    "description": "Heavy freezing drizzle"
+    "description": "Heavy freezing drizzle",
+    "image": "much_rain"
   },
   "1180": {
-    "description": "Patchy light rain"
+    "description": "Patchy light rain",
+    "image": "some_rain"
   },
   "1183": {
-    "description": "Light rain"
+    "description": "Light rain",
+    "image": "some_rain"
   },
   "1186": {
-    "description": "Moderate rain at times"
+    "description": "Moderate rain at times",
+    "image": "some_rain"
   },
   "1189": {
-    "description": "Moderate rain"
+    "description": "Moderate rain",
+    "image": "some_rain"
   },
   "1192": {
-    "description": "Heavy rain at times"
+    "description": "Heavy rain at times",
+    "image": "much_rain"
   },
   "1195": {
-    "description": "Heavy rain"
+    "description": "Heavy rain",
+    "image": "much_rain"
   },
   "1198": {
-    "description": "Light freezing rain"
+    "description": "Light freezing rain",
+    "image": "some_rain"
   },
   "1201": {
-    "description": "Moderate or heavy freezing rain"
+    "description": "Moderate or heavy freezing rain",
+    "image": "much_rain"
   },
   "1204": {
-    "description": "Light sleet"
+    "description": "Light sleet",
+    "image": "some_snow"
   },
   "1207": {
-    "description": "Moderate or heavy sleet"
+    "description": "Moderate or heavy sleet",
+    "image": "some_snow"
   },
   "1210": {
-    "description": "Patchy light snow"
+    "description": "Patchy light snow",
+    "image": "some_snow"
   },
   "1213": {
-    "description": "Light snow"
+    "description": "Light snow",
+    "image": "some_snow"
   },
   "1216": {
-    "description": "Patchy moderate snow"
+    "description": "Patchy moderate snow",
+    "image": "much_snow"
   },
   "1219": {
-    "description": "Moderate snow"
+    "description": "Moderate snow",
+    "image": "much_snow"
   },
   "1222": {
-    "description": "Patchy heavy snow"
+    "description": "Patchy heavy snow",
+    "image": "much_snow"
   },
   "1225": {
-    "description": "Heavy snow"
+    "description": "Heavy snow",
+    "image": "much_snow"
   },
   "1237": {
-    "description": "Ice pellets"
+    "description": "Ice pellets",
+    "image": "much_snow"
   },
   "1240": {
-    "description": "Light rain shower"
+    "description": "Light rain shower",
+    "image": "some_rain"
   },
   "1243": {
-    "description": "Moderate or heavy rain shower"
+    "description": "Moderate or heavy rain shower",
+    "image": "much_rain"
   },
   "1246": {
-    "description": "Torrential rain shower"
+    "description": "Torrential rain shower",
+    "image": "much_rain"
   },
   "1249": {
-    "description": "Light sleet showers"
+    "description": "Light sleet showers",
+    "image": "some_snow"
   },
   "1252": {
-    "description": "Moderate or heavy sleet showers"
+    "description": "Moderate or heavy sleet showers",
+    "image": "some_snow"
   },
   "1255": {
-    "description": "Light snow showers"
+    "description": "Light snow showers",
+    "image": "some_snow"
   },
   "1258": {
-    "description": "Moderate or heavy snow showers"
+    "description": "Moderate or heavy snow showers",
+    "image": "much_snow"
   },
   "1261": {
-    "description": "Light showers of ice pellets"
+    "description": "Light showers of ice pellets",
+    "image": "much_snow"
   },
   "1264": {
-    "description": "Moderate or heavy showers of ice pellets"
+    "description": "Moderate or heavy showers of ice pellets",
+    "image": "much_snow"
   },
   "1273": {
-    "description": "Patchy light rain with thunder"
+    "description": "Patchy light rain with thunder",
+    "image": "thunder_and_lightning"
   },
   "1276": {
-    "description": "Moderate or heavy rain with thunder"
+    "description": "Moderate or heavy rain with thunder",
+    "image": "thunder_and_lightning"
   },
   "1279": {
-    "description": "Patchy light snow with thunder"
+    "description": "Patchy light snow with thunder",
+    "image": "thunder_and_lightning"
   },
   "1282": {
-    "description": "Moderate or heavy snow with thunder"
+    "description": "Moderate or heavy snow with thunder",
+    "image": "thunder_and_lightning"
   }
 }
