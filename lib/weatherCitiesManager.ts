@@ -13,10 +13,17 @@ export interface CityDisplayData {
 }
 
 const masterCityList: { [id: string]: City } = {
-  forgsville: {
+  forgsville_and_no: {
     weatherSource: "Toronto",
     display: {
-      name: "Forgsville",
+      name: "Forgsville & No",
+      country: "Remy Republic",
+    },
+  },
+  scammington: {
+    weatherSource: "Niagara Falls",
+    display: {
+      name: "Scammington",
       country: "Remy Republic",
     },
   },
@@ -27,6 +34,20 @@ const masterCityList: { [id: string]: City } = {
       country: "Remy Republic",
     },
   },
+  floridanot: {
+    weatherSource: "Miami",
+    display: {
+      name: "Floridanot",
+      country: "Remy Republic",
+    },
+  },
+  billzoplace: {
+    weatherSource: "Thunder Bay",
+    display: {
+      name: "Billzoplace",
+      country: "Billzoplace City State",
+    },
+  },
   swamp_of_secrets: {
     weatherSource: "New Orleans",
     display: {
@@ -34,11 +55,25 @@ const masterCityList: { [id: string]: City } = {
       country: "Tobytopia",
     },
   },
-  billzoplace: {
-    weatherSource: "Ottawa",
+  tobytopian_southern_territories: {
+    weatherSource: "San Francisco",
     display: {
-      name: "Billzoplace",
-      country: "Billzoplace City State",
+      name: "Southern Territories",
+      country: "Tobytopia",
+    },
+  },
+  spawn: {
+    weatherSource: "Winnipeg",
+    display: {
+      name: "Spawn",
+      country: "International Zone",
+    },
+  },
+  neville: {
+    weatherSource: "Volgograd",
+    display: {
+      name: "Neville",
+      country: "City of Neville",
     },
   },
 }
