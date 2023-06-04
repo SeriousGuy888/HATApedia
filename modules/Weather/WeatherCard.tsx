@@ -237,8 +237,6 @@ const InfoBox: NextPage<{ title: string; data: string }> = ({
     <li
       className={`
         bg-black bg-opacity-10
-        filter backdrop-blur-xl
-
         rounded-md p-4 text-center break-words
         @container/infobox
       `}
