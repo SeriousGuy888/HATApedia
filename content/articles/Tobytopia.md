@@ -5,7 +5,7 @@ image: "[[Tobytopia Banner.png]]"
 nation:
   banner: "[[Tobytopia Banner.png]]"
   info:
-    leader: Toby
+    ultimate kaiser of doom three thousand: Toby
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
