@@ -14,6 +14,11 @@ const Home = () => {
       name: "World Map",
       path: "/map",
     },
+    {
+      icon: "fork.png",
+      name: "Weather",
+      path: "/weather",
+    },
   ]
 
   return (
@@ -22,7 +27,7 @@ const Home = () => {
         <title>HATApedia</title>
       </Head>
       <article className="max-w-5xl w-full h-fit p-8">
-        <h1 className="text-4xl mb-8">E, shoom! Wog thu tu HATApedia.</h1>
+        <h1 className="text-4xl mb-8">Welcome to HATApedia 🎉</h1>
 
         <div className="flex flex-wrap gap-4">
           {links.map((link) => (
@@ -31,7 +36,7 @@ const Home = () => {
               key={link.path}
               className="flex-1 p-8 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 min-w-[15rem]"
             >
-              <div className="grid grid-rows-[3fr_1fr] gap-2 text-center">
+              <div className="grid grid-rows-[3fr_1fr] gap-4 text-center">
                 <div className="relative w-full">
                   <Image
                     src={`/images/link_icons/${link.icon}`}
