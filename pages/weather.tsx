@@ -91,6 +91,7 @@ const Weather: NextPage<{ cities: { [id: string]: CityDisplayData } }> = ({
           }}
           weatherData={weatherData}
           tempUnit={tempUnit}
+          ready={weatherData !== null}
         />
       </section>
     </>

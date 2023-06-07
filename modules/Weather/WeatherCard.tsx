@@ -32,9 +32,15 @@ interface Props {
   }
   weatherData: WeatherData | null
   tempUnit: TemperatureUnit
+  ready: boolean
 }
 
-const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
+const WeatherCard: NextPage<Props> = ({
+  cardInfo,
+  weatherData,
+  tempUnit,
+  ready,
+}) => {
   const currWeather = weatherData?.current ?? null
   const unitSymbol = tempUnit === "celsius" ? "°C" : "K"
 
@@ -164,29 +170,29 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
       <header className="flex justify-between gap-4 flex-col-reverse @md:flex-row">
         <section className="flex flex-col items-center @md:items-start">
           <h1 className="relative">
-            <span className="text-7xl">{actualTemp}</span>
+            <span className="text-7xl">{ready ? actualTemp : "..."}</span>
             <span className="text-xl absolute -right-6 top-2">
-              {unitSymbol}
+              {ready && unitSymbol}
             </span>
           </h1>
           <p className="text-xs">
-            {feelsLikeTemp !== actualTemp
+            {ready && feelsLikeTemp !== actualTemp
               ? `Feels like ${feelsLikeTemp}${unitSymbol}`
               : "\u200b"}
           </p>
         </section>
         <section className="flex-shrink text-center @md:text-right">
           <p className="text-xl @md:text-lg font-bold">
-            {cardInfo.cityName ?? "Waiting..."}
+            {ready ? cardInfo.cityName : "Waiting..."}
           </p>
           <p className="text-sm text-blue-100 font-light">
-            {cardInfo.country ?? "Please select a city."}
+            {ready ? cardInfo.country : "Please select a city."}
           </p>
         </section>
       </header>
       <section>
         <p className="text-center uppercase leading-4 text-sm tracking-wider @md:text-base">
-          {currWeather
+          {ready && currWeather
             ? getWeatherCondition(
                 currWeather.condition.code,
                 currWeather.condition.text,
@@ -195,7 +201,7 @@ const WeatherCard: NextPage<Props> = ({ cardInfo, weatherData, tempUnit }) => {
             : "Waiting..."}
         </p>
       </section>
-      {currWeather && (
+      {ready && currWeather && (
         <ul className="grid gap-2 grid-cols-[repeat(auto-fit,_minmax(40%,1fr))]">
           <InfoBox title={"Humidity"} data={`${currWeather.humidity}%`} />
           <InfoBox
