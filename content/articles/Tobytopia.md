@@ -1,6 +1,6 @@
 ---
 title: Tobytopia
-subtitle: Ultimatekaiserofdoomthreethousandreich
+subtitle: Totalitarian Kratocracy
 image: "[[Tobytopia Banner.png]]"
 nation:
   banner: "[[Tobytopia Banner.png]]"
