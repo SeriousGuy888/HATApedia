@@ -81,3 +81,9 @@ Almost eight in-game days passed in the 2 hours and 39 minutes between the initi
 
 With over a week of Remyan workers going to work drowsy and unattentive, economists have estimated that Doctor Zomboss's coup may have caused up to 75,000 [[Republicoin]] (for whatever that's worth) in economic damage to the [[Remy Republic]] in the form of lost productivity. Although many laugh at Tobytopia, it seems that this coup has far wider ripples than just within Tobytopia.
 
+## Refugee Crisis
+Due to this political instability, the Immigration and Passport Office of the [[Remy Republic]] was being rapidly flooded with immigration requests, requests for political asylum, and refugees crossing the border illegally.
+
+As these refugees were mainly forgs, whose preferred climate was very similar to that of [[New Mangrovia]], that is where most of the refugees crossed into the Remy Republic. Some forgs were also reported having crossed the border into Billzoplace, but most used it as a jumping off point to head to New Mangrovia.
+
+On 2023-06-04, Immigration and Passport Office announced that it had begun processing the mountain of immigration requests resultant from the coup. Exact numbers are unclear, but almost all of the refugees wished to resettle in New Mangrovia.
