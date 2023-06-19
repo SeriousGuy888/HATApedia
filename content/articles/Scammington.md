@@ -32,3 +32,6 @@ As a result, many of these turtles fled to the Remy Republic, specifically to Sc
 The turtles' arrival also pushed out the few remaining villager residents in Scammington.
 
 This mass migration has also had an impact on the culture of Scammington<sup>[more information needed]</sup>.
+
+# Notable People
+- [[Birch Nuke]], a villager from Billzoplace, accepted to Scammington for his remarkable scams
