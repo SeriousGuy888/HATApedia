@@ -52,8 +52,8 @@ Unfortunately for Toby, many of his items — all except those picked up by Zomb
 ## Reproclamation of Tobytopia
 At approximately 22:45, Toby made a proclamation to the nation, announcing that he had regained control of the government. In this proclamation, Toby rerererenamed the country back to Tobytopia and restored himself as the Ultimate Kaiser of Doom Three Thousand.
 
-In a slightly more comprehensible speech than that of Zomboss, Toby said the following:
-> This is a great time of loss, of grief, for me, my family, for all of Tobytopia together, but it really shows our unitedness and our resolve to go against our problems. It also shows the power of Tobytopia, that this, which would be a great loss for countries like the Remy Republic and Billzo Land[sic], is something we can overcome. It's a testament to our power, our willpower, that we can get this back...
+In a slightly more comprehensible speech than that of Zomboss, Toby made the following statement:
+> This is a great time of loss, of grief, for me, my family, for all of Tobytopia together, but it really shows our unitedness and our resolve to go against our problems. It also shows the power of Tobytopia, that this, which would be a great loss for countries like the [[Remy Republic]] and [[Billzoplace|Billzo Land]]<sup>[sic]</sup>, is something we can overcome. It's a testament to our power, our willpower, that we can get this back...
 > 
 > ...That's the real story of this tragedy here today.
 
