@@ -13,25 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Flagrant Fowls.md",
+                "file": "articles/Tobytopia.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f92d2f346af3b5f6",
+            "id": "75535d629772531f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Zombitopian Junta.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7e267e9577513749",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Tobytopia.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Flagrant Fowls.md",
+                "file": "articles/Zombitopian Junta.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Flagrant Fowls.md",
+                "file": "articles/Zombitopian Junta.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Flagrant Fowls.md"
+                "file": "articles/Zombitopian Junta.md"
               }
             }
           }
@@ -156,7 +169,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Flagrant Fowls.md",
+                "file": "articles/Zombitopian Junta.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -203,18 +216,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9174623cbd402a24",
+  "active": "75535d629772531f",
   "lastOpenFiles": [
-    "articles/Remy Republic.md",
-    "articles/Flagrant Fowls.md",
     "articles/Tobytopia.md",
-    "articles/Fletcher Quadratic.md",
-    "articles/Che Forguera.md",
+    "articles/Zombitopian Junta.md",
+    "images/Zomboss Eliminated.png",
     "articles/Toby.md",
+    "articles/Neville.md",
+    "articles/No.md",
     "articles/Remy.md",
     "articles/Scammington.md",
-    "articles/No.md",
+    "articles/Mangrovepox.md",
+    "articles/Billzoplace.md",
     "articles/Election Night Shooting.md",
+    "articles/Flagrant Fowls.md",
+    "articles/Remy Republic.md",
+    "articles/Fletcher Quadratic.md",
+    "articles/Che Forguera.md",
     "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
@@ -226,7 +244,6 @@
     "images/Toby arrives at the Jungle Palace.png",
     "images/Toby blows up Holden.png",
     "images/Holdentopia Jungle Palace.png",
-    "images/Holden murders Toby.png",
-    "images/No 2023-01-15.png"
+    "images/Holden murders Toby.png"
   ]
 }

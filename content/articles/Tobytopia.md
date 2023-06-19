@@ -99,6 +99,9 @@ Toby then flew to Holden's jungle palace, barring Holden from ever visiting the 
 ![[Toby places some signs at the jungle palace.png]]
 ![[Holdentopia residents are not allowed here unless to pray.png]]
 
+## Zomboss's Coup
+Please see: [[Zombitopian Junta|Zomboss's Coup]]
+
 # Structures
 
 ## Toby's Base
