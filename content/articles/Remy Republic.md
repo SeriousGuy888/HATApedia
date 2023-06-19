@@ -193,3 +193,12 @@ The Glorious Leader made the following speech on 2023-04-10 regarding the events
 > This new gang of scallywags, the Allies of Tromos, will fall and get what they have been waiting for. Over the next few days, our government will band together and initiate a battle plan to combat the Tromos, and for the protection of the Remy Republic, the government will declare a state of emergency.
 > 
 > The Remyan military will be commanded to patrol and keep the Remy Republic safe. As a final warning, those who betray the family that is the Remy Republic during the state of emergency shall be punished in Remyan court. That is all I have to say. Thank you, and goodnight.
+
+# Sports
+The Remy Republic has sports I think.
+
+## Bobble League
+The national team of the Remy Republic is the [[Flagrant Fowls]].
+
+## Football
+The Remy Republic reportedly plans to build a stadium in Scammington for "the good type" of football.
