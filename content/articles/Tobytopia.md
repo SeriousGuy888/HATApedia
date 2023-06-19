@@ -6,6 +6,8 @@ nation:
   banner: "[[Tobytopia Banner.png]]"
   info:
     ultimate kaiser of doom three thousand: Toby
+    capital: The DVD Player
+    motto: Tobytopia togethəəəəəəəəəəər strong
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp

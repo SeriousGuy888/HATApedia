@@ -57,6 +57,8 @@ In a slightly more comprehensible speech than that of Zomboss, Toby said the fol
 > 
 > ...That's the real story of this tragedy here today.
 
+In this proclamation, Toby also officially set the capital of the country as the [[DVD Player]] and officially made the motto of the country "*Tobytopia togethəəəəəəəəəəər strong*".
+
 # Aftermath
 
 ## Economic Impacts
