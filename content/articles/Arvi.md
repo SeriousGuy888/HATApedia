@@ -15,6 +15,6 @@ He would end up advocating his position as king to [[bill the Allay]] at the [[U
 Arvi left to found the new city of [[Neville]].
 
 # Minehut Ban
-Arvi was banned from Minehut for a month on 2023-04-12.
+Arvi was banned from Minehut for a month on 2023-04-12 for saying the word "gay". He later appealed the ban.
 
-*minehut moment*
+> minehut moment

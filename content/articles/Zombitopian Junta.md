@@ -14,6 +14,8 @@ nation:
 
 > [!tip] All times in this article are in Eastern Daylight Time (UTC-4).
 
+Zombitopia was a short-lived [<ruby>junta<rt>ˈhʊntə</rt></ruby>](https://en.wiktionary.org/wiki/junta) state that came into being when [[Doctor Zomboss]] overthrew [[Toby]] while he was AFK for some reason.
+
 # Zomboss's Coup
 
 On 2023-05-22 at 19:30, [[Toby]], Ultimate Kaiser of Doom Three Thousand of [[Tobytopia]], was killed by Doctor Zomboss, from hit game, Plants vs Zombies, while he was AFK.

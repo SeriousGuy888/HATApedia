@@ -25,19 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Fortugal.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9d649840464d6906",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Che Forguera.md",
+                "file": "articles/Zombitopian Junta.md",
                 "mode": "source",
                 "source": false
               }
@@ -123,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Fortugal.md",
+                "file": "articles/Zombitopian Junta.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Fortugal.md",
+                "file": "articles/Zombitopian Junta.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Fortugal.md"
+                "file": "articles/Zombitopian Junta.md"
               }
             }
           }
@@ -181,7 +169,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Fortugal.md",
+                "file": "articles/Zombitopian Junta.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -230,22 +218,24 @@
   },
   "active": "75535d629772531f",
   "lastOpenFiles": [
-    "articles/Che Forguera.md",
+    "articles/Arvi.md",
+    "articles/Neville.md",
+    "articles/Zombitopian Junta.md",
+    "articles/Flagrant Fowls.md",
+    "articles/Remy.md",
+    "articles/Mangrovepox.md",
+    "articles/Korolarachi.md",
     "articles/Fortugal.md",
+    "articles/Che Forguera.md",
     "articles/Tobytopia.md",
     "articles/Fletcher Quadratic.md",
     "articles/Scammington.md",
     "articles/Remy Republic.md",
-    "articles/Neville.md",
-    "articles/Zombitopian Junta.md",
     "images/Zomboss Eliminated.png",
     "articles/Toby.md",
     "articles/No.md",
-    "articles/Remy.md",
-    "articles/Mangrovepox.md",
     "articles/Billzoplace.md",
     "articles/Election Night Shooting.md",
-    "articles/Flagrant Fowls.md",
     "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
