@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "382c7513b838f058",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/HATA.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "7e267e9577513749",
             "type": "leaf",
             "state": {
@@ -44,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/HATA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/HATA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Zombitopian Junta.md"
+                "file": "articles/HATA.md"
               }
             }
           }
@@ -169,7 +181,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/HATA.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -216,11 +228,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "75535d629772531f",
+  "active": "382c7513b838f058",
   "lastOpenFiles": [
+    "images/epic hata logo.png",
+    "articles/HATA.md",
+    "articles/Zombitopian Junta.md",
     "articles/Arvi.md",
     "articles/Neville.md",
-    "articles/Zombitopian Junta.md",
     "articles/Flagrant Fowls.md",
     "articles/Remy.md",
     "articles/Mangrovepox.md",
@@ -246,7 +260,6 @@
     "images/Pasted image 20230509111231.png",
     "images/Toby arrives at the Jungle Palace.png",
     "images/Toby blows up Holden.png",
-    "images/Holdentopia Jungle Palace.png",
-    "images/Holden murders Toby.png"
+    "images/Holdentopia Jungle Palace.png"
   ]
 }
