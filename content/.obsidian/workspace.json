@@ -25,7 +25,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Fortugal.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9d649840464d6906",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Che Forguera.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Tobytopia.md",
+                "file": "articles/Che Forguera.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Fortugal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Fortugal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Zombitopian Junta.md"
+                "file": "articles/Fortugal.md"
               }
             }
           }
@@ -169,7 +181,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Fortugal.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -216,23 +228,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5b4aaa9e87dec23e",
+  "active": "75535d629772531f",
   "lastOpenFiles": [
+    "articles/Che Forguera.md",
+    "articles/Fortugal.md",
     "articles/Tobytopia.md",
+    "articles/Fletcher Quadratic.md",
+    "articles/Scammington.md",
+    "articles/Remy Republic.md",
+    "articles/Neville.md",
     "articles/Zombitopian Junta.md",
     "images/Zomboss Eliminated.png",
     "articles/Toby.md",
-    "articles/Neville.md",
     "articles/No.md",
     "articles/Remy.md",
-    "articles/Scammington.md",
     "articles/Mangrovepox.md",
     "articles/Billzoplace.md",
     "articles/Election Night Shooting.md",
     "articles/Flagrant Fowls.md",
-    "articles/Remy Republic.md",
-    "articles/Fletcher Quadratic.md",
-    "articles/Che Forguera.md",
     "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
