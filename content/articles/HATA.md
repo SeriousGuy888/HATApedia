@@ -1,6 +1,7 @@
 ---
 title: HATA
 subtitle: Holden's Awesome Tyrannosaurus Adventure
+image: "[[epic hata logo.png]]"
 aliases:
 - HATAsurv
 - HATAwar
