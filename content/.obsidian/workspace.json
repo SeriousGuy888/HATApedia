@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "7fc79c8c056ee148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/The Voices.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "7e267e9577513749",
             "type": "leaf",
             "state": {
@@ -85,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "equalsosc",
+                "query": "hata",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +114,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -230,13 +243,14 @@
   },
   "active": "382c7513b838f058",
   "lastOpenFiles": [
-    "images/epic hata logo.png",
-    "articles/HATA.md",
     "articles/Zombitopian Junta.md",
+    "articles/HATA.md",
+    "articles/The Voices.md",
+    "articles/Remy.md",
+    "images/epic hata logo.png",
     "articles/Arvi.md",
     "articles/Neville.md",
     "articles/Flagrant Fowls.md",
-    "articles/Remy.md",
     "articles/Mangrovepox.md",
     "articles/Korolarachi.md",
     "articles/Fortugal.md",

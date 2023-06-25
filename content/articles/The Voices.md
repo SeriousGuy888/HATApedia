@@ -4,7 +4,7 @@ subtitle: THEY'RE NOT REAL THEY'RE NOT REAL THEY'RE NOT REAL
 ---
 
 The Voices are an unknown entity that manifests as voices in the
-heads of certain people while they are playing on the HATA server.
+heads of certain people while they are playing on the [[HATA]] server.
 
 # Identity
 [[Toby]] (allegedly)

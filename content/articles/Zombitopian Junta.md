@@ -36,7 +36,7 @@ At 19:30, after killing Toby, Doctor Zomboss officially announced his seizure of
 In a hardly comprehensible speech atop Toby's [[DVD Player|yet to be finished palace]], Zomboss declared that the country would henceforth be known as *Zombitopia*, with himself as *Brains of the Operation*.
 
 ## Banner
-It is worth noting that Zomboss did not make any statement with regards to the national flag. Hata historians therefore generally take the preexisting Tobytopian banner as the standard used by Zombitopia.
+It is worth noting that Zomboss did not make any statement with regards to the national flag. [[Hata]] historians therefore generally take the preexisting Tobytopian banner as the standard used by Zombitopia.
 
 However, it is worth noting that there are no actual records of contemporary use of the banner by the Zombitopian administration, on account of the government being overthrown like thirteen minutes later.
 

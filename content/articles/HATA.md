@@ -12,5 +12,5 @@ HATA, originally known as HATAwar, first opened on 2022-12-02.
 
 # Logo
 
-Epic: 
+Epique: 
 ![[epic hata logo.png]]
