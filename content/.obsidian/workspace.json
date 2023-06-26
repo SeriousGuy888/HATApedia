@@ -67,8 +67,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -114,8 +113,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -136,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Tobytopia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Tobytopia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/HATA.md"
+                "file": "articles/Tobytopia.md"
               }
             }
           }
@@ -194,7 +192,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Tobytopia.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -241,10 +239,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "382c7513b838f058",
+  "active": "9174623cbd402a24",
   "lastOpenFiles": [
-    "articles/Zombitopian Junta.md",
     "articles/HATA.md",
+    "articles/Zombitopian Junta.md",
     "articles/The Voices.md",
     "articles/Remy.md",
     "images/epic hata logo.png",
