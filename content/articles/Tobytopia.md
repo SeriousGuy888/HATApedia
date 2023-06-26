@@ -7,7 +7,7 @@ nation:
   info:
     ultimate kaiser of doom three thousand: Toby
     capital: The DVD Player
-    motto: I'm your sexy mom; I'm a milf.
+    motto: I'm your sexy mom; I'm a milf, Remy.
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
