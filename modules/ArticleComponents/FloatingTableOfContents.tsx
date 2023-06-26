@@ -43,7 +43,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
           fixed bottom-0 
           md:sticky md:top-24 md:bottom-auto 
         
-          bg-gray-200 dark:bg-gray-900 shadow-xl
+          bg-gray-200 dark:bg-gray-900
           md:bg-transparent md:dark:bg-transparent 
           
           px-8 py-4 
@@ -120,7 +120,7 @@ const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
       className={`text-xs ${
         highlighted && "bg-gray-200 dark:bg-gray-700"
       } w-full py-1`}
-      style={{ paddingLeft: `${node.depth - 1}rem` }}
+      style={{ paddingLeft: `${node.depth - 0}rem`, paddingRight: "1rem" }}
     >
       <Link
         href={`#${node.id}`}
