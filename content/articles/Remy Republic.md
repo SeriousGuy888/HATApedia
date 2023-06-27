@@ -93,22 +93,7 @@ The Remy Republic maintains diplomatic relations with a number of other nations.
 # History
 
 ## The Great Mangrove War
-
-The Great Mangrove War was a conflict between the Remy Republic and [[Tobytopia]]. The disagreement was over which nation should have sovereignty over New Mangrovia (then referred to by Remy as Remyan Mangrovia).
-
-After Holden and Toby came to Forgsville and tried to burn down Remy's house, Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia. This crisis boiled over into an epique duel between Remy and Holden, which Remy would win 2 to 1.
-
-<Youtube videoId="pXPVKZaFRZI" />
-
-As a result of the Remyan victory, Remy and Holden came to the following agreement.
-- Remy gets to own Remyan Mangrovia
-- Remyan Mangrovia will be renamed to New Mangrovia
-- Holden gets the title of Founder of New Mangrovia
-- Holden gets to cleanup the mess from the crisis
-
-Toby would later allude to not recognising this settlement between Remy and Holden,
-saying that he might just invade and retake the territory for Tobytopia again. However,
-Toby never acted on these threats, and New Mangrovia remains a Remyan territory.
+Please see: [[Great Mangrove War]]
 
 ## The Border Disorder
 > Mr Tobachov, tear down that wall!
