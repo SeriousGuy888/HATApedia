@@ -8,3 +8,7 @@ Hawainot is the capital of the [[Remy Republic]] and one of the provinces.
 - [[Fletcher Quadratic]]
 - [[Julian Quadratic]]
 - [[Jasper Golem]]
+
+# Geography
+- [[Equalsosceles Island]]
+- [[Hawainot Channel Islands]]
