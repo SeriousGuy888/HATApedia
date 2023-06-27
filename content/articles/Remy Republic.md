@@ -67,16 +67,17 @@ It is worth noting that the vote was originally undecided, with the vote counts 
 
 ### Villager Council
 The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
-| Province/Territory    | SBP   | MCP  | BNQ  | IND  |
-| :-------------------- | :---- | :--- | :--- | :--- |
-| Hawainot              | 95 🏆  | 5    |      |      |
-| Forgsville            | 75 🏆  | 25   |      |      |
-| No                    | 25    | 24   | 51 🏆 |      |
-| Scammington           | 21    | 79 🏆 |      |      |
-| New Mangrovia         | 30    | 60 🏆 |      | 10   |
-| Cocoa Bean Cove Terr. | 100 🏆 |      |      |      |
-| Unnamed Cave Terr.    | 39    | 20   |      | 41 🏆 |
-| Floridanot Terr.      | 70 🏆  | 30   |      |      |
+
+| Province/Territory    | SBP    | MCP   | BNQ   | Ind   | 
+|:--------------------- |:------ |:----- |:----- |:----- |
+| Hawainot              | 95 🏆  | 5     |       |       |
+| Forgsville            | 75 🏆  | 25    |       |       |
+| No                    | 25     | 24    | 51 🏆 |       |
+| Scammington           | 21     | 79 🏆 |       |       |
+| New Mangrovia         | 30     | 60 🏆 |       | 10    |
+| Cocoa Bean Cove Terr. | 100 🏆 |       |       |       |
+| Unnamed Cave Terr.    | 39     | 20    |       | 41 🏆 |
+| Floridanot Terr.      | 70 🏆  | 30    |       |       |
 
 ![[Remy Republic Villager Council Election Result Map.png]]
 
