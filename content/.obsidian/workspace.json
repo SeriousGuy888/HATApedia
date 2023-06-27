@@ -4,64 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "fd12e993d57b2dd6",
+        "id": "ad99773520c4ee22",
         "type": "tabs",
         "children": [
           {
-            "id": "9174623cbd402a24",
+            "id": "c8bd2ed30646f9b1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Tobytopia.md",
+                "file": "articles/Remy Republic.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "75535d629772531f",
+            "id": "1b740f4b9adf8ab2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Great Mangrove War.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "382c7513b838f058",
+            "id": "f6feb7ca5b99b406",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/HATA.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7fc79c8c056ee148",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/The Voices.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7e267e9577513749",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Che Forguera.md",
+                "file": "articles/Fletcher Quadratic.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Tobytopia.md",
+                "file": "articles/Remy Republic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Tobytopia.md",
+                "file": "articles/Remy Republic.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Tobytopia.md"
+                "file": "articles/Remy Republic.md"
               }
             }
           }
@@ -192,7 +168,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Tobytopia.md",
+                "file": "articles/Remy Republic.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -239,39 +215,45 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9174623cbd402a24",
+  "active": "c8bd2ed30646f9b1",
   "lastOpenFiles": [
+    "images/-- this folder is symlinked into the obsidian vault --",
+    "images/__symlinked folder for obsidian__",
+    "images/New Text Document.txt",
+    "images/Zomboss Eliminated.png",
+    "images/western_hawainot_offensive.png",
+    "images/United Nations Banner.png",
+    "images/unhq_portrait.png",
+    "images/unhq_interior.png",
+    "images/unhq_exterior.png",
+    "images/Tobytopia Banner.png",
+    "images/Toby's semiautomatic crop farms.png",
+    "images/Toby's Cave 2023-03-31.png",
+    "images/Toby's Base 2023-03-31 From Tree Level.png",
+    "images",
+    "articles/Fletcher Quadratic.md",
+    "articles/Great Mangrove War.md",
+    "articles/Mangrovepox.md",
+    "articles/Remy Republic.md",
+    "articles/Hawainot.md",
+    "articles/No.md",
+    "articles/Tobytopia.md",
     "articles/HATA.md",
     "articles/Zombitopian Junta.md",
     "articles/The Voices.md",
     "articles/Remy.md",
-    "images/epic hata logo.png",
     "articles/Arvi.md",
     "articles/Neville.md",
     "articles/Flagrant Fowls.md",
-    "articles/Mangrovepox.md",
     "articles/Korolarachi.md",
     "articles/Fortugal.md",
     "articles/Che Forguera.md",
-    "articles/Tobytopia.md",
-    "articles/Fletcher Quadratic.md",
     "articles/Scammington.md",
-    "articles/Remy Republic.md",
-    "images/Zomboss Eliminated.png",
     "articles/Toby.md",
-    "articles/No.md",
     "articles/Billzoplace.md",
     "articles/Election Night Shooting.md",
-    "images/Election Night Shooting with death messages.png",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Anna.md",
-    "articles/Holden.md",
-    "images/Holdentopia residents are not allowed here unless to pray.png",
-    "images/Toby places some signs at the jungle palace.png",
-    "images/Pasted image 20230509111235.png",
-    "images/Pasted image 20230509111231.png",
-    "images/Toby arrives at the Jungle Palace.png",
-    "images/Toby blows up Holden.png",
-    "images/Holdentopia Jungle Palace.png"
+    "articles/Holden.md"
   ]
 }

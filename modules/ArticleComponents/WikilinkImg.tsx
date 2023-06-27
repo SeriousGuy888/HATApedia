@@ -12,12 +12,12 @@ const WikilinkImg: NextPage<HTMLImageElement> = ({
 }) => {
   return (
     <Link
-      href={src ? "/api/images/" + src : ""}
+      href={src ? "/images/content/" + src : ""}
       target="_blank"
       className="w-full max-w-full flex justify-center overflow-hidden rounded-lg "
     >
       <Image
-        src={"/api/images/" + src}
+        src={"/images/content/" + src}
         blurDataURL="/images/loading.png"
         placeholder="blur"
         quality={20}
