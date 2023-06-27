@@ -23,7 +23,7 @@ const MDXComponents = {
 
     return imgElem
   },
-  NationInfoCard: dynamic(() => import("./NationInfoCard")),
+  InfoboxNation: dynamic(() => import("./Infoboxes/NationInfobox")),
   BookAndQuill: dynamic(() => import("./BookAndQuill")),
   Youtube: dynamic(() => import("./Youtube")),
 }

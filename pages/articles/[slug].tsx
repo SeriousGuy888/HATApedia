@@ -8,7 +8,7 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
 
 import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
-import NationInfoCard from "../../modules/ArticleComponents/NationInfoCard"
+import NationInfobox from "../../modules/ArticleComponents/Infoboxes/NationInfobox"
 import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
@@ -77,7 +77,10 @@ const ArticlePage: NextPage<Props> = ({
           </header>
 
           {(frontmatter.nation as any) && (
-            <NationInfoCard nation={frontmatter.nation as any} />
+            <NationInfobox
+              facts={frontmatter.nation?.info}
+              banner={frontmatter.nation?.banner}
+            />
           )}
           <article
             className={

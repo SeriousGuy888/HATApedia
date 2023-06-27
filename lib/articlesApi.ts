@@ -1,7 +1,6 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
-import { NationInfoCardData } from "../modules/ArticleComponents/NationInfoCard"
 
 import { serialize } from "next-mdx-remote/serialize"
 
@@ -25,7 +24,7 @@ export interface Article {
   title: string
   subtitle?: string
   image?: string
-  nation?: NationInfoCardData
+  nation?: any
 }
 export interface ArticleFull extends Article {
   content: string

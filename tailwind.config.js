@@ -12,6 +12,7 @@ module.exports = {
     fontFamily: {
       sans: ["Montserrat", "sans-serif"],
       serif: ["Merriweather", "serif"],
+      mono: ["Fira Code", "Consolas", "monospace"],
     },
     extend: {
       typography: (theme) => ({
