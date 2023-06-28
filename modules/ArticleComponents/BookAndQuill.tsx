@@ -144,6 +144,7 @@ const MinecraftTextRenderer: NextPage<{
                 ? "line-through"
                 : "none",
               textShadow: textComponent.obfuscated ? "0 0 5px black" : "none",
+              whiteSpace: "pre-wrap",
             }}
           >
             {lines.map((value, i) => (
