@@ -11,6 +11,7 @@ import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import remarkCallouts from "@portaljs/remark-callouts"
 import rehypeFormat from "rehype-format"
 import rehypeStringify from "rehype-stringify"
 import rehypeWrap from "rehype-wrap-all"
@@ -83,6 +84,7 @@ export const getArticle = async (slug: string) => {
         remarkParse,
         remarkGfm,
         [remarkWikilink, { existingPageNames: allSlugs }],
+        remarkCallouts,
         remarkGroupImages,
         remarkHtml,
       ],
