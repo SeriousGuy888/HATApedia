@@ -1,6 +1,6 @@
 ---
 title: Billzoshoom
-subtitle: Wearer of duck onesies
+subtitle: God of News
 image: "[[Billzo Portrait.png]]"
 ---
 
