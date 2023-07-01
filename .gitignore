@@ -173,3 +173,7 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node,nextjs
+
+
+# ignore symlink so it doesnt track the same files multiple times
+/content/images/
