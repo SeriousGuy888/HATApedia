@@ -8,3 +8,6 @@ image: "[[Toby Portrait.png]]"
 Toby lives in [[Tobytopia]].
 
 His base was once secret, but then everyone found it.
+
+# Inheritance Incident
+Please see: [[Inheritance Incident]]
