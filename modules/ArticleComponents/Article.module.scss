@@ -30,7 +30,7 @@
     // overriding @portaljs/remark-callouts/styles.css
     .blockquote > p,
     .callout-content > p {
-      margin: 1rem 0; !important
+      margin: 1rem 0 !important;
 
       &:first-child {
         margin-top: 0;
