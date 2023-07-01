@@ -1,3 +1,10 @@
+# 2023-06-30
+
+## Added callouts
+> [!cite] Look
+> it's a callout and i can easily add it to any article now
+
+
 # 2023-06-03
 
 ## Added weather page
