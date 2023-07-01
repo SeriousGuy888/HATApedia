@@ -44,7 +44,7 @@ Remy and Jasper then made their way to the [[United Nations|United Nations Headq
 
 Billzo was also there, arriving through legitimate means, and [[Arvi]] as well, who was teleported to the UN by Bill because he kept crashing the server by loading too many new chunks and didn't know how to get home.
 
-Jasper encouraged everyone to take off their clothes, because that would make him more comfortable.
+Jasper encouraged everyone to take off their clothes because that would make him more comfortable.
 
 Toby, after arriving at the UN with somehow yet another set of backup gear as well as a rocket launcher loaded with a big damage missile, attempted to fire it from the overhang down towards the negotiation table, intending to assassinate Jasper. Unfortunately, due to the 1.5 block tall hitbox of Minecraft fences, the missile collided with the fence instead of hitting Jasper, backfiring on Toby, killing him instantly.
 
@@ -81,7 +81,7 @@ The following were the main points brought up in the negotations:
 - Toby requested that everything, including his tools and armour to be returned immediately.
 - Jasper pressed his request for enderender access.
 
-These negotations were very tense, with Toby frequently pulling out his rocket launcher and pointing it at Remy and Jasper, while attempting to gaslight Remy into thinking that he is not holding a rocket launcher.
+These negotations were very tense, with Toby frequently pulling out his rocket launcher and pointing it at Remy and Jasper, while attempting to gaslight Remy into thinking that he was not holding a rocket launcher.
 
 ## Resolution
 Toby cut the negotations short, quickly pulling out his rocket launcher and loosing several rockets at the opposite side of the table. He managed to kill Jasper after first popping his totem of undying, and after firing several more missiles at Remy, caused Remy to log out in fear.
