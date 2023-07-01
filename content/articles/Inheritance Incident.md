@@ -16,7 +16,7 @@ On 2023-06-29, [[Toby]] was climbing around the [[Billzoplace City Villager Resi
 ## Remy Shot Dead at Shakakowo Bridge
 Toby, after hearing that Jasper had taken his items, quickly gathered a set of backup gear, including backup netherite armour, <ruby>ekto mode<rt>invisibility</rt></ruby> potions, and a <ruby>rocket launcher<rt>crossbow</rt></ruby> with [[big damage missile|big damage missiles]]. He intended to contest his own will and disinherit Jasper postmortem.
 
-Toby found his way back to Billzoplace, where Remy and Jasper were hanging around by [[Billzoshoom|Billzo]]'s house on the north side of the river. Toby, from the south side of the [[Shakakowo Bridge]], approached the pair, invisible and wearing armour at the same time, while menacingly brandishing his rocket launcher.
+Toby found his way back to Billzoplace, where Remy and Jasper were hanging around by [[Billzo Shoom|Billzo]]'s house on the north side of the river. Toby, from the south side of the [[Shakakowo Bridge]], approached the pair, invisible and wearing armour at the same time, while menacingly brandishing his rocket launcher.
 
 The [[Remy|Glorious Leader]] then charged forwards towards Toby, onto the bridge, intending to challenge the Ultimate Kaiser of Doom Three Thousand and protect his client. Jasper stayed back by the nether portal and drew his bow, firing at Toby. Remy survived at least one direct hit from one of Toby's big damage missiles, but in his attempt to flee after being hit, he was shot and killed by Toby on the south side of the river by the bridge.
 

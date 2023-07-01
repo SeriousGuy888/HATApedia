@@ -2,7 +2,7 @@
 subtitle: Trade Agreement
 ---
 
-The Treaty of No (2022) is a treaty signed on 2022-12-25 between the [[Remy Republic]] and [[Billzoplace]]. As this was during Remy's absence (vacation to France), it was [[Remyforg]] who represented the Remy Republic in the meeting with [[Billzoshoom]].
+The Treaty of No (2022) is a treaty signed on 2022-12-25 between the [[Remy Republic]] and [[Billzoplace]]. As this was during Remy's absence (vacation to France), it was [[Remyforg]] who represented the Remy Republic in the meeting with [[Billzo Shoom]].
 
 The treaty stipulates that Billzoplace may import wheat from the Remy Republic in exchange for Billzoplace funding the expansion of the Remy Republic's wheat fields.
 
@@ -22,4 +22,4 @@ The treaty stipulates that Billzoplace may import wheat from the Remy Republic i
 Billzoplace shall fund the expansion of the wheat field in No.
 
 ### Article II
-The Remy Republic shall export wheat to Billzoplace for [[Billzoshoom|Billzo]]'s sneaky and sinister purposes.
+The Remy Republic shall export wheat to Billzoplace for [[Billzo Shoom|Billzo]]'s sneaky and sinister purposes.

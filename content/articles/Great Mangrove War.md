@@ -9,7 +9,7 @@ The Great Mangrove War was a conflict between the [[Remy Republic]] and [[Tobyto
 
 ## Remy Claims the Mangrove
 
-On 2022-12-21 at 21:07 EDT, the [[Remy|Glorious Leader of the Remy Republic]], standing atop a tree and wearing [[Billzoshoom|Billzo]]'s Minecraft skin, made a speech which formally laid claim to the area of savanna that would become known as Remyan Mangrovia which was covered by mangrove trees planted by Holden.
+On 2022-12-21 at 21:07 EDT, the [[Remy|Glorious Leader of the Remy Republic]], standing atop a tree and wearing [[Billzo Shoom|Billzo]]'s Minecraft skin, made a speech which formally laid claim to the area of savanna that would become known as Remyan Mangrovia which was covered by mangrove trees planted by Holden.
 
 > I CLAIM HOLDEN'S MANGROVE TREES IN THE NAME OF THE REMY REPUBLIC!
 > 
