@@ -26,6 +26,20 @@
         min-height: 8rem;
       }
     }
+
+    // overriding @portaljs/remark-callouts/styles.css
+    .blockquote > p,
+    .callout-content > p {
+      margin: 1rem 0; !important
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   h1:hover,
