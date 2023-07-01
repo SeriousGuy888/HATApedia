@@ -28,16 +28,18 @@
     }
 
     // overriding @portaljs/remark-callouts/styles.css
-    .blockquote > p,
-    .callout-content > p {
-      margin: 1rem 0 !important;
-
+    .blockquote,
+    .callout-content {
       &:first-child {
         margin-top: 0;
       }
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      & > p {
+        margin: 1rem 0 !important;
       }
     }
   }
