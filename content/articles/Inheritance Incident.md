@@ -35,7 +35,7 @@ At some point, Toby used an escape tunnel he had preprepared in the shady facili
 
 ![[toby sniki subway tunnel.png]]
 
-Remy and Arvi also found this tunnel and dropped down. Remy and Jasper then split up, with Remy running through the tunnel towards Sheapland Station, while Jasper ran back towards Billzoplace.
+Remy and Jasper also found this tunnel and dropped down. The duo then split up, with Remy running through the tunnel towards Sheapland Station, while Jasper ran back towards Billzoplace.
 
 Toby, after arriving at Sheapland station, went up the stairs and swam north, across the [[Sheap River]] and towards [[New Mangrovia]].
 
