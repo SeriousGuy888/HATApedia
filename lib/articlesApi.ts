@@ -25,11 +25,11 @@ export interface ArticlePreview {
   title: string
   subtitle?: string
   image?: string
+  nation?: any
 }
 interface ArticleMetadata extends ArticlePreview {
   nation?: any
   timeline?: {
-    // date: Date
     events?: {
       date: Date | { start: Date; end: Date }
       title: string
@@ -86,7 +86,7 @@ export async function getArticle(slug: string) {
   }
 
   const allSlugs = await getAllSlugs()
-  const { content, data } = matter(source)
+  const { content } = matter(source)
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -115,7 +115,7 @@ export async function getArticle(slug: string) {
   })
 
   // makes Date serialisation error go away for some reason
-  mdxSource.frontmatter = data as any
+  mdxSource.frontmatter = getArticlePreview(slug) as any
 
   const excerpt =
     (

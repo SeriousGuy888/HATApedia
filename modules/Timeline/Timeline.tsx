@@ -69,7 +69,7 @@ const Timeline: NextPage<Props> = ({ events }) => {
             }}
           >
             <h2
-              className="text-lg"
+              className="text-lg font-mono tracking-widest"
               style={{
                 writingMode: "vertical-rl",
                 textOrientation: "mixed",

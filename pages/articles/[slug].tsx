@@ -27,9 +27,7 @@ const ArticlePage: NextPage<Props> = ({
   tocHeadings,
   fileName,
 }) => {
-  const frontmatter = mdxSource.frontmatter as unknown as ArticlePreview & {
-    nation?: any
-  }
+  const frontmatter = mdxSource.frontmatter as unknown as ArticlePreview
 
   const title = frontmatter.title ?? fileName.replace(/.mdx?$/, "")
 
