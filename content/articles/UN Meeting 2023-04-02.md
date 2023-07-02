@@ -1,6 +1,7 @@
 ---
-title: UN Meeting 2023-04-02
 subtitle: Meeting Minutes
+timeline:
+  date: 2023-04-02
 ---
 
 ![[Pasted image 20230402192537.png]]

@@ -29,10 +29,12 @@ export interface ArticlePreview {
 interface ArticleMetadata extends ArticlePreview {
   nation?: any
   timeline?: {
-    // gray-matter serialises Dates nested one level deep to strings,
-    // but not a second level deep for some reason,
-    // so the date is a string or an object with Date objects
-    date?: string | { start: Date; end: Date }
+    // date: Date
+    events?: {
+      date: Date
+      title: string
+      description?: string
+    }[]
   }
 }
 

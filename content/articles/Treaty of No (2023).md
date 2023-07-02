@@ -1,5 +1,7 @@
 ---
 subtitle: Trade Agreement
+timeline:
+  date: 2022-01-21
 ---
 
 The *Treaty of No (2023)* was a followup to the first Treaty of No. This treaty allowed the [[Remy Republic]] free access to [[Billzo Shoom]]'s slime farm beneath the newly constructed [[Limedye Oil Rig]].

@@ -1,26 +1,28 @@
 import { NextPage } from "next"
-import { ArticlePreview } from "../lib/articlesApi"
 import { getTimelineEventsFromArticles } from "../lib/timelineApi"
+import Head from "next/head"
 
 interface Props {
   events: TimelineEvent[]
 }
 
 export interface TimelineEvent {
-  article: ArticlePreview
-  date: string | TimelineEventDateRange // these strings are dates, but Date is not serialisable
-}
-
-export interface TimelineEventDateRange {
-  start: string
-  end: string
+  slug: string
+  date: string
+  title: string
+  description?: string
 }
 
 const Timeline: NextPage<Props> = ({ events }) => {
   return (
-    <section className="my-12">
-      <pre>{JSON.stringify(events, null, 4)}</pre>
-    </section>
+    <>
+      <Head>
+        <title>Timeline</title>
+      </Head>
+      <section className="my-12">
+        <pre>{JSON.stringify(events, null, 2)}</pre>
+      </section>
+    </>
   )
 }
 

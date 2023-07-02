@@ -1,5 +1,7 @@
 ---
 subtitle: Investment and Trade Agreement
+timeline:
+  date: 2023-04-07
 ---
 
 The Treaty of Neville is a trade and investment agreement signed between the [[Remy Republic]] and [[Neville]].

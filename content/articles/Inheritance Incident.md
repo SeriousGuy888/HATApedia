@@ -2,7 +2,10 @@
 title: The Inheritance Incident
 subtitle: Incident Between Jasper and Toby
 timeline:
-  date: 2023-06-29
+  events:
+  - date: 2023-06-29
+    title: "The Inheritance Incident"
+    description: "Jasper inherits Toby's items, and Toby contests the will."
 ---
 
 # Chronicle

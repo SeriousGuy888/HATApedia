@@ -10,6 +10,10 @@ nation:
     brains of the operation: Doctor Zomboss
     capital: The DVD Player
     motto: bəəəəəəəəəər
+timeline:
+  date:
+    start: 2023-05-22
+    end: 2023-05-22
 ---
 
 > [!tip] All times in this article are in Eastern Daylight Time (UTC-4).
