@@ -144,12 +144,12 @@ export async function getArticlePreview(slug: string) {
 
   const { title, subtitle, image } = metadata
 
-  return {
+  return (await goodifyArticleData({
     slug,
     title,
     subtitle,
     image,
-  } as ArticlePreview
+  })) as ArticlePreview
 }
 
 export async function getArticleMetadata(slug: string) {
