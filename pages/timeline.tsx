@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import { getTimelineEventsFromArticles } from "../lib/timelineApi"
 import Head from "next/head"
+import Timeline from "../modules/Timeline/Timeline"
 
 interface Props {
   events: TimelineEvent[]
@@ -8,19 +9,25 @@ interface Props {
 
 export interface TimelineEvent {
   slug: string
-  date: string
+  date: TimelineDateRange
   title: string
   description?: string
 }
 
-const Timeline: NextPage<Props> = ({ events }) => {
+// dates aren't serialisable D: so we have to use strings
+export interface TimelineDateRange {
+  start: string
+  end: string
+}
+
+const TimelinePage: NextPage<Props> = ({ events }) => {
   return (
     <>
       <Head>
         <title>Timeline</title>
       </Head>
-      <section className="my-12">
-        <pre>{JSON.stringify(events, null, 2)}</pre>
+      <section className="w-full h-full">
+        <Timeline events={events} />
       </section>
     </>
   )
@@ -36,4 +43,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default Timeline
+export default TimelinePage

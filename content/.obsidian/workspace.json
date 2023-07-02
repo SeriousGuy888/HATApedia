@@ -13,31 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Remy Republic.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1b740f4b9adf8ab2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Great Mangrove War.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f6feb7ca5b99b406",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Fletcher Quadratic.md",
+                "file": "articles/Zombitopian Junta.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Zombitopian Junta.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Zombitopian Junta.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Remy Republic.md"
+                "file": "articles/Zombitopian Junta.md"
               }
             }
           }
@@ -168,7 +144,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Zombitopian Junta.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -217,43 +193,45 @@
   },
   "active": "c8bd2ed30646f9b1",
   "lastOpenFiles": [
+    "articles/Toby.md",
+    "articles/Scammington.md",
+    "articles/Scammington Bar.md",
+    "articles/Remy Republic.md",
+    "articles/Anna.md",
+    "articles/Election Night Shooting.md",
+    "articles/Great Mangrove War.md",
+    "articles/Inheritance Incident.md",
+    "articles/Arvi.md",
+    "articles/Billzo Shoom.md",
+    "articles/Billzoplace.md",
+    "articles/Flagrant Fowls.md",
+    "articles/Fortugal.md",
+    "articles/HATA.md",
+    "articles/Hawainot.md",
+    "articles/Holden.md",
+    "articles/Korolarachi.md",
+    "articles/Mangrovepox.md",
+    "articles/Neville.md",
+    "articles/No.md",
+    "articles/Remy.md",
+    "articles/Remy Sea Trade Bloc Agreement.md",
+    "articles/The Voices.md",
+    "articles/Zombitopian Junta.md",
+    "articles/United Nations.md",
+    "articles/UN Meeting 2023-04-02.md",
+    "images/contents of jasper's inheritance.png",
+    "images/jasper dead.png",
+    "images/explosions in the un.png",
+    "images/jasper and remy sit opposite to toby in the unhq.png",
+    "images/jasper remy and toby negotiate.png",
+    "images/toby announces intentions to kill himself a third time.png",
+    "images/toby assassinates himself with a firework at the unhq.png",
+    "images/jasper inherits toby's stuff.png",
+    "images/toby sniki subway tunnel.png",
+    "images/RemyHemy beed nuked by a missile.png",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",
-    "images/Zomboss Eliminated.png",
-    "images/western_hawainot_offensive.png",
-    "images/United Nations Banner.png",
-    "images/unhq_portrait.png",
-    "images/unhq_interior.png",
-    "images/unhq_exterior.png",
-    "images/Tobytopia Banner.png",
-    "images/Toby's semiautomatic crop farms.png",
-    "images/Toby's Cave 2023-03-31.png",
-    "images/Toby's Base 2023-03-31 From Tree Level.png",
-    "images",
-    "articles/Fletcher Quadratic.md",
-    "articles/Great Mangrove War.md",
-    "articles/Mangrovepox.md",
-    "articles/Remy Republic.md",
-    "articles/Hawainot.md",
-    "articles/No.md",
-    "articles/Tobytopia.md",
-    "articles/HATA.md",
-    "articles/Zombitopian Junta.md",
-    "articles/The Voices.md",
-    "articles/Remy.md",
-    "articles/Arvi.md",
-    "articles/Neville.md",
-    "articles/Flagrant Fowls.md",
-    "articles/Korolarachi.md",
-    "articles/Fortugal.md",
-    "articles/Che Forguera.md",
-    "articles/Scammington.md",
-    "articles/Toby.md",
-    "articles/Billzoplace.md",
-    "articles/Election Night Shooting.md",
-    "articles/(meta) Hatapedia Changelog.md",
-    "articles/Anna.md",
-    "articles/Holden.md"
+    "images"
   ]
 }

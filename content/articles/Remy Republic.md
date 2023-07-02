@@ -8,6 +8,12 @@ nation:
     glorious leader: Remy
     demonym: Remyan
     official languages: English, French, Billzonian
+timeline:
+  events:
+  - title: "Remyan Election"
+    date:
+      start: 2023-02-16
+      end: 2023-02-17
 ---
 
 The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
@@ -43,7 +49,7 @@ Each province sends elected representatives to the Remyan parliament.
 The Parliament of the Remy Republic is a bicameral legislature, with an upper house — the *Duck Nest* — and a lower house — the *Villager Council*.
 
 ## Election
-*See also: [[Election Night Shooting|Shooting in Hawainot on Election Night]]*
+*See also: [[Election Night Shooting]]*
 
 ![[First_Parliament_of_the_Remy_Republic.png|Result of the election: Remy gets another term as Glorious Leader, SBP wins both houses of parliament]]
 The election for the Villager Council occurred and concluded on 2023-02-16.

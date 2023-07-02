@@ -31,7 +31,7 @@ interface ArticleMetadata extends ArticlePreview {
   timeline?: {
     // date: Date
     events?: {
-      date: Date
+      date: Date | { start: Date; end: Date }
       title: string
       description?: string
     }[]

@@ -1,4 +1,4 @@
-import { TimelineEvent } from "../pages/timeline"
+import { TimelineDateRange, TimelineEvent } from "../pages/timeline"
 import { getAllSlugs, getArticleMetadata } from "./articlesApi"
 
 export async function getTimelineEventsFromArticles(): Promise<
@@ -19,11 +19,33 @@ export async function getTimelineEventsFromArticles(): Promise<
 
       // check if the date is a date object, if so, use it, otherwise, check if it's a date range and use it
       if (timeline?.events instanceof Array) {
-        events = timeline.events.map((e) => ({
-          ...e,
-          slug,
-          date: e.date.toISOString(),
-        }))
+        events = timeline.events.map((e) => {
+          let date: TimelineDateRange
+          if (e.date instanceof Date) {
+            date = {
+              start: e.date.toISOString(),
+              end: e.date.toISOString(),
+            }
+          } else if (
+            e.date?.start instanceof Date &&
+            e.date?.end instanceof Date
+          ) {
+            date = {
+              start: e.date.start.toISOString(),
+              end: e.date.end.toISOString(),
+            }
+          } else {
+            throw new Error(
+              `Article ${slug}'s timeline event ${e.title}'s date is not a date or date range`,
+            )
+          }
+
+          return {
+            ...e,
+            slug,
+            date,
+          }
+        })
       } else {
         throw new Error(`Article ${slug}'s timeline events are not an array`)
       }
