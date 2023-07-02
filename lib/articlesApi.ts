@@ -20,15 +20,20 @@ import strip from "strip-markdown"
 
 import remarkHeadingTree, { TocNode } from "../plugins/remark-heading-tree"
 
-export interface Article {
+export interface ArticlePreview {
   slug: string
   title: string
   subtitle?: string
   image?: string
-  nation?: any
 }
-export interface ArticleFull extends Article {
-  content: string
+interface ArticleMetadata extends ArticlePreview {
+  nation?: any
+  timeline?: {
+    // gray-matter serialises Dates nested one level deep to strings,
+    // but not a second level deep for some reason,
+    // so the date is a string or an object with Date objects
+    date?: string | { start: Date; end: Date }
+  }
 }
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
@@ -57,12 +62,14 @@ const getArticleFileContent = async (slug: string) => {
   return fs.readFile(filePath, "utf8")
 }
 
-const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
+const goodifyArticleData = async (obj: ArticlePreview | ArticleMetadata) => {
   const { title, subtitle } = obj
+
   if (!title) {
     // If no title specified, use the filename without the extension as title
     obj.title = ((await getSlugMap()) as any)?.[obj.slug].replace(/\.mdx?$/, "")
   }
+
   if (!subtitle) {
     delete obj.subtitle
   }
@@ -70,15 +77,16 @@ const handleUndefinedKeys = async (obj: Article | ArticleFull) => {
   return obj
 }
 
-export const getArticle = async (slug: string) => {
+export async function getArticle(slug: string) {
   const source = await getArticleFileContent(slug)
   if (!source) {
     return null
   }
 
   const allSlugs = await getAllSlugs()
+  const { content, data } = matter(source)
 
-  const mdxSource = await serialize(source, {
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         remarkParse,
@@ -102,10 +110,11 @@ export const getArticle = async (slug: string) => {
         rehypeStringify,
       ],
     },
-    parseFrontmatter: true,
   })
 
-  const { content } = matter(source)
+  // makes Date serialisation error go away for some reason
+  mdxSource.frontmatter = data as any
+
   const excerpt =
     (
       await remark().use(remarkGfm).use(strip).process(content.slice(0, 197))
@@ -125,18 +134,38 @@ export const getArticle = async (slug: string) => {
   }
 }
 
-export const getArticlePreview = async (slug: string) => {
-  const fileContents = await getArticleFileContent(slug)
-  if (!fileContents) {
+export async function getArticlePreview(slug: string) {
+  const metadata = await getArticleMetadata(slug)
+  if (!metadata) {
     return null
   }
-  const { data } = matter(fileContents)
-  const { title, subtitle, nation } = data
 
-  return (await handleUndefinedKeys({
+  const { title, subtitle, image } = metadata
+
+  return {
     slug,
     title,
     subtitle,
-    image: data?.image ?? nation?.banner ?? null,
-  })) as Article
+    image,
+  } as ArticlePreview
+}
+
+export async function getArticleMetadata(slug: string) {
+  const source = await getArticleFileContent(slug)
+  if (!source) {
+    return null
+  }
+  const { data } = matter(source)
+  const { title, subtitle, image, nation, timeline } = data
+
+  const articleData: ArticleMetadata = await goodifyArticleData({
+    slug,
+    title,
+    subtitle,
+    image: image ?? nation?.banner ?? null,
+    nation,
+    timeline,
+  })
+
+  return articleData
 }

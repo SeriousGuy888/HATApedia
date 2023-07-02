@@ -4,7 +4,7 @@ import styles from "../../modules/ArticleComponents/Article.module.scss"
 import "@portaljs/remark-callouts/styles.css"
 
 import { GetStaticPathsResult, GetStaticPropsResult, NextPage } from "next"
-import { Article, getAllSlugs, getArticle } from "../../lib/articlesApi"
+import { ArticlePreview, getAllSlugs, getArticle } from "../../lib/articlesApi"
 import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
 
@@ -27,7 +27,7 @@ const ArticlePage: NextPage<Props> = ({
   tocHeadings,
   fileName,
 }) => {
-  const frontmatter = mdxSource.frontmatter as unknown as Article
+  const frontmatter = mdxSource.frontmatter as unknown as ArticlePreview
 
   const title = frontmatter.title ?? fileName.replace(/.mdx?$/, "")
 
@@ -77,7 +77,7 @@ const ArticlePage: NextPage<Props> = ({
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
 
-          {(frontmatter.nation as any) && (
+          {frontmatter.nation && (
             <NationInfobox
               facts={frontmatter.nation?.info}
               banner={frontmatter.nation?.banner}

@@ -16,6 +16,7 @@ const Topbar = () => {
         <Link href={"/articles"}>Articles</Link>
         <Link href={"/map"}>Map</Link>
         <Link href={"/weather"}>Weather</Link>
+        <Link href={"/timeline"}>Timeline</Link>
       </div>
       <ThemeSwitcher />
       <div className="hidden print:flex justify-between w-full text-sm">
@@ -30,7 +31,7 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="flex gap-2 items-center no-underline print:hidden"
+      className="gap-2 items-center no-underline hidden print:hidden sm:flex"
     >
       <Image
         src="/images/earth_icon.png"

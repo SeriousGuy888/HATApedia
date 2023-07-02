@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import useSWR from "swr"
-import { Article } from "../../lib/articlesApi"
+import { ArticlePreview } from "../../lib/articlesApi"
 import LinkCard from "../Search/LinkCard"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
 
@@ -12,8 +12,8 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
     return <p>Failed to get article {slug}.</p>
   }
 
-  const article = data as Article
-  const src = getImgWikilinkSrc(article.image ?? "") 
+  const article = data as ArticlePreview
+  const src = getImgWikilinkSrc(article.image ?? "")
 
   return (
     <LinkCard

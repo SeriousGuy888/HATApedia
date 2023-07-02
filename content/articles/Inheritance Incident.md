@@ -1,6 +1,8 @@
 ---
 title: The Inheritance Incident
 subtitle: Incident Between Jasper and Toby
+timeline:
+  date: 2023-06-29
 ---
 
 # Chronicle

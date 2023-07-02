@@ -1,6 +1,10 @@
 ---
 title: The Great Mangrove War
 subtitle: conflict between Tobytopia and the Remy Republic
+timeline:
+  date:
+    start: 2022-12-21
+    end: 2023-01-22
 ---
 
 The Great Mangrove War was a conflict between the [[Remy Republic]] and [[Tobytopia]] (more specifically, [[Holden]] from Tobytopia). The disagreement was over which nation should have sovereignty over [[New Mangrovia]] (then referred to by Remy as Remyan Mangrovia).
