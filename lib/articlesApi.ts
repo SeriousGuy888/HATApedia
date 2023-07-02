@@ -115,7 +115,7 @@ export async function getArticle(slug: string) {
   })
 
   // makes Date serialisation error go away for some reason
-  mdxSource.frontmatter = getArticlePreview(slug) as any
+  mdxSource.frontmatter = (await getArticlePreview(slug)) as any
 
   const excerpt =
     (
