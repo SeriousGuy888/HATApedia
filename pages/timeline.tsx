@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import { getTimelineEventsFromArticles } from "../lib/timelineApi"
 import Head from "next/head"
 import Timeline from "../modules/Timeline/Timeline"
+import BetaNotice from "../modules/_UI/BetaNotice"
 
 interface Props {
   events: TimelineEvent[]
@@ -26,7 +27,8 @@ const TimelinePage: NextPage<Props> = ({ events }) => {
       <Head>
         <title>Timeline</title>
       </Head>
-      <section className="w-full h-full overflow-x-scroll">
+      <BetaNotice />
+      <section className="w-full h-full overflow-x-scroll overflow-y-hidden">
         <Timeline events={events} />
       </section>
     </>
