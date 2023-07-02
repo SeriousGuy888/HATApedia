@@ -26,7 +26,7 @@ const TimelinePage: NextPage<Props> = ({ events }) => {
       <Head>
         <title>Timeline</title>
       </Head>
-      <section className="w-full h-full">
+      <section className="w-full h-full overflow-x-scroll">
         <Timeline events={events} />
       </section>
     </>
