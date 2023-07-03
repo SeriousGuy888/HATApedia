@@ -107,6 +107,9 @@ const Timeline: NextPage<Props> = ({ events }) => {
               }}
             >
               <h2 className="text-white font-bold">{e.title}</h2>
+              <p className="text-xs font-mono">
+                {getIsoDate(e.date.start)} - {getIsoDate(e.date.end)}
+              </p>
               <p>{e.description}</p>
             </div>
           )
@@ -141,6 +144,10 @@ function getNumDaysInMonth(month: Date): number {
   // Takes the month provided, goes to the next month, and then goes back a day,
   // returning the # of the last day of the month
   return new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate()
+}
+
+function getIsoDate(date: Date): string {
+  return date.toISOString().split("T")[0]
 }
 
 /**
