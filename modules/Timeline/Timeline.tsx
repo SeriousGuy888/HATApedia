@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import { TimelineEvent } from "../../pages/timeline"
+import { useState } from "react"
 
 interface Props {
   events: TimelineEvent[]
@@ -16,6 +17,8 @@ const LANE_GAP = 0.5 // rem
 const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
 const Timeline: NextPage<Props> = ({ events }) => {
+  const [zoom, setZoom] = useState<number>(1)
+
   const sortedEvents = events
     .map((e) => {
       return {
@@ -64,10 +67,10 @@ const Timeline: NextPage<Props> = ({ events }) => {
             className="py-4 bg-slate-200 dark:bg-slate-800 border-x-[1px] border-slate-300 dark:border-slate-700 text-center"
             key={month.toISOString()}
             style={{
-              width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
+              width: zoom * DAY_WIDTH * getNumDaysInMonth(month) + "px",
             }}
           >
-            <h2 className="text-lg tracking-widest">
+            <h2 className="text-lg tracking-widest whitespace-nowrap">
               {month.toLocaleString("default", {
                 month: "long",
                 year: "numeric",
@@ -90,7 +93,7 @@ const Timeline: NextPage<Props> = ({ events }) => {
           const [newLanes, laneToUse] = findOpenLane(lanes, e.date)
           lanes = newLanes
 
-          const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + "rem"
+          const laneOffset = laneToUse * (zoom * LANE_HEIGHT + LANE_GAP) + "rem"
 
           return (
             <div
@@ -98,15 +101,36 @@ const Timeline: NextPage<Props> = ({ events }) => {
               key={e.title}
               style={{
                 top: laneOffset,
-                left: daysOffsetFromStart * DAY_WIDTH + "px",
-                width: lengthInDays * DAY_WIDTH + "px",
-                height: LANE_HEIGHT + "rem",
+                left: zoom * DAY_WIDTH * daysOffsetFromStart + "px",
+                width: zoom * DAY_WIDTH * lengthInDays + "px",
+                height: zoom * LANE_HEIGHT + "rem",
               }}
             >
               <h2 className="text-white font-bold">{e.title}</h2>
             </div>
           )
         })}
+      </section>
+      <section className="absolute right-8 bottom-8 flex items-center">
+        <span>
+          Zoom: <span className="font-bold">{zoom}x</span>
+        </span>
+        <button
+          className="bg-blue-500 text-white px-2 py-1 rounded-lg ml-2"
+          onClick={() => {
+            if (zoom < 2) setZoom(zoom + 0.25)
+          }}
+        >
+          Zoom in
+        </button>
+        <button
+          className="bg-blue-500 text-white px-2 py-1 rounded-lg ml-2"
+          onClick={() => {
+            if (zoom > 0.5) setZoom(zoom - 0.25)
+          }}
+        >
+          Zoom out
+        </button>
       </section>
     </div>
   )
