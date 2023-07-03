@@ -1,6 +1,5 @@
 import { NextPage } from "next"
 import { TimelineEvent } from "../../pages/timeline"
-import { css } from "@emotion/react"
 
 interface Props {
   events: TimelineEvent[]
@@ -11,8 +10,8 @@ interface DateRange {
   end: Date
 }
 
-const DAY_HEIGHT = 8 // pixels
-const LANE_WIDTH = 12 // rem
+const DAY_WIDTH = 16 // pixels
+const LANE_HEIGHT = 10 // rem
 const LANE_GAP = 0.5 // rem
 const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
@@ -58,23 +57,17 @@ const Timeline: NextPage<Props> = ({ events }) => {
   let lanes: Lane[] = []
 
   return (
-    <div className="flex gap-1">
-      <section className="grid">
+    <div className="grid gap-2">
+      <section className="flex">
         {months.map((month, index) => (
           <div
-            className="px-4 bg-slate-200 dark:bg-slate-800 flex flex-col justify-center border-y-[1px] border-slate-300 dark:border-slate-700 text-right"
+            className="py-4 bg-slate-200 dark:bg-slate-800 border-x-[1px] border-slate-300 dark:border-slate-700 text-center"
             key={month.toISOString()}
             style={{
-              height: DAY_HEIGHT * getNumDaysInMonth(month) + "px",
+              width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
             }}
           >
-            <h2
-              className="text-lg font-mono tracking-widest"
-              style={{
-                writingMode: "vertical-rl",
-                textOrientation: "mixed",
-              }}
-            >
+            <h2 className="text-lg tracking-widest">
               {month.toLocaleString("default", {
                 month: "long",
                 year: "numeric",
@@ -97,17 +90,17 @@ const Timeline: NextPage<Props> = ({ events }) => {
           const [newLanes, laneToUse] = findOpenLane(lanes, e.date)
           lanes = newLanes
 
-          const offsetFromLeft = laneToUse * (LANE_WIDTH + LANE_GAP) + "rem"
+          const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + "rem"
 
           return (
             <div
-              className={`bg-blue-500 p-2 absolute`}
+              className="bg-blue-500 p-2 absolute overflow-hidden rounded-lg"
               key={e.title}
               style={{
-                top: daysOffsetFromStart * DAY_HEIGHT + "px",
-                left: offsetFromLeft,
-                height: lengthInDays * DAY_HEIGHT + "px",
-                width: LANE_WIDTH + "rem",
+                top: laneOffset,
+                left: daysOffsetFromStart * DAY_WIDTH + "px",
+                width: lengthInDays * DAY_WIDTH + "px",
+                height: LANE_HEIGHT + "rem",
               }}
             >
               <h2 className="text-white font-bold">{e.title}</h2>

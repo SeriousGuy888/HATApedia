@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "articles/Remy Republic.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "83614145aebb8ad8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "articles/Zombitopian Junta.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -191,12 +204,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c8bd2ed30646f9b1",
+  "active": "83614145aebb8ad8",
   "lastOpenFiles": [
+    "articles/Remy Republic.md",
+    "articles/Zombitopian Junta.md",
+    "articles/Tobytopia.md",
     "articles/Toby.md",
     "articles/Scammington.md",
     "articles/Scammington Bar.md",
-    "articles/Remy Republic.md",
     "articles/Anna.md",
     "articles/Election Night Shooting.md",
     "articles/Great Mangrove War.md",
@@ -216,9 +231,7 @@
     "articles/Remy.md",
     "articles/Remy Sea Trade Bloc Agreement.md",
     "articles/The Voices.md",
-    "articles/Zombitopian Junta.md",
     "articles/United Nations.md",
-    "articles/UN Meeting 2023-04-02.md",
     "images/contents of jasper's inheritance.png",
     "images/jasper dead.png",
     "images/explosions in the un.png",
