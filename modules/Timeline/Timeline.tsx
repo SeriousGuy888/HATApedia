@@ -12,7 +12,7 @@ interface DateRange {
 }
 
 const DAY_WIDTH = 16 // pixels
-const LANE_HEIGHT = 10 // rem
+const LANE_HEIGHT = 8 // rem
 const LANE_GAP = 0.5 // rem
 const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
@@ -93,7 +93,7 @@ const Timeline: NextPage<Props> = ({ events }) => {
           const [newLanes, laneToUse] = findOpenLane(lanes, e.date)
           lanes = newLanes
 
-          const laneOffset = laneToUse * (zoom * LANE_HEIGHT + LANE_GAP) + "rem"
+          const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + "rem"
 
           return (
             <div
@@ -103,10 +103,11 @@ const Timeline: NextPage<Props> = ({ events }) => {
                 top: laneOffset,
                 left: zoom * DAY_WIDTH * daysOffsetFromStart + "px",
                 width: zoom * DAY_WIDTH * lengthInDays + "px",
-                height: zoom * LANE_HEIGHT + "rem",
+                height: LANE_HEIGHT + "rem",
               }}
             >
               <h2 className="text-white font-bold">{e.title}</h2>
+              <p>{e.description}</p>
             </div>
           )
         })}
