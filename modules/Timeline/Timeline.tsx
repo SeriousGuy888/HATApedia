@@ -27,7 +27,7 @@ const Timeline: NextPage<Props> = ({ events }) => {
           start: new Date(e.date.start),
 
           // add a day to the end date so that it's inclusive
-          end: new Date(new Date(e.date.end).getTime() + MILLIS_PER_DAY),
+          end: new Date(new Date(e.date.end).getTime()),
         },
       }
     })
@@ -87,7 +87,8 @@ const Timeline: NextPage<Props> = ({ events }) => {
           )
 
           const lengthInDays = Math.floor(
-            (e.date.end.getTime() - e.date.start.getTime()) / MILLIS_PER_DAY,
+            (e.date.end.getTime() - e.date.start.getTime()) / MILLIS_PER_DAY +
+              1, // add 1 day to compensate for inclusive end date
           )
 
           const [newLanes, laneToUse] = findOpenLane(lanes, e.date)
