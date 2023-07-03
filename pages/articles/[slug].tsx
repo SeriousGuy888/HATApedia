@@ -93,9 +93,7 @@ const ArticlePage: NextPage<Props> = ({
           </article>
         </div>
 
-        <aside>
-          <FloatingTableOfContents nodes={tocHeadings} />
-        </aside>
+        <FloatingTableOfContents nodes={tocHeadings} />
       </section>
     </>
   )

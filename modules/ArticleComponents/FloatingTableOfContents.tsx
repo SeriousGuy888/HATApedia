@@ -20,7 +20,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
   }
 
   return (
-    <>
+    <aside>
       <button
         className="bg-blue-900 p-3 opacity-100 rounded-full fixed right-4 bottom-4 z-40 md:hidden"
         onClick={toggleToc}
@@ -40,8 +40,8 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
       />
       <div
         className={`
-          fixed bottom-0 
-          md:sticky md:top-24 md:bottom-auto 
+          fixed bottom-0
+          md:sticky md:top-24 md:self-start
         
           bg-gray-200 dark:bg-gray-900
           md:bg-transparent md:dark:bg-transparent 
@@ -69,7 +69,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
         </div>
         {renderHeadingLinks(nodes)}
       </div>
-    </>
+    </aside>
   )
 }
 

@@ -28,7 +28,7 @@ export default function MyApp(props: AppProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="flex justify-center overflow-x-auto"
+            className="flex justify-center"
           >
             <Component {...pageProps} />
           </motion.main>
