@@ -31,7 +31,7 @@ const Timeline: NextPage<Props> = ({ events }) => {
         },
       }
     })
-    .sort((a, b) => a.date.start.getTime() - b.date.start.getTime())
+    .sort((a, b) => a.date.start.getTime() - b.date.end.getTime())
 
   const eventDateEarliest = new Date(sortedEvents[0].date.start)
   const eventDateLatest = new Date(
