@@ -59,7 +59,7 @@ const CharacterInfobox: NextPage<{ yaml: string }> = ({ yaml }) => {
               mcUuid && (
                 /* eslint-disable @next/next/no-img-element */
                 <img
-                  src={`https://crafatar.com/renders/body/${mcUuid}?scale=4`}
+                  src={`https://crafatar.com/renders/body/${mcUuid}?scale=4&overlay=true`}
                   alt="Minecraft skin"
                 />
               )
