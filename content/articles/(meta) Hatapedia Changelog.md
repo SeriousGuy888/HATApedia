@@ -1,3 +1,16 @@
+# 2023-07-04
+
+## Improved Nation Infoboxes
+Nation infoboxes are no longer tied to articles. I've managed to write some code to allow myself to use them anywhere in the articles. I can even use them here!
+
+```infobox-nation
+name: "Hatapedia"
+banner: "[[epic hata logo.png]]"
+facts:
+  example fact: Example Fact
+  author: Billzo
+```
+
 # 2023-06-30
 
 ## Added callouts
