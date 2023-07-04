@@ -9,6 +9,7 @@ interface Props {
 }
 
 interface InfoboxData {
+  name?: string
   facts?: { [key: string]: any }
   banner?: string
 }
@@ -17,7 +18,7 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
   const infoboxData = parse(yaml) as InfoboxData | null
 
   // warn if infoboxData contains extra keys
-  const allowedKeys = ["facts", "banner"]
+  const allowedKeys = ["name", "facts", "banner"]
   const extraKeys = Object.keys(infoboxData ?? {}).filter(
     (key) => !allowedKeys.includes(key),
   )
@@ -35,20 +36,33 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
     )
   }
 
-  let { facts, banner } = infoboxData
+  let { name, facts, banner } = infoboxData
 
   if (!facts) {
     facts = {}
   }
 
   return (
-    <aside className="p-6 mb-16 bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-wrap items-start gap-4">
-      <Banner src={banner} />
-      <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
-        {Object.keys(facts).map((key) => (
-          <Fact key={key} title={key} value={facts?.[key]} />
-        ))}
-      </div>
+    <aside className="">
+      {name && (
+        <section className="bg-blue-200 dark:bg-blue-900 mb-0 px-6 py-4 rounded-t-lg">
+          <p className="m-0 text-black dark:text-white">
+            About <span className="font-bold">{name}</span>
+          </p>
+        </section>
+      )}
+      <section
+        className={`p-6 mb-16 bg-slate-100 dark:bg-slate-800 ${
+          name ? "rounded-b-lg" : "rounded-lg"
+        } flex flex-wrap items-start gap-4`}
+      >
+        <Banner src={banner} />
+        <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
+          {Object.keys(facts).map((key) => (
+            <Fact key={key} title={key} value={facts?.[key]} />
+          ))}
+        </div>
+      </section>
     </aside>
   )
 }
