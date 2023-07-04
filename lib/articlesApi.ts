@@ -95,7 +95,12 @@ export async function getArticle(slug: string) {
         [remarkWikilink, { existingPageNames: allSlugs }],
         [
           remarkYamlComponents,
-          { conversionMap: { "infobox-nation": "NationInfobox" } },
+          {
+            conversionMap: {
+              "infobox-nation": "NationInfobox",
+              "infobox-character": "CharacterInfobox",
+            },
+          },
         ],
         remarkCallouts,
         remarkGroupImages,
