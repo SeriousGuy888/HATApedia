@@ -48,10 +48,10 @@ const ArticlePage: NextPage<Props> = ({
         )}
       </Head>
       <section
-        className={`max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg w-full py-8 h-fit md:grid grid-cols-[3fr_1fr] gap-12`}
+        className={`max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg w-full py-8 h-fit md:grid grid-cols-[3fr_1fr] gap-8`}
         id="_top"
       >
-        <div>
+        <div className="max-w-prose">
           <header>
             <div className="flex flex-row justify-between gap-4">
               <section>
@@ -62,16 +62,6 @@ const ArticlePage: NextPage<Props> = ({
                   {frontmatter.subtitle}
                 </h2>
               </section>
-              {frontmatter.image && (
-                <figure className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
-                  <Image
-                    src={getImgWikilinkSrc(frontmatter.image)}
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
-                </figure>
-              )}
             </div>
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
