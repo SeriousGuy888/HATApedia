@@ -5,6 +5,14 @@ image: "[[Fletcher Quadratic Portrait.png]]"
 
 Fletcher Quadratic is one of the [[the Voices]] in Remy's head, physically manifesting as a villager.
 
+```infobox-character
+name: Fletcher Quadratic
+image: "[[Fletcher Quadratic Portrait.png]]"
+facts:
+  title: Leader of the Island Commune of Marooned and Stranded Villagers
+  rank in the remyan army: General
+```
+
 # Career
 
 ## Castaway (unknown to 2023-01-26)
