@@ -178,8 +178,7 @@ The alliance between Toby's [[Tobytopia]], [[Holden's Regime]], and Arvi's [[Nev
 ### Speech Following the Night of Mischief
 The Glorious Leader made the following speech on 2023-04-10 regarding the events of the previous night.
 
-> Citizens of the Remy Republic,
-> 
+> [!cite] Citizens of the Remy Republic,
 > An iron curtain has fallen upon us all. We have been misled by those we were led to trust. We have been beaten and bruised by those we thought were close to our hearts. We have been insulted by those who focus on harassing others rather than improving themselves. In short, we have been blindsided and betrayed.
 > 
 > As the leader of the Remy Republic, I shall not let these recent attacks go unnoticed. The Night of Mischief was the unfortunate warning the Remy Republic needed to wake up and better prepare ourselves. I promise you that we will build back better and stronger, and we will vanquish those who try to go against us.
