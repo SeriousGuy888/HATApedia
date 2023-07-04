@@ -43,7 +43,7 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
   }
 
   return (
-    <aside className="">
+    <aside className="my-12">
       {name && (
         <section className="bg-blue-200 dark:bg-blue-900 mb-0 px-6 py-4 rounded-t-lg">
           <p className="m-0 text-black dark:text-white">
@@ -52,7 +52,7 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
         </section>
       )}
       <section
-        className={`p-6 mb-16 bg-slate-100 dark:bg-slate-800 ${
+        className={`p-6 bg-slate-100 dark:bg-slate-800 ${
           name ? "rounded-b-lg" : "rounded-lg"
         } flex flex-wrap items-start gap-4`}
       >
