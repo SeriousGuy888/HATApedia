@@ -14,12 +14,11 @@ interface InfoboxData {
 }
 
 const NationInfobox: NextPage<Props> = ({ yaml }) => {
-  const infoboxData = parse(yaml) as InfoboxData
-  let { facts, banner } = infoboxData
+  const infoboxData = parse(yaml) as InfoboxData | null
 
   // warn if infoboxData contains extra keys
   const allowedKeys = ["facts", "banner"]
-  const extraKeys = Object.keys(infoboxData).filter(
+  const extraKeys = Object.keys(infoboxData ?? {}).filter(
     (key) => !allowedKeys.includes(key),
   )
   if (extraKeys.length > 0) {
@@ -27,9 +26,16 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
   }
   // end warn
 
-  if (!facts && !banner) {
-    return <UIElementError message="Nation infobox contains no data." />
+  if (!infoboxData || (!infoboxData?.facts && !infoboxData?.banner)) {
+    return (
+      <UIElementError
+        message="Nation infobox contains no data or invalid data."
+        codeBlock={yaml.trim() || "[empty]"}
+      />
+    )
   }
+
+  let { facts, banner } = infoboxData
 
   if (!facts) {
     facts = {}
