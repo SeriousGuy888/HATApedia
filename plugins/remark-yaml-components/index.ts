@@ -38,22 +38,26 @@ const convertYamlCodeblocks: unified.Plugin<[Options?], mdast.Root> = (
         return
       }
 
+      // node.lang is the language name specified in markdown ```(lang) ... ```
       const lang = node.lang
       if (!lang || conversionMap[lang] === undefined) {
+        // if no lang is specified, or the conversion map does not say to convert this lang,
+        // skip to the next code block
         return
       }
 
       const jsxNode: mdast.HTML = {
         type: "html",
         data: {
-          hName: conversionMap[lang],
+          hName: conversionMap[lang], // <NationInfobox ... />
           hProperties: {
-            yaml: node.value,
+            yaml: node.value, // the yaml data
           },
         },
-        value: node.value,
+        value: "",
       }
 
+      // replace the codeblock with the JSX node
       parent.children[index] = jsxNode
     })
   }
