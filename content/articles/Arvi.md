@@ -1,6 +1,6 @@
 ---
 title: Arvi
-subtitle: Serial Killer
+subtitle: The Stripper
 image: "[[Arvi Portrait.png]]"
 ---
 
