@@ -11,8 +11,6 @@ const convert: unified.Plugin<[], mdast.Root> = () => {
         return
       }
 
-      console.log(node)
-
       if (node.lang === "infobox-nation") {
         const jsxNode: mdast.HTML = {
           type: "html",
