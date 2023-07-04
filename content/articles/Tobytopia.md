@@ -74,9 +74,13 @@ By killing Toby, Holden managed to acquire everything Toby had on him at the tim
 
 After acquiring power, Holden officially renamed the nation to *Holdentopia*, declared himself High Emperor, and decided to establish a new capital city in the jungle. Landing on a jungle tree, Holden used the stone that was in Toby's inventory and some jungle wood he harvested from the nearby trees to begin building a palace for his new capital.
 
-| High Emperor |    Capital     |        Motto         |
-|:------------:|:--------------:|:--------------------:|
-|    Holden    | Western Jungle | *Holdentopia strong* |
+```infobox-nation
+name: Holdentopia
+facts:
+  high emperor: Holden
+  capital: Western Jungle
+  motto: Holdentopia strong.
+```
 
 ### Toby's Countercoup
 While Holden left to build his city, Toby had respawned and prepared to retake the throne from Holden. He gathered any gear he had remaining from his ender chest and storage system, including invisiblity potions, a crossbow, and four [[big damage missile|big damage missiles]] so that he could conduct a retalliatory assassination on Holden.
