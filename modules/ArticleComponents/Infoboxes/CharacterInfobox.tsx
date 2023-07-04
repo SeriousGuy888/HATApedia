@@ -41,35 +41,35 @@ const CharacterInfobox: NextPage<{ yaml: string }> = ({ yaml }) => {
         <p className="m-0 text-black dark:text-white font-bold">{name}</p>
       </section>
       <section
-        className={`p-6 bg-slate-100 dark:bg-slate-800 flex flex-col ${
+        className={`p-6 bg-slate-100 dark:bg-slate-800 ${
           name ? "rounded-b-lg" : "rounded-lg"
-        }`}
+        } flex flex-wrap items-start gap-8 @container`}
       >
-        {image && (
-          <figure className="flex-1 m-0 mb-8 w-full">
-            <Image
-              src={getImgWikilinkSrc(image)}
-              alt={"Image of " + name}
-              width={256}
-              height={256}
-              className="rounded-xl w-full"
-            />
+        {(image || mcUuid) && (
+          <figure className="@sm:flex-1 m-0 w-full flex justify-center">
+            {image ? (
+              <Image
+                src={getImgWikilinkSrc(image)}
+                alt={"Image of " + name}
+                width={256}
+                height={256}
+                className="rounded-xl w-full"
+              />
+            ) : (
+              mcUuid && (
+                /* eslint-disable @next/next/no-img-element */
+                <img
+                  src={`https://crafatar.com/renders/body/${mcUuid}?scale=4`}
+                  alt="Minecraft skin"
+                />
+              )
+            )}
           </figure>
         )}
-        <div className="flex flex-wrap items-start gap-8">
-          {mcUuid && (
-            /* eslint-disable @next/next/no-img-element */
-            <img
-              src={`https://crafatar.com/renders/body/${mcUuid}?scale=4`}
-              alt="Minecraft skin"
-              className="flex-1 m-0"
-            />
-          )}
-          <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
-            {Object.keys(facts).map((key) => (
-              <InfoboxFact key={key} title={key} value={facts?.[key]} />
-            ))}
-          </div>
+        <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
+          {Object.keys(facts).map((key) => (
+            <InfoboxFact key={key} title={key} value={facts?.[key]} />
+          ))}
         </div>
       </section>
     </aside>
