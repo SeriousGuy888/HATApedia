@@ -4,6 +4,16 @@ subtitle: Ultimate Kaiser of Doom Three Thousand of Tobytopia
 image: "[[Toby Portrait.png]]"
 ---
 
+Toby is the ruler of [[Tobytopia]], the owner of the [[HATA]] minecraft server, as well as an <ruby>ekto<rt>ghost</rt></ruby> notorious for various <ruby>sniki<rt>clandestine</rt></ruby> operations.
+
+```infobox-character
+name: Toby
+mcUuid: "428025a08cb14537bfa151ce799c50b0"
+facts:
+  title: Ultimate Kaiser of Doom Three Thousand
+  sniki: Akrat
+```
+
 # Toby's Base
 Toby lives in [[Tobytopia]].
 
