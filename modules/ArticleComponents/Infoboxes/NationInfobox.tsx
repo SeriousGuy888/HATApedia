@@ -3,6 +3,8 @@ import UIElementError from "../../_UI/UIElementError"
 import Image from "next/image"
 import { getImgWikilinkSrc } from "../../../lib/wikilinkParser"
 import { parse } from "yaml"
+import { warnIfExtraKeys } from "./yamlInfoboxUtils"
+import InfoboxFact from "./InfoboxFact"
 
 interface Props {
   yaml: string
@@ -17,16 +19,6 @@ interface InfoboxData {
 const NationInfobox: NextPage<Props> = ({ yaml }) => {
   const infoboxData = parse(yaml) as InfoboxData | null
 
-  // warn if infoboxData contains extra keys
-  const allowedKeys = ["name", "facts", "banner"]
-  const extraKeys = Object.keys(infoboxData ?? {}).filter(
-    (key) => !allowedKeys.includes(key),
-  )
-  if (extraKeys.length > 0) {
-    console.warn(`NationInfobox contains extra keys: ${extraKeys.join(", ")}`)
-  }
-  // end warn
-
   if (!infoboxData || (!infoboxData?.facts && !infoboxData?.banner)) {
     return (
       <UIElementError
@@ -35,6 +27,9 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
       />
     )
   }
+
+  // warn if infoboxData contains extra keys
+  warnIfExtraKeys(infoboxData, ["name", "facts", "banner"], "NationInfobox")
 
   let { name, facts, banner } = infoboxData
 
@@ -59,7 +54,7 @@ const NationInfobox: NextPage<Props> = ({ yaml }) => {
         <Banner src={banner} />
         <div className="flex flex-col content-start flex-[4] gap-2 min-w-[120px]">
           {Object.keys(facts).map((key) => (
-            <Fact key={key} title={key} value={facts?.[key]} />
+            <InfoboxFact key={key} title={key} value={facts?.[key]} />
           ))}
         </div>
       </section>
@@ -87,23 +82,5 @@ const Banner: NextPage<{ src?: string }> = ({ src }) => {
         unoptimized
       />
     </div>
-  )
-}
-
-const Fact: NextPage<{
-  title: string
-  value: string
-}> = ({ title, value }) => {
-  return (
-    <section className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-md p-4 print:border-b-black print:border-2">
-      <div className="px-2 py-1">
-        <p className="uppercase text-gray-600 dark:text-gray-300 print:text-black text-xs my-0">
-          {title}
-        </p>
-        <p className="text-md text-black dark:text-white print:text-black my-0">
-          {value ?? "Unknown"}
-        </p>
-      </div>
-    </section>
   )
 }
