@@ -2,15 +2,17 @@
 title: United Nations
 subtitle: Supranational Organisation
 image: "[[United Nations Banner.png]]"
-nation:
-  banner: "[[United Nations Banner.png]]"
-  info:
-    founder: Remy
-    architect: Arvi
 ---
 
-The United Nations is an organisation intended to solve international disputes
-and issues in a peaceful manner on the server.
+The United Nations is an organisation intended to solve international disputes and issues in a peaceful manner on the server.
+
+
+```infobox-nation
+banner: "[[United Nations Banner.png]]"
+facts:
+  founder: Remy
+  architect: Arvi
+```
 
 # Inception
 

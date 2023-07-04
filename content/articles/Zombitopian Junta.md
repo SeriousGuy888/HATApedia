@@ -4,12 +4,6 @@ aliases:
 - Zombitopia
 subtitle: Zombic Junta State
 image: "[[Tobytopia Banner.png]]"
-nation:
-  banner: "[[Tobytopia Banner.png]]"
-  info:
-    brains of the operation: Doctor Zomboss
-    capital: The DVD Player
-    motto: bəəəəəəəəəər
 timeline:
   events:
   - title: "Zombitopian Junta"
@@ -17,6 +11,15 @@ timeline:
       start: 2023-05-22
       end: 2023-05-22
 ---
+
+
+```infobox-nation
+banner: "[[Tobytopia Banner.png]]"
+facts:
+  brains of the operation: Doctor Zomboss
+  capital: The DVD Player
+  motto: bəəəəəəəəəər
+```
 
 > [!tip] All times in this article are in Eastern Daylight Time (UTC-4).
 

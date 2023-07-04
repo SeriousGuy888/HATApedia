@@ -2,17 +2,19 @@
 title: Billzoplace
 subtitle: Unitary One-Party Republic
 image: "[[Billzoplace Banner.png]]"
-nation:
-  banner: "[[Billzoplace Banner.png]]"
-  info:
-    Ruler: Billzo le Magic Caterpillar
-    Demonym: Billzonian
-    Official Languages: Billzonian, English
 ---
 
 Billzoplace, also informally known as Billzonia, is the a city state based around the three-way intersection of the Remy Sea, the Sheapland River, and the Spawn River.
 
 It was constructed by and is home to [[Billzo Shoom|Billzo]].
+
+```infobox-nation
+banner: "[[Billzoplace Banner.png]]"
+facts:
+  Ruler: Billzo le Magic Caterpillar
+  Demonym: Billzonian
+  Official Languages: Billzonian, English
+```
 
 # The City
 Billzoplace City (*Billzoplace Urb* in Billzonian) refers to the city built in [[Sheapland]]. Its construction began in late February of 2023.

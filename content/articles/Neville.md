@@ -1,13 +1,15 @@
 ---
 title: City of Neville
 subtitle: City State
-nation:
-  info:
-    untitled leader: Arvi
-    demonym: Nevillian
 ---
 
 Neville is a city state to the northeast of spawn. It was founded by [[Arvi]].
+
+```infobox-nation
+facts:
+  untitled leader: Arvi
+  demonym: Nevillian
+```
 
 # Economy
 The main industry of Neville is agriculture. Neville is best known for its large wheat field.

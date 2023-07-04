@@ -2,16 +2,18 @@
 title: Tobytopia
 subtitle: Totalitarian Kratocracy
 image: "[[Tobytopia Banner.png]]"
-nation:
-  banner: "[[Tobytopia Banner.png]]"
-  info:
-    ultimate kaiser of doom three thousand: Toby
-    capital: The DVD Player
-    motto: I'm your sexy mom; I'm a milf, Remy.
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
 to the northwest of Spawn. It was founded by [[Toby]].
+
+```infobox-nation
+banner: "[[Tobytopia Banner.png]]"
+facts:
+  ultimate kaiser of doom three thousand: Toby
+  capital: The DVD Player
+  motto: I'm your sexy mom; I'm a milf, Remy.
+```
 
 # Territories
 - [[Swamp of Secrets]] (AKA Tobytopian Mangrovia)

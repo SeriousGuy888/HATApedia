@@ -18,7 +18,6 @@ facts:
   glorious leader: Remy
   demonym: Remyan
   official languages: English, French, Billzonian
-wwww: ww
 ```
 
 # Provinces and Territories
