@@ -1,15 +1,17 @@
 ---
 title: The Fortuguese Republic
 subtitle: Unrecognised Forguik Rebel State
-nation:
-  info:
-    leader: César Forguero
 ---
+
+```infobox-nation
+facts:
+  leader: César Forguero
+```
 
 <ruby>Fortugal<rt>ˈfɔr.tʃʊ.gəl</rt></ruby> is a currently unrecognised <ruby>Forguik<rt>ˈfɔɹ.gɪk</rt></ruby> state, in a state of rebellion against [[Tobytopia]].
 
 # Rebellion Against Tobytopia
-[[Toby]] bad.
+[[Toby]] has imprisoned some of their leaders.
 
 # Leaders
 
