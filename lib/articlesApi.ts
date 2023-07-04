@@ -6,6 +6,7 @@ import { serialize } from "next-mdx-remote/serialize"
 
 import remarkGfm from "remark-gfm"
 import remarkWikilink from "../plugins/remark-wikilink-syntax"
+import remarkInfobox from "../plugins/remark-infobox-syntax"
 import remarkGroupImages from "../plugins/remark-group-images"
 import remarkParse from "remark-parse"
 import remarkHtml from "remark-html"
@@ -94,6 +95,7 @@ export async function getArticle(slug: string) {
         remarkParse,
         remarkGfm,
         [remarkWikilink, { existingPageNames: allSlugs }],
+        remarkInfobox,
         remarkCallouts,
         remarkGroupImages,
         remarkHtml,
