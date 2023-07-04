@@ -18,7 +18,7 @@ const InfoboxFact: NextPage<{
           {value instanceof Array && value.length > 1 ? (
             <ul className="list-disc">
               {value.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="m-0">{item}</li>
               ))}
             </ul>
           ) : (
