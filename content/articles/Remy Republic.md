@@ -2,12 +2,6 @@
 title: The Remy Republic
 subtitle: Federal Parliamentary Republic
 image: "[[Remy Republic Banner.png]]"
-nation:
-  banner: "[[Remy Republic Banner.png]]"
-  info:
-    glorious leader: Remy
-    demonym: Remyan
-    official languages: English, French, Billzonian
 timeline:
   events:
   - title: "Remyan Election"
@@ -16,15 +10,16 @@ timeline:
       end: 2023-02-17
 ---
 
+The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
+
 ```infobox-nation
 banner: "[[Remy Republic Banner.png]]"
-info:
+facts:
   glorious leader: Remy
   demonym: Remyan
   official languages: English, French, Billzonian
+wwww: ww
 ```
-
-The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
 
 # Provinces and Territories
 

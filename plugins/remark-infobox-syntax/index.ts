@@ -19,7 +19,7 @@ const convert: unified.Plugin<[], mdast.Root> = () => {
           data: {
             hName: "NationInfobox",
             hProperties: {
-              className: "infobox",
+              yaml: node.value,
             },
           },
           value: node.value,

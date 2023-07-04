@@ -9,7 +9,6 @@ import type { MDXRemoteSerializeResult } from "next-mdx-remote"
 import { MDXRemote } from "next-mdx-remote"
 
 import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
-import NationInfobox from "../../modules/ArticleComponents/Infoboxes/NationInfobox"
 import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
@@ -63,7 +62,7 @@ const ArticlePage: NextPage<Props> = ({
                   {frontmatter.subtitle}
                 </h2>
               </section>
-              {frontmatter.image && !frontmatter.nation && (
+              {frontmatter.image && (
                 <figure className="rounded-xl p-2 bg-gray-100 dark:bg-gray-800">
                   <Image
                     src={getImgWikilinkSrc(frontmatter.image)}
@@ -76,13 +75,6 @@ const ArticlePage: NextPage<Props> = ({
             </div>
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
-
-          {frontmatter.nation && (
-            <NationInfobox
-              facts={frontmatter.nation?.info}
-              banner={frontmatter.nation?.banner}
-            />
-          )}
           <article
             className={
               "prose prose-base dark:prose-invert print:prose-print " +

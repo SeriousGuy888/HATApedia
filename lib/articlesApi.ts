@@ -26,10 +26,8 @@ export interface ArticlePreview {
   title: string
   subtitle?: string
   image?: string
-  nation?: any
 }
 interface ArticleMetadata extends ArticlePreview {
-  nation?: any
   timeline?: {
     events?: {
       date: Date | { start: Date; end: Date }
@@ -167,7 +165,6 @@ export async function getArticleMetadata(slug: string) {
     title,
     subtitle,
     image: image ?? nation?.banner ?? null,
-    nation,
     timeline,
   })
 

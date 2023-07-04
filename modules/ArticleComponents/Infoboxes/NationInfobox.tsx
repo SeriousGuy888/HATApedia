@@ -2,11 +2,31 @@ import { NextPage } from "next"
 import UIElementError from "../../_UI/UIElementError"
 import Image from "next/image"
 import { getImgWikilinkSrc } from "../../../lib/wikilinkParser"
+import { parse } from "yaml"
 
-const NationInfobox: NextPage<{
+interface Props {
+  yaml: string
+}
+
+interface InfoboxData {
   facts?: { [key: string]: any }
   banner?: string
-}> = ({ facts, banner }) => {
+}
+
+const NationInfobox: NextPage<Props> = ({ yaml }) => {
+  const infoboxData = parse(yaml) as InfoboxData
+  let { facts, banner } = infoboxData
+
+  // warn if infoboxData contains extra keys
+  const allowedKeys = ["facts", "banner"]
+  const extraKeys = Object.keys(infoboxData).filter(
+    (key) => !allowedKeys.includes(key),
+  )
+  if (extraKeys.length > 0) {
+    console.warn(`NationInfobox contains extra keys: ${extraKeys.join(", ")}`)
+  }
+  // end warn
+
   if (!facts && !banner) {
     return <UIElementError message="Nation infobox contains no data." />
   }
@@ -60,7 +80,9 @@ const Fact: NextPage<{
         <p className="uppercase text-gray-600 dark:text-gray-300 print:text-black text-xs my-0">
           {title}
         </p>
-        <p className="text-md print:text-black my-0">{value ?? "Unknown"}</p>
+        <p className="text-md text-black dark:text-white print:text-black my-0">
+          {value ?? "Unknown"}
+        </p>
       </div>
     </section>
   )
