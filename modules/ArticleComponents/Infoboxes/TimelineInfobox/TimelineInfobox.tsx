@@ -1,9 +1,13 @@
 import { NextPage } from "next"
+import { useEffect, useState } from "react"
 import { parse } from "yaml"
-import cntl from "cntl"
+
+import { getEventColours } from "./TimelineEvent"
 
 import UIElementError from "../../../_UI/UIElementError"
-import TimelineEvent from "./TimelineEvent"
+import TimelineEventInfo from "./TimelineEventInfo"
+import TimelineHeader from "./TimelineHeader"
+import TimelineField from "./TimelineField"
 
 interface Props {
   yaml: string
@@ -34,6 +38,18 @@ export const LANE_GAP = 0.5 // rem
 export const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
 const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
+  const [selectedEvent, setSelectedEvent] = useState<TimelineEventData | null>()
+  const [selectedEventCols, setSelectedEventCols] = useState<ReturnType<
+    typeof getEventColours
+  > | null>(null)
+  useEffect(() => {
+    if (!selectedEvent) {
+      return
+    }
+
+    setSelectedEventCols(getEventColours(selectedEvent))
+  }, [selectedEvent])
+
   const timelineData = parse(yaml) as TimelineData | null
   const codeBlock = yaml.trim() || "[empty]"
 
@@ -92,88 +108,26 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
   const months = getMonthsToInclude(events)
   const lanes = arrangeLanes(events)
 
-  const gridLineStyles = cntl`border-slate-300 dark:border-slate-700 border-r-[1px] last:border-r-0`
-
   return (
     <aside className="mt-8 mb-12 not-prose">
-      <section className="bg-blue-200 dark:bg-blue-900 mb-0 px-6 py-4 rounded-t-lg">
-        <p className="m-0 text-black dark:text-white font-bold">
-          {title ?? "Timeline"}
-        </p>
-      </section>
-      <section className="bg-slate-100 dark:bg-slate-800 rounded-b-lg overflow-auto w-full">
-        <div className="flex">
-          {months.map((month, index) => (
-            <div
-              className={`py-2 border-b-[1px] bg-slate-200 dark:bg-slate-900 text-center flex-shrink-0 h-full ${gridLineStyles}`}
-              key={month.toISOString()}
-              style={{
-                width: DAY_WIDTH * getNumDaysInMonth(month) + "rem",
-              }}
-            >
-              <h2 className="m-0 text-sm tracking-widest whitespace-nowrap font-bold">
-                {month.toLocaleString("default", {
-                  month: "long",
-                  year: "numeric",
-                })}
-              </h2>
-            </div>
-          ))}
-        </div>
-        <div
-          className="relative"
-          style={{
-            height:
-              Math.min(lanes.length, 4) * (LANE_HEIGHT + LANE_GAP) +
-              LANE_GAP +
-              "rem",
-          }}
-        >
-          {months.map((month, index) => {
-            const width = DAY_WIDTH * getNumDaysInMonth(month) + "rem"
-            const daysOffsetFromStart = Math.floor(
-              (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
-            )
-            const leftOffset = DAY_WIDTH * daysOffsetFromStart + "rem"
-
-            return (
-              <div
-                key={month.toISOString()}
-                className={`absolute top-0 bottom-0 ${gridLineStyles}`}
-                style={{
-                  width,
-                  left: leftOffset,
-                  // some sort of daylight savings time shennanigans is causing the grid to be off by day after april
-                }}
-              />
-            )
-          })}
-
-          {lanes.map((lane, laneIndex) =>
-            lane.events.map((event) => {
-              return (
-                <TimelineEvent
-                  key={event.title}
-                  event={event}
-                  laneToUse={laneIndex} // not event.lane because arrangeLanes() may have made adjustments
-                  timelineStartMonth={months[0]}
-                  onClick={() => {
-                    alert("clicked " + event.title)
-                  }}
-                />
-              )
-            }),
-          )}
-        </div>
-      </section>
+      <TimelineHeader
+        selectedEvent={selectedEvent ?? undefined}
+        setSelectedEvent={setSelectedEvent}
+        selectedEventCols={selectedEventCols}
+        title={title}
+      />
+      <TimelineField
+        hidden={!!selectedEvent}
+        months={months}
+        lanes={lanes}
+        setSelectedEvent={setSelectedEvent}
+      />
+      {selectedEvent && <TimelineEventInfo {...selectedEvent} />}
     </aside>
   )
 }
 
 export default TimelineInfobox
-
-
-
 
 /**
  * @param events The events to arrange into lanes
@@ -233,12 +187,6 @@ function getMonthsToInclude(events: TimelineEventData[]): Date[] {
   return months
 }
 
-function getNumDaysInMonth(month: Date): number {
-  // Takes the month provided, goes to the next month, and then goes back a day,
-  // returning the # of the last day of the month
-  return new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate()
-}
-
 /**
  * Find the first available lane from the state of used lanes that doesn't have any events that overlap with the event.
  * If there are no available lanes, return the next lane that does not exist yet.
@@ -270,7 +218,7 @@ function findOpenLane(lanes: Lane[], dateRange: DateRange): number {
  *
  * It also keeps track of the events that are in that Lane.
  */
-class Lane {
+export class Lane {
   occupiedRanges: DateRange[]
   events: TimelineEventData[]
 

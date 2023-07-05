@@ -8,26 +8,46 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c8bd2ed30646f9b1",
+            "id": "5c7ca8b1b7d219b1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Remy Republic.md",
+                "file": "articles/Neville.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "83614145aebb8ad8",
+            "id": "4aa8794ace2db00e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Great Mangrove War.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "bb5085d2dea2db3b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Remy on the podium in new mangrovia - 2023-01-06.png"
+              }
+            }
+          },
+          {
+            "id": "d545e6ce85f32e34",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Remy removes mangrovepox 2023-01-06.png"
               }
             }
           }
@@ -99,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Great Mangrove War.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Great Mangrove War.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Zombitopian Junta.md"
+                "file": "articles/Great Mangrove War.md"
               }
             }
           }
@@ -157,7 +177,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Zombitopian Junta.md",
+                "file": "articles/Great Mangrove War.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -204,34 +224,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "83614145aebb8ad8",
+  "active": "4aa8794ace2db00e",
   "lastOpenFiles": [
+    "images/Remy on the podium in new mangrovia - 2023-01-06.png",
+    "articles/Great Mangrove War.md",
+    "images/Remy removes mangrovepox 2023-01-06.png",
+    "articles/Neville.md",
+    "articles/Arvi.md",
+    "articles/Fletcher Quadratic.md",
+    "articles/(meta) Hatapedia Changelog.md",
+    "articles/Billzoplace.md",
+    "articles/Che Forguera.md",
+    "articles/Limedye Oil Rig.md",
+    "articles/Mangrovepox.md",
+    "articles/Holden.md",
+    "articles/Billzo Shoom.md",
+    "articles/Fortugal.md",
+    "articles/Toby.md",
+    "articles/United Nations.md",
+    "articles/Remy.md",
+    "articles/Tobytopia.md",
     "articles/Remy Republic.md",
     "articles/Zombitopian Junta.md",
-    "articles/Tobytopia.md",
-    "articles/Toby.md",
+    "articles/HATA.md",
+    "articles/Flagrant Fowls.md",
+    "articles/Korolarachi.md",
     "articles/Scammington.md",
     "articles/Scammington Bar.md",
     "articles/Anna.md",
     "articles/Election Night Shooting.md",
-    "articles/Great Mangrove War.md",
-    "articles/Inheritance Incident.md",
-    "articles/Arvi.md",
-    "articles/Billzo Shoom.md",
-    "articles/Billzoplace.md",
-    "articles/Flagrant Fowls.md",
-    "articles/Fortugal.md",
-    "articles/HATA.md",
-    "articles/Hawainot.md",
-    "articles/Holden.md",
-    "articles/Korolarachi.md",
-    "articles/Mangrovepox.md",
-    "articles/Neville.md",
-    "articles/No.md",
-    "articles/Remy.md",
-    "articles/Remy Sea Trade Bloc Agreement.md",
-    "articles/The Voices.md",
-    "articles/United Nations.md",
     "images/contents of jasper's inheritance.png",
     "images/jasper dead.png",
     "images/explosions in the un.png",
@@ -240,8 +261,6 @@
     "images/toby announces intentions to kill himself a third time.png",
     "images/toby assassinates himself with a firework at the unhq.png",
     "images/jasper inherits toby's stuff.png",
-    "images/toby sniki subway tunnel.png",
-    "images/RemyHemy beed nuked by a missile.png",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",

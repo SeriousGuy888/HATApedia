@@ -28,8 +28,7 @@ const Event: NextPage<{
 
   const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
 
-  const colour = event.colour ?? "#0f766e"
-  const textCol = getTextCol(colour)
+  const { colour, textCol } = getEventColours(event)
 
   return (
     <article
@@ -70,9 +69,7 @@ const Event: NextPage<{
           {event.title}
         </h2>
         <p className="text-xs font-mono opacity-50 whitespace-nowrap">
-          {event.date.start.getTime() === event.date.end.getTime()
-            ? getIsoDate(event.date.start)
-            : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`}
+          {getEventDateString(event)}
         </p>
       </section>
     </article>
@@ -106,6 +103,19 @@ function getTextCol(colour?: `#${string}`) {
   return yiq >= 128 ? "black" : "white"
 }
 
+export function getEventColours(event: TimelineEventData) {
+  const colour = event.colour ?? "#0f766e"
+  const textCol = getTextCol(colour)
+
+  return { colour, textCol }
+}
+
 function getIsoDate(date: Date): string {
   return date.toISOString().split("T")[0]
+}
+
+export function getEventDateString(event: TimelineEventData): string {
+  return event.date.start.getTime() === event.date.end.getTime()
+    ? getIsoDate(event.date.start)
+    : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`
 }
