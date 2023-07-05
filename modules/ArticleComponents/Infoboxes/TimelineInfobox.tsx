@@ -86,7 +86,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
   events.sort((a, b) => a.date.start.getTime() - b.date.start.getTime())
 
   const months = getMonthsToInclude(events)
-  let lanes: Lane[] = arrangeLanes(events)
+  const lanes = arrangeLanes(events)
 
   const gridLineStyles = cntl`border-slate-300 dark:border-slate-700 border-r-[1px] last:border-r-0`
 
