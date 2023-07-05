@@ -30,7 +30,7 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="gap-2 items-center no-underline hidden print:hidden sm:flex"
+      className="gap-2 items-center no-underline print:hidden flex"
     >
       <Image
         src="/images/earth_icon.png"
