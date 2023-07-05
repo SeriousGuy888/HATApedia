@@ -1,6 +1,7 @@
 import { NextPage } from "next"
 import { parse } from "yaml"
 import UIElementError from "../../_UI/UIElementError"
+import cntl from "cntl"
 
 interface Props {
   yaml: string
@@ -14,6 +15,7 @@ interface TimelineData {
 interface TimelineEvent {
   title: string
   description?: string
+  lane?: number
   date: DateRange
 }
 
@@ -29,12 +31,13 @@ const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
 const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
   const timelineData = parse(yaml) as TimelineData | null
+  const codeBlock = yaml.trim() || "[empty]"
 
   if (!timelineData) {
     return (
       <UIElementError
         message="Timeline infobox contains no data or invalid data."
-        codeBlock={yaml.trim() || "[empty]"}
+        codeBlock={codeBlock}
       />
     )
   }
@@ -44,7 +47,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
     return (
       <UIElementError
         message="Timeline infobox contains no events."
-        codeBlock={yaml.trim() || "[empty]"}
+        codeBlock={codeBlock}
       />
     )
   }
@@ -55,7 +58,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
       return (
         <UIElementError
           message="Timeline infobox contains an event with missing data."
-          codeBlock={yaml.trim() || "[empty]"}
+          codeBlock={codeBlock}
         />
       )
     }
@@ -67,11 +70,15 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
       event.date.end = new Date(event.date.end)
     }
 
+    if (typeof event.lane !== "number") {
+      event.lane = undefined
+    }
+
     if (event.date.start.getTime() > event.date.end.getTime()) {
       return (
         <UIElementError
           message="Timeline infobox contains an event with an end date before the start date."
-          codeBlock={yaml.trim() || "[empty]"}
+          codeBlock={codeBlock}
         />
       )
     }
@@ -79,7 +86,9 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
   events.sort((a, b) => a.date.start.getTime() - b.date.start.getTime())
 
   const months = getMonthsToInclude(events)
-  let lanes: Lane[] = []
+  let lanes: Lane[] = arrangeLanes(events)
+
+  const gridLineStyles = cntl`border-slate-300 dark:border-slate-700 border-r-[1px] last:border-r-0`
 
   return (
     <aside className="mt-8 mb-12 not-prose">
@@ -88,11 +97,11 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
           {title ?? "Timeline"}
         </p>
       </section>
-      <section className="bg-slate-100 dark:bg-slate-800 rounded-b-lg overflow-x-scroll overflow-y-clip w-full">
+      <section className="bg-slate-100 dark:bg-slate-800 rounded-b-lg overflow-auto w-full">
         <div className="flex">
           {months.map((month, index) => (
             <div
-              className="py-2 border-b-[1px] border-r-[1px] last:border-r-0 bg-slate-200 dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-center flex-shrink-0 h-full"
+              className={`py-2 border-b-[1px] bg-slate-200 dark:bg-slate-900 text-center flex-shrink-0 h-full ${gridLineStyles}`}
               key={month.toISOString()}
               style={{
                 width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
@@ -107,7 +116,15 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
             </div>
           ))}
         </div>
-        <div className="min-h-[20rem] relative">
+        <div
+          className="relative"
+          style={{
+            height:
+              Math.min(lanes.length, 4) * (LANE_HEIGHT + LANE_GAP) +
+              LANE_GAP +
+              "rem",
+          }}
+        >
           {months.map((month, index) => {
             const daysOffsetFromStart = Math.floor(
               (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
@@ -116,7 +133,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
             return (
               <div
                 key={month.toISOString()}
-                className="absolute top-0 bottom-0 border-slate-300 dark:border-slate-700 border-r-[1px] last:border-r-0"
+                className={`absolute top-0 bottom-0 ${gridLineStyles}`}
                 style={{
                   width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
                   left: DAY_WIDTH * daysOffsetFromStart + "px",
@@ -124,19 +141,19 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
               />
             )
           })}
-          {events.map((event) => {
-            const [newLanes, laneToUse] = findOpenLane(lanes, event.date)
-            lanes = newLanes
 
-            return (
-              <Event
-                event={event}
-                laneToUse={laneToUse}
-                timelineStartMonth={months[0]}
-                key={event.title}
-              />
-            )
-          })}
+          {lanes.map((lane, laneIndex) =>
+            lane.events.map((event) => {
+              return (
+                <Event
+                  event={event}
+                  laneToUse={laneIndex} // not event.lane because arrangeLanes() may have made adjustments
+                  timelineStartMonth={months[0]}
+                  key={event.title}
+                />
+              )
+            }),
+          )}
         </div>
       </section>
     </aside>
@@ -182,6 +199,40 @@ const Event: NextPage<{
   )
 }
 
+/**
+ * @param events The events to arrange into lanes
+ * @returns An array of lanes, each containing events that do not overlap with each other.
+ *
+ *          If specified, the event will be placed in the specified lane if it is available.
+ *          If an event does not specify a lane or its preferred lane is occupied, it will be placed in the next
+ *          available lane.
+ *
+ *          Any empty lanes will be filtered out, ie: if events want to be in lanes 10, 20, and 40, they will
+ *          instead by placed in lanes 0, 1, and 2.
+ */
+function arrangeLanes(events: TimelineEvent[]) {
+  let lanes: Lane[] = []
+  for (const event of events) {
+    if (event.lane == undefined || lanes[event.lane]?.isOccupied(event.date)) {
+      event.lane = findOpenLane(lanes, event.date)
+    }
+
+    if (!lanes[event.lane]) {
+      lanes[event.lane] = new Lane()
+    }
+
+    lanes[event.lane].addEvent(event)
+  }
+
+  // filter out any empty lanes
+  lanes = lanes.filter(Boolean)
+  return lanes
+}
+
+/**
+ * @param events The events to get the earliest and latest months from
+ * @returns An array of months that should be included in the timeline, from the earliest month to the latest month.
+ */
 function getMonthsToInclude(events: TimelineEvent[]): Date[] {
   const eventDateEarliest = new Date(events[0].date.start)
   const eventDateLatest = new Date(events[events.length - 1].date.end)
@@ -215,37 +266,48 @@ function getIsoDate(date: Date): string {
 }
 
 /**
- * Find the first lane that doesn't have any events that overlap with the event
+ * Find the first available lane from the state of used lanes that doesn't have any events that overlap with the event.
+ * If there are no available lanes, return the next lane that does not exist yet.
+ *
+ * Used if an event does not specify a lane to be placed in.
  */
-function findOpenLane(lanes: Lane[], dateRange: DateRange): [Lane[], number] {
+function findOpenLane(lanes: Lane[], dateRange: DateRange): number {
   let laneToUse = 0
   let foundOpenLane = false
 
   while (!foundOpenLane) {
-    if (lanes[laneToUse] === undefined) {
-      lanes[laneToUse] = new Lane()
-      foundOpenLane = true
-    } else if (!lanes[laneToUse].isOccupied(dateRange)) {
-      foundOpenLane = true
-    } else {
-      laneToUse++
+    if (
+      lanes[laneToUse] === undefined || // if lane does not exist yet
+      !lanes[laneToUse].isOccupied(dateRange) // if there's a free slot in the lane if it does exist
+    ) {
+      break
     }
+
+    laneToUse++
   }
 
-  lanes[laneToUse].markOccupied(dateRange)
-  return [lanes, laneToUse]
+  return laneToUse
 }
 
 /**
-  A Lane keeps track of date ranges that are occupied in that Lane
-  so that events won't be placed in a Lane, but rather the next Lane
-  if it would overlap with an event in that Lane.
-*/
+ * A Lane keeps track of date ranges that are occupied in that Lane
+ * so that events won't be placed in a Lane, but rather the next Lane
+ * if it would overlap with an event in that Lane.
+ *
+ * It also keeps track of the events that are in that Lane.
+ */
 class Lane {
   occupiedRanges: DateRange[]
+  events: TimelineEvent[]
 
   constructor() {
     this.occupiedRanges = []
+    this.events = []
+  }
+
+  addEvent(event: TimelineEvent) {
+    this.markOccupied(event.date)
+    this.events.push(event)
   }
 
   markOccupied(dateRange: DateRange) {
