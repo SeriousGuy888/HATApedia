@@ -215,7 +215,7 @@ const Event: NextPage<{
               src={getImgWikilinkSrc(event.image)}
               alt=""
               fill
-              className="object-cover object-top"
+              className="object-cover object-center"
             />
           </figure>
         )}
