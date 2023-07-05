@@ -243,7 +243,9 @@ function arrangeLanes(events: TimelineEvent[]) {
  */
 function getMonthsToInclude(events: TimelineEvent[]): Date[] {
   const eventDateEarliest = new Date(events[0].date.start)
-  const eventDateLatest = new Date(events[events.length - 1].date.end)
+  const eventDateLatest = events.reduce((soFar, curr) => {
+    return curr.date.end.getTime() > soFar.getTime() ? curr.date.end : soFar
+  }, eventDateEarliest)
 
   const earliestYear = eventDateEarliest.getUTCFullYear()
   const earliestMonth = eventDateEarliest.getUTCMonth() // 0 indexed month -- 0-11
