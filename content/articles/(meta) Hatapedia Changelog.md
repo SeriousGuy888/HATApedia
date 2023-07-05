@@ -11,6 +11,16 @@ facts:
   author: Billzo
 ```
 
+## Character Infoboxes
+Infoboxes for humans and [[The Voices|voices]] alike:
+
+```infobox-character
+name: Doctor Zomboss
+image: "[[Zomboss Eliminated.png]]"
+facts:
+  status: Dead
+```
+
 # 2023-06-30
 
 ## Added callouts
