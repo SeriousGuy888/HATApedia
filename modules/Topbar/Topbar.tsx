@@ -16,7 +16,6 @@ const Topbar = () => {
         <Link href={"/articles"}>Articles</Link>
         <Link href={"/map"}>Map</Link>
         <Link href={"/weather"}>Weather</Link>
-        <Link href={"/timeline"}>Timeline</Link>
       </div>
       <ThemeSwitcher />
       <div className="hidden print:flex justify-between w-full text-sm">
