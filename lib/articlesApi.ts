@@ -99,6 +99,7 @@ export async function getArticle(slug: string) {
             conversionMap: {
               "infobox-nation": "NationInfobox",
               "infobox-character": "CharacterInfobox",
+              "infobox-timeline": "TimelineInfobox",
             },
           },
         ],
