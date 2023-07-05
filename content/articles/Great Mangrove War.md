@@ -11,7 +11,8 @@ events:
 - title: The Great Mangrove War
   description: From the first incident to the final resolution.
   lane: 10
-  colour: "#f0a0a0"
+  colour: "#722"
+  image: "[[Remy Infiltrates Toby's Moat 2023-04-26.png]]"
   date:
     start: 2022-12-21
     end: 2023-01-22

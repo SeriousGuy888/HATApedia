@@ -1,8 +1,10 @@
 import { NextPage } from "next"
 import { parse } from "yaml"
 import cntl from "cntl"
+import Image from "next/image"
 
 import UIElementError from "../../_UI/UIElementError"
+import { getImgWikilinkSrc } from "../../../lib/wikilinkParser"
 
 interface Props {
   yaml: string
@@ -18,6 +20,7 @@ interface TimelineEvent {
   description?: string
   lane?: number
   colour?: `#${string}`
+  image?: string // wikilink to an image
   date: DateRange
 }
 
@@ -151,10 +154,13 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
             lane.events.map((event) => {
               return (
                 <Event
+                  key={event.title}
                   event={event}
                   laneToUse={laneIndex} // not event.lane because arrangeLanes() may have made adjustments
                   timelineStartMonth={months[0]}
-                  key={event.title}
+                  onClick={() => {
+                    alert("clicked " + event.title)
+                  }}
                 />
               )
             }),
@@ -171,7 +177,8 @@ const Event: NextPage<{
   event: TimelineEvent
   laneToUse: number
   timelineStartMonth: Date
-}> = ({ event, laneToUse, timelineStartMonth }) => {
+  onClick?: () => void
+}> = ({ event, laneToUse, timelineStartMonth, onClick }) => {
   const daysOffsetFromStart = Math.floor(
     (event.date.start.getTime() - timelineStartMonth.getTime()) /
       MILLIS_PER_DAY,
@@ -184,30 +191,50 @@ const Event: NextPage<{
 
   const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
 
-  const colour = event.colour
+  const colour = event.colour ?? "#0f766e"
   const textCol = getTextCol(colour)
 
   return (
-    <div
-      className="absolute rounded-lg overflow-hidden p-2 text-white bg-teal-700"
+    <article
       key={event.title}
+      className="absolute rounded-lg overflow-hidden text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event"
       style={{
         top: laneOffset,
         left: DAY_WIDTH * daysOffsetFromStart + "px",
         width: DAY_WIDTH * lengthInDays + "px",
         height: LANE_HEIGHT + "rem",
-        backgroundColor: colour,
         color: textCol,
+        backgroundColor: colour,
       }}
+      onClick={onClick}
     >
-      <h2 className="font-bold">{event.title}</h2>
-      <p className="text-xs font-mono opacity-50">
-        {event.date.start.getTime() === event.date.end.getTime()
-          ? getIsoDate(event.date.start)
-          : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`}
-      </p>
-      <p className="text-xs">{event.description}</p>
-    </div>
+      <section className="relative w-full h-full p-2 isolate">
+        {event.image && (
+          <figure className="absolute inset-0 -z-30">
+            <Image
+              src={getImgWikilinkSrc(event.image)}
+              alt=""
+              fill
+              className="object-cover object-top"
+            />
+          </figure>
+        )}
+        <div
+          className="absolute inset-0 -z-20"
+          style={{
+            background: `linear-gradient(to bottom, ${colour} 35%, transparent 100%)`,
+          }}
+        />
+        <div className="absolute inset-0 -z-10 backdrop-grayscale group-hover/event:backdrop-grayscale-0 transition-all duration-300" />
+
+        <h2 className="font-bold whitespace-nowrap">{event.title}</h2>
+        <p className="text-xs font-mono opacity-50 whitespace-nowrap">
+          {event.date.start.getTime() === event.date.end.getTime()
+            ? getIsoDate(event.date.start)
+            : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`}
+        </p>
+      </section>
+    </article>
   )
 }
 
@@ -216,7 +243,17 @@ function getTextCol(colour?: `#${string}`) {
     return "white"
   }
 
-  const hex = colour.replace("#", "")
+  let hex = colour.replace("#", "")
+  const is3DigitHex = hex.length === 3
+
+  if (is3DigitHex) {
+    // convert 3 digit hex to 6 digit hex
+    const r = hex.substring(0, 1)
+    const g = hex.substring(1, 2)
+    const b = hex.substring(2, 3)
+    hex = r + r + g + g + b + b
+  }
+
   const r = parseInt(hex.substring(0, 2), 16)
   const g = parseInt(hex.substring(2, 4), 16)
   const b = parseInt(hex.substring(4, 6), 16)
