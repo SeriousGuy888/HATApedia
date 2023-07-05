@@ -124,44 +124,61 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
               />
             )
           })}
-          {events.map((e) => {
-            const daysOffsetFromStart = Math.floor(
-              (e.date.start.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
-            )
-
-            const lengthInDays = Math.floor(
-              (e.date.end.getTime() - e.date.start.getTime()) / MILLIS_PER_DAY +
-                1, // add 1 day to compensate for inclusive end date
-            )
-
-            const [newLanes, laneToUse] = findOpenLane(lanes, e.date)
+          {events.map((event) => {
+            const [newLanes, laneToUse] = findOpenLane(lanes, event.date)
             lanes = newLanes
 
-            const laneOffset =
-              laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
-
             return (
-              <div
-                className="absolute rounded-lg overflow-hidden bg-blue-500 p-2"
-                key={e.title}
-                style={{
-                  top: laneOffset,
-                  left: DAY_WIDTH * daysOffsetFromStart + "px",
-                  width: DAY_WIDTH * lengthInDays + "px",
-                  height: LANE_HEIGHT + "rem",
-                }}
-              >
-                <h2 className="text-white font-bold">{e.title}</h2>
-                <p className="text-xs font-mono">
-                  {getIsoDate(e.date.start)} - {getIsoDate(e.date.end)}
-                </p>
-                <p>{e.description}</p>
-              </div>
+              <Event
+                event={event}
+                laneToUse={laneToUse}
+                timelineStartMonth={months[0]}
+                key={event.title}
+              />
             )
           })}
         </div>
       </section>
     </aside>
+  )
+}
+
+export default TimelineInfobox
+
+const Event: NextPage<{
+  event: TimelineEvent
+  laneToUse: number
+  timelineStartMonth: Date
+}> = ({ event, laneToUse, timelineStartMonth }) => {
+  const daysOffsetFromStart = Math.floor(
+    (event.date.start.getTime() - timelineStartMonth.getTime()) /
+      MILLIS_PER_DAY,
+  )
+
+  const lengthInDays = Math.floor(
+    (event.date.end.getTime() - event.date.start.getTime()) / MILLIS_PER_DAY +
+      1, // add 1 day to compensate for inclusive end date
+  )
+
+  const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
+
+  return (
+    <div
+      className="absolute rounded-lg overflow-hidden p-2 bg-blue-500 text-white"
+      key={event.title}
+      style={{
+        top: laneOffset,
+        left: DAY_WIDTH * daysOffsetFromStart + "px",
+        width: DAY_WIDTH * lengthInDays + "px",
+        height: LANE_HEIGHT + "rem",
+      }}
+    >
+      <h2 className="font-bold">{event.title}</h2>
+      <p className="text-xs font-mono opacity-50">
+        {getIsoDate(event.date.start)} - {getIsoDate(event.date.end)}
+      </p>
+      <p className="text-xs">{event.description}</p>
+    </div>
   )
 }
 
@@ -196,8 +213,6 @@ function getNumDaysInMonth(month: Date): number {
 function getIsoDate(date: Date): string {
   return date.toISOString().split("T")[0]
 }
-
-export default TimelineInfobox
 
 /**
  * Find the first lane that doesn't have any events that overlap with the event
