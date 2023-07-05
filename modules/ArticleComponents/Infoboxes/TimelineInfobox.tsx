@@ -1,7 +1,8 @@
 import { NextPage } from "next"
 import { parse } from "yaml"
-import UIElementError from "../../_UI/UIElementError"
 import cntl from "cntl"
+
+import UIElementError from "../../_UI/UIElementError"
 
 interface Props {
   yaml: string
@@ -16,6 +17,7 @@ interface TimelineEvent {
   title: string
   description?: string
   lane?: number
+  colour?: `#${string}`
   date: DateRange
 }
 
@@ -182,20 +184,20 @@ const Event: NextPage<{
 
   const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
 
+  const colour = event.colour
+  const textCol = getTextCol(colour)
+
   return (
     <div
-      className="absolute rounded-lg overflow-hidden p-2 text-white"
+      className="absolute rounded-lg overflow-hidden p-2 text-white bg-teal-700"
       key={event.title}
       style={{
         top: laneOffset,
         left: DAY_WIDTH * daysOffsetFromStart + "px",
         width: DAY_WIDTH * lengthInDays + "px",
         height: LANE_HEIGHT + "rem",
-        backgroundColor:
-          "#" +
-          Math.round(Math.random() * 0xffffff)
-            .toString(16)
-            .padStart(6, "0"),
+        backgroundColor: colour,
+        color: textCol,
       }}
     >
       <h2 className="font-bold">{event.title}</h2>
@@ -207,6 +209,21 @@ const Event: NextPage<{
       <p className="text-xs">{event.description}</p>
     </div>
   )
+}
+
+function getTextCol(colour?: `#${string}`) {
+  if (!colour) {
+    return "white"
+  }
+
+  const hex = colour.replace("#", "")
+  const r = parseInt(hex.substring(0, 2), 16)
+  const g = parseInt(hex.substring(2, 4), 16)
+  const b = parseInt(hex.substring(4, 6), 16)
+
+  // https://stackoverflow.com/a/3943023
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000
+  return yiq >= 128 ? "black" : "white"
 }
 
 /**
