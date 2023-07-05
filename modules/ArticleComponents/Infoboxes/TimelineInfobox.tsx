@@ -25,7 +25,7 @@ interface DateRange {
 }
 
 const DAY_WIDTH = 8 // pixels
-const LANE_HEIGHT = 8 // rem
+const LANE_HEIGHT = 6 // rem
 const LANE_GAP = 0.5 // rem
 const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
