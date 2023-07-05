@@ -12,7 +12,7 @@ events:
   description: From the first incident to the final resolution.
   lane: 10
   colour: "#722"
-  image: "[[Remy Infiltrates Toby's Moat 2023-04-26.png]]"
+  image: "[[Remy on the podium in new mangrovia - 2023-01-06.png]]"
   date:
     start: 2022-12-21
     end: 2023-01-22
@@ -36,11 +36,13 @@ events:
     end: 2023-01-22
 - title: Mangrovepox
   description: The Remy Republic closes internal borders.
+  image: "[[Remy removes mangrovepox 2023-01-06.png]]"
   lane: 30
   date:
     start: 2023-01-05
     end: 2023-06-14
 ```
+
 
 # Catalyst
 
