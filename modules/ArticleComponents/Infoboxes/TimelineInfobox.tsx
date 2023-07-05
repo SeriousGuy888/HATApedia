@@ -184,7 +184,7 @@ const Event: NextPage<{
 
   return (
     <div
-      className="absolute rounded-lg overflow-hidden p-2 text-black mix-blend-lighten"
+      className="absolute rounded-lg overflow-hidden p-2 text-white"
       key={event.title}
       style={{
         top: laneOffset,
