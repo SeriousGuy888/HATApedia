@@ -8,16 +8,36 @@ The Great Mangrove War was a conflict between the [[Remy Republic]] and [[Tobyto
 ```infobox-timeline
 title: The Great Mangrove War
 events:
-- title: The War
-  description: violence and bullying
+- title: The Great Mangrove War
+  description: From the first incident to the final resolution.
+  lane: 10
   date:
     start: 2022-12-21
     end: 2023-01-22
-- title: EOUFJS
-  description: sodjgdfoinhdljkb
+- title: Remy Claims the Mangrove
+  description: Holden threatens war.
+  lane: 20
   date:
-    start: 2022-12-30
-    end: 2023-03-10
+    start: 2022-12-21
+    end: 2022-12-21
+- title: Toby Backs Holden's Claims
+  description: This is escalation.
+  lane: 20
+  date:
+    start: 2023-01-04
+    end: 2023-01-04
+- title: Epique Violencing
+  description: and peace agreement
+  lane: 20
+  date:
+    start: 2023-01-22
+    end: 2023-01-22
+- title: Mangrovepox
+  description: The Remy Republic closes internal borders.
+  lane: 30
+  date:
+    start: 2023-01-05
+    end: 2023-06-14
 ```
 
 # Catalyst
@@ -72,13 +92,13 @@ This rapid spread of mangrove trees starting on 2023-01-05 would become known as
 
 # Epique Violencing
 
-After Holden and Toby came to Forgsville and tried to burn down Remy's house, Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia. This crisis boiled over into an epique duel between Remy and Holden, which Remy would win 2 to 1.
+On 2023-01-22, after Holden and Toby came to Forgsville and tried to burn down Remy's house, Remy retalliated by burning down a large portion of the Swamp of Secrets in Tobytopia. This crisis boiled over into an epique duel between Remy and Holden, which Remy would win 2 to 1.
 
 <Youtube videoId="pXPVKZaFRZI" />
 
 # Resolution
 
-As a result of the Remyan victory, Remy and Holden came to the following agreement.
+On the same day, as a result of the Remyan victory, Remy and Holden came to the following agreement.
 - Remy gets to own Remyan Mangrovia
 - Remyan Mangrovia will be renamed to New Mangrovia
 - Holden gets the title of Founder of New Mangrovia
