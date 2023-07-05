@@ -126,17 +126,20 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
           }}
         >
           {months.map((month, index) => {
+            const width = DAY_WIDTH * getNumDaysInMonth(month) + "px"
             const daysOffsetFromStart = Math.floor(
               (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
             )
+            const leftOffset = DAY_WIDTH * daysOffsetFromStart + "px"
 
             return (
               <div
                 key={month.toISOString()}
                 className={`absolute top-0 bottom-0 ${gridLineStyles}`}
                 style={{
-                  width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
-                  left: DAY_WIDTH * daysOffsetFromStart + "px",
+                  width,
+                  left: leftOffset,
+                  // some sort of daylight savings time shennanigans is causing the grid to be off by day after april
                 }}
               />
             )
@@ -181,13 +184,18 @@ const Event: NextPage<{
 
   return (
     <div
-      className="absolute rounded-lg overflow-hidden p-2 bg-blue-500 text-white"
+      className="absolute rounded-lg overflow-hidden p-2 text-white"
       key={event.title}
       style={{
         top: laneOffset,
         left: DAY_WIDTH * daysOffsetFromStart + "px",
         width: DAY_WIDTH * lengthInDays + "px",
         height: LANE_HEIGHT + "rem",
+        backgroundColor:
+          "#" +
+          Math.round(Math.random() * 0xffffff)
+            .toString(16)
+            .padStart(6, "0"),
       }}
     >
       <h2 className="font-bold">{event.title}</h2>
