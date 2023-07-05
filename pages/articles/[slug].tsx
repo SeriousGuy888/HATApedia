@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Image from "next/image"
 import styles from "../../modules/ArticleComponents/Article.module.scss"
 import "@portaljs/remark-callouts/styles.css"
 
