@@ -1,10 +1,9 @@
 import { NextPage } from "next"
 import { parse } from "yaml"
 import cntl from "cntl"
-import Image from "next/image"
 
-import UIElementError from "../../_UI/UIElementError"
-import { getImgWikilinkSrc } from "../../../lib/wikilinkParser"
+import UIElementError from "../../../_UI/UIElementError"
+import TimelineEvent from "./TimelineEvent"
 
 interface Props {
   yaml: string
@@ -12,10 +11,10 @@ interface Props {
 
 interface TimelineData {
   title?: string
-  events: TimelineEvent[]
+  events: TimelineEventData[]
 }
 
-interface TimelineEvent {
+export interface TimelineEventData {
   title: string
   description?: string
   lane?: number
@@ -29,10 +28,10 @@ interface DateRange {
   end: Date
 }
 
-const DAY_WIDTH = 8 // pixels
-const LANE_HEIGHT = 6 // rem
-const LANE_GAP = 0.5 // rem
-const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
+export const DAY_WIDTH = 0.75 // rem
+export const LANE_HEIGHT = 6 // rem
+export const LANE_GAP = 0.5 // rem
+export const MILLIS_PER_DAY = 1000 * 60 * 60 * 24
 
 const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
   const timelineData = parse(yaml) as TimelineData | null
@@ -109,7 +108,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
               className={`py-2 border-b-[1px] bg-slate-200 dark:bg-slate-900 text-center flex-shrink-0 h-full ${gridLineStyles}`}
               key={month.toISOString()}
               style={{
-                width: DAY_WIDTH * getNumDaysInMonth(month) + "px",
+                width: DAY_WIDTH * getNumDaysInMonth(month) + "rem",
               }}
             >
               <h2 className="m-0 text-sm tracking-widest whitespace-nowrap font-bold">
@@ -131,11 +130,11 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
           }}
         >
           {months.map((month, index) => {
-            const width = DAY_WIDTH * getNumDaysInMonth(month) + "px"
+            const width = DAY_WIDTH * getNumDaysInMonth(month) + "rem"
             const daysOffsetFromStart = Math.floor(
               (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
             )
-            const leftOffset = DAY_WIDTH * daysOffsetFromStart + "px"
+            const leftOffset = DAY_WIDTH * daysOffsetFromStart + "rem"
 
             return (
               <div
@@ -153,7 +152,7 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
           {lanes.map((lane, laneIndex) =>
             lane.events.map((event) => {
               return (
-                <Event
+                <TimelineEvent
                   key={event.title}
                   event={event}
                   laneToUse={laneIndex} // not event.lane because arrangeLanes() may have made adjustments
@@ -173,95 +172,8 @@ const TimelineInfobox: NextPage<Props> = ({ yaml }) => {
 
 export default TimelineInfobox
 
-const Event: NextPage<{
-  event: TimelineEvent
-  laneToUse: number
-  timelineStartMonth: Date
-  onClick?: () => void
-}> = ({ event, laneToUse, timelineStartMonth, onClick }) => {
-  const daysOffsetFromStart = Math.floor(
-    (event.date.start.getTime() - timelineStartMonth.getTime()) /
-      MILLIS_PER_DAY,
-  )
 
-  const lengthInDays = Math.floor(
-    (event.date.end.getTime() - event.date.start.getTime()) / MILLIS_PER_DAY +
-      1, // add 1 day to compensate for inclusive end date
-  )
 
-  const laneOffset = laneToUse * (LANE_HEIGHT + LANE_GAP) + LANE_GAP + "rem"
-
-  const colour = event.colour ?? "#0f766e"
-  const textCol = getTextCol(colour)
-
-  return (
-    <article
-      key={event.title}
-      className="absolute rounded-lg overflow-hidden text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event"
-      style={{
-        top: laneOffset,
-        left: DAY_WIDTH * daysOffsetFromStart + "px",
-        width: DAY_WIDTH * lengthInDays + "px",
-        height: LANE_HEIGHT + "rem",
-        color: textCol,
-        backgroundColor: colour,
-      }}
-      onClick={onClick}
-    >
-      <section className="relative w-full h-full p-2 isolate">
-        {event.image && (
-          <figure className="absolute inset-0 -z-30">
-            <Image
-              src={getImgWikilinkSrc(event.image)}
-              alt=""
-              fill
-              className="object-cover object-center"
-            />
-          </figure>
-        )}
-        <div
-          className="absolute inset-0 -z-20"
-          style={{
-            background: `linear-gradient(to bottom, ${colour} 35%, transparent 100%)`,
-          }}
-        />
-        <div className="absolute inset-0 -z-10 backdrop-grayscale group-hover/event:backdrop-grayscale-0 transition-all duration-300" />
-
-        <h2 className="font-bold whitespace-nowrap">{event.title}</h2>
-        <p className="text-xs font-mono opacity-50 whitespace-nowrap">
-          {event.date.start.getTime() === event.date.end.getTime()
-            ? getIsoDate(event.date.start)
-            : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`}
-        </p>
-      </section>
-    </article>
-  )
-}
-
-function getTextCol(colour?: `#${string}`) {
-  if (!colour) {
-    return "white"
-  }
-
-  let hex = colour.replace("#", "")
-  const is3DigitHex = hex.length === 3
-
-  if (is3DigitHex) {
-    // convert 3 digit hex to 6 digit hex
-    const r = hex.substring(0, 1)
-    const g = hex.substring(1, 2)
-    const b = hex.substring(2, 3)
-    hex = r + r + g + g + b + b
-  }
-
-  const r = parseInt(hex.substring(0, 2), 16)
-  const g = parseInt(hex.substring(2, 4), 16)
-  const b = parseInt(hex.substring(4, 6), 16)
-
-  // https://stackoverflow.com/a/3943023
-  const yiq = (r * 299 + g * 587 + b * 114) / 1000
-  return yiq >= 128 ? "black" : "white"
-}
 
 /**
  * @param events The events to arrange into lanes
@@ -274,7 +186,7 @@ function getTextCol(colour?: `#${string}`) {
  *          Any empty lanes will be filtered out, ie: if events want to be in lanes 10, 20, and 40, they will
  *          instead by placed in lanes 0, 1, and 2.
  */
-function arrangeLanes(events: TimelineEvent[]) {
+function arrangeLanes(events: TimelineEventData[]) {
   let lanes: Lane[] = []
   for (const event of events) {
     if (event.lane == undefined || lanes[event.lane]?.isOccupied(event.date)) {
@@ -297,7 +209,7 @@ function arrangeLanes(events: TimelineEvent[]) {
  * @param events The events to get the earliest and latest months from
  * @returns An array of months that should be included in the timeline, from the earliest month to the latest month.
  */
-function getMonthsToInclude(events: TimelineEvent[]): Date[] {
+function getMonthsToInclude(events: TimelineEventData[]): Date[] {
   const eventDateEarliest = new Date(events[0].date.start)
   const eventDateLatest = events.reduce((soFar, curr) => {
     return curr.date.end.getTime() > soFar.getTime() ? curr.date.end : soFar
@@ -325,10 +237,6 @@ function getNumDaysInMonth(month: Date): number {
   // Takes the month provided, goes to the next month, and then goes back a day,
   // returning the # of the last day of the month
   return new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate()
-}
-
-function getIsoDate(date: Date): string {
-  return date.toISOString().split("T")[0]
 }
 
 /**
@@ -364,14 +272,14 @@ function findOpenLane(lanes: Lane[], dateRange: DateRange): number {
  */
 class Lane {
   occupiedRanges: DateRange[]
-  events: TimelineEvent[]
+  events: TimelineEventData[]
 
   constructor() {
     this.occupiedRanges = []
     this.events = []
   }
 
-  addEvent(event: TimelineEvent) {
+  addEvent(event: TimelineEventData) {
     this.markOccupied(event.date)
     this.events.push(event)
   }

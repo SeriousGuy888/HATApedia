@@ -25,7 +25,9 @@ const MDXComponents = {
   },
   NationInfobox: dynamic(() => import("./Infoboxes/NationInfobox")),
   CharacterInfobox: dynamic(() => import("./Infoboxes/CharacterInfobox")),
-  TimelineInfobox: dynamic(() => import("./Infoboxes/TimelineInfobox")),
+  TimelineInfobox: dynamic(
+    () => import("./Infoboxes/TimelineInfobox/TimelineInfobox"),
+  ),
   BookAndQuill: dynamic(() => import("./BookAndQuill")),
   Youtube: dynamic(() => import("./Youtube")),
 }
