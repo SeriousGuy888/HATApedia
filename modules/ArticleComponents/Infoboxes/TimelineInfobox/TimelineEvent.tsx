@@ -1,7 +1,14 @@
 import { NextPage } from "next"
 import Image from "next/image"
 import { getImgWikilinkSrc } from "../../../../lib/wikilinkParser"
-import { DAY_WIDTH, LANE_GAP, LANE_HEIGHT, MILLIS_PER_DAY, TimelineEventData } from "./TimelineInfobox"
+import {
+  DAY_WIDTH,
+  LANE_GAP,
+  LANE_HEIGHT,
+  MILLIS_PER_DAY,
+  TimelineEventData,
+} from "./TimelineInfobox"
+import styles from "./TimelineInfobox.module.scss"
 
 const Event: NextPage<{
   event: TimelineEventData
@@ -27,7 +34,9 @@ const Event: NextPage<{
   return (
     <article
       key={event.title}
-      className="absolute rounded-lg overflow-hidden text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event"
+      className={`absolute rounded-lg overflow-clip text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event ${
+        lengthInDays <= 10 ? styles.shortEvent : ""
+      }`}
       style={{
         top: laneOffset,
         left: DAY_WIDTH * daysOffsetFromStart + "rem",
@@ -57,7 +66,7 @@ const Event: NextPage<{
         />
         <div className="absolute inset-0 -z-10 backdrop-grayscale group-hover/event:backdrop-grayscale-0 transition-all duration-300" />
 
-        <h2 className="font-bold whitespace-nowrap overflow-auto sticky left-0">
+        <h2 className="font-bold whitespace-nowrap overflow-ellipsis overflow-clip sticky left-0">
           {event.title}
         </h2>
         <p className="text-xs font-mono opacity-50 whitespace-nowrap">

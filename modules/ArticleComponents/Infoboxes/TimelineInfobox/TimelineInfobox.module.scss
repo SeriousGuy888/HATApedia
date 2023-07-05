@@ -1,0 +1,10 @@
+.shortEvent {
+  transition: max-width 500ms;
+  max-width: 8rem;
+
+  &:hover {
+    width: auto !important;
+    max-width: 25dvw;
+    z-index: 50;
+  }
+}
