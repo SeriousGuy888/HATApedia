@@ -200,7 +200,9 @@ const Event: NextPage<{
     >
       <h2 className="font-bold">{event.title}</h2>
       <p className="text-xs font-mono opacity-50">
-        {getIsoDate(event.date.start)} - {getIsoDate(event.date.end)}
+        {event.date.start === event.date.end
+          ? getIsoDate(event.date.start)
+          : `${getIsoDate(event.date.start)} - ${getIsoDate(event.date.end)}`}
       </p>
       <p className="text-xs">{event.description}</p>
     </div>
