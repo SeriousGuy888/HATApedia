@@ -32,27 +32,19 @@
             }
           },
           {
-            "id": "bb5085d2dea2db3b",
+            "id": "405d2c4896c6bdca",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "images/Remy on the podium in new mangrovia - 2023-01-06.png"
-              }
-            }
-          },
-          {
-            "id": "d545e6ce85f32e34",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "images/Remy removes mangrovepox 2023-01-06.png"
+                "file": "articles/HATA.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -119,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Great Mangrove War.md",
+                "file": "articles/HATA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Great Mangrove War.md",
+                "file": "articles/HATA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Great Mangrove War.md"
+                "file": "articles/HATA.md"
               }
             }
           }
@@ -177,7 +169,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Great Mangrove War.md",
+                "file": "articles/HATA.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -224,10 +216,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4aa8794ace2db00e",
+  "active": "405d2c4896c6bdca",
   "lastOpenFiles": [
-    "images/Remy on the podium in new mangrovia - 2023-01-06.png",
+    "images/Remy burns tobytopia.png",
+    "articles/HATA.md",
     "articles/Great Mangrove War.md",
+    "images/Remy on the podium in new mangrovia - 2023-01-06.png",
     "images/Remy removes mangrovepox 2023-01-06.png",
     "articles/Neville.md",
     "articles/Arvi.md",
@@ -246,7 +240,6 @@
     "articles/Tobytopia.md",
     "articles/Remy Republic.md",
     "articles/Zombitopian Junta.md",
-    "articles/HATA.md",
     "articles/Flagrant Fowls.md",
     "articles/Korolarachi.md",
     "articles/Scammington.md",
@@ -260,7 +253,6 @@
     "images/jasper remy and toby negotiate.png",
     "images/toby announces intentions to kill himself a third time.png",
     "images/toby assassinates himself with a firework at the unhq.png",
-    "images/jasper inherits toby's stuff.png",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",
