@@ -58,12 +58,11 @@ const Event: NextPage<{
           </figure>
         )}
         <div
-          className="absolute inset-0 -z-20"
+          className="absolute inset-0 -z-20 opacity-70 group-hover/event:opacity-100 transition-all duration-300"
           style={{
-            background: `linear-gradient(to bottom, ${colour} 35%, transparent 100%)`,
+            background: `linear-gradient(to bottom, ${colour} 20%, transparent 100%)`,
           }}
         />
-        <div className="absolute inset-0 -z-10 backdrop-grayscale group-hover/event:backdrop-grayscale-0 transition-all duration-300" />
 
         <h2 className="font-bold whitespace-nowrap overflow-ellipsis overflow-clip sticky left-0">
           {event.title}
