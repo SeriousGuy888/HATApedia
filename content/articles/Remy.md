@@ -16,6 +16,7 @@ facts:
   - Former Captain of the Flagrant Fowls
   full name: "RemyHemy"
   aka: "Blaze"
+  favourite font: Times New Roman
 ```
 
 # Career
