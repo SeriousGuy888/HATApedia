@@ -81,8 +81,16 @@ const wikilinkSyntax: Plugin<[Options?], mdast.Root> = (
 
         return imgNode
       } else {
-        const pageSlug = pageName ? sluggify(pageName) : ""
+        const pageSlug: string = pageName ? sluggify(pageName) : ""
         const href = `${pageSlug}${headingAnchor ? "#" + headingAnchor : ""}`
+
+        // If pageSlug is empty, it means the link is to the current page, so don't make it red.
+        // If pageSlug is not empty, check if it's in the list of existing pages,
+        // and if it does not exist, then make it red.
+        let isRedLink = false
+        if (pageSlug && !options.existingPageNames.includes(pageSlug)) {
+          isRedLink = true
+        }
 
         const linkNode: Link = {
           type: "link",
@@ -96,13 +104,7 @@ const wikilinkSyntax: Plugin<[Options?], mdast.Root> = (
           data: {
             hProperties: {
               // make link red if page doesn't exist
-              className:
-                // If pageSlug is empty, it means the link is to the current page, so don't make it red.
-                // If pageSlug is not empty, check if it's in the list of existing pages,
-                // and if it does not exist, then make it red.
-                pageSlug && options.existingPageNames.includes(pageSlug)
-                  ? ""
-                  : "redLink",
+              className: isRedLink ? "redLink" : "",
             },
           },
         }
