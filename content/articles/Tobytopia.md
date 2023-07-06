@@ -13,6 +13,7 @@ facts:
   ultimate kaiser of doom three thousand: Toby
   capital: The DVD Player
   motto: I'm your sexy mom; I'm a milf, Remy.
+  founded: 2022-12-02
 ```
 
 # Territories
@@ -40,6 +41,79 @@ decided to claim it first.
 [[Remy Republic#Jungle Island Incident|More info in the Remy Republic article]]
 
 # History
+
+```infobox-timeline
+title: Timeline of Tobytopia
+events:
+- title: "First Tobytopian Empire (under Toby's rule)"
+  lane: 20
+  image: "[[Toby's semiautomatic crop farms.png]]"
+  colour: "#d60"
+  date:
+    start: 2022-12-02
+    end: 2023-01-21
+- title: "Remy Exercises Good Neighbour Policy"
+  lane: 20
+  image: "[[Toby Returns to Propagule Palace.png]]"
+  colour: "#d0d"
+  date:
+    start: 2023-01-22
+    end: 2023-01-22
+- title: "First Tobytopian Empire (under Toby's rule)"
+  lane: 20
+  image: "[[Toby's Base 2023-03-31 From Tree Level.png]]"
+  colour: "#d60"
+  date:
+    start: 2023-01-23
+    end: 2023-05-06
+- title: "Holdentopia"
+  lane: 20
+  image: "[[Holden murders Toby.png]]"
+  colour: "#4d0"
+  date:
+    start: 2023-05-07
+    end: 2023-05-07
+- title: "Second Tobytopian Empire"
+  lane: 20
+  image: "[[Toby places some signs at the jungle palace.png]]"
+  colour: "#d60"
+  date:
+    start: 2023-05-08
+    end: 2023-05-21
+- title: "Zombitopian Junta"
+  lane: 20
+  image: "[[Zomboss Eliminated.png]]"
+  date:
+    start: 2023-05-22
+    end: 2023-05-22
+- title: "Third Tobytopian Empire"
+  lane: 20
+  image: "[[Tobytopia Banner.png]]"
+  colour: "#d60"
+  date:
+    start: 2023-05-23
+    end: 2023-06-25
+- title: "Slimetopia"
+  lane: 20
+  date:
+    start: 2023-06-26
+    end: 2023-06-26
+- title: "Fourth Tobytopian Empire"
+  lane: 20
+  image: "[[jasper remy and toby negotiate.png]]"
+  colour: "#d60"
+  date:
+    start: 2023-06-27
+    end: 2023-07-05
+    
+- title: "Fortuguese Rebellion"
+  lane: 30
+  colour: "#296"
+  image: "[[Authentic Fortuguese Army.png]]"
+  date:
+    start: 2023-02-25
+    end: 2023-07-05
+```
 
 ## Remy's Coup
 
