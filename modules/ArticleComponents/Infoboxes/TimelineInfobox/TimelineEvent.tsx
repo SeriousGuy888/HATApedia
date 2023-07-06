@@ -33,7 +33,7 @@ const Event: NextPage<{
   return (
     <article
       key={event.title}
-      className={`absolute rounded-lg overflow-clip text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event ${
+      className={`absolute overflow-clip text-white bg-teal-700 cursor-pointer bg-cover bg-center bg-no-repeat group/event ${
         lengthInDays <= 10 ? styles.shortEvent : ""
       }`}
       style={{
