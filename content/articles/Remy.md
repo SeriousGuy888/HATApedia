@@ -13,6 +13,7 @@ facts:
   - Ace Reporter
   - Glorious Leader of the Remy Republic
   - Former Interim Dictator of Tobytopia
+  - Former Captain of the Flagrant Fowls
   full name: "RemyHemy"
   aka: "Blaze"
 ```

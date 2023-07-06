@@ -1,6 +1,6 @@
 ---
 title: Toby
-subtitle: Ultimate Kaiser of Doom Three Thousand of Tobytopia
+subtitle: Ultimate Kaiser of Doom Three Thousand of the Tobytopian Empire
 image: "[[Toby Portrait.png]]"
 ---
 
@@ -10,7 +10,9 @@ Toby is the ruler of [[Tobytopia]], the owner of the [[HATA]] minecraft server, 
 name: Toby
 mcUuid: "428025a08cb14537bfa151ce799c50b0"
 facts:
-  title: Ultimate Kaiser of Doom Three Thousand
+  titles:
+  - Ultimate Kaiser of Doom Three Thousand of the Tobytopian Empire
+  - Captain of the Flagrant Fowls
   sniki: Akrat
 ```
 
