@@ -16,6 +16,18 @@ facts:
 
 ![[Neville 2023-07-05.png]]
 
+# Demographics
+
+Neville is primarily inhabited by humans.
+
+There is occasionally also a sizable snow golem population, although they tend to die en masse every time it rains (which is quite frequent — see [[#Climate]]).
+
+## Human Residents
+
+- [[Arvi]]
+- [[Anna]]
+- [[Adam]]
+
 # Economy
 The main industry of Neville is agriculture. Neville is best known for its large wheat field.
 
