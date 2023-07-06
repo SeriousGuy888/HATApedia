@@ -6,11 +6,15 @@ Scammington is located on the southern tip of the island of [[Sheapland]], separ
 
 ![[Scammington 2023-04-13.png]]
 
-# Industry
+# Builds
 Scammington is planned by the [[Remy|Glorious Leader]] to be the gambling center of the Remy Republic, although there is not much there at the time of writing.
 
 ## Scammington Bar
 Please see: [[Scammington Bar]]
+
+## Jasper's Boxing Ring
+
+![[Jasper building his boxing ring in Scammington 2023-07-05.png]]
 
 # Demographics
 According to a census of the population of Scammington on 2023-04-13, the population of Scammington can be broken down by species as follows.
