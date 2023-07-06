@@ -2,7 +2,14 @@ import cntl from "cntl"
 import { NextPage } from "next"
 import { Dispatch, SetStateAction } from "react"
 import TimelineEvent from "./TimelineEvent"
-import { TimelineEventData, DAY_WIDTH, LANE_HEIGHT, LANE_GAP, MILLIS_PER_DAY, Lane } from "./TimelineInfobox"
+import {
+  TimelineEventData,
+  DAY_WIDTH,
+  LANE_HEIGHT,
+  LANE_GAP,
+  MILLIS_PER_DAY,
+  Lane,
+} from "./TimelineInfobox"
 
 const TimelineField: NextPage<{
   hidden: boolean
@@ -47,25 +54,26 @@ const TimelineField: NextPage<{
             "rem",
         }}
       >
-        {months.map((month, index) => {
-          const width = DAY_WIDTH * getNumDaysInMonth(month) + "rem"
-          const daysOffsetFromStart = Math.floor(
-            (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
-          )
-          const leftOffset = DAY_WIDTH * daysOffsetFromStart + "rem"
+        <section className="absolute inset-0 flex">
+          {months.map((month) => {
+            const width = DAY_WIDTH * getNumDaysInMonth(month) + "rem"
+            const daysOffsetFromStart = Math.floor(
+              (month.getTime() - months[0].getTime()) / MILLIS_PER_DAY,
+            )
+            const leftOffset = DAY_WIDTH * daysOffsetFromStart + "rem"
 
-          return (
-            <div
-              key={month.toISOString()}
-              className={`absolute top-0 bottom-0 ${gridLineStyles}`}
-              style={{
-                width,
-                left: leftOffset,
-                // some sort of daylight savings time shennanigans is causing the grid to be off by day after april
-              }}
-            />
-          )
-        })}
+            return (
+              <div
+                key={month.toISOString()}
+                className={`h-full flex-shrink-0 ${gridLineStyles}`}
+                style={{
+                  width,
+                  left: leftOffset,
+                }}
+              />
+            )
+          })}
+        </section>
 
         {lanes.map((lane, laneIndex) =>
           lane.events.map((event, index) => {
