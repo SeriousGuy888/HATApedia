@@ -5,6 +5,8 @@ import { sluggify } from "../../utils/sluggify"
 import { slug as githubAnchorSlug } from "github-slugger"
 import sizeOf from "image-size"
 
+import type * as mdast from "mdast"
+
 interface Options {
   existingPageNames: string[]
 }
@@ -15,9 +17,9 @@ const extractLinkElements = (wikilink: string) => {
   //   2. page name/image name
   //   3. anchor (optional)
   //   4. link text/alt text (optional)
-  const captureGroups = /(!)?\[\[([^|#]+)(?:#([^|#]+))?(?:\|([^|#]+))?\]\]/
+  const captureGroups = /(!)?\[\[([^|#]+)?(?:#([^|#]+))?(?:\|([^|#]+))?\]\]/
 
-  const match = wikilink.match(captureGroups)
+  const match = captureGroups.exec(wikilink)
   if (!match) {
     return null
   }
@@ -30,18 +32,18 @@ const extractLinkElements = (wikilink: string) => {
 
   let altText = match[4]
   if (!altText) {
-    altText = headingText ? `${pageName}#${headingText}` : pageName
+    altText = headingText ? `${pageName || ""}#${headingText}` : pageName
   }
 
   return { isImage, pageName, altText, headingAnchor }
 }
 
-const wikilinkSyntax: Plugin<[Options?]> = (
+const wikilinkSyntax: Plugin<[Options?], mdast.Root> = (
   options: Options = {
     existingPageNames: [],
   },
-): Transformer => {
-  return (tree: any) => {
+) => {
+  return (tree) => {
     // regex to find wikilinks
     // Optional exclamation at start + [[something between brackets]]
     const linkRegex = /!?\[\[.*?\]\]/g
@@ -51,6 +53,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
       if (!linkElems) {
         return null
       }
+
       const { isImage, pageName, altText, headingAnchor } = linkElems
 
       if (isImage) {
@@ -61,7 +64,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
         }
 
         const imageSize = sizeOf(`./public/images/content/${pageName}`)
-        
+
         const imgNode: Image = {
           type: "image",
           url: pageName,
@@ -78,7 +81,7 @@ const wikilinkSyntax: Plugin<[Options?]> = (
 
         return imgNode
       } else {
-        const pageSlug = sluggify(pageName)
+        const pageSlug = pageName ? sluggify(pageName) : ""
         const href = `${pageSlug}${headingAnchor ? "#" + headingAnchor : ""}`
 
         const linkNode: Link = {
@@ -93,9 +96,13 @@ const wikilinkSyntax: Plugin<[Options?]> = (
           data: {
             hProperties: {
               // make link red if page doesn't exist
-              className: options.existingPageNames.includes(pageSlug)
-                ? ""
-                : "redLink",
+              className:
+                // If pageSlug is empty, it means the link is to the current page, so don't make it red.
+                // If pageSlug is not empty, check if it's in the list of existing pages,
+                // and if it does not exist, then make it red.
+                pageSlug && options.existingPageNames.includes(pageSlug)
+                  ? ""
+                  : "redLink",
             },
           },
         }
