@@ -1,3 +1,36 @@
+# 2023-07-05
+
+## Added Timeline Component
+I've replaced the timeline page I've been working on with a timeline component that can go in any article.
+
+```infobox-timeline
+title: Example Timeline
+events:
+- title: So beas an exemplar event
+  description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  image: "[[epic hata logo.png]]"
+  colour: "#900"
+  date:
+    start: 2023-01-15
+    end: 2023-06-01
+- title: So zel beas an exemplar event
+  date:
+    start: 2023-06-02
+    end: 2023-08-12
+- title: So event beas in an else lane
+  lane: 20
+  date:
+    start: 2023-02-10
+    end: 2023-07-01
+- title: Shu vyu
+  lane: 30
+  image: "[[remy struck by missile while jasper aims his bow, wearing toby's drip.png]]"
+  color: "#900"
+  date:
+    start: 2023-01-10
+    end: 2023-02-02
+```
+
 # 2023-07-04
 
 ## Improved Nation Infoboxes
