@@ -58,9 +58,9 @@ const Event: NextPage<{
           </figure>
         )}
         <div
-          className="absolute inset-0 -z-20 opacity-70 group-hover/event:opacity-100 transition-all duration-300"
+          className="absolute inset-0 -z-20 opacity-90 group-hover/event:opacity-100 transition-all duration-300"
           style={{
-            background: `linear-gradient(to bottom, ${colour} 20%, transparent 100%)`,
+            background: `linear-gradient(to bottom, ${colour} 40%, transparent 100%)`,
           }}
         />
 

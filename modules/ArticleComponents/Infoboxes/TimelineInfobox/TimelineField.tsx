@@ -68,10 +68,10 @@ const TimelineField: NextPage<{
         })}
 
         {lanes.map((lane, laneIndex) =>
-          lane.events.map((event) => {
+          lane.events.map((event, index) => {
             return (
               <TimelineEvent
-                key={event.title}
+                key={index} // NOSONAR
                 event={event}
                 laneToUse={laneIndex} // not event.lane because arrangeLanes() may have made adjustments
                 timelineStartMonth={months[0]}
