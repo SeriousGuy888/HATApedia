@@ -64,7 +64,7 @@ const Event: NextPage<{
           }}
         />
 
-        <h2 className="font-bold whitespace-nowrap overflow-ellipsis overflow-clip sticky left-0">
+        <h2 className="font-bold text-sm whitespace-nowrap overflow-ellipsis overflow-clip sticky left-0">
           {event.title}
         </h2>
         <p className="text-xs font-mono opacity-50 whitespace-nowrap">
