@@ -61,6 +61,7 @@ const CharacterInfobox: NextPage<{ yaml: string }> = ({ yaml }) => {
                 <img
                   src={`https://crafatar.com/renders/body/${mcUuid}?scale=4&overlay=true`}
                   alt="Minecraft skin"
+                  loading="lazy"
                 />
               )
             )}
