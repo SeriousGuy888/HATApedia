@@ -49,6 +49,13 @@ module.exports = {
             },
           },
         },
+        base: {
+          css: {
+            h1: {
+              marginTop: theme("spacing.12"),
+            },
+          },
+        },
         invert: {
           css: {
             color: theme("colors.gray.300"),
@@ -58,7 +65,7 @@ module.exports = {
             code: {
               color: theme("colors.gray.300"),
               backgroundColor: theme("colors.gray.800"),
-            }
+            },
           },
         },
         print: {
