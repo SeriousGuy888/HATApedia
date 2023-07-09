@@ -1,6 +1,7 @@
 ---
 title: The Boxing Matchbox War
 subtitle: Holdentopian Coup Attempt on the Remy Republic
+image: "[[remy under duress atop arvi tower.png]]"
 ---
 
 > [!tip] Timezone
