@@ -87,10 +87,12 @@ function useHighlighted(id: string) {
     }
 
     observer.current = new IntersectionObserver(handleObserver, {
-      rootMargin: "0% 0% -40% 0px",
+      rootMargin: "0% 0% -80% 0px",
     })
 
-    const elements = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
+    const elements = [
+      ...document.querySelectorAll("h1,h2,h3,h4,h5,h6").values(),
+    ].reverse()
 
     elements.forEach((elem) => observer.current?.observe(elem))
     return () => observer.current?.disconnect()
@@ -113,7 +115,7 @@ function renderHeadingLinks(nodes: TocNode[]): ReactNode {
 }
 
 const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
-  const [highlighted, setHighlighted] = useHighlighted(node.id)
+  const [highlighted] = useHighlighted(node.id)
 
   return (
     <p
@@ -126,7 +128,6 @@ const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
         href={`#${node.id}`}
         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-300"
         scroll={false}
-        onClick={() => setHighlighted(node.id)}
       >
         {node.value}
       </Link>
