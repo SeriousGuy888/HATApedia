@@ -65,10 +65,7 @@ const ArticlePage: NextPage<Props> = ({
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
           <article
-            className={
-              "prose prose-base dark:prose-invert print:prose-print " +
-              styles.prose
-            }
+            className={`prose prose-base dark:prose-invert print:prose-print pb-48 ${styles.prose}`}
           >
             <MDXRemote {...mdxSource} components={MDXComponents as any} />
           </article>
