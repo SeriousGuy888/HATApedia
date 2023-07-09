@@ -35,6 +35,18 @@ module.exports = {
             "blockquote p:last-of-type::after": {
               content: "",
             },
+            code: {
+              color: theme("colors.gray.700"),
+              backgroundColor: theme("colors.gray.100"),
+              padding: theme("spacing.1"),
+              borderRadius: theme("borderRadius.lg"),
+            },
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
+            },
           },
         },
         invert: {
@@ -43,6 +55,10 @@ module.exports = {
             a: {
               color: theme("colors.blue.400"),
             },
+            code: {
+              color: theme("colors.gray.300"),
+              backgroundColor: theme("colors.gray.800"),
+            }
           },
         },
         print: {
