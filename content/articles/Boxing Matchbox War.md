@@ -119,9 +119,8 @@ Holden used a flint and steel to set fire to many of the buildings in [[No]], [[
 
 The wheat gods set the weather to rain in an attempt to quell the inferno, but this was not very successful.
 
-![[Pasted image 20230709041113.png]]
-![[Pasted image 20230709041119.png]]
-![[Pasted image 20230709041123.png]]
+![[holden burns arvi tower.png]]
+![[holden burns remy's home sweet home.png]]
 ![[Pasted image 20230709041127.png]]
 ![[Pasted image 20230709041132.png]]
 

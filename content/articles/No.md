@@ -2,6 +2,14 @@
 subtitle: Province of the Remy Republic
 ---
 
+# Builds
+
+- [[Fluffy Bridge]]
+- [[No Windmill]]
+- [[No Sign]]
+- [[Arvi Tower]] (now destroyed)
+- [[Wheat Sacrifice Shrine]]
+
 # History
 
 ## Tobytopia Era
@@ -15,6 +23,11 @@ This era is also when No got its name — when [[Billzo Shoom]] requested that T
 [[Remy Republic]]
 
 ![[No 2022-12-04.png]]
+
+During the era of Remyan rule over No, the area has been the site of many attacks, wars, or coup attempts.
+- [[Mangrovepox]]
+- [[Boxing Matchbox War]]
+- [[Raid on No]]
 
 # Industry
 no is a big wheat field
