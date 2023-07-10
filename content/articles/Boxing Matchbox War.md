@@ -18,7 +18,7 @@ After the end of the Order 66 altercation, Holden and Remy were standing outside
 Holden then tried to kill Remy by digging a 2x2 hole where Remy logged out behind the [[Scammington Passport Office]], but this did not work, as Remy spawned in on a neighbouring block instead of over the hole when he logged back in again. As a result, it was not him, but *Holden* who got trapped in the hole. When Holden realised this, he tried to get out of the hole, but Remy was waiting for him at the surface. At `02:01`, Remy fired a [[big damage missile]] at Holden, which instantly killed him.
 
 ## Copyright Dispute
-Although Holden had been defeated by Remy, he had nonetheless managed to deal significant damage Remy, who had no food to heal and was still left on one heart of health. Just as Remy was celebrating his successful murder of Holden, an unexpected challenger approached from behind.
+Although Holden had been defeated by Remy, he had nonetheless managed to deal significant damage to Remy, who had no food to heal and was still left on one heart of health. Just as Remy was celebrating his successful murder of Holden, an unexpected challenger approached from behind.
 
 Within seconds, at `02:01`, [[Anna]] gently bonked Remy on the head with a shovel and instantly killed him. After assassinating the Glorious Leader, Anna removed Remy's armour from his corpse and fled the scene, running northeast towards [[Neville]].
 
@@ -54,7 +54,7 @@ Remy told Holden to meet him in [[No]], claiming that he would be willing to for
 
 Rockets from the clone troopers also reached the animal pens in No, killing much of Remy's livestock.
 
-Further unfortunately for Remy, after calling off Order 66, he was unable to ascertain the location of Holden's death, and was unable to reclaim his items. This allowed Holden to find the items first and gave him the leverage in the subsequent negotiations.
+Further unfortunately for Remy, after calling off Order 66, he was unable to ascertain the location of Holden's death, and was unable to reclaim his items. This allowed Holden to find the items first and gave him considerable leverage in the subsequent negotiations.
 
 ## Negotiations Atop Arvi Tower
 Remy and Holden met at [[Arvi Tower]] at approximately `02:20`, where Holden gave Remy his demands, dictating the following terms which would never come to fruition as Holden did not end up being able to get Remy to sign the treaty:
@@ -84,7 +84,7 @@ When Holden ordered Remy to hand over the book and quill that Remy had been pret
 ## Remy's Excursion to Tobytopia
 Unfortunately for Holden, Remy had secretly made an agreement with Anna behind Holden's back. When Remy promptly jumped off Arvi Tower and ran away towards the train station, Anna fired her crossbow at Remy while intentionally missing as per the secret agreement.
 
-Remy boarded a boat and fled the country, heading to Toby's [[DVD Player]] in the [[Swamp of Secrets]], all the while telling Holden that he was near the territory of [[Holden's Regime]]. Toby went into Toby's storage room and collected a set of netherite armour and an enchanted diamond sword from one of Toby's many backup kits. This was legal as Toby was presumed to be dead at the moment, meaning Remy was fully within his right to collect his inheritance.
+Remy boarded a boat and fled the country, heading to Toby's [[DVD Player]] in the [[Swamp of Secrets]], all the while telling Holden that he was near the territory of [[Holden's Regime]]. Remy went into [[Toby]]'s storage room and collected a set of netherite armour and an enchanted diamond sword from one of Toby's many backup kits. This was legal as Toby was presumed to be dead at the moment, meaning Remy was fully within his right to collect his inheritance.
 
 ![[remy steals from tobytopia during boxing matchbox war.png]]
 
@@ -106,7 +106,7 @@ Remy then called off Order 66.
 ![[remy successful countercoup.png]]
 
 ## Attempted Escape
-The failed revolutionaries attempted to flee on a boat, but they were spotted by Remy while they were just south of Fluffy Bridge. Remy swiftly gave chase, breaking the boat and stabbing Holden multiple times, after which Holden was struck by lightning and then drowned as well.
+The failed revolutionaries attempted to flee on a boat, but they were spotted by Remy while they were just south of Fluffy Bridge. Remy swiftly gave chase, breaking the boat and stabbing Holden multiple times, after which Holden was struck by licit and legitimate lightning and then drowned as well.
 
 ![[holden and anna attempt to escape boxing matchbox war.png]]
 
@@ -185,4 +185,4 @@ General [[Fletcher Quadratic]], living on [[Equalsosceles Island]], [[Hawainot]]
 The Glorious Leader also later officially abolished squatters rights in the Remy Republic, as that was one of the justifications that Holden used in his attempted takeover of the country.
 
 ## Holden's Title
-Although the terms that [[Holden]] had imposed upon Remy did not end up being signed, Holden still decided to implement one of the terms anyway. As of `2023-07-06`, Holden officially updated his title from the *Peasant of Holdentopia* (imposed upon him by Toby after [[Tobytopia#Holden's Coup|Holden's failed coup]]) to the *Glorious Not-Peasant of Holdentopia*.
+Although the terms that [[Holden]] had imposed upon Remy did not end up being signed, Holden still decided to implement one of the terms anyway. As of `2023-07-06`, Holden officially updated his title from the *Peasant of Holdentopia* (imposed upon him by [[Toby]] after [[Tobytopia#Holden's Coup|Holden's failed coup]]) to the *Glorious Not-Peasant of Holdentopia*.
