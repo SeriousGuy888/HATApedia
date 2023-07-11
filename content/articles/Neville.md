@@ -8,7 +8,7 @@ Neville is a city state to the northeast of spawn. It was founded by [[Arvi]].
 ```infobox-nation
 banner: "[[Neville Banner.png]]"
 facts:
-  untitled leader: Arvi
+  doomslayer nine thousand: Arvi
   demonym: Nevillian
 ```
 

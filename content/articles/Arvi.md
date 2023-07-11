@@ -9,7 +9,7 @@ name: Arvi
 mcUuid: "5d5d50e051bc40a182f5a21f8bb2c116"
 facts:
   titles:
-  - Untitled Leader of the City of Neville
+  - Doomslayer Nine Thousand of the City of Neville
   - The Stripper
   aka:
   - The Lorax
