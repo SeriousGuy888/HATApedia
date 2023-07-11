@@ -11,7 +11,10 @@ banner: "[[Remy Republic Banner.png]]"
 facts:
   glorious leader: Remy
   demonym: Remyan
-  official languages: English, French, Billzonian
+  official languages:
+  - English
+  - French
+  - Billzonian
   founded: 2022-12-02
 ```
 
