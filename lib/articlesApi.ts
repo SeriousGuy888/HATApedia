@@ -20,6 +20,7 @@ import { remark } from "remark"
 import strip from "strip-markdown"
 
 import remarkHeadingTree, { TocNode } from "../plugins/remark-heading-tree"
+import { getSlugMap } from "./articleSlugManager"
 
 export interface ArticlePreview {
   slug: string
@@ -39,18 +40,13 @@ interface ArticleMetadata extends ArticlePreview {
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
 
-const getSlugMap = async () =>
-  (await import("../cache/article_slugs.json")).default as {
-    [slug: string]: string
-  }
-
 export const getAllSlugs = async () => {
   return Object.keys(await getSlugMap())
 }
 
 const getArticleFileContent = async (slug: string) => {
   const slugMap = await getSlugMap()
-  const fileName = (slugMap as any)?.[slug]
+  const fileName = slugMap?.[slug]
 
   if (!fileName) {
     return null
