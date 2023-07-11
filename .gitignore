@@ -177,3 +177,4 @@ dist
 
 # ignore symlink so it doesnt track the same files multiple times
 /content/images/
+/cache/
