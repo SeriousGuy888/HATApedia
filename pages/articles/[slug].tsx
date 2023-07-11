@@ -52,16 +52,14 @@ const ArticlePage: NextPage<Props> = ({
       >
         <div className="max-w-prose">
           <header>
-            <div className="flex flex-row justify-between gap-4">
-              <section>
-                <h1 className="text-5xl font-bold mb-2 print:text-black">
-                  {title}
-                </h1>
-                <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm">
-                  {frontmatter.subtitle}
-                </h2>
-              </section>
-            </div>
+            <section>
+              <h1 className="text-4xl sm:text-5xl font-bold mb-2 print:text-black break-words">
+                {title}
+              </h1>
+              <h2 className="text-gray-600 dark:text-gray-400 uppercase text-sm break-words">
+                {frontmatter.subtitle}
+              </h2>
+            </section>
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
           <article
