@@ -10,6 +10,7 @@ banner: "[[Neville Banner.png]]"
 facts:
   doomslayer nine thousand: Arvi
   demonym: Nevillian
+  founded: 2023-04-07
 ```
 
 # Builds
