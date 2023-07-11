@@ -58,10 +58,15 @@ const CharacterInfobox: NextPage<{ yaml: string }> = ({ yaml }) => {
             ) : (
               mcUuid && (
                 /* eslint-disable @next/next/no-img-element */
-                <img
-                  src={`https://crafatar.com/renders/body/${mcUuid}?scale=4&overlay=true`}
+                <Image
+                  src={`https://minotar.net/armor/body/${mcUuid}/16.png`}
                   alt="Minecraft skin"
                   loading="lazy"
+                  width={16}
+                  height={32}
+                  unoptimized
+                  className="w-full"
+                  style={{ imageRendering: "pixelated" }}
                 />
               )
             )}
