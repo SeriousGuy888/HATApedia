@@ -12,6 +12,7 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
+      import("./scripts/cache_article_slugs.mjs")
       import("./scripts/build_algolia_search.mjs")
     }
     return config
