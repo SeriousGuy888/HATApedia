@@ -167,13 +167,13 @@ export async function getArticleMetadata(slug: string) {
     return null
   }
   const { data } = matter(source)
-  const { title, subtitle, image, nation, timeline } = data
+  const { title, subtitle, image, timeline } = data
 
   const articleData: ArticleMetadata = await goodifyArticleData({
     slug,
     title,
     subtitle,
-    image: image ?? nation?.banner ?? null,
+    image: image ?? null,
     timeline,
   })
 
