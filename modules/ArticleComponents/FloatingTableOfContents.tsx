@@ -8,6 +8,7 @@ import Link from "next/link"
 
 import ListRoundedIcon from "@mui/icons-material/ListRounded"
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded"
+import { motion } from "framer-motion"
 
 const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
   const [isTocOpen, setTocOpen] = useState<boolean>(false)
@@ -20,7 +21,11 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
   }
 
   return (
-    <aside>
+    <motion.aside
+      initial={{ x: 75, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <button
         className="bg-blue-900 p-3 opacity-100 rounded-full fixed right-4 bottom-4 z-40 md:hidden"
         onClick={toggleToc}
@@ -69,7 +74,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
         </div>
         {renderHeadingLinks(nodes)}
       </div>
-    </aside>
+    </motion.aside>
   )
 }
 

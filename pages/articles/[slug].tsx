@@ -11,6 +11,7 @@ import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
+import { motion } from "framer-motion"
 
 interface Props {
   mdxSource: MDXRemoteSerializeResult
@@ -62,11 +63,14 @@ const ArticlePage: NextPage<Props> = ({
             </section>
             <hr className="my-8 border-t-[1] border-gray-200 dark:border-gray-700" />
           </header>
-          <article
+          <motion.article
             className={`prose prose-base dark:prose-invert print:prose-print pb-48 ${styles.prose}`}
+            initial={{ y: 150, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4 }}
           >
             <MDXRemote {...mdxSource} components={MDXComponents as any} />
-          </article>
+          </motion.article>
         </div>
 
         <FloatingTableOfContents nodes={tocHeadings} />
