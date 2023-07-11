@@ -7,6 +7,14 @@ const articlesDir = path.join(process.cwd(), "/content/articles/")
 
 generateArticleSlugs()
 
+/**
+ * Gathers all the article files in the articles directory, takes their file names,
+ * converts them to slugs, and writes them to a cache file.
+ *
+ * If there different files whose slugs are the same, a warning is printed to the console.
+ *
+ * @returns A map of slugs to file names that was just written to the cache file
+ */
 function generateArticleSlugs() {
   const filenames = fs.readdirSync(articlesDir)
 
