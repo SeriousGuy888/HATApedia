@@ -95,6 +95,7 @@ The Remy Republic maintains diplomatic relations with a number of other nations.
 - [[Treaty of No (2023)]]
 - [[Remy Sea Trade Bloc Agreement]]
 - [[Treaty of Neville]]
+- [[Pink and Purple Treaty]]
 
 # History
 
