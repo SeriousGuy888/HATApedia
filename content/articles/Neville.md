@@ -1,6 +1,6 @@
 ---
-title: City of Neville
-subtitle: City State
+title: Kingdom of Neville
+subtitle: Monarchy and City State
 ---
 
 Neville is a city state to the northeast of spawn. It was founded by [[Arvi]].
@@ -38,6 +38,13 @@ Neville has received some investment from the Remy Republic for its wheat field.
 Neville maintains diplomatic and trade relations with the [[Remy Republic]]. These relations are defined by the [[Treaty of Neville]].
 
 Neville maintains that it is free to pursue diplomatic relations with whichever nations it desires, including [[Tobytopia]].
+
+Neville is also in a formal alliance with the Remy Republic, defined by the [[Pink and Purple Treaty]].
+
+# History
+The City of Neville was first founded on `2023-04-07` by [[Arvi]] when he first created the city's wheat field. [[Remy]] at one point accused Arvi of having built his wheat field with wheat seeds stolen from [[No]]. Arvi denied this.
+
+On `2023-07-13` during a meeting with Remy at the [[United Nations]], [[Arvi]], as the Doomslayer Nine Thousand, officially proclaimed that Neville would now be known as the *Kingdom of Neville*. The meeting the discussion leading up to the signing of the [[Pink and Purple Treaty]] which constituted a formalisation of the alliance between the Kingdom of Neville and the [[Remy Republic]].
 
 # Climate
 Residents of Neville, namely Arvi, have complained that it is just constantly raining in Neville.
