@@ -4,11 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "ad99773520c4ee22",
+        "id": "01b0419fe62deebb",
         "type": "tabs",
         "children": [
           {
-            "id": "5c7ca8b1b7d219b1",
+            "id": "dd914003601f34ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Remy Republic.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3e5b88a3661dd99b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Mushroom War.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "69373380f7149bb5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Arvi Tower.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a1a28eb61d82120b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,31 +56,19 @@
             }
           },
           {
-            "id": "4aa8794ace2db00e",
+            "id": "294d010854da0e6e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Great Mangrove War.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "405d2c4896c6bdca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Layon.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -103,7 +127,7 @@
       {
         "id": "cb676db07f241dfb",
         "type": "tabs",
-        "dimension": 72.3076923076923,
+        "dimension": 66.25,
         "children": [
           {
             "id": "2c075f1d0c461ce9",
@@ -111,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Neville.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Neville.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/HATA.md"
+                "file": "articles/Neville.md"
               }
             }
           }
@@ -161,7 +185,7 @@
       {
         "id": "253cdfe11ca9f976",
         "type": "tabs",
-        "dimension": 27.692307692307693,
+        "dimension": 33.75,
         "children": [
           {
             "id": "5b4aaa9e87dec23e",
@@ -169,11 +193,11 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Neville.md",
                 "options": {
-                  "collapse-filter": true,
+                  "collapse-filter": false,
                   "search": "",
-                  "localJumps": 1,
+                  "localJumps": 2,
                   "localBacklinks": true,
                   "localForelinks": true,
                   "localInterlinks": false,
@@ -192,7 +216,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.25883865621816293,
+                  "scale": 0.18462326225858158,
                   "close": true
                 }
               }
@@ -216,43 +240,43 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "405d2c4896c6bdca",
+  "active": "a1a28eb61d82120b",
   "lastOpenFiles": [
-    "images/Remy burns tobytopia.png",
-    "articles/HATA.md",
-    "articles/Great Mangrove War.md",
-    "images/Remy on the podium in new mangrovia - 2023-01-06.png",
-    "images/Remy removes mangrovepox 2023-01-06.png",
+    "articles/Layon.md",
+    "images/Archie Bridge South Side 2023-07-14.png",
+    "images/Archie Bridge North Side 2023-07-14.png",
+    "images/Archie Bridge 2023-07-14.png",
     "articles/Neville.md",
-    "articles/Arvi.md",
-    "articles/Fletcher Quadratic.md",
-    "articles/(meta) Hatapedia Changelog.md",
-    "articles/Billzoplace.md",
-    "articles/Che Forguera.md",
-    "articles/Limedye Oil Rig.md",
-    "articles/Mangrovepox.md",
-    "articles/Holden.md",
-    "articles/Billzo Shoom.md",
-    "articles/Fortugal.md",
-    "articles/Toby.md",
-    "articles/United Nations.md",
-    "articles/Remy.md",
-    "articles/Tobytopia.md",
+    "articles/Mushroom War.md",
     "articles/Remy Republic.md",
-    "articles/Zombitopian Junta.md",
-    "articles/Flagrant Fowls.md",
-    "articles/Korolarachi.md",
+    "articles/Arvi Tower.md",
+    "articles/Treaty of No (2022).md",
+    "articles/Billzo Shoom.md",
+    "articles/Toby.md",
+    "articles/Tobytopia.md",
+    "articles/Jasper.md",
+    "articles/Arvi.md",
+    "articles/Boxing Matchbox War.md",
+    "images/remy stands atop arvi tower with white banners 2023-01-15.png",
+    "images/holden burns remy's home sweet home.png",
+    "images/Pasted image 20230709041113.png",
+    "images/holden burns arvi tower.png",
+    "articles/No.md",
     "articles/Scammington.md",
-    "articles/Scammington Bar.md",
-    "articles/Anna.md",
-    "articles/Election Night Shooting.md",
-    "images/contents of jasper's inheritance.png",
-    "images/jasper dead.png",
-    "images/explosions in the un.png",
-    "images/jasper and remy sit opposite to toby in the unhq.png",
-    "images/jasper remy and toby negotiate.png",
-    "images/toby announces intentions to kill himself a third time.png",
-    "images/toby assassinates himself with a firework at the unhq.png",
+    "articles/Operation Yellow Brick Road.md",
+    "images/Pasted image 20230709041132.png",
+    "images/Pasted image 20230709041127.png",
+    "images/Pasted image 20230709040923.png",
+    "articles/Swamp of Secrets.md",
+    "UN Resolution 1.md",
+    "articles/Great Mangrove War.md",
+    "articles/Remy.md",
+    "articles/Flagrant Fowls.md",
+    "articles/(meta) Hatapedia Changelog.md",
+    "articles/Zombitopian Junta.md",
+    "articles/HATA.md",
+    "articles/Fletcher Quadratic.md",
+    "articles/Billzoplace.md",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",
