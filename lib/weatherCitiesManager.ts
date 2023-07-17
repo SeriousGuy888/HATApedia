@@ -72,8 +72,15 @@ const masterCityList: { [id: string]: City } = {
   neville: {
     weatherSource: "Volgograd",
     display: {
-      name: "Neville",
-      country: "City of Neville",
+      name: "Layon",
+      country: "Kingdom of Neville",
+    },
+  },
+  mountain_base: {
+    weatherSource: "Calgary",
+    display: {
+      name: "Mountain Base",
+      country: "Holdentopia, Incorporated",
     },
   },
 }
