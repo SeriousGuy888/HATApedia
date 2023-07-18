@@ -44,7 +44,7 @@ const masterCityList: { [id: string]: City } = {
   billzoplace: {
     weatherSource: "Thunder Bay",
     display: {
-      name: "Billzoplace",
+      name: "Billzoplace City",
       country: "Billzoplace City State",
     },
   },
@@ -69,7 +69,7 @@ const masterCityList: { [id: string]: City } = {
       country: "International Zone",
     },
   },
-  neville: {
+  layon: {
     weatherSource: "Volgograd",
     display: {
       name: "Layon",
