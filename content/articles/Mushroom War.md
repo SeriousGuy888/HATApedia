@@ -186,6 +186,10 @@ A few days later, on `2023-07-13`, Arvi and Remy signed the [[Pink and Purple Tr
 # Total Casualty Count
 The following is a **low-end estimate** for the total number of casualties sustained by each party involved, obtained by adding together the [[#Casualties for the Auze Campaign]], the [[#Casualties for the Remyan Invasion of Archie Bridge]], and the [[#Casualties for the Raid on No]].
 
+There were at least a total of
+- 61 casualties including the raiders
+- 10 casualties excluding the raiders
+
 ## Remy Republic
 **3 casualties**
 
@@ -207,6 +211,8 @@ The following is a **low-end estimate** for the total number of casualties susta
 - [[Holden]], 6 times during the Raid on No
 
 ## Raiders
+**≥51 casualties**
+
 All of the raiders were killed.
 
 - Between 51 and 83 raiders.
