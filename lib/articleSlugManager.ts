@@ -99,7 +99,7 @@ export async function getBacklinksTo(slug: string) {
   const slugMap = await getSlugMap()
 
   const backlinks =
-    map[slug].map((slug) => ({
+    map[slug]?.map((slug) => ({
       slug,
       title: slugMap[slug].replace(/\.md$/, ""),
     })) ?? []
