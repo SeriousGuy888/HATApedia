@@ -57,8 +57,8 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
           ${isTocOpen ? "block" : "hidden"}
           md:block
           
-          overflow-y-scroll h-full
-          md:overflow-y-hidden md:h-fit
+          overflow-y-auto h-full
+          md:h-auto md:max-h-[85dvh]
 
           w-full left-0
           max-h-[65%] z-30
@@ -121,7 +121,6 @@ function renderHeadingLinks(nodes: TocNode[]): ReactNode {
 
 const TocLink: NextPage<{ node: TocNode }> = ({ node }) => {
   const [highlighted] = useHighlighted(node.id)
-
   return (
     <p
       className={`text-xs ${
