@@ -63,7 +63,8 @@ He also placed signs outside the west entrance to the bridge, listing his demand
 
 > Arvi, my demands are clear[:] **return my mushroom island back to me**[.] If you fail to do so, the Archie [B]ridge will remain Remyan land[.] This is my peaceful way of solving this mistake of yours[.] Do not increase tensions further[.]
 > 
-> [S]igned[,] RemyHemy
+> [S]igned[,]
+> RemyHemy
 > The Glorious Leader
 > 
 > PS[:] If Anna needs mushrooms, she should look in a dark oak fo[r]est. OR START A MUSHROOM FARM!
