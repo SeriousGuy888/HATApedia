@@ -175,7 +175,7 @@ They attached the following message to their apology:
 > 
 > hm
 
-## *Status Quo Ante Bellum*
+## Status Quo Ante Bellum
 After the war, Arvi and Remy made a verbal agreement to return all captured territories. Remy would later remove his banners from [[Layon#Archie Bridge]] and replaced the Nevillian banner on [[Auze]] once more with the Remyan banner.
 
 No formal treaty was ever signed; the verbal agreement is the only agreement made.
