@@ -84,28 +84,32 @@ const ArticlePage: NextPage<Props> = ({
           </aside>
         </section>
 
-        <hr className={hrStyle} />
+        {backlinks.length > 0 && (
+          <>
+            <hr className={hrStyle} />
 
-        <section id="_backlinks" className="max-w-full w-full">
-          <h2 className="text-3xl font-bold mb-2">Backlinks</h2>
-          <p className="pb-8">
-            <em>{title}</em> is also mentioned (linked) elsewhere on HATApedia
-            in the following articles:
-          </p>
+            <section id="_backlinks" className="max-w-full w-full">
+              <h2 className="text-3xl font-bold mb-2">Backlinks</h2>
+              <p className="pb-8">
+                <em>{title}</em> is also mentioned (linked) elsewhere on
+                HATApedia in the following articles:
+              </p>
 
-          <ul className="list-disc list-inside grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-y-0 gap-x-4 prose dark:prose-invert max-w-none w-full">
-            {backlinks.map((backlink) => (
-              <li
-                key={backlink.slug}
-                className="whitespace-nowrap text-ellipsis overflow-clip min-w-0 my-1"
-              >
-                <Link href={`/articles/${backlink.slug}`}>
-                  {backlink.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+              <ul className="list-disc list-inside grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-y-0 gap-x-4 prose dark:prose-invert max-w-none w-full">
+                {backlinks.map((backlink) => (
+                  <li
+                    key={backlink.slug}
+                    className="whitespace-nowrap text-ellipsis overflow-clip min-w-0 my-1"
+                  >
+                    <Link href={`/articles/${backlink.slug}`}>
+                      {backlink.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </>
+        )}
       </div>
     </>
   )
