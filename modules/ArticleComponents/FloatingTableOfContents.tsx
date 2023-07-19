@@ -21,7 +21,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
   }
 
   return (
-    <motion.aside
+    <motion.section
       initial={{ x: 75, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.2 }}
@@ -46,7 +46,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
       <div
         className={`
           fixed bottom-0
-          md:sticky md:top-24 md:self-start
+          md:static
         
           bg-gray-200 dark:bg-gray-900
           md:bg-transparent md:dark:bg-transparent 
@@ -74,7 +74,7 @@ const FloatingTableOfContents: NextPage<{ nodes: TocNode[] }> = ({ nodes }) => {
         </div>
         {renderHeadingLinks(nodes)}
       </div>
-    </motion.aside>
+    </motion.section>
   )
 }
 

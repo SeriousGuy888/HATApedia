@@ -1,6 +1,10 @@
 import fs from "fs/promises"
 import path from "path"
-import { getAllSlugs, getArticleFileContent } from "./articlesApi"
+import {
+  getAllSlugs,
+  getArticleFileContent,
+  getArticleMetadata,
+} from "./articlesApi"
 import { unified } from "unified"
 import remarkParse from "remark-parse"
 import { getOutlinkList } from "../plugins/remark-wikilink-syntax"
@@ -92,5 +96,13 @@ async function getBacklinksForAllArticles() {
 
 export async function getBacklinksTo(slug: string) {
   const map = await getBacklinksForAllArticles()
-  return map[slug] ?? []
+  const slugMap = await getSlugMap()
+
+  const backlinks =
+    map[slug].map((slug) => ({
+      slug,
+      title: slugMap[slug].replace(/\.md$/, ""),
+    })) ?? []
+
+  return backlinks
 }
