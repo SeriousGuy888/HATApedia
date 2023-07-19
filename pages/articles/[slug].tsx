@@ -52,7 +52,7 @@ const ArticlePage: NextPage<Props> = ({
           />
         )}
       </Head>
-      <div className="py-8 max-w-[90vw] lg:max-w-[75vw] xl:max-w-screen-lg flex flex-col gap-12">
+      <div className="py-8 w-[90vw] lg:w-[75vw] xl:w-screen-lg flex flex-col gap-12">
         <section className="md:grid grid-cols-[3fr_1fr] gap-8" id="_top">
           <div className="max-w-prose min-w-0">
             <header>
