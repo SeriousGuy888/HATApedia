@@ -194,6 +194,7 @@ The following is a **low-end estimate** for the total number of casualties susta
   - Anonymous mooshroom
   - [[Liam Forg Ashwin]] *(later revived)*
   - [[Billzo Caterpillar]] *(later revived)*
+- At least 3 milkings of residents of Auze without consent
 
 ## City of Neville
 **1 casualty**
