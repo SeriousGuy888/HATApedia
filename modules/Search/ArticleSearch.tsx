@@ -34,10 +34,10 @@ const SearchBar = () => {
           submitIcon: "hidden",
         }}
       />
-      <div>
+      <div className="overflow-x-clip">
         <Pagination
           classNames={{
-            root: "mt-8 select-none flex justify-center",
+            root: "my-8 select-none flex justify-center max-w-full",
             list: "flex gap-1",
             item: "rounded-2xl w-8 h-8 text-center text-gray-600 dark:text-white flex items-center [&>*]:flex-1",
             selectedItem: "bg-blue-500 text-white",
@@ -45,6 +45,7 @@ const SearchBar = () => {
             previousPageItem: "mr-4",
             nextPageItem: "ml-4",
           }}
+          padding={2}
         />
         <Hits
           hitComponent={Hit}
