@@ -71,6 +71,7 @@ const ArticlePage: NextPage<Props> = ({
               initial={{ y: 150, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4 }}
+              key={fileName}
             >
               <MDXRemote {...mdxSource} components={MDXComponents as any} />
             </motion.article>
