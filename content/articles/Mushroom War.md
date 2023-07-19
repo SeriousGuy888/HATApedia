@@ -105,7 +105,7 @@ Arvi did not fold to Remy's demands, instead resolving to form a coalition with 
 
 ## Triggering of the Raid
 
-At approximately `00:15` on `2023-07-09`, [[Arvi]], [[Anna]], and [[Holden]], together forming a *<ruby>Triple Trouble Tower<rt>they were sitting on each other's heads</rt></ruby>* arrived in [[No]] via the nether portal in the [[Wheat Sacrifice Shrine]]. Although it was not their original intention, their arrival immediately triggered a pillager raid on No as Anna was unintentionally carrying the Bad Omen status effect.
+At approximately `00:15` on `2023-07-09`, [[Arvi]], [[Anna]], and [[Holden]], together forming a *Triple Trouble Tower* (they were sitting on each other's heads) arrived in [[No]] via the nether portal in the [[Wheat Sacrifice Shrine]]. Although it was not their original intention, their arrival immediately triggered a pillager raid on No as Anna was unintentionally carrying the Bad Omen status effect.
 
 The [[Remy|Glorious Leader]] was notified of this raid by the [[Billzo Shoom|God of News]] as the Triple Trouble Tower was crossing Fluffy Bridge. Upon noticing the raid bossbar, he was reportedly very unhappy with the actions of <ruby>Holden and the Nevillians<rt>This is not a band name.</rt></ruby>.
 
