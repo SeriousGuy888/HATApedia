@@ -215,7 +215,7 @@ There were at least a total of
 
 All of the raiders were killed.
 
-- Between 51 and 83 raiders.
+- Between 51 and 83 raiders based on the Minecraft Wiki.
   - At least 4 of them were ravagers
     - At least 1 ravager was ridden by an evoker
   - At least 1 witch
