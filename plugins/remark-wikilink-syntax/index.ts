@@ -1,6 +1,6 @@
 import { findAndReplace } from "mdast-util-find-and-replace"
 import { Image, Link } from "mdast"
-import type { Plugin, Transformer } from "unified"
+import type { Plugin } from "unified"
 import { sluggify } from "../../utils/sluggify"
 import { slug as githubAnchorSlug } from "github-slugger"
 import sizeOf from "image-size"
@@ -43,76 +43,106 @@ const wikilinkSyntax: Plugin<[Options?], mdast.Root> = (
     existingPageNames: [],
   },
 ) => {
-  return (tree) => {
+  return (tree, file) => {
     // regex to find wikilinks
     // Optional exclamation at start + [[something between brackets]]
     const linkRegex = /!?\[\[.*?\]\]/g
 
-    findAndReplace(tree, linkRegex, (wikilink: string) => {
-      const linkElems = extractLinkElements(wikilink)
-      if (!linkElems) {
-        return null
-      }
+    findAndReplace(
+      tree,
+      linkRegex,
+      /**
+       * @param wikilink The string matched by the regex -- for example "![[something]]"
+       */
+      (wikilink: string) => {
+        const linkElems = extractLinkElements(wikilink)
+        if (!linkElems) {
+          return null
+        }
 
-      const { isImage, pageName, altText, headingAnchor } = linkElems
+        const { isImage, pageName, altText, headingAnchor } = linkElems
 
-      if (isImage) {
-        if (headingAnchor) {
-          console.warn(
-            `Heading anchors are not supported for images: ${wikilink}. Ignoring anchor.`,
+        if (isImage) {
+          return getImageNode(wikilink, pageName, altText, headingAnchor)
+        } else {
+          return getLinkNode(
+            pageName,
+            altText,
+            headingAnchor,
+            options.existingPageNames,
           )
         }
-
-        const imageSize = sizeOf(`./public/images/content/${pageName}`)
-
-        const imgNode: Image = {
-          type: "image",
-          url: pageName,
-          alt: altText,
-          title: altText,
-          data: {
-            hProperties: {
-              className: "wikilink-image",
-              width: imageSize.width,
-              height: imageSize.height,
-            },
-          },
-        }
-
-        return imgNode
-      } else {
-        const pageSlug: string = pageName ? sluggify(pageName) : ""
-        const href = `${pageSlug}${headingAnchor ? "#" + headingAnchor : ""}`
-
-        // If pageSlug is empty, it means the link is to the current page, so don't make it red.
-        // If pageSlug is not empty, check if it's in the list of existing pages,
-        // and if it does not exist, then make it red.
-        let isRedLink = false
-        if (pageSlug && !options.existingPageNames.includes(pageSlug)) {
-          isRedLink = true
-        }
-
-        const linkNode: Link = {
-          type: "link",
-          url: href,
-          children: [
-            {
-              type: "text",
-              value: altText,
-            },
-          ],
-          data: {
-            hProperties: {
-              // make link red if page doesn't exist
-              className: isRedLink ? "redLink" : "",
-            },
-          },
-        }
-
-        return linkNode
-      }
-    })
+      },
+    )
   }
 }
 
 export default wikilinkSyntax
+
+function getImageNode(
+  wikilink: string,
+  fileName: string,
+  altText: string,
+  headingAnchor: string,
+): Image {
+  if (headingAnchor) {
+    console.warn(
+      `Heading anchors are not supported for images: ${wikilink}. Ignoring anchor.`,
+    )
+  }
+
+  const imageSize = sizeOf(`./public/images/content/${fileName}`)
+
+  const imgNode: Image = {
+    type: "image",
+    url: fileName,
+    alt: altText,
+    title: altText,
+    data: {
+      hProperties: {
+        className: "wikilink-image",
+        width: imageSize.width,
+        height: imageSize.height,
+      },
+    },
+  }
+
+  return imgNode
+}
+
+function getLinkNode(
+  pageName: string,
+  altText: string,
+  headingAnchor: string,
+  existingPageNames: string[],
+): Link {
+  const pageSlug: string = pageName ? sluggify(pageName) : ""
+  const href = `${pageSlug}${headingAnchor ? "#" + headingAnchor : ""}`
+
+  // If pageSlug is empty, it means the link is to the current page, so don't make it red.
+  // If pageSlug is not empty, check if it's in the list of existing pages,
+  // and if it does not exist, then make it red.
+  let isRedLink = false
+  if (pageSlug && !existingPageNames.includes(pageSlug)) {
+    isRedLink = true
+  }
+
+  const linkNode: Link = {
+    type: "link",
+    url: href,
+    children: [
+      {
+        type: "text",
+        value: altText,
+      },
+    ],
+    data: {
+      hProperties: {
+        // make link red if page doesn't exist
+        className: isRedLink ? "redLink" : "",
+      },
+    },
+  }
+
+  return linkNode
+}
