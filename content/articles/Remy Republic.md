@@ -41,6 +41,10 @@ The territories of the Remy Republic are as follows:
 - [[Cocoa Bean Cove]]
 - [[Edmonton]] (formerly Cave Place)
 - [[Floridanot]]
+- [[Auze]]
+
+### Former Territories
+[[Layon#Archie Bridge|Archie Bridge]] was briefly proclaimed to be a territory of the Remy Republic during the [[Mushroom War]] under the name of the *Territory of Archie*.
 
 # Government
 The Remy Republic government is organised as a federal parliamentary republic.

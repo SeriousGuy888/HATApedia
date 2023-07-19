@@ -10,12 +10,15 @@ The City of <ruby>Layon<rt>/ˈleɪ.jɑn/</rt></ruby> is the capital city and, as
 ## Chartering of the City of Layon
 The City of Layon was officially established on `2023-07-14` by [[Arvi]], the Doomslayer Nine Thousand of the Kingdom of Neville.
 
-Arvi defined the boundaries of the city to effectively be everything that had so far then been built in Neville. This included all structures on the hill — both sides of Archie Bridge — but not the area below where a waterfall and further structures were planned.
+Arvi defined the boundaries of the city to effectively be everything that had so far then been built in Neville. This included all structures on the hill — both sides of [[#Archie Bridge]] — but not the area below where a waterfall and further structures were planned.
 
-![[Archie Bridge 2023-07-14.png]]
-![[Archie Bridge North Side 2023-07-14.png]]
-![[Archie Bridge South Side 2023-07-14.png]]
 
 # Builds
 
 ![[Neville 2023-07-05.png]]
+
+## Archie Bridge
+
+![[Archie Bridge 2023-07-14.png]]
+![[Archie Bridge North Side 2023-07-14.png]]
+![[Archie Bridge South Side 2023-07-14.png]]
