@@ -41,7 +41,7 @@ function getHeadings(node: Root): TocNode[] {
 }
 
 function addID(node: Heading, slugger: GithubSlugger): void {
-  node.data = node.data || {}
+  node.data ??= {}
   node.data.hProperties = {
     id: slugger.slug((node.children[0] as any)?.value),
   }
