@@ -31,6 +31,9 @@ There is occasionally also a sizable snow golem population, although they tend t
 ## Founding
 The City of Neville was first founded on `2023-04-07` by [[Arvi]] when he first created the city's wheat field. [[Remy]] at one point accused Arvi of having built his wheat field with wheat seeds stolen from [[No]]. Arvi denied this.
 
+## Mushroom War
+From `2023-07-08` to `2023-07-09`, Neville fought in the [[Mushroom War]] against the [[Remy Republic]]. The war did not change anything in the end, and Neville would end up signing the [[Pink and Purple Treaty|PP Treaty]] with Remy just a few days later.
+
 ## Establishment of the Capital
 Main article: [[Layon#Chartering of the City of Layon]]
 

@@ -27,7 +27,7 @@ This era is also when No got its name — when [[Billzo Shoom]] requested that T
 During the era of Remyan rule over No, the area has been the site of many attacks, wars, or coup attempts.
 - [[Mangrovepox]]
 - [[Boxing Matchbox War]]
-- [[Raid on No]]
+- [[Mushroom War#Raid on No]]
 
 # Industry
 no is a big wheat field
