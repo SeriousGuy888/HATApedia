@@ -96,7 +96,7 @@ const ArticlePage: NextPage<Props> = ({
             {backlinks.map((backlink) => (
               <li
                 key={backlink.slug}
-                className="whitespace-nowrap text-ellipsis overflow-clip min-w-0"
+                className="whitespace-nowrap text-ellipsis overflow-clip min-w-0 my-1"
               >
                 <Link href={`/articles/${backlink.slug}`}>
                   {backlink.title}
