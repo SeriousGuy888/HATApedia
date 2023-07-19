@@ -1,15 +1,20 @@
-import { findAndReplace } from "mdast-util-find-and-replace"
-import { Image, Link } from "mdast"
 import type { Plugin } from "unified"
+import { findAndReplace } from "mdast-util-find-and-replace"
+import { visit } from "unist-util-visit"
+import { Image, Link, Root, Text } from "mdast"
 import { sluggify } from "../../utils/sluggify"
 import { slug as githubAnchorSlug } from "github-slugger"
 import sizeOf from "image-size"
 
-import type * as mdast from "mdast"
-
 interface Options {
   existingPageNames: string[]
 }
+
+/**
+ * regex to find wikilinks
+ * Optional exclamation at start + [[something between brackets]]
+ */
+const wikilinkRegex = /!?\[\[.*?\]\]/g
 
 const extractLinkElements = (wikilink: string) => {
   // Capture groups:
@@ -38,42 +43,31 @@ const extractLinkElements = (wikilink: string) => {
   return { isImage, pageName, altText, headingAnchor }
 }
 
-const wikilinkSyntax: Plugin<[Options?], mdast.Root> = (
+const wikilinkSyntax: Plugin<[Options?], Root> = (
   options: Options = {
     existingPageNames: [],
   },
 ) => {
   return (tree, file) => {
-    // regex to find wikilinks
-    // Optional exclamation at start + [[something between brackets]]
-    const linkRegex = /!?\[\[.*?\]\]/g
+    findAndReplace(tree, wikilinkRegex, (matchedStr: string) => {
+      const linkElems = extractLinkElements(matchedStr)
+      if (!linkElems) {
+        return null
+      }
 
-    findAndReplace(
-      tree,
-      linkRegex,
-      /**
-       * @param wikilink The string matched by the regex -- for example "![[something]]"
-       */
-      (wikilink: string) => {
-        const linkElems = extractLinkElements(wikilink)
-        if (!linkElems) {
-          return null
-        }
+      const { isImage, pageName, altText, headingAnchor } = linkElems
 
-        const { isImage, pageName, altText, headingAnchor } = linkElems
-
-        if (isImage) {
-          return getImageNode(wikilink, pageName, altText, headingAnchor)
-        } else {
-          return getLinkNode(
-            pageName,
-            altText,
-            headingAnchor,
-            options.existingPageNames,
-          )
-        }
-      },
-    )
+      if (isImage) {
+        return getImageNode(matchedStr, pageName, altText, headingAnchor)
+      } else {
+        return getLinkNode(
+          pageName,
+          altText,
+          headingAnchor,
+          options.existingPageNames,
+        )
+      }
+    })
   }
 }
 
@@ -145,4 +139,36 @@ function getLinkNode(
   }
 
   return linkNode
+}
+
+/**
+ * Get an array of all the slugs to which there are wikilinks to
+ * in the given tree (article content)
+ */
+export function getOutlinkList(tree: Root) {
+  // set of all slugs to which there are wikilinks to
+  const outlinks = new Set<string>()
+  
+  // loop through the tree and find all wikilinks in text nodes, and add them to the list of outlinks
+  visit(tree, "text", testForWikilink)
+
+  function testForWikilink(node: Text) {
+    const matches = node.value.match(wikilinkRegex)
+
+    if (matches) {
+      matches.forEach((match) => {
+        const linkElems = extractLinkElements(match)
+        if (!linkElems || linkElems.isImage) {
+          return
+        }
+
+        const { pageName } = linkElems
+        if (pageName) {
+          outlinks.add(sluggify(pageName))
+        }
+      })
+    }
+  }
+
+  return Array.from(outlinks)
 }

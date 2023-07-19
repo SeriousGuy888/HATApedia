@@ -40,11 +40,11 @@ interface ArticleMetadata extends ArticlePreview {
 
 const articlesDir = path.join(process.cwd(), "/content/articles/")
 
-export const getAllSlugs = async () => {
+export async function getAllSlugs() {
   return Object.keys(await getSlugMap())
 }
 
-const getArticleFileContent = async (slug: string) => {
+export async function getArticleFileContent(slug: string) {
   const slugMap = await getSlugMap()
   const fileName = slugMap?.[slug]
 

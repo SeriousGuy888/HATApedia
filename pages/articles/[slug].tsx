@@ -11,23 +11,24 @@ import MDXComponents from "../../modules/ArticleComponents/MDXComponents"
 import type { TocNode } from "../../plugins/remark-heading-tree"
 import FloatingTableOfContents from "../../modules/ArticleComponents/FloatingTableOfContents"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
+import { getBacklinksTo } from "../../lib/articleSlugManager"
 import { motion } from "framer-motion"
 
 interface Props {
-  mdxSource: MDXRemoteSerializeResult
-  excerpt: string
-  tocHeadings: TocNode[]
-  fileName: string
+  article: {
+    mdxSource: MDXRemoteSerializeResult
+    excerpt: string
+    tocHeadings: TocNode[]
+    fileName: string
+  }
+  backlinks: string[]
 }
 
 const ArticlePage: NextPage<Props> = ({
-  mdxSource,
-  excerpt,
-  tocHeadings,
-  fileName,
+  article: { mdxSource, excerpt, tocHeadings, fileName },
+  backlinks,
 }) => {
   const frontmatter = mdxSource.frontmatter as unknown as ArticlePreview
-
   const title = frontmatter.title ?? fileName.replace(/.mdx?$/, "")
 
   return (
@@ -84,6 +85,8 @@ export async function getStaticProps({
 }: {
   params: { slug: string }
 }): Promise<GetStaticPropsResult<Props>> {
+  const backlinks = await getBacklinksTo(slug)
+
   const article = await getArticle(slug)
   if (!article) {
     return {
@@ -92,7 +95,7 @@ export async function getStaticProps({
   }
 
   return {
-    props: article,
+    props: { article, backlinks },
   }
 }
 
