@@ -1,3 +1,9 @@
+
+# 2023-07-19
+
+## Added Backlinks
+Articles on HATApedia are extensively hyperlinked together. Now, you will find a section at the bottom of each article with links to articles that have links to it. This allows for easier navigation between related topics.
+
 # 2023-07-05
 
 ## Added Timeline Component
