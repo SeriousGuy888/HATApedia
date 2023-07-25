@@ -47,9 +47,15 @@ The murdered mooshroom's family as well as several of the milked mooshrooms have
 |   Civilian Deaths |                 |             1             |
 | Civilian Injuries |                 | ≥3 milked without consent |
 
+## Remyan Reactions
+
+Finally coming online on Discord, [[Remy]] discovered the news about the Nevillian and headed directly to [[Hawainot]] to meet with his top general, [[Fletcher Quadratic]] in order to discuss plans to retake the island. The plan they came up with was called [[Operation Yellow Brick Road]].
+
+The operation did not end up going ahead as the conflict had been resolved before it could be executed, although Remy did, at multiple occasions, consider ordering the operation to begin.
+
 # Remyan Occupation of Archie Bridge
 
-Finally coming online on Discord, [[Remy]] discovered the news about the Nevillian invasion and decided to retalliate. At approximately `22:45`, the Glorious Leader gathered supplies from his [[Remy's Home Sweet Home|Home Sweet Home]] and stepped into the nether portal in the [[Wheat Sacrifice Shrine]].
+Deciding to retalliate, at approximately `22:45`, the [[Remy|Glorious Leader]] gathered supplies from his [[Remy's Home Sweet Home|Home Sweet Home]] and stepped into the nether portal in the [[Wheat Sacrifice Shrine]].
 
 ## Invasion
 
