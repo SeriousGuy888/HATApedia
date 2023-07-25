@@ -190,6 +190,16 @@ The Glorious Leader made the following speech on 2023-04-10 regarding the events
 > 
 > The Remyan military will be commanded to patrol and keep the Remy Republic safe. As a final warning, those who betray the family that is the Remy Republic during the state of emergency shall be punished in Remyan court. That is all I have to say. Thank you, and goodnight.
 
+## Holden's Coup Attempt
+*Main article: [[Boxing Matchbox War]]*
+
+After a boxing match with [[Holden]] ended in chaos and Remy was murdered by [[Anna]] over a copyright dispute regarding the drip applied to his armour, Holden, with some help from Anna, was nearly able to seize control of the Remy Republic.
+
+## Mushroom War
+*Main article: [[Mushroom War]]*
+
+After a [[Neville|Nevillian]] invasion of [[Auze]], the Remy Republic retalliated by occupying [[Layon#Archie Bridge|Archie Bridge]]. The conflict then further escalated, with [[Arvi]], [[Anna]], and [[Holden]] arriving in [[No]] and accidentally triggering a pillager raid.
+
 # Sports
 The Remy Republic has sports I think.
 
