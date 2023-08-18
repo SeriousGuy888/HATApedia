@@ -1,3 +1,11 @@
+# 2023-08-18
+
+## Added Inline Image Viewer
+You can now click on images in articles to view them in a larger size without leaving the page. The previewer also displays the alt text as a description of the image below the image itself.
+
+You can still view the original by clicking the `View Original` link.
+
+![[Remy Portrait.png|A portrait of RemyHemy, the Glorious Leader of the Remy Republic and former captain of the Flagrant Fowls bobble league team.]]
 
 # 2023-07-19
 

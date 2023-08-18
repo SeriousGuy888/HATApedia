@@ -15,6 +15,8 @@ import { getBacklinksTo } from "../../lib/articleSlugManager"
 import { motion } from "framer-motion"
 import cntl from "cntl"
 import Link from "next/link"
+import ImageViewer from "../../modules/ArticleComponents/ImageViewer/ImageViewer"
+import { ImageViewerProvider } from "../../modules/ArticleComponents/ImageViewer/ImageViewerProvider"
 
 interface Props {
   article: {
@@ -54,34 +56,35 @@ const ArticlePage: NextPage<Props> = ({
       </Head>
       <div className="py-8 w-[90vw] max-w-[90vw] lg:w-[75vw] lg:max-w-[75vw] xl:w-screen-lg xl:max-w-screen-lg flex flex-col gap-12">
         <section className="md:grid grid-cols-[3fr_1fr] gap-8" id="_top">
-          <div className="max-w-prose min-w-0">
-            <header>
-              <section>
-                <h1 className="text-4xl sm:text-5xl font-bold mb-2 print:text-black break-words">
-                  {title}
-                </h1>
-                <p className="text-gray-600 dark:text-gray-400 uppercase text-sm break-words">
-                  {frontmatter.subtitle}
-                </p>
-              </section>
-              <hr className={hrStyle} />
-            </header>
-            <motion.article
-              className={`prose prose-base dark:prose-invert print:prose-print ${styles.prose}`}
-              initial={{ y: 150, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.4 }}
-              key={fileName}
-            >
-              <MDXRemote {...mdxSource} components={MDXComponents as any} />
-            </motion.article>
-          </div>
-
-          <aside className="min-w-0 min-h-0">
-            <div className="md:sticky md:top-24">
-              <FloatingTableOfContents nodes={tocHeadings} />
+          <ImageViewerProvider>
+            <div className="max-w-prose min-w-0">
+              <header>
+                <section>
+                  <h1 className="text-4xl sm:text-5xl font-bold mb-2 print:text-black break-words">
+                    {title}
+                  </h1>
+                  <p className="text-gray-600 dark:text-gray-400 uppercase text-sm break-words">
+                    {frontmatter.subtitle}
+                  </p>
+                </section>
+                <hr className={hrStyle} />
+              </header>
+              <motion.article
+                className={`prose prose-base dark:prose-invert print:prose-print ${styles.prose}`}
+                initial={{ y: 150, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.4 }}
+                key={fileName}
+              >
+                <ImageViewer />
+                <MDXRemote {...mdxSource} components={MDXComponents as any} />
+              </motion.article>
             </div>
-          </aside>
+
+            <aside className="min-w-0 min-h-0">
+              <FloatingTableOfContents nodes={tocHeadings} />
+            </aside>
+          </ImageViewerProvider>
         </section>
 
         {backlinks.length > 0 && (

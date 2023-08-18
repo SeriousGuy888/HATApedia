@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Neville.md",
+                "file": "articles/(meta) Hatapedia Changelog.md",
                 "mode": "source",
                 "source": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Neville.md",
+                "file": "articles/(meta) Hatapedia Changelog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Neville.md",
+                "file": "articles/(meta) Hatapedia Changelog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Neville.md"
+                "file": "articles/(meta) Hatapedia Changelog.md"
               }
             }
           }
@@ -193,7 +193,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Neville.md",
+                "file": "articles/(meta) Hatapedia Changelog.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -242,13 +242,13 @@
   },
   "active": "a1a28eb61d82120b",
   "lastOpenFiles": [
+    "articles/Remy Republic.md",
+    "articles/Neville.md",
     "articles/Layon.md",
     "images/Archie Bridge South Side 2023-07-14.png",
     "images/Archie Bridge North Side 2023-07-14.png",
     "images/Archie Bridge 2023-07-14.png",
-    "articles/Neville.md",
     "articles/Mushroom War.md",
-    "articles/Remy Republic.md",
     "articles/Arvi Tower.md",
     "articles/Treaty of No (2022).md",
     "articles/Billzo Shoom.md",
