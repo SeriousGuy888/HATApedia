@@ -13,6 +13,7 @@ No Sleep Café was first conceptualised in early August when [[Billzo Shoom|Bill
 On `2023-08-11`, moderately wonky sketches were produced which contained the city in its current state as well as where buildings might be placed in the future. The sketch page also included an early design for the No Sleep Café (although yet to be so named) from which the building was later designed in Minecraft.
 
 ![[2023-08-11 Billzoplace City Sketches.jpg]]
+![[No Sleep Cafe 2023-08-18.png]]
 
 [[Billzo Shoom|Billzo]] spent the following few days in his Minecraft architecture testing world and designing the café itself, which deviated slightly from the sketches. These were then put into a schematic and built on [[HATA]] itself with the help of Litematica.
 ## Opening
