@@ -6,15 +6,6 @@ import Link from "next/link"
 
 const ImageViewer: NextPage = () => {
   const { image, setImage: setImg } = useContext(ImageViewerContext)
-
-  // Prevent scrolling when image viewer is open
-  useEffect(() => {
-    const html = document.querySelector("html")
-    if (html) {
-      html.style.overflow = image ? "hidden" : "auto"
-    }
-  }, [image])
-
   const { src, alt, title, width, height } = image ?? {}
 
   return (
