@@ -44,3 +44,5 @@ Fletcher Quadratic was celebrated among those he led for the successful invasion
 His contributions were regarded as vital to the Remy Republic's acquisition of its first ever cocoa beans — an essential ingredient in the process for making pogstries.
 
 Unfortunately, Quadratic turned out to not be very proficient at paperwork, on account of barely being literate. This was significant because he was forced to fill out several sheets of forms and information sheets in order to formalise the annexation of Western Hawainot, leading to him and his troops being unable to participate in the failed [[Remy Republic#Jungle Island Incident|invasion of the jungle island]], as the Glorious Leader was forced to attempt the invasion entirely alone.
+
+During the [[Mushroom War]], Fletcher Quadratic, with Remy, drew up plans for [[Operation Yellow Brick Road]].
