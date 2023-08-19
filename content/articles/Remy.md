@@ -64,8 +64,12 @@ Remy's political decisions are also called into question by this issue of legiti
 
 # Achievements
 
+## 2023-08-15 - Comedy Performance
+On `2023-08-15`, Remy performed at the first ever comedy session at the [[No Sleep Café]]'s opening ceremony. Several people laughed at his jokes.
+
 ## 2023-08-16 - First Netherite
 
 On `2023-08-16`, Remy went netherite mining and acquired his first ever netherite ingot obtained in survival mode.
+
 ![[Remy finds ancient debris 2023-08-16.png]]
 ![[Remy's first netherite ingot 2023-08-16.png]]
