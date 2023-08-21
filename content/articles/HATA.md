@@ -6,6 +6,23 @@ aliases:
 - HATAsurv
 - HATAwar
 ---
+# What is HATA?
+
+HATA is a Minecraft survival multiplayer server.
+
+## Origins of the Name
+
+HATA stands for
+
+|       | Correct       | Incorrect |
+| -----:|:------------- |:--------- |
+| **H** | Holden's      | Holden    |
+| **A** | Awesome       | Anna      |
+| **T** | Tyrannosaurus | Toby      |
+| **A** | Adventure     | Arvi      |
+.
+
+It is unclear exactly where the tyrannosaurus is on the server. There have so far been zero T-rex sightings recorded on the server.
 
 # History
 HATA, originally known as HATAwar, first opened on `2022-12-02`.
