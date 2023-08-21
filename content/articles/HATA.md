@@ -8,7 +8,7 @@ aliases:
 ---
 
 # History
-HATA, originally known as HATAwar, first opened on 2022-12-02.
+HATA, originally known as HATAwar, first opened on `2022-12-02`.
 
 ```infobox-timeline
 title: History of HATA
@@ -38,5 +38,12 @@ events:
 
 # Logo
 
-Epique: 
+This is the current official logo of Hata. It was made by [[Billzo Shoom|Bill]] in [Witeboard](https://witeboard.com/) in approximately ten seconds. It is highly epique, and it depicts a green tyrannosaurus, symbolising the tyrannosaurus in [[Holden]]'s awesome adventure.
+
+The logo was officially adopted by [[Toby]], as admin of the server, on `2023-06-20` at `23:58` EDT.
+
 ![[epic hata logo.png]]
+
+This is a draft of a logo that [[Toby]] made. It was not adopted, because it is not as epique.
+
+![[Toby hata logo 2023-06-20.png]]
