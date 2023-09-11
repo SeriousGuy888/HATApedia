@@ -1,5 +1,5 @@
 import Head from "next/head"
-import ArticleSearch from "../../modules/Search/ArticleSearch"
+import ArticleSearch from "../../modules/AlgoliaSearch/ArticleSearch"
 
 const ArticlesDirectory = () => {
   return (

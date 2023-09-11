@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import useSWR from "swr"
 import { ArticlePreview } from "../../lib/articlesApi"
-import LinkCard from "../Search/LinkCard"
+import LinkCard from "../AlgoliaSearch/LinkCard"
 import { getImgWikilinkSrc } from "../../lib/wikilinkParser"
 
 const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
