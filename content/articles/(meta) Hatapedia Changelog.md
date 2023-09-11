@@ -1,3 +1,8 @@
+# 2023-09-10
+
+## Added Ctrl+K to Search
+You can now press <kbd>Ctrl</kbd><kbd>K</kbd> to bring up a search pallette that allows you to search for articles by their title.
+
 # 2023-08-18
 
 ## Added Inline Image Viewer
