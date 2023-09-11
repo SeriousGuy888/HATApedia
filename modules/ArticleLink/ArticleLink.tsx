@@ -19,7 +19,7 @@ const ArticleLink: NextPage<{ slug?: string }> = ({ slug }) => {
     <LinkCard
       title={article.title}
       subtitle={article.subtitle}
-      link={`./article/${article.slug}`}
+      link={`/articles/${article.slug}`}
       imageSrc={src}
     />
   )
