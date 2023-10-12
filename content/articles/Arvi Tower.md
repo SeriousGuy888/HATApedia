@@ -1,5 +1,7 @@
 ---
 subtitle: Destroyed Tower in No
+date_created: 2023-07-09
+date_modified: 2023-10-12
 ---
 
 # History
@@ -17,6 +19,7 @@ events:
 ```
 
 ## Construction
+
 Arvi Tower was built by [[Arvi]] on `2022-12-29` while [[Billzo Shoom|Bill]] was in the process of expanding the wheat fields in [[No]] while [[Remy]] was on vacation under authority of the [[Treaty of No (2022)]].
 
 > i made a very bad tower
@@ -32,6 +35,7 @@ The first instance of this was on `2023-01-15`, when Remy delivered a speech on 
 ![[remy stands atop arvi tower with white banners 2023-01-15.png]]
 
 ## Destruction
+
 Arvi Tower was destroyed during the [[Boxing Matchbox War]] on `2023-07-06` during [[Holden]]'s pyromania.
 
 ![[holden burns arvi tower.png]]

@@ -2,6 +2,8 @@
 title: The Great Mangrove War
 subtitle: conflict between Tobytopia and the Remy Republic
 image: "[[Remy on the podium in new mangrovia - 2023-01-06.png]]"
+date_created: 2023-06-27
+date_modified: 2023-10-12
 ---
 
 The Great Mangrove War was a conflict between the [[Remy Republic]] and [[Tobytopia]] (more specifically, [[Holden]] from Tobytopia). The disagreement was over which nation should have sovereignty over [[New Mangrovia]] (then referred to by Remy as Remyan Mangrovia).
@@ -44,7 +46,6 @@ events:
     end: 2023-06-14
 ```
 
-
 # Catalyst
 
 ## Remy Claims the Mangrove
@@ -70,6 +71,7 @@ Holden and Remy disagreed on who had the right to own the territory.
 - Remy maintained that "[[finders, keepers; losers, weepers]]" was the official policy position of the [[Remy Republic]] and offered to sell the territory to Holden for a price — specifically the Dragon Egg, which was in the possession of [[Tobytopia]].
 
 ## Tobytopian Position
+
 Holden, being a Tobytopian subject, was backed by [[Tobytopia]]. On 2023-01-04, [[Toby]], the then untitled leader of Tobytopia, officially claimed Remyan Mangrovia as Tobytopian territory.
 
 ![[2023-01-04 HATA Map.png]]

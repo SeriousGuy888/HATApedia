@@ -1,6 +1,8 @@
 ---
 title: The Flagrant Fowls
 subtitle: Remyan National Bobble League Team
+date_created: 2023-06-19
+date_modified: 2023-10-12
 ---
 
 The Flagrant Fowls, from Discord's Bobble League, is the national team of the [[Remy Republic]]. They have been well renowned as an impressive, worthy, and GLORIOUS team.

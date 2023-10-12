@@ -1,6 +1,8 @@
 ---
 subtitle: Remyan General and Leader of the Island Commune
 image: "[[Fletcher Quadratic Portrait.png]]"
+date_created: 2023-05-30
+date_modified: 2023-10-12
 ---
 
 Fletcher Quadratic is one of [[the Voices]] in Remy's head, physically manifesting as a villager.
@@ -16,11 +18,13 @@ facts:
 # Career
 
 ## Castaway (unknown to 2023-01-26)
+
 Fletcher Quadratic was a member of a group of villagers who fell off and swam away from the [[Limedye Oil Rig]]. His group swam southwards and ended up stranded on [[Equalsosceles Island]] in central eastern [[Hawainot]].
 
 This party of approximately sixteen villagers then set up camp on the island, surviving off the land and writing "SOS" with their beds in hopes of being rescued.
 
 ## Leader of the Island Commune of Marooned and Stranded Villagers (2023-01-26 to present)
+
 On 2023-01-26, the [[Remy|Glorious Leader]] paid a visit to the marooned villagers' camp on [[Equalsosceles Island]]. After he asked to speak to the leader of the villagers' party, it was Fletcher Quadratic who stepped forth and negotiated with the Glorious Leader.
 
 After some discussion, Remy, gracious, benevolent, generous, and glorious as he is, agreed to offer asylum and refugee status to the stranded villagers, allowing them to stay in the Remy Republic. The villagers were reportedly "pogging extremely hard" in response to this encounter.
@@ -30,6 +34,7 @@ Fletcher Quadratic became extremely popular among his villager peers after negot
 ![[Fletcher Quadratic meets the Glorious Leader 2023-01-26.png]]
 
 ## General in the Remyan Army (2023-01-27 to present)
+
 Fletcher Quadratic reportedly received great favour from the Glorious Leader himself.
 
 > The villagers over there are very nice. The leader [of the Island Commune], Fletcher Quadratic and I go way back.

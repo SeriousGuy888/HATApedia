@@ -2,6 +2,8 @@
 title: The Remy Republic
 subtitle: Federal Parliamentary Republic
 image: "[[Remy Republic Banner.png]]"
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 The Remy Republic a state that was originally founded by [[Remy]] on the southern 1000 block worldborder of the server map.
@@ -25,6 +27,7 @@ The Remy Republic is subdivided into provinces and territories.
 ![[Provinces and Territories of the Remy Republic 2023-02-15.png]]
 
 ## Provinces
+
 Provinces in the Remy Republic are full parts of the country, and they are included and represented in the Duck Nest, the upper house of the Remyan legislature.
 
 The provinces of the Remy Republic are as follows:
@@ -35,6 +38,7 @@ The provinces of the Remy Republic are as follows:
 - [[New Mangrovia]] (formerly Remyan Mangovia)
 
 ## Territories
+
 Territories are non-core parts of the Remy Republic. They are not colonies, per se, on account of not being called that, but they do not receive representation in the Duck Nest.
 
 The territories of the Remy Republic are as follows:
@@ -44,15 +48,18 @@ The territories of the Remy Republic are as follows:
 - [[Auze]]
 
 ### Former Territories
+
 [[Layon#Archie Bridge|Archie Bridge]] was briefly proclaimed to be a territory of the Remy Republic during the [[Mushroom War]] under the name of the *Territory of Archie*.
 
 # Government
+
 The Remy Republic government is organised as a federal parliamentary republic.
 Each province sends elected representatives to the Remyan parliament.
 
 The Parliament of the Remy Republic is a bicameral legislature, with an upper house — the *Duck Nest* — and a lower house — the *Villager Council*.
 
 ## Election
+
 *See also: [[Election Night Shooting]]*
 
 ![[First_Parliament_of_the_Remy_Republic.png|Result of the election: Remy gets another term as Glorious Leader, SBP wins both houses of parliament]]
@@ -61,6 +68,7 @@ The election for the Villager Council occurred and concluded on 2023-02-16.
 The election for the Duck Nest occurred on 2023-02-16, although a second vote for the Duck Nest continued until 21:00 on the following day, 2023-02-17.
 
 ### Duck Nest
+
 The following are the candidates who ran in the first Remy Republic election for seats in the Duck Nest. The Slime Ball Party was able to achieve a full sweep of a victory in the election, at least in the Duck Nest.
 
 |                   |        Slime Ball Party (SBP)         | Magma Cream Party (MCP) | Bloc Nobecois (BNQ) |
@@ -76,6 +84,7 @@ It is worth noting that the vote was originally undecided, with the vote counts 
 ![[Remy Republic Duck Nest Election Result Map.png]]
 
 ### Villager Council
+
 The Slime Ball Party also won a majority in the Villager Council, although it was not a full sweep, unlike the Duck Nest. The final vote **percentages** for the Villager Council were as follows:
 
 | Province/Territory    | SBP    | MCP   | BNQ   | Ind   | 
@@ -92,9 +101,11 @@ The Slime Ball Party also won a majority in the Villager Council, although it wa
 ![[Remy Republic Villager Council Election Result Map.png]]
 
 # Diplomacy
+
 The Remy Republic maintains diplomatic relations with a number of other nations.
 
 ## Treaties
+
 - [[Treaty of No (2022)]]
 - [[Treaty of No (2023)]]
 - [[Remy Sea Trade Bloc Agreement]]
@@ -104,15 +115,18 @@ The Remy Republic maintains diplomatic relations with a number of other nations.
 # History
 
 ## The Great Mangrove War
+
 Please see: [[Great Mangrove War]]
 
 ## The Border Disorder
+
 > Mr Tobachov, tear down that wall!
 
 As the Glorious Leader, Remy, spoke these immortal words, the HATA worldborder
 trembled in fear and retreated outwards.
 
 ### Western Hawainot Offensive
+
 <Youtube videoId="0rIYGpypZ0k" />
 
 The Remy Republic initiated a military operation led by General [[Fletcher Quadratic]] and swiftly invaded the western islands of the Hawainot Archipelago. Remy was then able to collect his jungle wood and cocoa beans so that he can finally begin producing his pogstries.
@@ -122,6 +136,7 @@ The military operation unfortunately was in fact very rushed in its planning and
 ![[western_hawainot_offensive.png|Map of the Remyan advance into Western Hawainot]]
 
 #### Acquisition of Southern No
+
 After planting his flag in Western Hawainot and acquiring his so coveted cocoa beans, Remy also claimed Southern No. This is an area of land that was originally labelled as being part of No on the first worldmap released, but tragically, in reality, lay outside the confines of the 1000 block worldborder.
 
 [[Toby|Toby from Tobytopia]] had threatened to claim Southern No before Remy could during the days leading up to the Border Disorder, but these threats did not come to fruition.
@@ -139,9 +154,11 @@ The invasion was repulsed by the defending Tobytopian forces. The Glorious Leade
 ![[jungle_island_incident.png|Map of disputed jungle island]]
 
 #### Claiming of the Jungle Mainland
+
 After the glorious defeat on the jungle island, and on the suggestion of Toby, Remy rowed his boat westward again, and claimed the coastline of the large landmass further to the west of the jungle island. This landmass also had a large area of sparse jungle on it.
 
 ## Mangrovepox Outbreak in No
+
 *Please see: [[Mangrovepox]]*
 
 ## Night of Mischief
@@ -179,6 +196,7 @@ During an emergency meeting of the Duck Nest, the Villager Council, and Remyan m
 The alliance between Toby's [[Tobytopia]], [[Holden's Regime]], and Arvi's [[Neville]] was given the name "the Allies of [Tromos](https://en.wiktionary.org/wiki/%CF%84%CF%81%CF%8C%CE%BC%CE%BF%CF%82)" by the Remyan government. The Glorious Leader then declaring the creation of the Allies of [Asphaleia](https://en.wiktionary.org/wiki/%CE%B1%CF%83%CF%86%CE%AC%CE%BB%CE%B5%CE%B9%CE%B1), which was touted as a counter to the Allies of Tromos. This growing polarisation between factions in the region raised concerns about future conflicts and their potential impact on the stability of the area.
 
 ### Speech Following the Night of Mischief
+
 The Glorious Leader made the following speech on 2023-04-10 regarding the events of the previous night.
 
 > [!cite] Citizens of the Remy Republic,
@@ -191,20 +209,25 @@ The Glorious Leader made the following speech on 2023-04-10 regarding the events
 > The Remyan military will be commanded to patrol and keep the Remy Republic safe. As a final warning, those who betray the family that is the Remy Republic during the state of emergency shall be punished in Remyan court. That is all I have to say. Thank you, and goodnight.
 
 ## Holden's Coup Attempt
+
 *Main article: [[Boxing Matchbox War]]*
 
 After a boxing match with [[Holden]] ended in chaos and Remy was murdered by [[Anna]] over a copyright dispute regarding the drip applied to his armour, Holden, with some help from Anna, was nearly able to seize control of the Remy Republic.
 
 ## Mushroom War
+
 *Main article: [[Mushroom War]]*
 
 After a [[Neville|Nevillian]] invasion of [[Auze]], the Remy Republic retalliated by occupying [[Layon#Archie Bridge|Archie Bridge]]. The conflict then further escalated, with [[Arvi]], [[Anna]], and [[Holden]] arriving in [[No]] and accidentally triggering a pillager raid.
 
 # Sports
+
 The Remy Republic has sports I think.
 
 ## Bobble League
+
 The national team of the Remy Republic is the [[Flagrant Fowls]].
 
 ## Football
+
 The Remy Republic reportedly plans to build a stadium in Scammington for "the good type" of football.

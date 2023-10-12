@@ -2,6 +2,8 @@
 title: Tobytopia
 subtitle: Totalitarian Kratocracy
 image: "[[Tobytopia Banner.png]]"
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
@@ -17,6 +19,7 @@ facts:
 ```
 
 # Territories
+
 - [[Swamp of Secrets]] (AKA Tobytopian Mangrovia)
 - Unnamed Jungle Island
 - [[Tobytopian Southern Territories]]
@@ -24,6 +27,7 @@ facts:
 # Territorial Disputes
 
 ## New Mangrovia
+
 An area of mangrove trees planted by [[Holden]] in what used to be the savanna.
 This area was at some point claimed by Remy, but this claim was disputed by Toby and
 Holden since Holden, a Tobytopian, planted the trees.
@@ -34,6 +38,7 @@ but Holden would be awarded with the title of Founder of New Mangrovia.
 [[Remy Republic#The Great Mangrove War|More info in the Remy Republic article]]
 
 ## Unnamed Jungle Island
+
 This island, which is currently under Tobytopian sovereignty, was once part of a
 dispute with Remy. Remy had intended to claim this island, but forgotten, and Toby
 decided to claim it first.
@@ -135,6 +140,7 @@ On 2023-04-29, General Forguera officially met with [[Remy]], Glorious Leader of
 > All times in this record are approximate (based on the publication times of news articles) as the DiscordSRV plugin was broken and not logging the chat when these events took place.
 
 ### The Murder
+
 At approximately 02:20 EDT on 2023-05-07, [[Holden]] staged a coup d'état by killing Toby in his cave base.
 
 Holden reportedly calculated this murder meticulously. Toby had for some reason been on a single heart of health when he came down the elevator. Holden then started punching Toby, getting him down to half a heart, after which Toby logged out of the server in an attempt to prevent himself from being punched to death by Holden, probably hoping that Holden would just go away. Holden, in an act of genius, simply waited for Toby to log back on in the same place. After a few minutes, Toby did, in fact, log back in, and Holden was able to brutally beat Toby to death as soon as that happened.
@@ -157,6 +163,7 @@ facts:
 ```
 
 ### Toby's Countercoup
+
 While Holden left to build his city, Toby had respawned and prepared to retake the throne from Holden. He gathered any gear he had remaining from his ender chest and storage system, including invisiblity potions, a crossbow, and four [[big damage missile|big damage missiles]] so that he could conduct a retalliatory assassination on Holden.
 
 Toby soon tracked down Holden's exact location — the beach village on the northern coast of the nation. Toby rowed his boat to the village and splashed an invisibility potion on himself. He snuck closer to the village house in which Holden was hiding out and waited for Holden to come out of the front door. At approximately 02:30 EDT, as Holden stepped out of the door, Toby fired his big damage missile and instantly killed the usurper.
@@ -168,6 +175,7 @@ Toby picked up Holden's inventory off of the ground, reacquiring his gear and po
 > Back in power, baby!
 
 ### Aftermath
+
 Toby formally rerenamed the nation back to *Tobytopia*, making the following declarations regarding the administration of the nation:
 
 1. The entire country, including the palace in the jungle, is to be under Tobytopian sovereignty.
@@ -182,6 +190,7 @@ Toby then flew to Holden's jungle palace, barring Holden from ever visiting the 
 ![[Holdentopia residents are not allowed here unless to pray.png]]
 
 ## Zomboss's Coup
+
 Please see: [[Zombitopian Junta|Zomboss's Coup]]
 
 # Structures
@@ -195,6 +204,7 @@ Please see: [[Zombitopian Junta|Zomboss's Coup]]
 ![[Remy sneaks around Toby's Palace 2023-04-26.png]]
 
 ## Toby's Cave
+
 Toby's cave is located directly below the base above it.
 
 ![[Toby's Cave 2023-03-31.png|The main chamber of the cave]]

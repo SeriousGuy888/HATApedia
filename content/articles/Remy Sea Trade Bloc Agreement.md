@@ -1,5 +1,7 @@
 ---
 subtitle: Bilateral Trade Deal
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 | Signing Date | Signatories                        |

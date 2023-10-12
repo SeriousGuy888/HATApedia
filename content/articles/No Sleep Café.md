@@ -1,5 +1,7 @@
 ---
 subtitle: Café in Billzoplace City
+date_created: 2023-08-16
+date_modified: 2023-10-12
 ---
 
 No Sleep Café is a building on the [[Billzoplace]] City north coast.
@@ -16,10 +18,13 @@ On `2023-08-11`, moderately wonky sketches were produced which contained the cit
 ![[No Sleep Cafe 2023-08-18.png]]
 
 [[Billzo Shoom|Billzo]] spent the following few days in his Minecraft architecture testing world and designing the café itself, which deviated slightly from the sketches. These were then put into a schematic and built on [[HATA]] itself with the help of Litematica.
+
 ## Opening
+
 No Sleep Café first opened for business on `2023-08-15`.
 
 ### First Comedy Performance
+
 On `2023-08-15`, the day the café opened, a number of people (namely [[Remy]], [[Billzo Shoom|Bill]], [[Hoang]], [[Arvi]], and [[Adam]]) came to the café to attend a comedy performance by Remy.
 
 [[Toby]] felt left out because he could not properly attend on account of being in Winnipeg and having an unreliable internet connection. He logged onto the server but was unable to properly move around due to these connection issues. His [[SlashSpec|spec head]] could be seen in the café, indicating his presence in spirit. Toby ultimately had to have someone screenshare the comedy performance.

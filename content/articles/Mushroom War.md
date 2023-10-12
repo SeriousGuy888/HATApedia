@@ -1,6 +1,8 @@
 ---
 title: The Mushroom War
 subtitle: War Between Neville and the Remy Republic
+date_created: 2023-07-08
+date_modified: 2023-10-12
 ---
 
 > [!tip] Timezone
@@ -11,9 +13,11 @@ subtitle: War Between Neville and the Remy Republic
 The Mushroom War was a brief war between the [[Remy Republic]] and the [[Neville|City of Neville]] *(this was before Neville changed its official name to the Kingdom of Neville)*. [[Holdentopia, Incorporated]] also took part in the war as part of a coalition with Neville during the [[#Raid on No]]. The war took place from approximately `2023-07-08` at `22:25` to approximately `00:48` the next day.
 
 # Background
+
 [[Auze]] is a territory of the Remy Republic — a mushroom island — [claimed](https://discord.com/channels/1046302463143194709/1048416479093198908/1116973796545544203) by the [[Remy|Glorious Leader]] on `2023-06-10` during his adventure to see the wizard, specifically the Wonderful Wizard of Oz.
 
 # Nevillian Invasion of Auze
+
 On `2023-07-08`, [[Arvi]], the Doomslayer Nine Thousand of the City of Neville, was exploring the ocean east of (what is now known as) [[Layon]] and, receiving word from [[Billzo Shoom|Bill]] that he was near Auze, decided to make a visit to the island.
 
 ## Nevillian Landing
@@ -90,6 +94,7 @@ No casualties are known to have occurred, save for an allegedly [[Tobytopia|Toby
 ## Reactions
 
 ### Anna
+
 > ok remy fuck u
 > 
 > bros jealous of my bridge
@@ -97,6 +102,7 @@ No casualties are known to have occurred, save for an allegedly [[Tobytopia|Toby
 > ―[[Anna]], `2023-07-08` at `23:24`, (not yet having read the news about the [[#Nevillian Invasion of Auze]]). [Message Link](https://discord.com/channels/1046302463143194709/1046302463801692171/1127440080932442123)
 
 ### Arvi
+
 > Should have never invaded us
 >
 > …
@@ -104,7 +110,6 @@ No casualties are known to have occurred, save for an allegedly [[Tobytopia|Toby
 > There will be a lot of casualties now
 > 
 > ―[[Arvi]], `23:30` and `23:33` ([message link 1](https://discord.com/channels/1046302463143194709/1046302463801692171/1127441538016882810), [message link 2](https://discord.com/channels/1046302463143194709/1046302463801692171/1127442493571600424))
-
 
 # Raid on No
 
@@ -137,9 +142,11 @@ The pillagers brought in witches and <ruby>armoured vehicles<rt>ravagers</rt></r
 ![[Ravager in No 2023-07-09.png]]
 
 ## Other Defence Efforts
+
 Bill, the God of News also arrived, firing arrows and [[big damage missile|rockets]] into the fray.
 
 ## End of the Raid
+
 The raid continued until around `00:25`. Billzo trapped two pillagers in a boat outside the shrine, which Remy promised to torture comprehensively, but Holden stabbed them before Remy could do so.
 
 ![[End of Raid on No 2023-07-09.png]]
@@ -157,6 +164,7 @@ There were at least seven waves of raiders as the server was set to Hard mode ([
 # Resolution
 
 ## Revival Séance
+
 After the Raid on No was over, Remy took the <ruby>corpses<rt>villagermeat</rt></ruby> of [[Liam Forg Ashwin]] and [[Billzo Caterpillar]] to the Wheat Sacrifice Shrine and placed them atop the sacred revival flame. Uttering the required incantations to invoke their plot armour, the two villagers were brought back from the dead.
 
 Liam Forg Ashwin had come back with a <ruby>new set of drip<rt>cold biome villager clothing</rt></ruby> that he purchased during his time in the underworld, but Billzo Caterpillar was still wearing the same old plains villager clothes he had died in.
@@ -164,14 +172,17 @@ Liam Forg Ashwin had come back with a <ruby>new set of drip<rt>cold biome villag
 The two villagers then returned to their composters, put their straw hats on again, and got to replanting the wheat damaged in the raid.
 
 ## Flexagon's Firework Show
+
 To celebrate the victory over the raiders, [[Gerry Flexagon]], who was standing in the chicken pen, started setting off fireworks. [[Harry Toothbrush]] watched this firework show, but was not entirely paying attention, as he was simultaneously watching *Tom and Jerry* by the ruins of [[Arvi Tower]].
 
 ## Arvi and Anna's Apology
+
 At `00:48`, Arvi and Anna then had Bill mail some items to Remy as an apology for the raid.
 
 ![[Arvi and Anna's apology gift to Remy 2023-07-09.png]]
 
 They attached the following message to their apology:
+
 > we are sorry
 > 
 > kiss face
@@ -183,6 +194,7 @@ They attached the following message to their apology:
 > hm
 
 ## Who Won?
+
 The Mushroom War's resolution was one of *[status quo ante bellum](https://en.wikipedia.org/wiki/Status_quo_ante_bellum)*. Everything returned to the state it was in at the start of the war. Arvi claims the whole war was just a joke blown out of proportion, while Remy has expressed annoyance at constantly being disturbed by other nations.
 
 After the war, Arvi and Remy made a verbal agreement to return all captured territories. Remy would later remove his banners from [[Layon#Archie Bridge]] and replaced the Nevillian banner on [[Auze]] once more with the Remyan banner.
@@ -190,9 +202,11 @@ After the war, Arvi and Remy made a verbal agreement to return all captured terr
 No formal treaty was ever signed; the verbal agreement is the only agreement made.
 
 ## Pink and Purple Treaty
+
 A few days later, on `2023-07-13`, Arvi and Remy signed the [[Pink and Purple Treaty]], constituting a formal alliance between the [[Remy Republic]] and the, then newly renamed, [[Neville|Kingdom of Neville]].
 
 # Total Casualty Count
+
 The following is a **low-end estimate** for the total number of casualties sustained by each party involved, obtained by adding together the [[#Casualties for the Auze Campaign]], the [[#Casualties for the Remyan Invasion of Archie Bridge]], and the [[#Casualties for the Raid on No]].
 
 There were at least a total of
@@ -200,6 +214,7 @@ There were at least a total of
 - 10 casualties excluding the raiders
 
 ## Remy Republic
+
 **3 casualties**
 
 - No military casualties.
@@ -210,16 +225,19 @@ There were at least a total of
 - At least 3 milkings of residents of Auze without consent
 
 ## City of Neville
+
 **1 casualty**
 
 - [[Arvi]], once from fall damage once in preparation for the Raid on No
 
 ## Holdentopia, Incorporated
+
 **6 casualties**
 
 - [[Holden]], 6 times during the Raid on No
 
 ## Raiders
+
 **≥51 casualties**
 
 All of the raiders were killed.

@@ -1,6 +1,8 @@
 ---
 title: City of Layon
 subtitle: Capital of the Kingdom of Neville
+date_created: 2023-07-15
+date_modified: 2023-10-12
 ---
 
 The City of <ruby>Layon<rt>/ˈleɪ.jɑn/</rt></ruby> is the capital city and, as of writing, the sole city of the [[Neville|Kingdom of Neville]]. The City's name is derived from a [Tagalog word](https://en.wiktionary.org/wiki/layon#Tagalog) meaning "purpose; aim; objective".
@@ -8,10 +10,10 @@ The City of <ruby>Layon<rt>/ˈleɪ.jɑn/</rt></ruby> is the capital city and, as
 # History
 
 ## Chartering of the City of Layon
+
 The City of Layon was officially established on `2023-07-14` by [[Arvi]], the Doomslayer Nine Thousand of the Kingdom of Neville.
 
 Arvi defined the boundaries of the city to effectively be everything that had so far then been built in Neville. This included all structures on the hill — both sides of [[#Archie Bridge]] — but not the area below where a waterfall and further structures were planned.
-
 
 # Builds
 

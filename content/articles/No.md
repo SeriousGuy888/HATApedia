@@ -1,5 +1,7 @@
 ---
 subtitle: Province of the Remy Republic
+date_created: 2023-05-06
+date_modified: 2023-10-12
 ---
 
 # Builds
@@ -13,6 +15,7 @@ subtitle: Province of the Remy Republic
 # History
 
 ## Tobytopia Era
+
 Toby and Anna were there and they killed each other a bunch of times (for fun; recreational murder).
 
 Also """""[[Remy|someone]]""""" placed a sign that said "Toby is a stinky poo" in Tobytopia. This was reportedly because this """""someone""""" thought that [[Toby]] and [[Anna]] were getting too chummy.
@@ -20,6 +23,7 @@ Also """""[[Remy|someone]]""""" placed a sign that said "Toby is a stinky poo" i
 This era is also when No got its name — when [[Billzo Shoom]] requested that Toby name his land and was met with the answer of "No". Billzo thought this was an awfully strange name for a forest, but thought nothing of it, and labelled this place as No on the first map.
 
 ## Remy Republic Era
+
 [[Remy Republic]]
 
 ![[No 2022-12-04.png]]
@@ -30,6 +34,7 @@ During the era of Remyan rule over No, the area has been the site of many attack
 - [[Mushroom War#Raid on No]]
 
 # Industry
+
 no is a big wheat field
 
 look

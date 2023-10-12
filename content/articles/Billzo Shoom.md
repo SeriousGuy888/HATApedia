@@ -3,6 +3,8 @@ title: Billzoshoom
 subtitle: God of News
 image: "[[Billzo Portrait.png]]"
 aliases: Bill, Billzo
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 ```infobox-character

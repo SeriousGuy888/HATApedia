@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Boxing Matchbox War.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Boxing Matchbox War.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/HATA.md"
+                "file": "articles/Boxing Matchbox War.md"
               }
             }
           }
@@ -156,7 +157,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/HATA.md",
+                "file": "articles/Boxing Matchbox War.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -203,10 +204,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "dd914003601f34ca",
+  "active": "0d2687b7c6ec5272",
   "lastOpenFiles": [
+    "articles/Che Forguera.md",
     "articles/Boxing Matchbox War.md",
     "articles/HATA.md",
+    "articles/Hawainot.md",
     "articles/Mangrovepox.md",
     "images/Toby hata logo 2023-06-20.png",
     "articles/Remy Republic.md",
@@ -239,8 +242,6 @@
     "articles/Swamp of Secrets.md",
     "UN Resolution 1.md",
     "articles/Great Mangrove War.md",
-    "articles/Remy.md",
-    "articles/Zombitopian Junta.md",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",

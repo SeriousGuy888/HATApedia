@@ -1,5 +1,7 @@
 ---
 subtitle: Unbiased Jaspeur
+date_created: 2023-07-10
+date_modified: 2023-10-12
 ---
 
 ```infobox-character
@@ -11,7 +13,9 @@ facts:
 ```
 
 # Builds
+
 Jasper was the architect and builder of the [[Scammington Boxing Ring]].
 
 # Shenanigans
+
 Jasper was a key player in the [[Inheritance Incident]].

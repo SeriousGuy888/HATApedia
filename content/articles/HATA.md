@@ -3,9 +3,12 @@ title: HATA
 subtitle: Holden's Awesome Tyrannosaurus Adventure
 image: "[[epic hata logo.png]]"
 aliases:
-- HATAsurv
-- HATAwar
+  - HATAsurv
+  - HATAwar
+date_created: 2023-06-21
+date_modified: 2023-10-12
 ---
+
 # What is HATA?
 
 HATA is a Minecraft survival multiplayer server.
@@ -20,11 +23,13 @@ HATA stands for
 | **A** | Awesome       | [[Anna]]      |
 | **T** | Tyrannosaurus | [[Toby]]      |
 | **A** | Adventure     | [[Arvi]]      |
+
 .
 
 It is unclear exactly where the tyrannosaurus is on the server. There have so far been zero T-rex sightings recorded on the server.
 
 # History
+
 HATA, originally known as HATAwar, first opened on `2022-12-02`.
 
 ```infobox-timeline

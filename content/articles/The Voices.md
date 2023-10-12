@@ -1,18 +1,23 @@
 ---
 title: The Voices
 subtitle: THEY'RE NOT REAL THEY'RE NOT REAL THEY'RE NOT REAL
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 The Voices are an unknown entity that manifests as voices in the
 heads of certain people while they are playing on the [[HATA]] server.
 
 # Identity
+
 [[Toby]] (allegedly)
 
 # Interactions with Remy
+
 [[Remy]], the Glorious Leader of the [[Remy Republic|Remy Republic]], has been known to have interactions with these Voices.
 
 ## Netherrack Incident
+
 There was an incident where, one day, Remy started noticing that netherrack keeps appearing behind him whenever he opens chests, crafting tables, or furnaces.
 
 It is suspected that the placer of these netherrack blocks is, in fact, the Voices themselves, messing with Remy. Remy was, at the time, urged to pay no attention to these strange activities because the Voices are only real if you make them real.

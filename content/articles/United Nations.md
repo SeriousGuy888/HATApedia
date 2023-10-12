@@ -2,10 +2,11 @@
 title: United Nations
 subtitle: Supranational Organisation
 image: "[[United Nations Banner.png]]"
+date_created: 2023-05-01
+date_modified: 2023-10-12
 ---
 
 The United Nations is an organisation intended to solve international disputes and issues in a peaceful manner on the server.
-
 
 ```infobox-nation
 banner: "[[United Nations Banner.png]]"
@@ -34,4 +35,5 @@ Remy added chairs and a table, as well as ladders to get up and down.
 ![[unhq_portrait.png|Portrait of the first UN meeting]]
 
 # Impact
+
 The first ever meeting with all four nations present occurred on [[UN Meeting 2023-04-02|2023-04-02]].
