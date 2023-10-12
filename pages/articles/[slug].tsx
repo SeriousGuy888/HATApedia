@@ -37,6 +37,9 @@ const ArticlePage: NextPage<Props> = ({
 
   const hrStyle = cntl`my-8 border-t-[1] border-gray-200 dark:border-gray-700`
 
+  const dateCreated = new Date(frontmatter.dateCreated)
+  const dateModified = new Date(frontmatter.dateModified)
+
   return (
     <>
       <Head>
@@ -113,6 +116,23 @@ const ArticlePage: NextPage<Props> = ({
             </section>
           </>
         )}
+
+        <hr className={hrStyle} />
+
+        <div className="text-gray-600 dark:text-gray-400 text-xs flex justify-between flex-wrap">
+          <span>
+            Created{" "}
+            <time dateTime={dateCreated.toISOString()} className="font-bold">
+              {dateCreated.toLocaleDateString()}
+            </time>
+          </span>
+          <span>
+            Updated{" "}
+            <time dateTime={dateCreated.toISOString()} className="font-bold">
+              {dateModified.toLocaleDateString()}
+            </time>
+          </span>
+        </div>
       </div>
     </>
   )

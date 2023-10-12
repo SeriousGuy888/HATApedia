@@ -27,6 +27,8 @@ export interface ArticlePreview {
   title: string
   subtitle?: string
   image?: string
+  dateCreated: number
+  dateModified: number
 }
 interface ArticleMetadata extends ArticlePreview {
   timeline?: {
@@ -147,13 +149,15 @@ export async function getArticlePreview(slug: string) {
     return null
   }
 
-  const { title, subtitle, image } = metadata
+  const { title, subtitle, image, dateCreated, dateModified } = metadata
 
   return (await goodifyArticleData({
     slug,
     title,
     subtitle,
     image,
+    dateCreated: dateCreated.valueOf() ?? null,
+    dateModified: dateModified.valueOf() ?? null,
   })) as ArticlePreview
 }
 
@@ -163,7 +167,7 @@ export async function getArticleMetadata(slug: string) {
     return null
   }
   const { data } = matter(source)
-  const { title, subtitle, image, timeline } = data
+  const { title, subtitle, image, timeline, date_created, date_modified } = data
 
   const articleData: ArticleMetadata = await goodifyArticleData({
     slug,
@@ -171,6 +175,8 @@ export async function getArticleMetadata(slug: string) {
     subtitle,
     image: image ?? null,
     timeline,
+    dateCreated: date_created.valueOf() ?? null,
+    dateModified: date_modified.valueOf() ?? null,
   })
 
   return articleData

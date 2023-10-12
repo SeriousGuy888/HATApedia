@@ -20,6 +20,54 @@
             }
           },
           {
+            "id": "7230f0e7fbf7d8c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Floridanot.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "59e430fa8451fe8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Korolarachi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d420e639ded14bdb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Layon.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "52711916cb6eea9c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "articles/Mangrovepox.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "0d2687b7c6ec5272",
             "type": "leaf",
             "state": {
@@ -32,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -99,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Boxing Matchbox War.md",
+                "file": "articles/Mangrovepox.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Boxing Matchbox War.md",
+                "file": "articles/Mangrovepox.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Boxing Matchbox War.md"
+                "file": "articles/Mangrovepox.md"
               }
             }
           }
@@ -157,7 +205,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Boxing Matchbox War.md",
+                "file": "articles/Mangrovepox.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -204,11 +252,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0d2687b7c6ec5272",
+  "active": "52711916cb6eea9c",
   "lastOpenFiles": [
+    "articles/Layon.md",
+    "articles/Korolarachi.md",
     "articles/Che Forguera.md",
-    "articles/Boxing Matchbox War.md",
+    "articles/Floridanot.md",
     "articles/HATA.md",
+    "articles/Boxing Matchbox War.md",
     "articles/Hawainot.md",
     "articles/Mangrovepox.md",
     "images/Toby hata logo 2023-06-20.png",
@@ -219,7 +270,6 @@
     "articles/Billzo Shoom.md",
     "articles/Jasper.md",
     "articles/Mushroom War.md",
-    "articles/Layon.md",
     "articles/Arvi Tower.md",
     "articles/(meta) Hatapedia Changelog.md",
     "articles/Neville.md",
@@ -240,8 +290,6 @@
     "images/Pasted image 20230709041132.png",
     "images/Pasted image 20230709041127.png",
     "articles/Swamp of Secrets.md",
-    "UN Resolution 1.md",
-    "articles/Great Mangrove War.md",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",
