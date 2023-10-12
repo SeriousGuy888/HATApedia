@@ -128,7 +128,7 @@ const ArticlePage: NextPage<Props> = ({
           </span>
           <span>
             Updated{" "}
-            <time dateTime={dateCreated.toISOString()} className="font-bold">
+            <time dateTime={dateModified.toISOString()} className="font-bold">
               {dateModified.toLocaleDateString()}
             </time>
           </span>
