@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/Mangrovepox.md",
+                "file": "articles/Billzoplace.md",
                 "mode": "source",
                 "source": false
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Mangrovepox.md",
+                "file": "articles/Billzoplace.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Mangrovepox.md",
+                "file": "articles/Billzoplace.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Mangrovepox.md"
+                "file": "articles/Billzoplace.md"
               }
             }
           }
@@ -205,7 +205,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Mangrovepox.md",
+                "file": "articles/Billzoplace.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -254,6 +254,10 @@
   },
   "active": "52711916cb6eea9c",
   "lastOpenFiles": [
+    "images/billzoplace_2023-08-22.webp",
+    "articles/Billzoplace.md",
+    "images/Billzoplace-20231018152826409.webp",
+    "articles/Mangrovepox.md",
     "articles/Layon.md",
     "articles/Korolarachi.md",
     "articles/Che Forguera.md",
@@ -261,7 +265,6 @@
     "articles/HATA.md",
     "articles/Boxing Matchbox War.md",
     "articles/Hawainot.md",
-    "articles/Mangrovepox.md",
     "images/Toby hata logo 2023-06-20.png",
     "articles/Remy Republic.md",
     "articles/Emerald Woveyad.md",
@@ -286,10 +289,6 @@
     "images/holden burns arvi tower.png",
     "articles/No.md",
     "articles/Scammington.md",
-    "articles/Operation Yellow Brick Road.md",
-    "images/Pasted image 20230709041132.png",
-    "images/Pasted image 20230709041127.png",
-    "articles/Swamp of Secrets.md",
     "images/-- this folder is symlinked into the obsidian vault --",
     "images/__symlinked folder for obsidian__",
     "images/New Text Document.txt",

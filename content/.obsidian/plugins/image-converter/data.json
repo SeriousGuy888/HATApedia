@@ -1,0 +1,20 @@
+{
+  "autoRename": true,
+  "convertToWEBP": true,
+  "convertToJPG": false,
+  "convertToPNG": false,
+  "convertTo": "webp",
+  "quality": 0.75,
+  "attachmentLocation": "disable",
+  "attachmentSpecifiedFolder": "",
+  "attachmentSubfolderName": "",
+  "resizeMode": "None",
+  "autoNonDestructiveResize": "disabled",
+  "customSize": "",
+  "desiredWidth": 600,
+  "desiredHeight": 800,
+  "desiredLength": 800,
+  "resizeByDragging": false,
+  "resizeWithShiftScrollwheel": false,
+  "rightClickContextMenu": false
+}
