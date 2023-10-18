@@ -3,7 +3,7 @@ title: Billzoplace
 subtitle: Unitary One-Party Republic
 image: "[[Billzoplace Banner.png]]"
 date_created: 2023-06-19
-date_modified: 2023-10-12
+date_modified: 2023-10-18
 ---
 
 Billzoplace, also informally known as Billzonia, is the a city state based around the three-way intersection of the Remy Sea, the Sheapland River, and the Spawn River.
@@ -23,6 +23,8 @@ facts:
 Billzoplace City (*Billzoplace Urb* in Billzonian) refers to the city built in [[Sheapland]]. Its construction began in late February of 2023.
 
 ![[billzoplace_2023-03-02.jpg|Billzoplace, 2023-03-02]]
+
+![[billzoplace_2023-08-22.webp]]
 
 The architecture style of Billzoplace City is largely based on that of the district of Harka in [[oktosurv_theory|CheezSurv6]].
 
