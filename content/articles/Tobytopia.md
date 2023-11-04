@@ -13,8 +13,9 @@ to the northwest of Spawn. It was founded by [[Toby]].
 banner: "[[Tobytopia Banner.png]]"
 facts:
   ultimate kaiser of doom three thousand: Toby
-  capital: The DVD Player
-  motto: I'm your sexy mom; I'm a milf, Remy.
+  capital: Tobytown
+  motto: We hate zombies!
+  anthem: Bonfire by Childish Gambino
   founded: 2022-12-02
 ```
 
