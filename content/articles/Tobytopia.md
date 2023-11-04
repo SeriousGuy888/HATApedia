@@ -1,9 +1,9 @@
 ---
 title: Tobytopia
-subtitle: Totalitarian Kratocracy
+subtitle: Kratocracy
 image: "[[Tobytopia Banner.png]]"
 date_created: 2023-05-01
-date_modified: 2023-10-12
+date_modified: 2023-11-04
 ---
 
 Tobytopia is a nation situated deep within the the Swamp of Secrets, or the mangrove swamp
