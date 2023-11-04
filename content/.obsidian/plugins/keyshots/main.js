@@ -45,18 +45,21 @@ __export(plugin_exports, {
   default: () => KeyshotsPlugin
 });
 module.exports = __toCommonJS(plugin_exports);
-var import_obsidian6 = require("obsidian");
+var import_obsidian11 = require("obsidian");
 
 // src/mappings/hotkeys.ts
 var HotKey = (key, ...modifiers) => [{ key, modifiers }];
 var DEFAULT_MAP = {
   add_caret_down: HotKey("ArrowDown", "Mod", "Alt"),
   add_caret_up: HotKey("ArrowUp", "Mod", "Alt"),
+  better_insert_callout: HotKey("C", "Shift", "Alt"),
   change_keyshots_preset: HotKey("P", "Mod", "Shift"),
+  close_all_foldable_callouts: HotKey("L", "Shift", "Alt"),
   duplicate_line_down: HotKey("ArrowDown", "Shift", "Alt"),
   duplicate_line_up: HotKey("ArrowUp", "Shift", "Alt"),
   duplicate_selection_or_line: HotKey("D", "Mod", "Alt"),
   expand_line_selections: HotKey("E", "Alt"),
+  insert_table: HotKey("T", "Shift", "Alt"),
   insert_code_block: HotKey("`", "Mod", "Shift"),
   insert_line_above: HotKey("Enter", "Ctrl", "Shift"),
   insert_line_below: HotKey("Enter", "Shift"),
@@ -70,8 +73,12 @@ var DEFAULT_MAP = {
   multi_toggle_highlight: HotKey("H", "Mod", "Shift"),
   multi_toggle_italic: HotKey("I", "Mod", "Shift"),
   multi_toggle_strikethrough: HotKey("M", "Mod", "Shift"),
+  open_all_foldable_callouts: HotKey("O", "Shift", "Alt"),
   open_dev_tools: HotKey("F12"),
   open_keyshots_settings_tab: HotKey(",", "Mod", "Alt"),
+  replace_by_regex: HotKey("H", "Mod", "Alt"),
+  reverse_selected_lines: HotKey("R", "Alt"),
+  search_by_regex: HotKey("F", "Mod", "Alt"),
   select_all_word_instances: HotKey("L", "Mod", "Shift"),
   select_multiple_word_instances: HotKey("D", "Mod"),
   shuffle_selected_lines: HotKey("S", "Mod", "Shift", "Alt"),
@@ -82,6 +89,7 @@ var DEFAULT_MAP = {
   switch_keyshots_case_sensitivity: HotKey("I", "Mod", "Alt"),
   switch_line_numbers_setting: HotKey("N", "Mod", "Alt"),
   switch_readable_length_setting: HotKey("R", "Mod", "Alt"),
+  toggle_all_callouts_fold_state: HotKey("K", "Shift", "Alt"),
   toggle_case_jetbrains: HotKey("U", "Ctrl", "Shift"),
   toggle_kebabcase: HotKey("-", "Alt"),
   toggle_keyboard_input: HotKey("K", "Mod", "Shift"),
@@ -161,7 +169,7 @@ var DEFAULT_SETTINGS = {
 };
 
 // src/commands.ts
-var import_obsidian4 = require("obsidian");
+var import_obsidian9 = require("obsidian");
 
 // src/classes/editor-position-manipulator.ts
 var EditorPositionManipulator = class {
@@ -294,6 +302,11 @@ var EditorSelectionManipulator = class {
       const preCh = ((_b = txt.substring(0, this.anchor.ch).match(/[^ ()[\]{},;]+$/i)) != null ? _b : [""])[0].length;
       this.moveChars(-preCh, postCh);
     }
+    return this;
+  }
+  collapse() {
+    if (!this.isCaret())
+      this.head = this.anchor.clone();
     return this;
   }
   get linesCount() {
@@ -618,6 +631,7 @@ ${sel.getText()}
 \`\`\`
 `).moveLines(2).setChars(0).expand();
   });
+  editor.focus();
 }
 function addCaretsViaDoubleKey(plugin, ev) {
   if (!["ArrowUp", "ArrowDown"].includes(ev.key))
@@ -639,6 +653,62 @@ function insertOrdinalNumbering(editor) {
   SelectionsProcessing.selectionsProcessor(editor, void 0, (sel, index) => {
     return sel.replaceText((index + 1).toString(), true);
   });
+}
+function reverseSelectedLines(editor) {
+  SelectionsProcessing.selectionsProcessor(editor, (arr) => arr.filter((s) => !s.isCaret()), (sel) => {
+    const replaceSel = sel.asNormalized().expand();
+    replaceSel.replaceText(replaceSel.getText().split("\n").reverse().join("\n"));
+    return sel;
+  });
+}
+function insertCallout(editor, id) {
+  let moveLine2 = 0;
+  SelectionsProcessing.selectionsProcessor(editor, void 0, (sel) => {
+    sel.moveLines(moveLine2);
+    moveLine2 += sel.linesCount - 2;
+    return sel.normalize().replaceText(`
+>[!${id}]
+${sel.getText().split("\n").map((p) => "> " + p).join("\n")}
+`).moveLines(2).expand().moveChars(2, 0);
+  });
+  editor.focus();
+}
+function insertTable(editor, rows, column) {
+  SelectionsProcessing.selectionsProcessor(editor, void 0, (sel) => sel.normalize().replaceText(`
+|${"     |".repeat(column)}
+|${" --- |".repeat(column)}${("\n|" + "     |".repeat(column)).repeat(rows)}
+`).moveLines(1).moveChars(2));
+  editor.focus();
+}
+function replaceRegex(editor, regex, replacer, onlySelection) {
+  if (onlySelection)
+    SelectionsProcessing.selectionsReplacer(editor, (val) => val.replace(regex, replacer));
+  else
+    editor.setValue(editor.getValue().replace(regex, replacer));
+  editor.focus();
+}
+function selectByRegex(editor, regex, onlySelection) {
+  const selections = [];
+  if (onlySelection) {
+    EditorSelectionManipulator.listSelections(editor).forEach((sel) => {
+      Array.from(sel.getText().matchAll(regex)).forEach((value) => {
+        var _a;
+        const i = (_a = value.index) != null ? _a : 0;
+        selections.push(EditorSelectionManipulator.documentStart(editor).moveChars(sel.asNormalized().anchor.toOffset()).moveChars(i, i + value[0].length));
+      });
+    });
+  } else {
+    Array.from(editor.getValue().matchAll(regex)).forEach((value) => {
+      var _a;
+      const i = (_a = value.index) != null ? _a : 0;
+      selections.push(EditorSelectionManipulator.documentStart(editor).moveChars(i, i + value[0].length));
+    });
+  }
+  editor.setSelections(selections.map((v) => v.toEditorSelection()));
+  editor.focus();
+}
+function countRegexMatches(editor, regex, onlySelection) {
+  return (onlySelection ? EditorSelectionManipulator.listSelections(editor).map((s) => s.getText()) : [editor.getValue()]).map((v) => (v.match(regex) || []).length).reduce((part, a) => part + a, 0);
 }
 
 // src/components/ide-preset-modal.ts
@@ -826,6 +896,11 @@ var IDE_LABELS = {
     description: "Everything is blank, default preset when you install Keyshots",
     svg_icon_content: EMPTY_SVG
   },
+  "keyshots": {
+    name: "Keyshots Default Mappings",
+    description: "Hotkeys designed by creator of Keyshots that are 100% conflict free with Obsidian",
+    svg_icon_content: KEYSHOTS_SVG(32)
+  },
   "vscode": {
     name: "Visual Studio Code",
     description: "Compact text editor and light IDE for Web or Python development",
@@ -840,11 +915,6 @@ var IDE_LABELS = {
     name: "Microsoft Visual Studio",
     description: "IDE for making Windows desktop apps, or any other programs using C-Family languages or Visual Basic",
     svg_icon_content: VS_SVG
-  },
-  "keyshots": {
-    name: "Keyshots Default Mappings",
-    description: "Hotkeys designed by creator of Keyshots that are 100% conflict free with Obsidian",
-    svg_icon_content: KEYSHOTS_SVG(32)
   }
 };
 
@@ -859,10 +929,8 @@ var IDEPresetModal = class extends import_obsidian2.SuggestModal {
     return Object.values(IDE_LABELS).filter((v) => v.name.toLowerCase().includes(query.toLowerCase()));
   }
   async onChooseSuggestion(item, evt) {
-    this.plugin.settings.ide_mappings = Object.keys(IDE_LABELS).filter((f) => IDE_LABELS[f] === item)[0];
-    this.plugin.loadCommands();
+    await this.plugin.changePreset(Object.keys(IDE_LABELS).filter((f) => IDE_LABELS[f] === item)[0]);
     new import_obsidian2.Notice(`\u2705 Preset successfully changed to "${item.name}"!`);
-    await this.plugin.saveSettings();
   }
   renderSuggestion(value, el) {
     el.setCssProps({ "display": "flex", "gap": "10px", "align-items": "center" });
@@ -872,9 +940,6 @@ var IDEPresetModal = class extends import_obsidian2.SuggestModal {
     desc.createEl("small", { text: value.description }).setCssProps({ "opacity": "0.8" });
   }
 };
-
-// src/components/code-block-modal.ts
-var import_obsidian3 = require("obsidian");
 
 // src/mappings/prism-langs.ts
 var PRISM_LANGS = [
@@ -2074,13 +2139,33 @@ var PRISM_LANGS = [
   ].sort((a, b) => a.name.localeCompare(b.name))
 ];
 
+// src/components/abstract/callback-suggest-modal.ts
+var import_obsidian3 = require("obsidian");
+var CallbackSuggestModal = class extends import_obsidian3.SuggestModal {
+  constructor(app2, onSelectCallback) {
+    super(app2.app);
+    this.onSelectCallback = onSelectCallback;
+  }
+  onChooseSuggestion(item, evt) {
+    this.onSelectCallback(item, evt);
+  }
+};
+var CallbackFuzzySuggestModal = class extends import_obsidian3.FuzzySuggestModal {
+  constructor(app2, onSelectCallback) {
+    super(app2.app);
+    this.onSelectCallback = onSelectCallback;
+  }
+  onChooseItem(item, evt) {
+    this.onSelectCallback(item, evt);
+  }
+};
+
 // src/components/code-block-modal.ts
-var CodeBlockModal = class extends import_obsidian3.FuzzySuggestModal {
+var CodeBlockModal = class extends CallbackFuzzySuggestModal {
   constructor(plugin, onSelectCallback) {
-    super(plugin.app);
+    super(plugin, onSelectCallback);
     this.limit = 1e3;
     this.setPlaceholder("Choose a language that this code block will be written in...");
-    this.onSelectCallback = onSelectCallback;
   }
   getItemText(item) {
     return item.name;
@@ -2088,71 +2173,279 @@ var CodeBlockModal = class extends import_obsidian3.FuzzySuggestModal {
   getItems() {
     return PRISM_LANGS;
   }
-  onChooseItem(item, evt) {
-    this.onSelectCallback(item);
+};
+
+// src/components/callout-picker-modal.ts
+var import_obsidian4 = require("obsidian");
+var _CalloutPickerModal = class extends CallbackSuggestModal {
+  constructor(plugin, onSelectCallback) {
+    super(plugin, onSelectCallback);
+    this.setPlaceholder("Select one of the callouts... (callouts are searchable by it's id or aliases)");
+  }
+  getSuggestions(query) {
+    return _CalloutPickerModal.CALLOUTS.filter((ids) => ids.filter((id) => id.includes(query.toLowerCase())).length > 0).map((ids) => ids[0]);
+  }
+  renderSuggestion(value, el) {
+    import_obsidian4.MarkdownRenderer.renderMarkdown(`>[!${value}]`, el, "", new import_obsidian4.Component()).then(() => {
+      const callout = el.childNodes.item(0);
+      callout.setCssProps({ "margin": "0" });
+    });
+  }
+};
+var CalloutPickerModal = _CalloutPickerModal;
+CalloutPickerModal.CALLOUTS = [
+  ["note"],
+  ["abstract", "summary", "tldr"],
+  ["info"],
+  ["tip", "hint", "important"],
+  ["success", "check", "done"],
+  ["question", "help", "faq"],
+  ["warning", "caution", "attention"],
+  ["failure", "fail", "missing"],
+  ["danger", "error"],
+  ["bug"],
+  ["example"],
+  ["quote", "cite"]
+];
+
+// src/components/table-modal.ts
+var import_obsidian6 = require("obsidian");
+
+// src/components/abstract/callback-modal.ts
+var import_obsidian5 = require("obsidian");
+var CallbackModal = class extends import_obsidian5.Modal {
+  constructor(app2, modalTitle, confirmCallback) {
+    super(app2);
+    this.confirmCallback = confirmCallback;
+    this.modalTitle = modalTitle;
+  }
+  successClose(data) {
+    this.close();
+    this.confirmCallback(data);
+  }
+  onOpen() {
+    super.onOpen();
+    const { titleEl, modalTitle } = this;
+    titleEl.createEl("h1", { "text": modalTitle });
+  }
+  onClose() {
+    this.containerEl.empty();
+  }
+};
+
+// src/components/table-modal.ts
+var TableModal = class extends CallbackModal {
+  constructor(app2, confirmCallback) {
+    super(app2, "Insert Table", confirmCallback);
+  }
+  onOpen() {
+    super.onOpen();
+    const { contentEl, containerEl } = this;
+    containerEl.classList.add("keyshots-table-modal");
+    contentEl.createEl("p", {
+      "cls": "desc",
+      "text": "Quick-select size in grid or write exact values and confirm them via button."
+    });
+    const divider = contentEl.createEl("div", "divider");
+    const tableEl = divider.createEl("div", "table-selector-container");
+    const matrix = tableEl.createEl("table");
+    const processCellsInTable = (rN, cN, callback) => {
+      Array.from(matrix.rows).slice(0, rN).forEach((row, i) => {
+        Array.from(row.getElementsByTagName("td")).slice(0, cN).forEach((col, j) => callback(col, i, j));
+      });
+    };
+    const geometryLabel = tableEl.createEl("div", "geometry-label");
+    for (let i = 0; i < 10; i++) {
+      const tr = matrix.createEl("tr");
+      for (let j = 0; j < 10; j++) {
+        const td = tr.createEl("td");
+        if (j == 0)
+          continue;
+        td.addEventListener("click", () => {
+          this.successClose({
+            rows: i + 1,
+            columns: j + 1
+          });
+        });
+        td.addEventListener("mouseenter", () => {
+          processCellsInTable(i + 1, j + 1, (cell) => cell.classList.add("hovered"));
+          geometryLabel.textContent = `${i + 1}R x ${j + 1}C`;
+        });
+        td.addEventListener("mouseleave", () => {
+          processCellsInTable(i + 1, j + 1, (cell) => cell.removeAttribute("class"));
+          geometryLabel.textContent = ``;
+        });
+      }
+    }
+    const optEl = divider.createEl("div", { "cls": "opt" });
+    const data = {
+      row: 2,
+      column: 2
+    };
+    new import_obsidian6.Setting(optEl).setName("Rows").setDesc("Does not include headings row.").addText((cb) => cb.setValue("2").onChange((v) => data.row = parseInt(v)));
+    new import_obsidian6.Setting(optEl).setName("Columns").addText((cb) => cb.setValue("2").onChange((v) => data.column = parseInt(v)));
+    optEl.querySelectorAll("input[type=text]").forEach((e) => e.setAttrs({
+      "type": "number",
+      "min": "2",
+      "max": "200",
+      "step": "1"
+    }));
+    new import_obsidian6.Setting(optEl).addButton((cb) => cb.setCta().setButtonText("Insert table").onClick(() => {
+      if (isNaN(data.row) || isNaN(data.column)) {
+        new import_obsidian6.Notice("\u26A0\uFE0F Error: Invalid input of row or column values!");
+        return;
+      }
+      this.successClose({
+        rows: Math.max(2, data.row),
+        columns: Math.max(2, data.column)
+      });
+    }));
+  }
+};
+
+// src/components/abstract/regex-modal.ts
+var import_obsidian7 = require("obsidian");
+var RegexModal = class extends CallbackModal {
+  constructor(app2, editorContent, modalTitle, confirmCallback, matchesCountCallback) {
+    super(app2, modalTitle, confirmCallback);
+    this.pattern = "";
+    this.editorContent = editorContent;
+    this.matchesCountCallback = matchesCountCallback;
+  }
+  getRegex() {
+    if (this.pattern === "")
+      return void 0;
+    try {
+      return new RegExp(this.pattern, `gm${this.case_sensitive ? "" : "i"}`);
+    } catch (SyntaxError) {
+      return void 0;
+    }
+  }
+  updateModalValidState() {
+    const regex = this.getRegex();
+    this.updatePreview();
+    if (!regex) {
+      this.patternInput.inputEl.classList.add("invalid");
+      this.footer.nameEl.classList.add("invalid");
+      this.footer.setName(this.pattern === "" ? "Empty Pattern!" : "Invalid Pattern!");
+      this.button.setDisabled(true);
+      return;
+    }
+    this.patternInput.inputEl.classList.remove("invalid");
+    this.footer.nameEl.classList.remove("invalid");
+    this.footer.setName("Matches: " + this.matchesCountCallback({ pattern: regex, only_selections: this.only_selections }));
+    this.button.setDisabled(false);
+  }
+  updatePreview() {
+    this.previewEl.empty();
+    if (this.preview) {
+      import_obsidian7.MarkdownRenderer.renderMarkdown(this.previewProcessor(this.editorContent), this.previewEl, "", new import_obsidian7.Component()).then();
+      this.previewEl.classList.replace("raw", "markdown-rendered");
+    } else {
+      const content = this.previewEl.createEl("div");
+      content.innerHTML = this.previewProcessor(this.editorContent);
+      this.previewEl.classList.replace("markdown-rendered", "raw");
+    }
+  }
+  addPatternInput() {
+    new import_obsidian7.Setting(this.optionsCtrEl).setName("Pattern").setDesc("Regular Expression pattern to select text for action.").addText((cb) => this.patternInput = cb.setValue(this.pattern).setPlaceholder("(.*)").onChange((v) => {
+      this.pattern = v;
+      this.updateModalValidState();
+    }));
+  }
+  addCaseSensitiveSetting() {
+    new import_obsidian7.Setting(this.optionsCtrEl).setName("Case sensitive").setDesc("If should RegEx care about difference between capital or non-capital letters.").addToggle((cb) => cb.setValue(this.case_sensitive).onChange((v) => {
+      this.case_sensitive = v;
+      this.updateModalValidState();
+    }));
+  }
+  addSelectionOnlySetting() {
+    new import_obsidian7.Setting(this.optionsCtrEl).setName("Apply on already made selections only").setDesc("If regex should be applied only in current selections in the editor.").setClass("last").addToggle((cb) => cb.setValue(this.only_selections).onChange((v) => {
+      this.only_selections = v;
+      this.updateModalValidState();
+    }));
+  }
+  onOpen() {
+    super.onOpen();
+    const { containerEl, contentEl } = this;
+    containerEl.classList.add("keyshots-regex");
+    const dividerEl = contentEl.createEl("div", "content-divider");
+    this.optionsCtrEl = dividerEl.createEl("div", "options-ctr");
+    const previewCtrEl = dividerEl.createEl("div", "preview-ctr");
+    previewCtrEl.createEl("h2", { text: "Preview" });
+    this.previewEl = previewCtrEl.createEl("div", "preview markdown-rendered");
+    new import_obsidian7.Setting(previewCtrEl).setName("Preview mode").addToggle((cb) => cb.onChange((v) => {
+      this.preview = v;
+      this.updatePreview();
+    }));
+    this.footer = new import_obsidian7.Setting(contentEl).addButton((cb) => this.button = cb.setCta().setButtonText("Proceed").onClick(() => {
+      const regex = this.getRegex();
+      if (regex)
+        this.successClose(this.buildData());
+    }));
+    this.footer.nameEl.classList.add("matches");
+  }
+};
+
+// src/components/regex/regex-replace-modal.ts
+var import_obsidian8 = require("obsidian");
+var RegexReplaceModal = class extends RegexModal {
+  constructor(app2, editorContent, modalTitle, confirmCallback, matchesCountCallback) {
+    super(app2, editorContent, modalTitle, confirmCallback, matchesCountCallback);
+    this.replacer = "";
+  }
+  previewProcessor(content) {
+    const regex = this.getRegex();
+    return regex ? content.replace(regex, this.replacer) : content;
+  }
+  buildData() {
+    return {
+      pattern: this.getRegex(),
+      replacer: this.replacer,
+      only_selections: this.only_selections
+    };
+  }
+  onOpen() {
+    super.onOpen();
+    this.addPatternInput();
+    new import_obsidian8.Setting(this.optionsCtrEl).setName("Replacer").setDesc("Text for replacement, can capture groups made by Pattern.").addText((cb) => cb.setValue(this.replacer).setPlaceholder("$1").onChange((v) => {
+      this.replacer = v;
+      this.updatePreview();
+    }));
+    this.addCaseSensitiveSetting();
+    this.addSelectionOnlySetting();
+    this.updateModalValidState();
+  }
+};
+
+// src/components/regex/regex-search-modal.ts
+var RegexSearchModal = class extends RegexModal {
+  constructor(app2, editorContent, modalTitle, confirmCallback, matchesCountCallback) {
+    super(app2, editorContent, modalTitle, confirmCallback, matchesCountCallback);
+  }
+  previewProcessor(content) {
+    const regex = this.getRegex();
+    return regex ? content.replace(regex, (match) => `<span class="keyshots-regex-match">${match}</span>`) : content;
+  }
+  buildData() {
+    return {
+      pattern: this.getRegex(),
+      only_selections: this.only_selections
+    };
+  }
+  onOpen() {
+    super.onOpen();
+    this.addPatternInput();
+    this.addCaseSensitiveSetting();
+    this.addSelectionOnlySetting();
+    this.updateModalValidState();
   }
 };
 
 // src/commands.ts
 var COMMANDS = (plugin, map) => [
   {
-    id: "switch-readable-length-setting",
-    name: "Switch 'readable line length' setting",
-    hotkeys: map.switch_readable_length_setting,
-    callback: () => flipBooleanSetting(plugin.app, "readableLineLength")
-  },
-  {
-    id: "switch-line-numbers-setting",
-    name: "Switch 'line numbers' setting",
-    hotkeys: map.switch_line_numbers_setting,
-    callback: () => flipBooleanSetting(plugin.app, "showLineNumber")
-  },
-  {
-    id: "switch-inline-title-setting",
-    name: "Switch 'inline title' setting",
-    hotkeys: map.switch_inline_title_setting,
-    callback: () => flipBooleanSetting(plugin.app, "showInlineTitle")
-  },
-  {
-    id: "change-keyshots-preset",
-    name: "Change Keyshots preset",
-    hotkeys: map.change_keyshots_preset,
-    callback: () => new IDEPresetModal(plugin).open()
-  },
-  {
-    id: "switch-keyshots-case-sensitivity",
-    name: "Switch Keyshots case sensitivity",
-    hotkeys: map.switch_keyshots_case_sensitivity,
-    callback: () => toggleCaseSensitivity(plugin)
-  },
-  {
-    id: "open-keyshots-settings-tab",
-    name: "Open Keyshots settings tab",
-    hotkeys: map.open_keyshots_settings_tab,
-    callback: () => openKeyshotsSettings(app)
-  },
-  {
-    id: "move-line-up",
-    name: "Move line up",
-    repeatable: true,
-    hotkeys: map.move_line_up,
-    editorCallback: (editor) => moveLine(editor, -1 /* UP */, 0)
-  },
-  {
-    id: "move-line-down",
-    name: "Move line down",
-    repeatable: true,
-    hotkeys: map.move_line_down,
-    editorCallback: (editor) => moveLine(editor, 1 /* DOWN */, editor.lineCount() - 1)
-  },
-  {
-    id: "duplicate-line-up",
-    name: "Duplicate line up (Visual Studio Code)",
-    repeatable: true,
-    hotkeys: map.duplicate_line_up,
-    editorCallback: (editor) => vscodeDuplicate(editor, -1 /* UP */)
-  },
-  {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "duplicate-line-down",
     name: "Duplicate line down (Visual Studio Code)",
     repeatable: true,
@@ -2160,6 +2453,15 @@ var COMMANDS = (plugin, map) => [
     editorCallback: (editor) => vscodeDuplicate(editor, 1 /* DOWN */)
   },
   {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
+    id: "duplicate-line-up",
+    name: "Duplicate line up (Visual Studio Code)",
+    repeatable: true,
+    hotkeys: map.duplicate_line_up,
+    editorCallback: (editor) => vscodeDuplicate(editor, -1 /* UP */)
+  },
+  {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "duplicate-selection-or-line",
     name: "Duplicate selection or line (JetBrains IDEs)",
     repeatable: true,
@@ -2167,6 +2469,7 @@ var COMMANDS = (plugin, map) => [
     editorCallback: (editor) => jetBrainsDuplicate(editor)
   },
   {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "insert-line-above",
     name: "Insert line above",
     repeatable: true,
@@ -2174,6 +2477,7 @@ var COMMANDS = (plugin, map) => [
     editorCallback: (editor) => insertLine(editor, -1 /* UP */)
   },
   {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "insert-line-below",
     name: "Insert line below",
     repeatable: true,
@@ -2181,43 +2485,219 @@ var COMMANDS = (plugin, map) => [
     editorCallback: (editor) => insertLine(editor, 1 /* DOWN */)
   },
   {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "join-selected-lines",
     name: "Join selected lines",
     hotkeys: map.join_selected_lines,
     editorCallback: (editor) => replaceSelections(editor, (s) => s.replace(/\n/g, ""))
   },
   {
-    id: "split-selections-on-new-line",
-    name: "Split selections on new line",
-    hotkeys: map.split_selections_on_new_line,
-    editorCallback: (editor) => splitSelectedTextOnNewLine(editor)
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
+    id: "move-line-down",
+    name: "Move line down",
+    repeatable: true,
+    hotkeys: map.move_line_down,
+    editorCallback: (editor) => moveLine(editor, 1 /* DOWN */, editor.lineCount() - 1)
   },
   {
-    id: "expand-line-selections",
-    name: "Expand line selections",
-    hotkeys: map.expand_line_selections,
-    editorCallback: (editor) => expandSelections(editor)
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
+    id: "move-line-up",
+    name: "Move line up",
+    repeatable: true,
+    hotkeys: map.move_line_up,
+    editorCallback: (editor) => moveLine(editor, -1 /* UP */, 0)
   },
   {
-    id: "sort-selected-lines",
-    name: "Sort selected lines",
-    hotkeys: map.sort_selected_lines,
-    editorCallback: (editor) => sortSelectedLines(editor)
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
+    id: "reverse-selected-lines",
+    name: "Reverse selected lines",
+    hotkeys: map.reverse_selected_lines,
+    editorCallback: (editor) => reverseSelectedLines(editor)
   },
   {
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
     id: "shuffle-selected-lines",
     name: "Shuffle selected lines",
     hotkeys: map.shuffle_selected_lines,
     editorCallback: (editor) => shuffleSelectedLines(editor, plugin.settings.shuffle_rounds_amount)
   },
   {
-    id: "add-caret-up",
-    name: "Add caret cursor up",
-    repeatable: true,
-    hotkeys: map.add_caret_up,
-    editorCallback: (editor) => addCarets(editor, -1 /* UP */, 0)
+    category: "Editor Lines Manipulation" /* EDITOR_LINES_MANIPULATION */,
+    id: "sort-selected-lines",
+    name: "Sort selected lines",
+    hotkeys: map.sort_selected_lines,
+    editorCallback: (editor) => sortSelectedLines(editor)
   },
   {
+    category: "Insert Components" /* INSERT_COMPONENTS */,
+    id: "better-insert-callout",
+    name: "Better insert callout",
+    hotkeys: map.better_insert_callout,
+    editorCallback: (editor) => new CalloutPickerModal(plugin, (item) => insertCallout(editor, item)).open()
+  },
+  {
+    category: "Insert Components" /* INSERT_COMPONENTS */,
+    id: "insert-code-block",
+    name: "Insert code block",
+    hotkeys: map.insert_code_block,
+    editorCallback: (editor) => new CodeBlockModal(plugin, (item) => insertCodeBlock(editor, item)).open()
+  },
+  {
+    category: "Insert Components" /* INSERT_COMPONENTS */,
+    id: "insert-ordinal-numbering",
+    name: "Insert ordinal numbering",
+    hotkeys: map.insert_ordinal_numbering,
+    editorCallback: (editor) => insertOrdinalNumbering(editor)
+  },
+  {
+    category: "Insert Components" /* INSERT_COMPONENTS */,
+    id: "insert-table",
+    name: "Insert Table",
+    hotkeys: map.insert_table,
+    editorCallback: (editor) => new TableModal(plugin.app, (data) => insertTable(editor, data.rows, data.columns)).open()
+  },
+  {
+    category: "Rendered Controling" /* RENDERED_CONTROLING */,
+    id: "close-all-foldable-callouts",
+    name: "Close all foldable callouts",
+    hotkeys: map.close_all_foldable_callouts,
+    callback: () => document.querySelectorAll("div.callout.is-collapsible:not(.is-collapsed) div.callout-title").forEach((c) => c.click())
+  },
+  {
+    category: "Rendered Controling" /* RENDERED_CONTROLING */,
+    id: "open-all-foldable-callouts",
+    name: "Open all foldable callouts",
+    hotkeys: map.open_all_foldable_callouts,
+    callback: () => document.querySelectorAll("div.callout.is-collapsible.is-collapsed div.callout-title").forEach((c) => c.click())
+  },
+  {
+    category: "Rendered Controling" /* RENDERED_CONTROLING */,
+    id: "toggle-all-callouts-fold-state",
+    name: "Toggle all callouts fold state",
+    hotkeys: map.toggle_all_callouts_fold_state,
+    callback: () => document.querySelectorAll("div.callout div.callout-title").forEach((c) => c.click())
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-bold",
+    name: "Multi-toggle bold",
+    hotkeys: map.multi_toggle_bold,
+    editorCallback: (editor) => surroundWithChars(editor, "**")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-code",
+    name: "Multi-toggle code",
+    hotkeys: map.multi_toggle_code,
+    editorCallback: (editor) => surroundWithChars(editor, "``")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-comment",
+    name: "Multi-toggle comment",
+    hotkeys: map.multi_toggle_comment,
+    editorCallback: (editor) => surroundWithChars(editor, "%%")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-highlight",
+    name: "Multi-toggle highlight",
+    hotkeys: map.multi_toggle_highlight,
+    editorCallback: (editor) => surroundWithChars(editor, "==")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-italic",
+    name: "Multi-toggle italic",
+    hotkeys: map.multi_toggle_italic,
+    editorCallback: (editor) => surroundWithChars(editor, "*")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "multi-toggle-strikethrough",
+    name: "Multi-toggle strikethrough",
+    hotkeys: map.multi_toggle_strikethrough,
+    editorCallback: (editor) => surroundWithChars(editor, "~~")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "replace-by-regex",
+    name: "Replace by Regular Expression (Regex)",
+    hotkeys: map.replace_by_regex,
+    editorCallback: (editor) => new RegexReplaceModal(plugin.app, editor.getValue(), "Replace by Regular Expression", (data) => replaceRegex(editor, data.pattern, data.replacer, data.only_selections), (data) => countRegexMatches(editor, data.pattern, data.only_selections)).open()
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-case-jetbrains",
+    name: "Toggle case (JetBrains)",
+    hotkeys: map.toggle_case_jetbrains,
+    editorCallback: (editor) => replaceSelections(editor, (str) => str === str.toLowerCase() ? str.toUpperCase() : str.toLowerCase())
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-kebab-case",
+    name: "Toggle selections kebabcase",
+    hotkeys: map.toggle_kebabcase,
+    editorCallback: (editor) => convertOneToOtherChars(editor, " ", "-")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-keyboard-input",
+    name: "Toggle keyboard input (<kbd>)",
+    hotkeys: map.toggle_keyboard_input,
+    editorCallback: (editor) => surroundWithChars(editor, "<kbd>", "</kbd>")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-snake-case",
+    name: "Toggle selections snakecase",
+    hotkeys: map.toggle_snakecase,
+    editorCallback: (editor) => convertOneToOtherChars(editor, " ", "_")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-underline",
+    name: "Toggle underline",
+    hotkeys: map.toggle_underline,
+    editorCallback: (editor) => surroundWithChars(editor, "<u>", "</u>")
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "toggle-uri-encoded-or-decoded",
+    name: "Toggle selections URI encoded/decoded string",
+    hotkeys: map.toggle_uri_encoded_or_decoded,
+    editorCallback: (editor) => convertURI(editor)
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "transform-selections-to-lowercase",
+    name: "Transform selections to lowercase",
+    hotkeys: map.transform_selections_to_lowercase,
+    editorCallback: (editor) => replaceSelections(editor, (s) => s.toLowerCase())
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "transform-selections-to-titlecase",
+    name: "Transform selections to titlecase (capitalize)",
+    hotkeys: map.transform_selections_to_titlecase,
+    editorCallback: (editor) => replaceSelections(editor, (s) => s.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()))
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "transform-selections-to-uppercase",
+    name: "Transform selections to uppercase",
+    hotkeys: map.transform_selections_to_uppercase,
+    editorCallback: (editor) => replaceSelections(editor, (s) => s.toUpperCase())
+  },
+  {
+    category: "Replace Selections" /* REPLACE_SELECTIONS */,
+    id: "trim-selections",
+    name: "Trim selections",
+    hotkeys: map.trim_selections,
+    editorCallback: (editor) => replaceSelections(editor, (s) => s.trim())
+  },
+  {
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
     id: "add-caret-down",
     name: "Add caret cursor down",
     repeatable: true,
@@ -2225,136 +2705,103 @@ var COMMANDS = (plugin, map) => [
     editorCallback: (editor) => addCarets(editor, 1 /* DOWN */, editor.lineCount())
   },
   {
-    id: "select-multiple-word-instances",
-    name: "Select multiple word instances",
-    hotkeys: map.select_multiple_word_instances,
-    editorCallback: (editor) => selectWordInstances(editor, plugin.settings.case_sensitive)
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
+    id: "add-caret-up",
+    name: "Add caret cursor up",
+    repeatable: true,
+    hotkeys: map.add_caret_up,
+    editorCallback: (editor) => addCarets(editor, -1 /* UP */, 0)
   },
   {
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
+    id: "search-by-regex",
+    name: "Search by Regular Expression (Regex)",
+    hotkeys: map.search_by_regex,
+    editorCallback: (editor) => new RegexSearchModal(plugin.app, editor.getValue(), "Search by Regular Expression", (data) => selectByRegex(editor, data.pattern, data.only_selections), (data) => countRegexMatches(editor, data.pattern, data.only_selections)).open()
+  },
+  {
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
     id: "select-all-word-instances",
     name: "Select all word instances",
     hotkeys: map.select_all_word_instances,
     editorCallback: (editor) => selectAllWordInstances(editor, plugin.settings.case_sensitive)
   },
   {
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
+    id: "select-multiple-word-instances",
+    name: "Select multiple word instances",
+    hotkeys: map.select_multiple_word_instances,
+    editorCallback: (editor) => selectWordInstances(editor, plugin.settings.case_sensitive)
+  },
+  {
+    category: "Selection Adding or Removing" /* SELECTION_ADD_OR_REMOVE */,
     id: "split-selections-by-lines",
     name: "Split selections by lines",
     hotkeys: map.split_selections_by_lines,
     editorCallback: (editor) => splitSelectionsByLines(editor)
   },
   {
-    id: "trim-selections",
-    name: "Trim selections",
-    hotkeys: map.trim_selections,
-    editorCallback: (editor) => replaceSelections(editor, (s) => s.trim())
+    category: "Transform Selections" /* TRANSFORM_SELECTIONS */,
+    id: "expand-line-selections",
+    name: "Expand line selections",
+    hotkeys: map.expand_line_selections,
+    editorCallback: (editor) => expandSelections(editor)
   },
   {
-    id: "toggle-snake-case",
-    name: "Toggle selections snakecase",
-    hotkeys: map.toggle_snakecase,
-    editorCallback: (editor) => convertOneToOtherChars(editor, " ", "_")
+    category: "Transform Selections" /* TRANSFORM_SELECTIONS */,
+    id: "split-selections-on-new-line",
+    name: "Split selections on new line",
+    hotkeys: map.split_selections_on_new_line,
+    editorCallback: (editor) => splitSelectedTextOnNewLine(editor)
   },
   {
-    id: "toggle-kebab-case",
-    name: "Toggle selections kebabcase",
-    hotkeys: map.toggle_kebabcase,
-    editorCallback: (editor) => convertOneToOtherChars(editor, " ", "-")
+    category: "Obsidian Settings" /* OBSIDIAN_SETTINGS */,
+    id: "switch-inline-title-setting",
+    name: "Switch 'inline title' setting",
+    hotkeys: map.switch_inline_title_setting,
+    callback: () => flipBooleanSetting(plugin.app, "showInlineTitle")
   },
   {
-    id: "toggle-uri-encoded-or-decoded",
-    name: "Toggle selections URI encoded/decoded string",
-    hotkeys: map.toggle_uri_encoded_or_decoded,
-    editorCallback: (editor) => convertURI(editor)
+    category: "Obsidian Settings" /* OBSIDIAN_SETTINGS */,
+    id: "switch-line-numbers-setting",
+    name: "Switch 'line numbers' setting",
+    hotkeys: map.switch_line_numbers_setting,
+    callback: () => flipBooleanSetting(plugin.app, "showLineNumber")
   },
   {
-    id: "transform-selections-to-lowercase",
-    name: "Transform selections to lowercase",
-    hotkeys: map.transform_selections_to_lowercase,
-    editorCallback: (editor) => replaceSelections(editor, (s) => s.toLowerCase())
+    category: "Obsidian Settings" /* OBSIDIAN_SETTINGS */,
+    id: "switch-readable-length-setting",
+    name: "Switch 'readable line length' setting",
+    hotkeys: map.switch_readable_length_setting,
+    callback: () => flipBooleanSetting(plugin.app, "readableLineLength")
   },
   {
-    id: "transform-selections-to-uppercase",
-    name: "Transform selections to uppercase",
-    hotkeys: map.transform_selections_to_uppercase,
-    editorCallback: (editor) => replaceSelections(editor, (s) => s.toUpperCase())
-  },
-  {
-    id: "transform-selections-to-titlecase",
-    name: "Transform selections to titlecase (capitalize)",
-    hotkeys: map.transform_selections_to_titlecase,
-    editorCallback: (editor) => replaceSelections(editor, (s) => s.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()))
-  },
-  {
-    id: "toggle-case-jetbrains",
-    name: "Toggle case (JetBrains)",
-    hotkeys: map.toggle_case_jetbrains,
-    editorCallback: (editor) => replaceSelections(editor, (str) => str === str.toLowerCase() ? str.toUpperCase() : str.toLowerCase())
-  },
-  {
-    id: "multi-toggle-bold",
-    name: "Multi-toggle bold",
-    hotkeys: map.multi_toggle_bold,
-    editorCallback: (editor) => surroundWithChars(editor, "**")
-  },
-  {
-    id: "multi-toggle-italic",
-    name: "Multi-toggle italic",
-    hotkeys: map.multi_toggle_italic,
-    editorCallback: (editor) => surroundWithChars(editor, "*")
-  },
-  {
-    id: "multi-toggle-code",
-    name: "Multi-toggle code",
-    hotkeys: map.multi_toggle_code,
-    editorCallback: (editor) => surroundWithChars(editor, "``")
-  },
-  {
-    id: "multi-toggle-highlight",
-    name: "Multi-toggle highlight",
-    hotkeys: map.multi_toggle_highlight,
-    editorCallback: (editor) => surroundWithChars(editor, "==")
-  },
-  {
-    id: "multi-toggle-comment",
-    name: "Multi-toggle comment",
-    hotkeys: map.multi_toggle_comment,
-    editorCallback: (editor) => surroundWithChars(editor, "%%")
-  },
-  {
-    id: "multi-toggle-strikethrough",
-    name: "Multi-toggle strikethrough",
-    hotkeys: map.multi_toggle_strikethrough,
-    editorCallback: (editor) => surroundWithChars(editor, "~~")
-  },
-  {
-    id: "toggle-underline",
-    name: "Toggle underline",
-    hotkeys: map.toggle_underline,
-    editorCallback: (editor) => surroundWithChars(editor, "<u>", "</u>")
-  },
-  {
-    id: "toggle-keyboard-input",
-    name: "Toggle keyboard input (<kbd>)",
-    hotkeys: map.toggle_keyboard_input,
-    editorCallback: (editor) => surroundWithChars(editor, "<kbd>", "</kbd>")
-  },
-  {
-    id: "insert-code-block",
-    name: "Insert code block",
-    hotkeys: map.insert_code_block,
-    editorCallback: (editor) => new CodeBlockModal(plugin, (item) => insertCodeBlock(editor, item)).open()
-  },
-  {
-    id: "insert-ordinal-numbering",
-    name: "Insert ordinal numbering",
-    hotkeys: map.insert_ordinal_numbering,
-    editorCallback: (editor) => insertOrdinalNumbering(editor)
-  },
-  {
+    category: "Other" /* OTHER */,
     id: "open-dev-tools",
     name: "Open developer tools",
     hotkeys: map.open_dev_tools,
     callback: () => electron.remote.getCurrentWindow().webContents.openDevTools()
+  },
+  {
+    category: "Keyshots Settings" /* KEYSHOTS_SETTINGS */,
+    id: "change-keyshots-preset",
+    name: "Change Keyshots preset",
+    hotkeys: map.change_keyshots_preset,
+    callback: () => new IDEPresetModal(plugin).open()
+  },
+  {
+    category: "Keyshots Settings" /* KEYSHOTS_SETTINGS */,
+    id: "open-keyshots-settings-tab",
+    name: "Open Keyshots settings tab",
+    hotkeys: map.open_keyshots_settings_tab,
+    callback: () => openKeyshotsSettings(app)
+  },
+  {
+    category: "Keyshots Settings" /* KEYSHOTS_SETTINGS */,
+    id: "switch-keyshots-case-sensitivity",
+    name: "Switch Keyshots case sensitivity",
+    hotkeys: map.switch_keyshots_case_sensitivity,
+    callback: () => toggleCaseSensitivity(plugin)
   }
 ];
 var DOUBLE_KEY_COMMANDS = (plugin) => [
@@ -2364,7 +2811,7 @@ var DOUBLE_KEY_COMMANDS = (plugin) => [
       id: "add-caret",
       name: "Add caret cursors",
       key: "Control",
-      maxDelay: 1e3,
+      maxDelay: 400,
       anotherKeyPressedCallback: (ev) => addCaretsViaDoubleKey(plugin, ev)
     }
   },
@@ -2374,8 +2821,8 @@ var DOUBLE_KEY_COMMANDS = (plugin) => [
       id: "quick-open",
       name: "Open Quick-Switcher",
       key: "Shift",
-      maxDelay: 1e3,
-      lastPressedCallback: () => runCommandById(plugin, "switcher:open", () => new import_obsidian4.Notice("Quick Switcher plugin is not enabled!"))
+      maxDelay: 400,
+      lastPressedCallback: () => runCommandById(plugin, "switcher:open", () => new import_obsidian9.Notice("Quick Switcher plugin is not enabled!"))
     }
   }
 ];
@@ -2453,7 +2900,7 @@ var DoubleKeyRegistry = class {
 };
 
 // src/components/settings-tab.ts
-var import_obsidian5 = require("obsidian");
+var import_obsidian10 = require("obsidian");
 
 // src/classes/document-fragment-builder.ts
 var _fragment;
@@ -2477,7 +2924,7 @@ var DocumentFragmentBuilder = class {
 _fragment = new WeakMap();
 
 // src/components/settings-tab.ts
-var KeyshotsSettingTab = class extends import_obsidian5.PluginSettingTab {
+var KeyshotsSettingTab = class extends import_obsidian10.PluginSettingTab {
   constructor(app2, plugin) {
     super(app2, plugin);
     this.plugin = plugin;
@@ -2489,26 +2936,24 @@ var KeyshotsSettingTab = class extends import_obsidian5.PluginSettingTab {
     title.innerHTML = KEYSHOTS_SVG(48) + title.innerHTML;
     title.setCssProps({ "display": "flex", "align-items": "center", "gap": "10px" });
     containerEl.createEl("h2", { text: "\u2328\uFE0F Default keys" });
-    new import_obsidian5.Setting(containerEl).setName("IDE Keys Mapping").setDesc("Change default hotkeys based on IDE, that you are comfortable with. This does not overwrite your custom hotkeys!").setDesc(new DocumentFragmentBuilder().appendText("Change default hotkeys based on IDE, that you are comfortable with.").createElem("br").createElem("b", { text: "\u2757This does not overwrite your custom Keyshots hotkeys configuration!" }).toFragment()).addDropdown((cb) => cb.addOptions(Object.entries(IDE_LABELS).reduce((acc, [key, ideInfo]) => {
+    new import_obsidian10.Setting(containerEl).setName("IDE Keys Mapping").setDesc("Change default hotkeys based on IDE, that you are comfortable with. This does not overwrite your custom hotkeys!").setDesc(new DocumentFragmentBuilder().appendText("Change default hotkeys based on IDE, that you are comfortable with.").createElem("br").createElem("b", { text: "\u2757This does not overwrite your custom Keyshots hotkeys configuration!" }).toFragment()).addDropdown((cb) => cb.addOptions(Object.entries(IDE_LABELS).reduce((acc, [key, ideInfo]) => {
       acc[key] = ideInfo.name;
       return acc;
     }, {})).setValue(this.plugin.settings.ide_mappings).onChange(async (value) => {
-      this.plugin.settings.ide_mappings = value;
-      this.plugin.loadCommands();
-      await this.plugin.saveSettings();
+      await this.plugin.changePreset(value);
     }));
-    new import_obsidian5.Setting(containerEl).setName("Default Keyshots hotkeys").setDesc(new DocumentFragmentBuilder().appendText("Sets default hotkeys for keyshots commands, that are not modified by IDE preset.").createElem("br").createElem("b", { text: "\u2757If you select clear preset, this setting will be ignored!" }).toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.keyshot_mappings).onChange(async (value) => {
+    new import_obsidian10.Setting(containerEl).setName("Default Keyshots hotkeys").setDesc(new DocumentFragmentBuilder().appendText("Sets default hotkeys for keyshots commands, that are not modified by IDE preset.").createElem("br").createElem("b", { text: "\u2757If you select clear preset, this setting will be ignored!" }).toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.keyshot_mappings).onChange(async (value) => {
       this.plugin.settings.keyshot_mappings = value;
       this.plugin.loadCommands();
       await this.plugin.saveSettings();
     }));
     containerEl.createEl("h2", { text: "\u{1F527} Commands settings" });
-    new import_obsidian5.Setting(containerEl).setName("Case sensitivity").setDesc(new DocumentFragmentBuilder().appendText("Determines if Keyshots commands should be case sensitive. For toggling while editing text just simply use ").createElem("kbd", { text: " Ctrl + Alt + I" }).appendText(" hotkey if you are using default Keyshots binding!").toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.case_sensitive).onChange(async (value) => {
+    new import_obsidian10.Setting(containerEl).setName("Case sensitivity").setDesc(new DocumentFragmentBuilder().appendText("Determines if Keyshots commands should be case sensitive. For toggling while editing text just simply use ").createElem("kbd", { text: " Ctrl + Alt + I" }).appendText(" hotkey if you are using default Keyshots binding!").toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.case_sensitive).onChange(async (value) => {
       this.plugin.settings.case_sensitive = value;
       await this.plugin.saveSettings();
     }));
     let slider;
-    new import_obsidian5.Setting(containerEl).setName("Shuffle rounds amount").setDesc(new DocumentFragmentBuilder().appendText("Number of rounds that will ").createElem("code", { text: "Shuffle selected lines" }).appendText(" command take. The more rounds it will take, the more random it will be!").toFragment()).addSlider((cb) => {
+    new import_obsidian10.Setting(containerEl).setName("Shuffle rounds amount").setDesc(new DocumentFragmentBuilder().appendText("Number of rounds that will ").createElem("code", { text: "Shuffle selected lines" }).appendText(" command take. The more rounds it will take, the more random it will be!").toFragment()).addSlider((cb) => {
       slider = cb;
       slider.setValue(this.plugin.settings.shuffle_rounds_amount).setLimits(1, 50, 1).setDynamicTooltip().onChange(async (value) => {
         this.plugin.settings.shuffle_rounds_amount = value;
@@ -2520,12 +2965,12 @@ var KeyshotsSettingTab = class extends import_obsidian5.PluginSettingTab {
       await this.plugin.saveSettings();
     }));
     containerEl.createEl("h2", { text: "\u{1F527} JetBrains Features" });
-    new import_obsidian5.Setting(containerEl).setName(new DocumentFragmentBuilder().appendText("Double ").createElem("kbd", { text: "Ctrl" }).appendText(" caret adding shortcut").toFragment()).setDesc(new DocumentFragmentBuilder().appendText("Everytime when you press ").createElem("kbd", { text: "Ctrl" }).appendText(" twice and second one you'll hold, then when you press ").createElem("kbd", { text: "\u2193" }).appendText(" or ").createElem("kbd", { text: "\u2191" }).appendText(' keys, Obsidian will add carets like will normaly do with "').createElem("b", { text: "Add carets up/down" }).appendText('" command.').toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.carets_via_double_ctrl).onChange(async (value) => {
+    new import_obsidian10.Setting(containerEl).setName(new DocumentFragmentBuilder().appendText("Double ").createElem("kbd", { text: "Ctrl" }).appendText(" caret adding shortcut").toFragment()).setDesc(new DocumentFragmentBuilder().appendText("Everytime when you press ").createElem("kbd", { text: "Ctrl" }).appendText(" twice and second one you'll hold, then when you press ").createElem("kbd", { text: "\u2193" }).appendText(" or ").createElem("kbd", { text: "\u2191" }).appendText(' keys, Obsidian will add carets like will normaly do with "').createElem("b", { text: "Add carets up/down" }).appendText('" command.').toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.carets_via_double_ctrl).onChange(async (value) => {
       this.plugin.settings.carets_via_double_ctrl = value;
       await this.plugin.saveSettings();
       this.plugin.loadDoubleKeyCommands();
     }));
-    new import_obsidian5.Setting(containerEl).setName(new DocumentFragmentBuilder().appendText("Opening Quick-Switcher via double ").createElem("kbd", { text: "Shift" }).appendText(" shortcut").toFragment()).setDesc(new DocumentFragmentBuilder().appendText("If you have Quick Switcher plugin enabled, hitting ").createElem("kbd", { text: "Shift" }).appendText(" twice will open quick switcher window.").toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.quick_switch_via_double_shift).onChange(async (value) => {
+    new import_obsidian10.Setting(containerEl).setName(new DocumentFragmentBuilder().appendText("Opening Quick-Switcher via double ").createElem("kbd", { text: "Shift" }).appendText(" shortcut").toFragment()).setDesc(new DocumentFragmentBuilder().appendText("If you have Quick Switcher plugin enabled, hitting ").createElem("kbd", { text: "Shift" }).appendText(" twice will open quick switcher window.").toFragment()).addToggle((cb) => cb.setValue(this.plugin.settings.quick_switch_via_double_shift).onChange(async (value) => {
       this.plugin.settings.quick_switch_via_double_shift = value;
       await this.plugin.saveSettings();
       this.plugin.loadDoubleKeyCommands();
@@ -2534,7 +2979,7 @@ var KeyshotsSettingTab = class extends import_obsidian5.PluginSettingTab {
 };
 
 // src/plugin.ts
-var KeyshotsPlugin = class extends import_obsidian6.Plugin {
+var KeyshotsPlugin = class extends import_obsidian11.Plugin {
   async onload() {
     await this.loadSettings();
     this.addSettingTab(new KeyshotsSettingTab(this.app, this));
@@ -2544,16 +2989,29 @@ var KeyshotsPlugin = class extends import_obsidian6.Plugin {
   }
   loadCommands() {
     if (this.commandIds !== void 0) {
-      if (!this.settings.carets_via_double_ctrl)
-        return;
       this.commandIds.forEach((cmd) => this.app.commands.removeCommand(cmd));
-      this._events.splice(5);
+      this._events = this._events.filter((e) => !e.toString().contains(".removeCommand("));
     }
     this.commandIds = new Set(COMMANDS(this, mapBySettings(this)).map((cmd) => this.addCommand(cmd).id));
   }
   loadDoubleKeyCommands() {
     this.doubleKeyRegistry.unregisterAllCommands();
     DOUBLE_KEY_COMMANDS(this).filter((cmd) => cmd.conditional(this)).forEach((cmd) => this.doubleKeyRegistry.registerCommand(cmd.object));
+  }
+  async changePreset(presetId) {
+    if (!Object.keys(IDE_LABELS).contains(presetId)) {
+      console.warn("Keyshots: Invalid attempt to change Keyshots mappings preset, incorrect preset ID.");
+      return;
+    }
+    this.settings.ide_mappings = presetId;
+    this.loadCommands();
+    await this.saveSettings();
+  }
+  availablePresets() {
+    return Object.keys(IDE_LABELS);
+  }
+  getPresetTitle(presetId) {
+    return IDE_LABELS[presetId].name;
   }
   async loadSettings() {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());

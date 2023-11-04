@@ -4,83 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "01b0419fe62deebb",
+        "id": "6a68243ca070abed",
         "type": "tabs",
         "children": [
           {
-            "id": "dd914003601f34ca",
+            "id": "53cef190c6088fd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "articles/HATA.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7230f0e7fbf7d8c8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Floridanot.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "59e430fa8451fe8e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Korolarachi.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d420e639ded14bdb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Layon.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "52711916cb6eea9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Billzoplace.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "0d2687b7c6ec5272",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "articles/Boxing Matchbox War.md",
+                "file": "articles/List of Coups and Coup Attempts by Country.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -147,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "articles/Billzoplace.md",
+                "file": "articles/List of Coups and Coup Attempts by Country.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "articles/Billzoplace.md",
+                "file": "articles/List of Coups and Coup Attempts by Country.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "articles/Billzoplace.md"
+                "file": "articles/List of Coups and Coup Attempts by Country.md"
               }
             }
           }
@@ -205,7 +144,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "articles/Billzoplace.md",
+                "file": "articles/List of Coups and Coup Attempts by Country.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -252,18 +191,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "52711916cb6eea9c",
+  "active": "53cef190c6088fd0",
   "lastOpenFiles": [
-    "images/billzoplace_2023-08-22.webp",
-    "articles/Billzoplace.md",
-    "images/Billzoplace-20231018152826409.webp",
     "articles/Mangrovepox.md",
-    "articles/Layon.md",
+    "articles/List of Coups and Coup Attempts by Country.md",
+    "articles/HATA.md",
     "articles/Korolarachi.md",
+    "articles/Layon.md",
+    "articles/Billzoplace.md",
+    "articles/Boxing Matchbox War.md",
+    "images/billzoplace_2023-08-22.webp",
+    "images/Billzoplace-20231018152826409.webp",
     "articles/Che Forguera.md",
     "articles/Floridanot.md",
-    "articles/HATA.md",
-    "articles/Boxing Matchbox War.md",
     "articles/Hawainot.md",
     "images/Toby hata logo 2023-06-20.png",
     "articles/Remy Republic.md",
